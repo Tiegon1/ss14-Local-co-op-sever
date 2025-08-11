@@ -91,10 +91,15 @@
     - id: SlimesSpawn
     - id: SolarFlare
     - id: SnakeSpawn
+    - id: Shade
     - id: SpiderClownSpawn
     - id: SpiderSpawn
     - id: HonkbotSpawn
     - id: VentClog
+    - id: Dino
+    - id: Spacemob
+    - id: MiscHostile
+    - id: Dragon
 
 - type: entityTable
   id: BasicAntagEventsTable
@@ -487,6 +492,7 @@
   parent: BaseStationEventShortDelay
   components:
   - type: StationEvent
+    minimumPlayers: 30
     weight: 4
     startAnnouncement: station-event-power-grid-check-start-announcement
     endAnnouncement: station-event-power-grid-check-end-announcement
@@ -537,8 +543,8 @@
     startAudio:
       path: /Audio/Announcements/attention.ogg
     earliestStart: 15
-    minimumPlayers: 15
-    weight: 5
+    minimumPlayers: 1
+    weight: 0.5
     duration: 60
     chaos: # Goobstation
       Mess: 200
@@ -553,7 +559,7 @@
     startAudio:
       path: /Audio/Announcements/aliens.ogg
     earliestStart: 20
-    minimumPlayers: 15
+    minimumPlayers: 1
     weight: 5
     duration: 30 # DeltaV: was 60, used as a delay now
     chaos: # Goobstation
@@ -568,6 +574,114 @@
       - id: MobAdultSlimesYellowAngry
 
 - type: entity
+  id: Shade
+  parent: BaseStationEventShortDelay
+  components:
+  - type: StationEvent
+    startAnnouncement: station-event-vent-creatures-start-announcement
+    startAudio:
+      path: /Audio/Announcements/aliens.ogg
+    earliestStart: 20
+    minimumPlayers: 1
+    weight: 5
+    duration: 30 # DeltaV: was 60, used as a delay now
+  - type: VentCrittersRule
+    table: !type:GroupSelector # DeltaV: EntityTable instead of spawn entries
+      children:
+      - id: MobBloodCultShade
+
+- type: entity
+  id: Dino
+  parent: BaseStationEventShortDelay
+  components:
+  - type: StationEvent
+    startAnnouncement: station-event-vent-creatures-start-announcement
+    startAudio:
+      path: /Audio/Announcements/aliens.ogg
+    earliestStart: 1
+    minimumPlayers: 1
+    weight: 3
+    duration: 30 # DeltaV: was 60, used as a delay now
+  - type: VentCrittersRule
+    table: !type:GroupSelector # DeltaV: EntityTable instead of spawn entries
+      children:
+      - id: MobDinosaurCompy
+      - id: MobDinosaurAnki
+      - id: MobDinosaurPara
+      - id: MobDinosaurSpino
+      - id: MobDinosaurCompy
+      - id: MobDinosaurStego
+      - id: MobDinosaurTrike
+      - id: MobDinosaurTrex
+      - id: MobDinosaurRaptor
+      - id: MobDinosaurCompy
+
+- type: entity
+  id: Spacemob
+  parent: BaseStationEventShortDelay
+  components:
+  - type: StationEvent
+    startAnnouncement: station-event-vent-creatures-start-announcement
+    startAudio:
+      path: /Audio/Announcements/aliens.ogg
+    earliestStart: 1
+    minimumPlayers: 1
+    weight: 5
+    duration: 30 # DeltaV: was 60, used as a delay now
+  - type: VentCrittersRule
+    table: !type:GroupSelector # DeltaV: EntityTable instead of spawn entries
+      children:
+      - id: MobSpiderSpace
+      - id: MobBearSpace
+      - id: MobKangarooSpace
+
+- type: entity
+  id: MiscHostile
+  parent: BaseStationEventShortDelay
+  components:
+  - type: StationEvent
+    startAnnouncement: station-event-vent-creatures-start-announcement
+    startAudio:
+      path: /Audio/Announcements/aliens.ogg
+    earliestStart: 1
+    minimumPlayers: 1
+    weight: 5
+    duration: 30 # DeltaV: was 60, used as a delay now
+  - type: VentCrittersRule
+    table: !type:GroupSelector # DeltaV: EntityTable instead of spawn entries
+      children:
+      - id: MobCorgiCerberus
+      - id: MobGoliath
+      - id: MobArgocyteEnforcer
+      - id: MobArgocyteFounder
+      - id: MobHivelord
+      - id: MobCarpHolo
+      - id: MobLaserRaptor
+      - id: MobArgocytePouncer
+      - id: MobGhoulProphet
+      - id: MobMothSyndy
+      - id: MobCatSyndy
+      - id: MobPenguinSyndy
+      - id: MobArgocyteSwiper
+
+- type: entity
+  id: Dragon
+  parent: BaseStationEventShortDelay
+  components:
+  - type: StationEvent
+    startAnnouncement: station-event-vent-creatures-start-announcement
+    startAudio:
+      path: /Audio/Announcements/aliens.ogg
+    earliestStart: 1
+    minimumPlayers: 1
+    weight: 1
+    duration: 30 # DeltaV: was 60, used as a delay now
+  - type: VentCrittersRule
+    table: !type:GroupSelector # DeltaV: EntityTable instead of spawn entries
+      children:
+      - id: MobDragon
+
+- type: entity
   id: SnakeSpawn
   parent: BaseStationEventShortDelay
   components:
@@ -576,7 +690,7 @@
     startAudio:
       path: /Audio/Announcements/aliens.ogg
     earliestStart: 20
-    minimumPlayers: 15
+    minimumPlayers: 1
     weight: 5
     duration: 30 # DeltaV: was 60, used as a delay now
   - type: VentCrittersRule
@@ -595,7 +709,7 @@
     startAudio:
       path: /Audio/Announcements/aliens.ogg
     earliestStart: 20
-    minimumPlayers: 15
+    minimumPlayers: 1
     weight: 5
     duration: 30 # DeltaV: was 60, used as a delay now
   - type: VentCrittersRule
@@ -611,8 +725,8 @@
     startAudio:
       path: /Audio/Announcements/attention.ogg
     earliestStart: 30 # funkystation delay
-    minimumPlayers: 30 # DeltaV - was 20
-    weight: 1 # DeltaV - was 1.5
+    minimumPlayers: 1 # DeltaV - was 20
+    weight: 5 # DeltaV - was 1.5
     duration: 30 # DeltaV: was 60, used as a delay now
   - type: VentCrittersRule
     playerRatio: 35 # DeltaV: Clown spiders are very robust
@@ -628,8 +742,8 @@
     startAudio:
       path: /Audio/Announcements/aliens.ogg
     earliestStart: 20
-    minimumPlayers: 10
-    weight: 1
+    minimumPlayers: 1
+    weight: 0.5
     duration: 30
   - type: VentCrittersRule
     table: # DeltaV: EntityTable instead of spawn entries

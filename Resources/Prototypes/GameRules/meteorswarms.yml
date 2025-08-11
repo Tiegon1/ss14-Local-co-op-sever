@@ -73,7 +73,7 @@
   - type: BasicStationEventScheduler
     minimumTimeUntilFirstEvent: 300 # 5 min
     minMaxEventTiming:
-      min: 750 # 12.5 min
+      min: 300 # 12.5 min
       max: 930 # 17.5 min
     scheduledGameRules: !type:NestedSelector
       tableId: BasicMeteorSwarmEventsTable
@@ -86,8 +86,8 @@
   - type: BasicStationEventScheduler
     minimumTimeUntilFirstEvent: 300 # 5 min
     minMaxEventTiming:
-      min: 750 # 12.5 min
-      max: 930 # 17.5 min
+      min: 1000 # 12.5 min
+      max: 2000 # 17.5 min
     scheduledGameRules: !type:NestedSelector
       tableId: MeteorSwarmMildTable
 
@@ -111,7 +111,7 @@
   - type: StationEvent
     reoccurrenceDelay: 1
     earliestStart: 12
-    minimumPlayers: 25
+    minimumPlayers: 1
   - type: MeteorSwarm
 
 - type: entity
@@ -119,7 +119,7 @@
   id: GameRuleSpaceDustMinor
   components:
   - type: StationEvent
-    weight: 44
+    weight: 50
     earliestStart: 2
     minimumPlayers: 0
   - type: MeteorSwarm
@@ -140,7 +140,7 @@
   id: GameRuleSpaceDustMajor
   components:
   - type: StationEvent
-    weight: 22
+    weight: 1
     minimumPlayers: 0
   - type: MeteorSwarm
     announcement: station-event-space-dust-start-announcement
@@ -160,8 +160,8 @@
   id: GameRuleMeteorSwarmSmall
   components:
   - type: StationEvent
-    weight: 18
-    minimumPlayers: 15
+    weight: 1
+    minimumPlayers: 1
   - type: MeteorSwarm
     meteors:
       MeteorSmall: 7
@@ -172,7 +172,7 @@
   id: GameRuleMeteorSwarmMedium
   components:
   - type: StationEvent
-    weight: 10
+    weight: 1
   - type: MeteorSwarm
     meteors:
       MeteorSmall: 3
@@ -184,7 +184,7 @@
   id: GameRuleMeteorSwarmLarge
   components:
   - type: StationEvent
-    weight: 5
+    weight: 1
   - type: MeteorSwarm
     meteors:
       MeteorSmall: 2
@@ -217,11 +217,11 @@
     startAnnouncement: station-event-immovable-rod-start-announcement
     startAudio:
       path: /Audio/Announcements/attention.ogg
-    weight: 3.5
+    weight: 1
     reoccurrenceDelay: 1
     duration: 1
     earliestStart: 30
-    minimumPlayers: 25
+    minimumPlayers: 1
   - type: ImmovableRodRule
     rodPrototypes:
     - id: ImmovableRodKeepTilesStill
