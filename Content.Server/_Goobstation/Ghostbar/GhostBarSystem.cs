@@ -25,7 +25,6 @@ using Content.Shared.Roles.Jobs;
 using Content.Shared.Roles;
 using Content.Shared.Inventory;
 using Content.Server.Antag.Components;
-using Content.Server.Preferences.Managers;
 using Content.Shared.Mindshield.Components;
 using Robust.Shared.EntitySerialization;
 using Robust.Shared.EntitySerialization.Systems;
@@ -42,7 +41,6 @@ public sealed class GhostBarSystem : EntitySystem
     [Dependency] private readonly StationSpawningSystem _spawningSystem = default!;
     [Dependency] private readonly MindSystem _mindSystem = default!;
     [Dependency] private readonly IEntityManager _entityManager = default!;
-    [Dependency] private readonly IServerPreferencesManager _prefsManager = default!;
 
     private DeserializationOptions _options = new DeserializationOptions();
 
@@ -95,10 +93,7 @@ public sealed class GhostBarSystem : EntitySystem
 
         var randomSpawnPoint = _random.Pick(spawnPoints);
         var randomJob = _random.Pick(_jobComponents);
-        if (!_prefsManager.TryGetCachedPreferences(args.SenderSession.UserId, out var preferences))
-            return;
-
-        var profile = preferences.GetRandomEnabledProfile();
+        var profile = _ticker.GetPlayerProfile(args.SenderSession);
         var mobUid = _spawningSystem.SpawnPlayerMob(randomSpawnPoint, randomJob, profile, null);
 
         _entityManager.EnsureComponent<GhostBarPlayerComponent>(mobUid);

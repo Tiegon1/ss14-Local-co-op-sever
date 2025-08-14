@@ -10,9 +10,7 @@
 // SPDX-FileCopyrightText: 2024 MilenVolf <63782763+MilenVolf@users.noreply.github.com>
 // SPDX-FileCopyrightText: 2024 Pieter-Jan Briers <pieterjan.briers+git@gmail.com>
 // SPDX-FileCopyrightText: 2024 Tayrtahn <tayrtahn@gmail.com>
-// SPDX-FileCopyrightText: 2025 Steve <marlumpy@gmail.com>
-// SPDX-FileCopyrightText: 2025 marc-pelletier <113944176+marc-pelletier@users.noreply.github.com>
-// SPDX-FileCopyrightText: 2025 metalgearsloth <31366439+metalgearsloth@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2024 metalgearsloth <31366439+metalgearsloth@users.noreply.github.com>
 // SPDX-FileCopyrightText: 2025 taydeo <td12233a@gmail.com>
 //
 // SPDX-License-Identifier: MIT
@@ -66,14 +64,13 @@ namespace Content.Shared.Friction
             _gridQuery = GetEntityQuery<MapGridComponent>();
         }
 
-        public override void UpdateBeforeSolve(bool prediction, float frameTime)
+        public override void UpdateBeforeMapSolve(bool prediction, PhysicsMapComponent mapComponent, float frameTime)
         {
-            base.UpdateBeforeSolve(prediction, frameTime);
+            base.UpdateBeforeMapSolve(prediction, mapComponent, frameTime);
 
-            foreach (var ent in PhysicsSystem.AwakeBodies)
+            foreach (var body in mapComponent.AwakeBodies)
             {
-                var uid = ent.Owner;
-                var body = ent.Comp1;
+                var uid = body.Owner;
 
                 // Only apply friction when it's not a mob (or the mob doesn't have control)
                 if (prediction && !body.Predict ||

@@ -39,7 +39,6 @@
 # SPDX-FileCopyrightText: 2025 GumshoeWorm <thelunaman365@gmail.com>
 # SPDX-FileCopyrightText: 2025 SlamBamActionman <83650252+SlamBamActionman@users.noreply.github.com>
 # SPDX-FileCopyrightText: 2025 Tay <td12233a@gmail.com>
-# SPDX-FileCopyrightText: 2025 ThatOneMoon <juozas.dringelis@gmail.com>
 # SPDX-FileCopyrightText: 2025 pa.pecherskij <pa.pecherskij@interfax.ru>
 # SPDX-FileCopyrightText: 2025 taydeo <td12233a@gmail.com>
 #
@@ -600,7 +599,7 @@
     - Trash
   - type: PhysicalComposition
     materialComposition:
-      Plastic: 100
+      Steel: 100
   - type: SpaceGarbage
   - type: StaticPrice
     price: 0

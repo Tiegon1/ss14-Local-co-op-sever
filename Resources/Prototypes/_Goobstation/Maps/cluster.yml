@@ -22,7 +22,6 @@
 # SPDX-FileCopyrightText: 2024 fishbait <gnesse@gmail.com>
 # SPDX-FileCopyrightText: 2024 lzk <124214523+lzk228@users.noreply.github.com>
 # SPDX-FileCopyrightText: 2025 The048 <128181635+The048@users.noreply.github.com>
-# SPDX-FileCopyrightText: 2025 kallalilies <kallikinlaw@gmail.com>
 # SPDX-FileCopyrightText: 2025 taydeo <td12233a@gmail.com>
 #
 # SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
@@ -50,7 +49,6 @@
             StationAi: [ 1, 1 ]
             Captain: [ 1, 1 ]
             NanotrasenRepresentative: [ 1, 1 ]
-            Magistrate: [ 1, 1 ]
             BlueshieldOfficer: [ 1, 1 ]
             HeadOfPersonnel: [ 1, 1 ]
             Bartender: [ 1, 1 ]
@@ -61,8 +59,6 @@
             Librarian: [ 1, 1 ]
             Lawyer: [ 1, 1 ]
             ServiceWorker: [ 1, 1 ]
-            Reporter: [ 1, 1 ]
-            Boxer: [ 1, 1 ]
             #engineering
             ChiefEngineer: [ 1, 1 ]
             AtmosphericTechnician: [ 2, 2 ]
@@ -74,7 +70,6 @@
             Paramedic: [ 1, 1 ]
             MedicalDoctor: [ 2, 2 ]
             MedicalIntern: [ 2, 2 ]
-            Psychologist: [ 1, 1 ]
             #science
             ResearchDirector: [ 1, 1 ]
             Scientist: [ 2, 2 ]

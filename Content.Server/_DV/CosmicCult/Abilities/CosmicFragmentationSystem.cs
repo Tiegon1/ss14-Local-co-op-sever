@@ -1,4 +1,3 @@
-// SPDX-FileCopyrightText: 2025 Currot <carpecarrot@gmail.com>
 // SPDX-FileCopyrightText: 2025 corresp0nd <46357632+corresp0nd@users.noreply.github.com>
 // SPDX-FileCopyrightText: 2025 deltanedas <@deltanedas:kde.org>
 // SPDX-FileCopyrightText: 2025 taydeo <td12233a@gmail.com>
@@ -124,14 +123,14 @@ public sealed class CosmicFragmentationSystem : EntitySystem
             return;
         if (args.Lawset.Id == "CosmicCultLaws")
         {
-            radio.IntrinsicChannels.Add(_cultRadio);
-            transmitter.IntrinsicChannels.Add(_cultRadio);
+            radio.Channels.Add(_cultRadio);
+            transmitter.Channels.Add(_cultRadio);
             _antag.SendBriefing(args.Target, Loc.GetString("cosmiccult-ai-subverted-briefing"), Color.FromHex("#4cabb3"), null);
         }
         else
         {
-            radio.IntrinsicChannels.Remove(_cultRadio);
-            transmitter.IntrinsicChannels.Remove(_cultRadio);
+            radio.Channels.Remove(_cultRadio);
+            transmitter.Channels.Remove(_cultRadio);
         }
     }
 }

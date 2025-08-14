@@ -113,7 +113,6 @@ public abstract partial class SharedMoverController : VirtualController
 
     public override void Initialize()
     {
-        UpdatesBefore.Add(typeof(TileFrictionController));
         base.Initialize();
 
         MoverQuery = GetEntityQuery<InputMoverComponent>();

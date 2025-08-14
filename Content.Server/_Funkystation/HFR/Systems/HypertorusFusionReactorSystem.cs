@@ -1,5 +1,4 @@
 // SPDX-FileCopyrightText: 2025 LaCumbiaDelCoronavirus <90893484+LaCumbiaDelCoronavirus@users.noreply.github.com>
-// SPDX-FileCopyrightText: 2025 Steve <marlumpy@gmail.com>
 // SPDX-FileCopyrightText: 2025 marc-pelletier <113944176+marc-pelletier@users.noreply.github.com>
 // SPDX-FileCopyrightText: 2025 taydeo <td12233a@gmail.com>
 //
@@ -134,7 +133,7 @@ namespace Content.Server._Funkystation.Atmos.HFR.Systems
                 }
                 if (TryComp<ApcPowerReceiverComponent>(core.ConsoleUid.Value, out var consolePower))
                 {
-                    consolePower.Load = isActive ? 100000f : (core.PowerLevel > 0 ? consolePower.Load : 350f);
+                    consolePower.Load = isActive ? 250000f : (core.PowerLevel > 0 ? consolePower.Load : 350f);
                 }
                 if (isActive)
                 {

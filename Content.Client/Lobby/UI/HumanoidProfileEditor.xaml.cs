@@ -55,13 +55,10 @@
 // SPDX-FileCopyrightText: 2024 dffdff2423 <dffdff2423@gmail.com>
 // SPDX-FileCopyrightText: 2024 eoineoineoin <github@eoinrul.es>
 // SPDX-FileCopyrightText: 2024 metalgearsloth <31366439+metalgearsloth@users.noreply.github.com>
-// SPDX-FileCopyrightText: 2025 Lyndomen <49795619+Lyndomen@users.noreply.github.com>
 // SPDX-FileCopyrightText: 2025 Mish <bluscout78@yahoo.com>
-// SPDX-FileCopyrightText: 2025 Quantum-cross <7065792+Quantum-cross@users.noreply.github.com>
 // SPDX-FileCopyrightText: 2025 SaffronFennec <firefoxwolf2020@protonmail.com>
 // SPDX-FileCopyrightText: 2025 Tay <td12233a@gmail.com>
 // SPDX-FileCopyrightText: 2025 Tobias Berger <toby@tobot.dev>
-// SPDX-FileCopyrightText: 2025 corresp0nd <46357632+corresp0nd@users.noreply.github.com>
 // SPDX-FileCopyrightText: 2025 pa.pecherskij <pa.pecherskij@interfax.ru>
 // SPDX-FileCopyrightText: 2025 slarticodefast <161409025+slarticodefast@users.noreply.github.com>
 // SPDX-FileCopyrightText: 2025 taydeo <td12233a@gmail.com>
@@ -81,6 +78,7 @@ using Content.Client.Stylesheets;
 using Content.Client.UserInterface.Systems.Guidebook;
 using Content.Shared.CCVar;
 using Content.Shared.Clothing;
+using Content.Shared.GameTicking;
 using Content.Shared.Guidebook;
 using Content.Shared.Humanoid;
 using Content.Shared.Humanoid.Markings;
@@ -96,15 +94,13 @@ using Robust.Client.Player;
 using Robust.Client.UserInterface;
 using Robust.Client.UserInterface.Controls;
 using Robust.Client.UserInterface.XAML;
+using Robust.Client.Utility;
 using Robust.Shared.Configuration;
 using Robust.Shared.ContentPack;
 using Robust.Shared.Enums;
 using Robust.Shared.Prototypes;
 using Robust.Shared.Utility;
-// Begin CD - Character Records
-using Content.Client._Funkystation.Medical.Records.UI;
-using Content.Shared._Funkystation.Records;
-// End CD - Character Records
+using Direction = Robust.Shared.Maths.Direction;
 
 namespace Content.Client.Lobby.UI
 {
@@ -117,8 +113,10 @@ namespace Content.Client.Lobby.UI
         private readonly IFileDialogManager _dialogManager;
         private readonly IPlayerManager _playerManager;
         private readonly IPrototypeManager _prototypeManager;
+        private readonly IResourceManager _resManager;
         private readonly MarkingManager _markingManager;
         private readonly JobRequirementsManager _requirements;
+        private readonly LobbyUIController _controller;
 
         private readonly SpriteSystem _sprite;
 
@@ -129,6 +127,7 @@ namespace Content.Client.Lobby.UI
         private LoadoutWindow? _loadoutWindow;
 
         private bool _exporting;
+        private bool _imaging;
 
         /// <summary>
         /// If we're attempting to save.
@@ -136,14 +135,14 @@ namespace Content.Client.Lobby.UI
         public event Action? Save;
 
         /// <summary>
+        /// Entity used for the profile editor preview
+        /// </summary>
+        public EntityUid PreviewDummy;
+
+        /// <summary>
         /// Temporary override of their selected job, used to preview roles.
         /// </summary>
         public JobPrototype? JobOverride;
-
-        /// <summary>
-        /// Track the state of the ShowClothes button to use for the profile preview
-        /// </summary>
-        public bool ShouldShowClothes => ShowClothes.Pressed;
 
         /// <summary>
         /// The character slot for the current profile.
@@ -155,31 +154,24 @@ namespace Content.Client.Lobby.UI
         /// </summary>
         public HumanoidCharacterProfile? Profile;
 
-        /// <summary>
-        /// The last saved profile, should match the server's copy, used for dirty state check and "reset to default"
-        /// </summary>
-        private HumanoidCharacterProfile? _savedProfile;
+        private List<SpeciesPrototype> _species = new();
 
-        private readonly List<SpeciesPrototype> _species = new();
+        private List<(string, RequirementsSelector)> _jobPriorities = new();
 
-        private readonly List<(string, RequirementsSelector)> _jobPriorities = new();
+        private readonly Dictionary<string, BoxContainer> _jobCategories;
 
-        private readonly Dictionary<string, BoxContainer> _jobCategories = new();
+        private Direction _previewRotation = Direction.North;
 
-        private readonly ColorSelectorSliders _rgbSkinColorSelector = new();
+        private ColorSelectorSliders _rgbSkinColorSelector;
 
         private bool _isDirty;
-
-        // Begin CD - Station Records
-        private readonly RecordEditorGui _recordsTab;
-        // End CD - Station Records
 
         [ValidatePrototypeId<GuideEntryPrototype>]
         private const string DefaultSpeciesGuidebook = "Species";
 
         public event Action<List<ProtoId<GuideEntryPrototype>>>? OnOpenGuidebook;
 
-        private readonly ISawmill _sawmill;
+        private ISawmill _sawmill;
 
         public HumanoidProfileEditor(
             IClientPreferencesManager preferencesManager,
@@ -202,7 +194,9 @@ namespace Content.Client.Lobby.UI
             _prototypeManager = prototypeManager;
             _markingManager = markings;
             _preferencesManager = preferencesManager;
+            _resManager = resManager;
             _requirements = requirements;
+            _controller = UserInterfaceManager.GetUIController<LobbyUIController>();
             _sprite = _entManager.System<SpriteSystem>();
             ImportButton.OnPressed += args =>
             {
@@ -216,17 +210,17 @@ namespace Content.Client.Lobby.UI
 
             ExportImageButton.OnPressed += args =>
             {
-                Preview.ExportImage(args.Button);
+                ExportImage();
             };
 
             OpenImagesButton.OnPressed += args =>
             {
-                resManager.UserData.OpenOsWindow(ContentSpriteSystem.Exports);
+                _resManager.UserData.OpenOsWindow(ContentSpriteSystem.Exports);
             };
 
             ResetButton.OnPressed += args =>
             {
-                ResetToDefault();
+                SetProfile((HumanoidCharacterProfile?) _preferencesManager.Preferences?.SelectedCharacter, _preferencesManager.Preferences?.SelectedCharacterIndex);
             };
 
             SaveButton.OnPressed += args =>
@@ -465,6 +459,21 @@ namespace Content.Client.Lobby.UI
 
             TabContainer.SetTabTitle(1, Loc.GetString("humanoid-profile-editor-jobs-tab"));
 
+            PreferenceUnavailableButton.AddItem(
+                Loc.GetString("humanoid-profile-editor-preference-unavailable-stay-in-lobby-button"),
+                (int) PreferenceUnavailableMode.StayInLobby);
+            PreferenceUnavailableButton.AddItem(
+                Loc.GetString("humanoid-profile-editor-preference-unavailable-spawn-as-overflow-button",
+                              ("overflowJob", Loc.GetString(SharedGameTicker.FallbackOverflowJobName))),
+                (int) PreferenceUnavailableMode.SpawnAsOverflow);
+
+            PreferenceUnavailableButton.OnItemSelected += args =>
+            {
+                PreferenceUnavailableButton.SelectId(args.Id);
+                Profile = Profile?.WithPreferenceUnavailable((PreferenceUnavailableMode) args.Id);
+                SetDirty();
+            };
+
             _jobCategories = new Dictionary<string, BoxContainer>();
 
             RefreshAntags();
@@ -487,21 +496,20 @@ namespace Content.Client.Lobby.UI
 
             #endregion Markings
 
-            // Begin CD - Character Records
-            #region CosmaticRecords
-
-            _recordsTab = new RecordEditorGui(UpdateProfileRecords, prototypeManager);
-            TabContainer.AddChild(_recordsTab);
-            TabContainer.SetTabTitle(TabContainer.ChildCount - 1, Loc.GetString("humanoid-profile-editor-cd-records-tab"));
-
-            #endregion CosmaticRecords
-            // End CD - Character Records
-
             RefreshFlavorText();
 
             #region Dummy
 
-            Preview.Initialize(this, _entManager, _preferencesManager, _prototypeManager, _playerManager);
+            SpriteRotateLeft.OnPressed += _ =>
+            {
+                _previewRotation = _previewRotation.TurnCw();
+                SetPreviewRotation(_previewRotation);
+            };
+            SpriteRotateRight.OnPressed += _ =>
+            {
+                _previewRotation = _previewRotation.TurnCcw();
+                SetPreviewRotation(_previewRotation);
+            };
 
             #endregion Dummy
 
@@ -529,12 +537,8 @@ namespace Content.Client.Lobby.UI
                     return;
 
                 _flavorText = new FlavorText.FlavorText();
-
-                // begin funky - flavor text is in the Records tab now
-                _recordsTab.PersonalInfoContainer.Visible = true;
-                _recordsTab.PersonalInfoContainer.AddChild(_flavorText);
-                // end funky
-
+                TabContainer.AddChild(_flavorText);
+                TabContainer.SetTabTitle(TabContainer.ChildCount - 1, Loc.GetString("humanoid-profile-editor-flavortext-tab"));
                 _flavorTextEdit = _flavorText.CFlavorTextInput;
 
                 _flavorText.OnFlavorTextChanged += OnFlavorTextChange;
@@ -544,11 +548,7 @@ namespace Content.Client.Lobby.UI
                 if (_flavorText == null)
                     return;
 
-                // begin funky - flavor text is in the Records tab now
-                _recordsTab.PersonalInfoContainer.Visible = false;
-                _recordsTab.PersonalInfoContainer.RemoveChild(_flavorText);
-                // end funky
-
+                TabContainer.RemoveChild(_flavorText);
                 _flavorText.OnFlavorTextChanged -= OnFlavorTextChange;
                 _flavorText.Dispose();
                 _flavorTextEdit?.Dispose();
@@ -762,7 +762,7 @@ namespace Content.Client.Lobby.UI
                 selector.Select(Profile?.AntagPreferences.Contains(antag.ID) == true ? 0 : 1);
 
                 var requirements = _entManager.System<SharedRoleSystem>().GetAntagRequirement(antag);
-                if (!_requirements.CheckRoleRequirements(requirements, Profile, out var reason))
+                if (!_requirements.CheckRoleRequirements(requirements, (HumanoidCharacterProfile?) _preferencesManager.Preferences?.SelectedCharacter, out var reason))
                 {
                     selector.LockRequirements(reason);
                     Profile = Profile?.WithAntagPreference(antag.ID, false);
@@ -776,7 +776,6 @@ namespace Content.Client.Lobby.UI
                 selector.OnSelected += preference =>
                 {
                     Profile = Profile?.WithAntagPreference(antag.ID, preference == 0);
-                    ReloadPreview();
                     SetDirty();
                 };
 
@@ -797,7 +796,7 @@ namespace Content.Client.Lobby.UI
         private void SetDirty()
         {
             // If it equals default then reset the button.
-            if (Profile == null || _savedProfile?.MemberwiseEquals(Profile) == true)
+            if (Profile == null || _preferencesManager.Preferences?.SelectedCharacter.MemberwiseEquals(Profile) == true)
             {
                 IsDirty = false;
                 return;
@@ -823,7 +822,16 @@ namespace Content.Client.Lobby.UI
         /// </remarks>
         private void ReloadPreview()
         {
-            Preview.ReloadPreview();
+            _entManager.DeleteEntity(PreviewDummy);
+            PreviewDummy = EntityUid.Invalid;
+
+            if (Profile == null || !_prototypeManager.HasIndex(Profile.Species))
+                return;
+
+            PreviewDummy = _controller.LoadProfileEntity(Profile, JobOverride, ShowClothes.Pressed);
+            SpriteView.SetEntity(PreviewDummy);
+            _entManager.System<MetaDataSystem>().SetEntityName(PreviewDummy, Profile.Name);
+
             // Check and set the dirty flag to enable the save/reset buttons as appropriate.
             SetDirty();
         }
@@ -833,7 +841,9 @@ namespace Content.Client.Lobby.UI
         /// </summary>
         public void ResetToDefault()
         {
-            SetProfile(_savedProfile, CharacterSlot);
+            SetProfile(
+                (HumanoidCharacterProfile?) _preferencesManager.Preferences?.SelectedCharacter,
+                _preferencesManager.Preferences?.SelectedCharacterIndex);
         }
 
         /// <summary>
@@ -862,32 +872,18 @@ namespace Content.Client.Lobby.UI
             UpdateCMarkingsHair();
             UpdateCMarkingsFacialHair();
 
-            // Begin CD - Character Records
-            _recordsTab.Update(profile);
-            // End CD - Character Records
-
             RefreshAntags();
             RefreshJobs();
             RefreshLoadouts();
             RefreshSpecies();
             RefreshTraits();
             RefreshFlavorText();
-            Preview.Initialize(this, _entManager, _preferencesManager, _prototypeManager, _playerManager);
             ReloadPreview();
-        }
 
-        /// <summary>
-        /// Load the profile located at the slot into the profile editor
-        /// </summary>
-        /// <param name="slot">slot's profile to load</param>
-        public void SetProfile(int slot)
-        {
-            if (_preferencesManager.Preferences == null)
-                return;
-            if (!_preferencesManager.Preferences!.TryGetHumanoidInSlot(slot, out var humanoid))
-                return;
-            _savedProfile = humanoid.Clone();
-            SetProfile(humanoid, slot);
+            if (Profile != null)
+            {
+                PreferenceUnavailableButton.SelectId((int) Profile.PreferenceUnavailable);
+            }
         }
 
 
@@ -896,7 +892,11 @@ namespace Content.Client.Lobby.UI
         /// </summary>
         private void ReloadProfilePreview()
         {
-            Preview.ReloadProfilePreview();
+            if (Profile == null || !_entManager.EntityExists(PreviewDummy))
+                return;
+
+            _entManager.System<HumanoidAppearanceSystem>().LoadProfile(PreviewDummy, Profile);
+
             // Check and set the dirty flag to enable the save/reset buttons as appropriate.
             SetDirty();
         }
@@ -946,8 +946,10 @@ namespace Content.Client.Lobby.UI
 
             var items = new[]
             {
-                ("humanoid-profile-editor-antag-preference-yes-button", 0),
-                ("humanoid-profile-editor-antag-preference-no-button", 1)
+                ("humanoid-profile-editor-job-priority-never-button", (int) JobPriority.Never),
+                ("humanoid-profile-editor-job-priority-low-button", (int) JobPriority.Low),
+                ("humanoid-profile-editor-job-priority-medium-button", (int) JobPriority.Medium),
+                ("humanoid-profile-editor-job-priority-high-button", (int) JobPriority.High),
             };
 
             foreach (var department in departments)
@@ -1022,24 +1024,41 @@ namespace Content.Client.Lobby.UI
                     icon.Texture = _sprite.Frame0(jobIcon.Icon);
                     selector.Setup(items, job.LocalizedName, 200, job.LocalizedDescription, icon, job.Guides);
 
-                    if (!_requirements.IsAllowed(job, Profile, out var reason))
+                    if (!_requirements.IsAllowed(job, (HumanoidCharacterProfile?) _preferencesManager.Preferences?.SelectedCharacter, out var reason))
                     {
                         selector.LockRequirements(reason);
-                        Profile = Profile?.WithoutJob(job);
-                        SetDirty();
                     }
                     else
                     {
                         selector.UnlockRequirements();
                     }
 
-                    selector.OnSelected += selection =>
+                    selector.OnSelected += selectedPrio =>
                     {
-                        var include = selection == 0;
-                        Profile = Profile?.WithJob(job.ID, include);
+                        var selectedJobPrio = (JobPriority) selectedPrio;
+                        Profile = Profile?.WithJobPriority(job.ID, selectedJobPrio);
 
-                        UpdateJobPreferences();
+                        foreach (var (jobId, other) in _jobPriorities)
+                        {
+                            // Sync other selectors with the same job in case of multiple department jobs
+                            if (jobId == job.ID)
+                            {
+                                other.Select(selectedPrio);
+                                continue;
+                            }
+
+                            if (selectedJobPrio != JobPriority.High || (JobPriority) other.Selected != JobPriority.High)
+                                continue;
+
+                            // Lower any other high priorities to medium.
+                            other.Select((int) JobPriority.Medium);
+                            Profile = Profile?.WithJobPriority(jobId, JobPriority.Medium);
+                        }
+
+                        // TODO: Only reload on high change (either to or from).
                         ReloadPreview();
+
+                        UpdateJobPriorities();
                         SetDirty();
                     };
 
@@ -1087,7 +1106,7 @@ namespace Content.Client.Lobby.UI
                 }
             }
 
-            UpdateJobPreferences();
+            UpdateJobPriorities();
         }
 
         private void OpenLoadout(JobPrototype? jobProto, RoleLoadout roleLoadout, RoleLoadoutPrototype roleLoadoutProto)
@@ -1146,18 +1165,8 @@ namespace Content.Client.Lobby.UI
             if (Profile is null)
                 return;
 
-            UpdateJobPreferences();
+            UpdateJobPriorities();
         }
-
-        // Start CD - Character Records
-        private void UpdateProfileRecords(PlayerProvidedCharacterRecords records)
-        {
-            if (Profile is null)
-                return;
-            Profile = Profile.WithCDCharacterRecords(records);
-            IsDirty = true;
-        }
-        // End CD - Character Records
 
         private void OnFlavorTextChange(string content)
         {
@@ -1254,6 +1263,19 @@ namespace Content.Client.Lobby.UI
             _loadoutWindow = null;
         }
 
+        protected override void EnteredTree()
+        {
+            base.EnteredTree();
+            ReloadPreview();
+        }
+
+        protected override void ExitedTree()
+        {
+            base.ExitedTree();
+            _entManager.DeleteEntity(PreviewDummy);
+            PreviewDummy = EntityUid.Invalid;
+        }
+
         private void SetAge(int newAge)
         {
             Profile = Profile?.WithAge(newAge);
@@ -1320,7 +1342,7 @@ namespace Content.Client.Lobby.UI
             if (!IsDirty)
                 return;
 
-            ReloadPreview();
+            _entManager.System<MetaDataSystem>().SetEntityName(PreviewDummy, newName);
         }
 
         private void SetSpawnPriority(SpawnPriorityPreference newSpawnPriority)
@@ -1367,13 +1389,14 @@ namespace Content.Client.Lobby.UI
         }
 
         /// <summary>
-        /// Updates selected job preferences to the priority selectors
+        /// Updates selected job priorities to the profile's.
         /// </summary>
-        private void UpdateJobPreferences()
+        private void UpdateJobPriorities()
         {
             foreach (var (jobId, prioritySelector) in _jobPriorities)
             {
-                prioritySelector.Select((Profile?.JobPreferences.Contains(jobId) ?? false) ? 0 : 1);
+                var priority = Profile?.JobPriorities.GetValueOrDefault(jobId, JobPriority.Never) ?? JobPriority.Never;
+                prioritySelector.Select((int) priority);
             }
         }
 
@@ -1637,6 +1660,11 @@ namespace Content.Client.Lobby.UI
             ResetButton.Disabled = Profile is null || !IsDirty;
         }
 
+        private void SetPreviewRotation(Direction direction)
+        {
+            SpriteView.OverrideDirection = (Direction) ((int) direction % 4 * 2);
+        }
+
         private void RandomizeEverything()
         {
             Profile = HumanoidCharacterProfile.Random();
@@ -1650,8 +1678,6 @@ namespace Content.Client.Lobby.UI
             var name = HumanoidCharacterProfile.GetName(Profile.Species, Profile.Gender);
             SetName(name);
             UpdateNameEdit();
-
-            _recordsTab.Update(Profile); // CD - Character Records
         }
         // #Goobstation - Borg Preferred Name
         private void RandomizeBorgName()
@@ -1660,6 +1686,19 @@ namespace Content.Client.Lobby.UI
             var name = HumanoidCharacterProfile.GetBorgName();
             SetBorgName(name);
             UpdateBorgNameEdit();
+        }
+
+        private async void ExportImage()
+        {
+            if (_imaging)
+                return;
+
+            var dir = SpriteView.OverrideDirection ?? Direction.South;
+
+            // I tried disabling the button but it looks sorta goofy as it only takes a frame or two to save
+            _imaging = true;
+            await _entManager.System<ContentSpriteSystem>().Export(PreviewDummy, dir, includeId: false);
+            _imaging = false;
         }
 
         private async void ImportProfile()

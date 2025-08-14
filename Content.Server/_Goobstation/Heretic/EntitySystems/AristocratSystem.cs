@@ -62,7 +62,7 @@ public sealed partial class AristocratSystem : EntitySystem
         if (mix != null)
         {
             mix.Temperature -= 500f;
-            mix.RemoveRatio(0.75f);
+            mix.RemoveRatio(0.5f);
         }
 
         // replace certain things with their winter analogue

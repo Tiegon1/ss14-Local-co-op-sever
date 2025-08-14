@@ -123,7 +123,7 @@ public sealed partial class ExplosionSystem
                 airtightMap = new();
 
             var initialGridData = new ExplosionGridTileFlood(
-                (epicentreGrid.Value, Comp<MapGridComponent>(epicentreGrid.Value)),
+                Comp<MapGridComponent>(epicentreGrid.Value),
                 airtightMap,
                 maxIntensity,
                 stepSize,
@@ -212,7 +212,7 @@ public sealed partial class ExplosionSystem
                         airtightMap = new();
 
                     data = new ExplosionGridTileFlood(
-                        (grid, Comp<MapGridComponent>(grid)),
+                        Comp<MapGridComponent>(grid),
                         airtightMap,
                         maxIntensity,
                         stepSize,

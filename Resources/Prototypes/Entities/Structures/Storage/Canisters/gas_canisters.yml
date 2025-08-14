@@ -39,7 +39,6 @@
 # SPDX-FileCopyrightText: 2024 Velcroboy <107660393+IamVelcroboy@users.noreply.github.com>
 # SPDX-FileCopyrightText: 2024 lapatison <100279397+lapatison@users.noreply.github.com>
 # SPDX-FileCopyrightText: 2024 metalgearsloth <31366439+metalgearsloth@users.noreply.github.com>
-# SPDX-FileCopyrightText: 2025 Checkraze <71046427+Cheackraze@users.noreply.github.com>
 # SPDX-FileCopyrightText: 2025 Steve <marlumpy@gmail.com>
 # SPDX-FileCopyrightText: 2025 Tay <td12233a@gmail.com>
 # SPDX-FileCopyrightText: 2025 marc-pelletier <113944176+marc-pelletier@users.noreply.github.com>
@@ -151,12 +150,9 @@
           components:
             - GasTank
     - type: StaticPrice
-      price: 250 # Funky
+      price: 200
     - type: AccessReader
-      access: [["Atmospherics"], ["Engineering"], ["Research"], ["Captain"]]
-    - type: Construction # Frontier
-      graph: NFStorageCanister # Frontier
-      node: storagecanister # Frontier
+      access: [["Atmospherics"], ["Engineering"], ["Research"]]
     - type: Lock
       locked: false
     - type: GuideHelp

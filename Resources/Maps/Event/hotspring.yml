@@ -72,7 +72,9 @@ entities:
     - type: Transform
     - type: Map
       mapPaused: True
+    - type: PhysicsMap
     - type: GridTree
+    - type: MovedGrids
     - type: Broadphase
     - type: OccluderTree
     - type: Gravity
@@ -273,7 +275,7 @@ entities:
       ambientLightColor: '#020100FF'
     - type: RadiationGridResistance
     - type: BecomesStation
-      id: HotSprings
+      id: Hot Springs
     - type: GasTileOverlay
     - type: GridAtmosphere
       version: 2

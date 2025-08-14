@@ -9,7 +9,6 @@
 // SPDX-FileCopyrightText: 2024 keronshb <54602815+keronshb@users.noreply.github.com>
 // SPDX-FileCopyrightText: 2024 username <113782077+whateverusername0@users.noreply.github.com>
 // SPDX-FileCopyrightText: 2024 whateverusername0 <whateveremail>
-// SPDX-FileCopyrightText: 2025 TheSecondLord <88201625+TheSecondLord@users.noreply.github.com>
 // SPDX-FileCopyrightText: 2025 taydeo <td12233a@gmail.com>
 //
 // SPDX-License-Identifier: MIT
@@ -108,7 +107,7 @@ public partial class ListingData : IEquatable<ListingData>, ICloneable
     /// <summary>
     /// The event that is broadcast when the listing is purchased.
     /// </summary>
-    [DataField(serverOnly: true), NonSerialized] // Goob edit
+    [DataField]
     public object? ProductEvent;
 
     // goobstation - heretics
@@ -159,11 +158,8 @@ public partial class ListingData : IEquatable<ListingData>, ICloneable
             Description != listing.Description ||
             ProductEntity != listing.ProductEntity ||
             ProductAction != listing.ProductAction ||
-            RaiseProductEventOnUser != listing.RaiseProductEventOnUser || // Goobstation
+            ProductEvent?.GetType() != listing.ProductEvent?.GetType() ||
             RestockTime != listing.RestockTime)
-            return false;
-
-        if (ProductEvent != null && listing.ProductEvent != null && ProductEvent.GetType() != listing.ProductEvent.GetType()) // Goobstation
             return false;
 
         if (Icon != null && !Icon.Equals(listing.Icon))
@@ -206,7 +202,6 @@ public partial class ListingData : IEquatable<ListingData>, ICloneable
             ProductUpgradeId = ProductUpgradeId,
             ProductActionEntity = ProductActionEntity,
             ProductEvent = ProductEvent,
-            RaiseProductEventOnUser = RaiseProductEventOnUser, // goob edit
             ProductHereticKnowledge = ProductHereticKnowledge, // goob edit
             PurchaseAmount = PurchaseAmount,
             RestockTime = RestockTime,

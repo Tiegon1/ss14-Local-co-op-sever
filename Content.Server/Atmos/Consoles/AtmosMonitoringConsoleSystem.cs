@@ -1,7 +1,5 @@
 // SPDX-FileCopyrightText: 2024 MilenVolf <63782763+MilenVolf@users.noreply.github.com>
 // SPDX-FileCopyrightText: 2024 Tadeo <td12233a@gmail.com>
-// SPDX-FileCopyrightText: 2025 ArtisticRoomba <145879011+ArtisticRoomba@users.noreply.github.com>
-// SPDX-FileCopyrightText: 2025 chromiumboy <50505512+chromiumboy@users.noreply.github.com>
 // SPDX-FileCopyrightText: 2025 taydeo <td12233a@gmail.com>
 //
 // SPDX-License-Identifier: MIT
@@ -288,11 +286,16 @@ public sealed class AtmosMonitoringConsoleSystem : SharedAtmosMonitoringConsoleS
             return false;
 
         var direction = xform.LocalRotation.GetCardinalDir();
-        var netId = TryGettingFirstPipeNode(uid, out var _, out var firstNetId) ? firstNetId : -1;
-        var color = TryComp<AtmosPipeColorComponent>(uid, out var atmosPipeColor) ? atmosPipeColor.Color : Color.White;
-        var layer = TryComp<AtmosPipeLayersComponent>(uid, out var atmosPipeLayers) ? atmosPipeLayers.CurrentPipeLayer : AtmosPipeLayer.Primary;
 
-        device = new AtmosDeviceNavMapData(GetNetEntity(uid), GetNetCoordinates(xform.Coordinates), netId.Value, component.NavMapBlip.Value, direction, color, layer);
+        if (!TryGettingFirstPipeNode(uid, out var _, out var netId))
+            netId = -1;
+
+        var color = Color.White;
+
+        if (TryComp<AtmosPipeColorComponent>(uid, out var atmosPipeColor))
+            color = atmosPipeColor.Color;
+
+        device = new AtmosDeviceNavMapData(GetNetEntity(uid), GetNetCoordinates(xform.Coordinates), netId.Value, component.NavMapBlip.Value, direction, color);
 
         return true;
     }
@@ -372,9 +375,7 @@ public sealed class AtmosMonitoringConsoleSystem : SharedAtmosMonitoringConsoleS
             if (!TryComp<NodeContainerComponent>(ent, out var entNodeContainer))
                 continue;
 
-            var showAbsentConnections = TryComp<AtmosMonitoringConsoleDeviceComponent>(ent, out var device) ? device.ShowAbsentConnections : true;
-
-            UpdateAtmosPipeChunk(ent, entNodeContainer, entAtmosPipeColor, tileIdx, ref chunk, showAbsentConnections);
+            UpdateAtmosPipeChunk(ent, entNodeContainer, entAtmosPipeColor, tileIdx, ref chunk);
         }
 
         // Add or update the chunk on the associated grid
@@ -396,13 +397,7 @@ public sealed class AtmosMonitoringConsoleSystem : SharedAtmosMonitoringConsoleS
         }
     }
 
-    private void UpdateAtmosPipeChunk
-        (EntityUid uid,
-        NodeContainerComponent nodeContainer,
-        AtmosPipeColorComponent pipeColor,
-        int tileIdx,
-        ref AtmosPipeChunk chunk,
-        bool showAbsentConnections = true)
+    private void UpdateAtmosPipeChunk(EntityUid uid, NodeContainerComponent nodeContainer, AtmosPipeColorComponent pipeColor, int tileIdx, ref AtmosPipeChunk chunk)
     {
         // Entities that are actively being deleted are not to be drawn
         if (MetaData(uid).EntityLifeStage >= EntityLifeStage.Terminating)
@@ -410,19 +405,16 @@ public sealed class AtmosMonitoringConsoleSystem : SharedAtmosMonitoringConsoleS
 
         foreach ((var id, var node) in nodeContainer.Nodes)
         {
-            if (node is not PipeNode { } pipeNode)
+            if (node is not PipeNode)
                 continue;
 
-            if (!showAbsentConnections && !pipeNode.ReachableNodes.Any(x => x.Owner != uid))
-                continue;
-
+            var pipeNode = (PipeNode)node;
             var netId = GetPipeNodeNetId(pipeNode);
-            var subnet = new AtmosMonitoringConsoleSubnet(netId, pipeNode.CurrentPipeLayer, pipeColor.Color.ToHex());
             var pipeDirection = pipeNode.CurrentPipeDirection;
 
-            chunk.AtmosPipeData.TryGetValue(subnet, out var atmosPipeData);
+            chunk.AtmosPipeData.TryGetValue((netId, pipeColor.Color.ToHex()), out var atmosPipeData);
             atmosPipeData |= (ulong)pipeDirection << tileIdx * SharedNavMapSystem.Directions;
-            chunk.AtmosPipeData[subnet] = atmosPipeData;
+            chunk.AtmosPipeData[(netId, pipeColor.Color.ToHex())] = atmosPipeData;
         }
     }
 

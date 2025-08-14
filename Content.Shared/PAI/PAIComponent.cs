@@ -9,13 +9,10 @@
 // SPDX-FileCopyrightText: 2024 Aiden <aiden@djkraz.com>
 // SPDX-FileCopyrightText: 2024 Tayrtahn <tayrtahn@gmail.com>
 // SPDX-FileCopyrightText: 2024 mr-bo-jangles <mr-bo-jangles@users.noreply.github.com>
-// SPDX-FileCopyrightText: 2025 ArchRBX <5040911+ArchRBX@users.noreply.github.com>
 // SPDX-FileCopyrightText: 2025 taydeo <td12233a@gmail.com>
 //
-// SPDX-License-Identifier: AGPL-3.0-or-later
+// SPDX-License-Identifier: MIT
 
-using Content.Shared.FixedPoint;
-using Content.Shared.Store;
 using Robust.Shared.GameStates;
 using Robust.Shared.Prototypes;
 using Robust.Shared.Serialization.TypeSerializers.Implementations.Custom.Prototype;
@@ -42,11 +39,17 @@ public sealed partial class PAIComponent : Component
     [DataField, ViewVariables(VVAccess.ReadWrite)]
     public EntityUid? LastUser;
 
+    [DataField(serverOnly: true)]
+    public EntProtoId? MidiActionId = "ActionPAIPlayMidi";
+
+    [DataField(serverOnly: true)] // server only, as it uses a server-BUI event !type
+    public EntityUid? MidiAction;
+
     [DataField]
-    public EntProtoId ShopActionId = "ActionPAIOpenShop";
+    public EntProtoId MapActionId = "ActionPAIOpenMap";
 
     [DataField, AutoNetworkedField]
-    public EntityUid? ShopAction;
+    public EntityUid? MapAction;
 
     /// <summary>
     /// When microwaved there is this chance to brick the pai, kicking out its player and preventing it from being used again.

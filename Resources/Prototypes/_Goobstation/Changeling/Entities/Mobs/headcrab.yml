@@ -52,8 +52,3 @@
   - type: Tag
     tags:
     - VimPilot
-  - type: NightVision
-    isActive: true
-    color: "#50595C"
-    activateSound: null
-    deactivateSound: null

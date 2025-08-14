@@ -1,6 +1,4 @@
-// SPDX-FileCopyrightText: 2025 Tayrtahn <tayrtahn@gmail.com>
-// SPDX-FileCopyrightText: 2025 marc-pelletier <113944176+marc-pelletier@users.noreply.github.com>
-// SPDX-FileCopyrightText: 2025 metalgearsloth <31366439+metalgearsloth@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2023 metalgearsloth <31366439+metalgearsloth@users.noreply.github.com>
 // SPDX-FileCopyrightText: 2025 taydeo <td12233a@gmail.com>
 //
 // SPDX-License-Identifier: MIT
@@ -33,17 +31,16 @@ public sealed class RequiresTileSystem : EntitySystem
         if (!TryComp<MapGridComponent>(ev.Entity, out var grid))
             return;
 
-        foreach (var change in ev.Changes)
+        var anchored = _maps.GetAnchoredEntitiesEnumerator(ev.Entity, grid, ev.NewTile.GridIndices);
+        if (anchored.Equals(AnchoredEntitiesEnumerator.Empty))
+            return;
+
+        while (anchored.MoveNext(out var ent))
         {
-            var anchored = _maps.GetAnchoredEntitiesEnumerator(ev.Entity, grid, change.GridIndices);
+            if (!_tilesQuery.HasComponent(ent.Value))
+                continue;
 
-            while (anchored.MoveNext(out var ent))
-            {
-                if (!_tilesQuery.HasComponent(ent.Value))
-                    continue;
-
-                QueueDel(ent.Value);
-            }
+            QueueDel(ent.Value);
         }
     }
 }

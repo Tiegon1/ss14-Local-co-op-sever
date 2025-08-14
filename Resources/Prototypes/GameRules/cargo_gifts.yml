@@ -1,3 +1,4 @@
+
 # SPDX-FileCopyrightText: 2023 Tom Leys <tom@crump-leys.com>
 # SPDX-FileCopyrightText: 2023 metalgearsloth <31366439+metalgearsloth@users.noreply.github.com>
 # SPDX-FileCopyrightText: 2024 Aidenkrz <aiden@djkraz.com>
@@ -56,6 +57,7 @@
     weight: 5
     duration: 120
     earliestStart: 20
+    minimumPlayers: 40
     chaos: # Goobstation
       Hunger: -80
       Thirst: -40

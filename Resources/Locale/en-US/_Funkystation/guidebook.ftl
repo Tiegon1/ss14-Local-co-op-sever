@@ -29,6 +29,3 @@ guide-entry-alertlevel-delta = Delta Alert
 guide-entry-reactions = Reactions
 
 guide-entry-blood-cult = Blood Cult
-
-guide-entry-training-manual-security = Security Training Manual
-guide-entry-training-manual-command = Command Training Manual

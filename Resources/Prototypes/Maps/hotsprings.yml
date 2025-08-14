@@ -4,13 +4,13 @@
 # SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
 
 - type: gameMap
-  id: HotSprings
+  id: Hot Springs
   mapName: 'Hot Springs'
   mapPath: /Maps/Event/hotspring.yml
   minPlayers: 15
   maxPlayers: 30
   stations:
-    HotSprings:
+    Hot Springs:
       stationProto: StandardNanotrasenStation
       components:
         - type: StationNameSetup

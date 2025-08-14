@@ -32,9 +32,3 @@
   name: OKSY - Living in the Urban
   path:
     path: /Audio/Lobby/livingintheurban.ogg
-
-- type: jukebox
-  id: menacing
-  name: Menacing - Inkboy Lost
-  path:
-    path: /Audio/Jukebox/menacing.ogg

@@ -478,17 +478,18 @@
 - type: entity
   id: ActionAugmentedEyesight
   name: Augmented Eyesight
-  description: Toggle thermal vision.
+  description: Toggle flash protection.
   categories: [ HideSpawnMenu ]
   components:
   - type: InstantAction
-    useDelay: 1
     checkCanInteract: false
     itemIconStyle: NoItem
     icon:
       sprite: _Goobstation/Changeling/changeling_abilities.rsi
       state: augmented_eyesight
-    event: !type:ToggleThermalVisionEvent {}
+    event: !type:ActionAugmentedEyesightEvent {}
+  - type: ChangelingAction
+    chemicalCost: 0
 
 - type: entity
   id: ActionBiodegrade

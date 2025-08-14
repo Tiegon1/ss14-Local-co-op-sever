@@ -22,7 +22,6 @@
 // SPDX-FileCopyrightText: 2024 eoineoineoin <github@eoinrul.es>
 // SPDX-FileCopyrightText: 2024 metalgearsloth <31366439+metalgearsloth@users.noreply.github.com>
 // SPDX-FileCopyrightText: 2025 Tay <td12233a@gmail.com>
-// SPDX-FileCopyrightText: 2025 qwerltaz <msmarcinpl@gmail.com>
 // SPDX-FileCopyrightText: 2025 slarticodefast <161409025+slarticodefast@users.noreply.github.com>
 // SPDX-FileCopyrightText: 2025 taydeo <td12233a@gmail.com>
 //
@@ -498,16 +497,10 @@ public sealed class AirAlarmSystem : EntitySystem
     /// <param name="uiOnly">Whether this change is for the UI only, or if it changes the air alarm's operating mode. Defaults to true.</param>
     public void SetMode(EntityUid uid, string origin, AirAlarmMode mode, bool uiOnly = true, AirAlarmComponent? controller = null)
     {
-        if (!Resolve(uid, ref controller))
+        if (!Resolve(uid, ref controller) || controller.CurrentMode == mode)
         {
             return;
         }
-
-        if (controller.PanicWireCut)
-        {
-            mode = AirAlarmMode.Panic;
-        }
-
 
         controller.CurrentMode = mode;
 
@@ -690,7 +683,6 @@ public sealed class AirAlarmSystem : EntitySystem
         }
         foreach (var (addr, data) in alarm.ScrubberData)
         {
-            data.AirAlarmPanicWireCut = alarm.PanicWireCut;
             dataToSend.Add((addr, data));
         }
         foreach (var (addr, data) in alarm.SensorData)
@@ -708,7 +700,7 @@ public sealed class AirAlarmSystem : EntitySystem
         _ui.SetUiState(
             uid,
             SharedAirAlarmInterfaceKey.Key,
-            new AirAlarmUIState(devNet.Address, deviceCount, pressure, temperature, dataToSend, alarm.CurrentMode, highestAlarm.Value, alarm.AutoMode, alarm.PanicWireCut));
+            new AirAlarmUIState(devNet.Address, deviceCount, pressure, temperature, dataToSend, alarm.CurrentMode, highestAlarm.Value, alarm.AutoMode));
     }
 
     private const float Delay = 8f;

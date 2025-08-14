@@ -67,12 +67,14 @@ namespace Content.Server.Database
             ICharacterProfile defaultProfile,
             CancellationToken cancel);
 
-        Task SaveCharacterSlotAsync(NetUserId userId, ICharacterProfile? profile, int slot);
+        Task SaveSelectedCharacterIndexAsync(NetUserId userId, int index);
 
-        Task SaveJobPrioritiesAsync(NetUserId userId, Dictionary<ProtoId<JobPrototype>, JobPriority> newJobPriorities);
+        Task SaveCharacterSlotAsync(NetUserId userId, ICharacterProfile? profile, int slot);
 
         Task SaveAdminOOCColorAsync(NetUserId userId, Color color);
 
+        // Single method for two operations for transaction.
+        Task DeleteSlotAndSetSelectedIndex(NetUserId userId, int deleteSlot, int newSlot);
         Task<PlayerPreferences?> GetPlayerPreferencesAsync(NetUserId userId, CancellationToken cancel);
         #endregion
 
@@ -492,17 +494,22 @@ namespace Content.Server.Database
             return RunDbCommand(() => _db.InitPrefsAsync(userId, defaultProfile));
         }
 
+        public Task SaveSelectedCharacterIndexAsync(NetUserId userId, int index)
+        {
+            DbWriteOpsMetric.Inc();
+            return RunDbCommand(() => _db.SaveSelectedCharacterIndexAsync(userId, index));
+        }
+
         public Task SaveCharacterSlotAsync(NetUserId userId, ICharacterProfile? profile, int slot)
         {
             DbWriteOpsMetric.Inc();
             return RunDbCommand(() => _db.SaveCharacterSlotAsync(userId, profile, slot));
         }
 
-        public Task SaveJobPrioritiesAsync(NetUserId userId,
-            Dictionary<ProtoId<JobPrototype>, JobPriority> newJobPriorities)
+        public Task DeleteSlotAndSetSelectedIndex(NetUserId userId, int deleteSlot, int newSlot)
         {
             DbWriteOpsMetric.Inc();
-            return RunDbCommand(() => _db.SaveJobPrioritiesAsync(userId, newJobPriorities));
+            return RunDbCommand(() => _db.DeleteSlotAndSetSelectedIndex(userId, deleteSlot, newSlot));
         }
 
         public Task SaveAdminOOCColorAsync(NetUserId userId, Color color)

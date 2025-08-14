@@ -1,6 +1,4 @@
 // SPDX-FileCopyrightText: 2024 beck-thompson <107373427+beck-thompson@users.noreply.github.com>
-// SPDX-FileCopyrightText: 2025 88tv <131759102+88tv@users.noreply.github.com>
-// SPDX-FileCopyrightText: 2025 lzk <124214523+lzk228@users.noreply.github.com>
 // SPDX-FileCopyrightText: 2025 taydeo <td12233a@gmail.com>
 //
 // SPDX-License-Identifier: MIT
@@ -19,11 +17,11 @@ namespace Content.Shared.Chat.TypingIndicator;
 [Serializable, NetSerializable]
 public sealed class TypingChangedEvent : EntityEventArgs
 {
-    public readonly TypingIndicatorState State;
+    public readonly bool IsTyping;
 
-    public TypingChangedEvent(TypingIndicatorState state)
+    public TypingChangedEvent(bool isTyping)
     {
-        State = state;
+        IsTyping = isTyping;
     }
 }
 

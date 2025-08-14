@@ -8,7 +8,6 @@
 // SPDX-FileCopyrightText: 2024 Piras314 <p1r4s@proton.me>
 // SPDX-FileCopyrightText: 2024 Tadeo <td12233a@gmail.com>
 // SPDX-FileCopyrightText: 2024 eoineoineoin <github@eoinrul.es>
-// SPDX-FileCopyrightText: 2025 qwerltaz <msmarcinpl@gmail.com>
 // SPDX-FileCopyrightText: 2025 taydeo <td12233a@gmail.com>
 //
 // SPDX-License-Identifier: MIT
@@ -52,7 +51,7 @@ public interface IAtmosDeviceData
 [Serializable, NetSerializable]
 public sealed class AirAlarmUIState : BoundUserInterfaceState
 {
-    public AirAlarmUIState(string address, int deviceCount, float pressureAverage, float temperatureAverage, List<(string, IAtmosDeviceData)> deviceData, AirAlarmMode mode, AtmosAlarmType alarmType, bool autoMode, bool panicWireCut)
+    public AirAlarmUIState(string address, int deviceCount, float pressureAverage, float temperatureAverage, List<(string, IAtmosDeviceData)> deviceData, AirAlarmMode mode, AtmosAlarmType alarmType, bool autoMode)
     {
         Address = address;
         DeviceCount = deviceCount;
@@ -62,7 +61,6 @@ public sealed class AirAlarmUIState : BoundUserInterfaceState
         Mode = mode;
         AlarmType = alarmType;
         AutoMode = autoMode;
-        PanicWireCut = panicWireCut;
     }
 
     public string Address { get; }
@@ -80,7 +78,6 @@ public sealed class AirAlarmUIState : BoundUserInterfaceState
     public AirAlarmMode Mode { get; }
     public AtmosAlarmType AlarmType { get; }
     public bool AutoMode { get; }
-    public bool PanicWireCut { get; }
 }
 
 [Serializable, NetSerializable]

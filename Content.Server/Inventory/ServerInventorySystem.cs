@@ -12,7 +12,6 @@
 // SPDX-FileCopyrightText: 2023 metalgearsloth <31366439+metalgearsloth@users.noreply.github.com>
 // SPDX-FileCopyrightText: 2024 AJCM-git <60196617+AJCM-git@users.noreply.github.com>
 // SPDX-FileCopyrightText: 2024 DrSmugleaf <10968691+DrSmugleaf@users.noreply.github.com>
-// SPDX-FileCopyrightText: 2025 TheSecondLord <88201625+TheSecondLord@users.noreply.github.com>
 // SPDX-FileCopyrightText: 2025 taydeo <td12233a@gmail.com>
 //
 // SPDX-License-Identifier: MIT
@@ -48,19 +47,11 @@ namespace Content.Server.Inventory
                 return;
 
             var enumerator = new InventorySlotEnumerator(source.Comp);
-            // Goob edit start
-            List<(EntityUid, SlotDefinition)> items = new();
             while (enumerator.NextItem(out var item, out var slot))
             {
-                items.Add((item, slot));
+                if (TryUnequip(source, slot.Name, true, true, inventory: source.Comp))
+                    TryEquip(target, item, slot.Name , true, true, inventory: target.Comp);
             }
-
-            foreach (var (item, slot) in items)
-            {
-                TryUnequip(source, slot.Name, true, true, inventory: source.Comp);
-                TryEquip(target, item, slot.Name, true, true, inventory: target.Comp);
-            }
-            // Goob edit end
         }
     }
 }
