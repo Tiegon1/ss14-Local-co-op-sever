@@ -94,12 +94,9 @@
     - id: Easymob
     - id: SpiderClownSpawn
     - id: SpiderSpawn
-    - id: HonkbotSpawn
     - id: VentClog
     - id: Hardmob
-    - id: Spacemob
     - id: Easymob
-    - id: Dragon
 
 - type: entityTable
   id: BasicAntagEventsTable
@@ -570,6 +567,9 @@
       - id: MobAdultSlimesBlueAngry
       - id: MobAdultSlimesGreenAngry
       - id: MobAdultSlimesYellowAngry
+      - id: MobSpiderSpace
+      - id: MobBearSpace
+      - id: MobKangarooSpace
 
 - type: entity
   id: Hardmob
@@ -596,25 +596,7 @@
       - id: MobDinosaurTrex
       - id: MobDinosaurRaptor
       - id: MobDinosaurCompy
-
-- type: entity
-  id: Spacemob
-  parent: BaseStationEventShortDelay
-  components:
-  - type: StationEvent
-    startAnnouncement: station-event-vent-creatures-start-announcement
-    startAudio:
-      path: /Audio/Announcements/aliens.ogg
-    earliestStart: 1
-    minimumPlayers: 1
-    weight: 5
-    duration: 30 # DeltaV: was 60, used as a delay now
-  - type: VentCrittersRule
-    table: !type:GroupSelector # DeltaV: EntityTable instead of spawn entries
-      children:
-      - id: MobSpiderSpace
-      - id: MobBearSpace
-      - id: MobKangarooSpace
+      - id: MobDragon
 
 - type: entity
   id: Easymob
@@ -645,23 +627,8 @@
       - id: MobCatSyndy
       - id: MobPenguinSyndy
       - id: MobArgocyteSwiper
+      - id: MobHonkBot
 
-- type: entity
-  id: Dragon
-  parent: BaseStationEventShortDelay
-  components:
-  - type: StationEvent
-    startAnnouncement: station-event-vent-creatures-start-announcement
-    startAudio:
-      path: /Audio/Announcements/aliens.ogg
-    earliestStart: 1
-    minimumPlayers: 1
-    weight: 1
-    duration: 30 # DeltaV: was 60, used as a delay now
-  - type: VentCrittersRule
-    table: !type:GroupSelector # DeltaV: EntityTable instead of spawn entries
-      children:
-      - id: MobDragon
 
 - type: entity
   id: SnakeSpawn
@@ -714,22 +681,6 @@
     playerRatio: 35 # DeltaV: Clown spiders are very robust
     table: # DeltaV: EntityTable instead of spawn entries
       id: MobClownSpider
-
-- type: entity
-  id: HonkbotSpawn
-  parent: BaseStationEventShortDelay
-  components:
-  - type: StationEvent
-    startAnnouncement: station-event-vent-creatures-start-announcement
-    startAudio:
-      path: /Audio/Announcements/aliens.ogg
-    earliestStart: 20
-    minimumPlayers: 1
-    weight: 0.5
-    duration: 30
-  - type: VentCrittersRule
-    table: # DeltaV: EntityTable instead of spawn entries
-      id: MobHonkBot
 
 - type: entity
   id: ZombieOutbreak
