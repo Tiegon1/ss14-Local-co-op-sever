@@ -88,12 +88,8 @@
     - id: MouseMigration
     - id: PowerGridCheck
     - id: RandomSentience
-    - id: SlimesSpawn
     - id: SolarFlare
-    - id: SnakeSpawn
     - id: Easymob
-    - id: SpiderClownSpawn
-    - id: SpiderSpawn
     - id: VentClog
     - id: Hardmob
     - id: Easymob
@@ -570,6 +566,11 @@
       - id: MobSpiderSpace
       - id: MobBearSpace
       - id: MobKangarooSpace
+      - id: MobPurpleSnake
+      - id: MobSmallPurpleSnake
+      - id: MobCobraSpace
+      - id: MobGiantSpiderAngry
+      - id: MobClownSpider
 
 - type: entity
   id: Hardmob
@@ -629,58 +630,6 @@
       - id: MobArgocyteSwiper
       - id: MobHonkBot
 
-
-- type: entity
-  id: SnakeSpawn
-  parent: BaseStationEventShortDelay
-  components:
-  - type: StationEvent
-    startAnnouncement: station-event-vent-creatures-start-announcement
-    startAudio:
-      path: /Audio/Announcements/aliens.ogg
-    earliestStart: 20
-    minimumPlayers: 1
-    weight: 5
-    duration: 30 # DeltaV: was 60, used as a delay now
-  - type: VentCrittersRule
-    table: !type:GroupSelector # DeltaV: EntityTable instead of spawn entries
-      children:
-      - id: MobPurpleSnake
-      - id: MobSmallPurpleSnake
-      - id: MobCobraSpace
-
-- type: entity
-  id: SpiderSpawn
-  parent: BaseStationEventShortDelay
-  components:
-  - type: StationEvent
-    startAnnouncement: station-event-vent-creatures-start-announcement
-    startAudio:
-      path: /Audio/Announcements/aliens.ogg
-    earliestStart: 20
-    minimumPlayers: 1
-    weight: 5
-    duration: 30 # DeltaV: was 60, used as a delay now
-  - type: VentCrittersRule
-    table: # DeltaV: EntityTable instead of spawn entries
-      id: MobGiantSpiderAngry
-
-- type: entity
-  id: SpiderClownSpawn
-  parent: BaseStationEventShortDelay
-  components:
-  - type: StationEvent
-    startAnnouncement: station-event-vent-creatures-start-announcement
-    startAudio:
-      path: /Audio/Announcements/attention.ogg
-    earliestStart: 30 # funkystation delay
-    minimumPlayers: 1 # DeltaV - was 20
-    weight: 5 # DeltaV - was 1.5
-    duration: 30 # DeltaV: was 60, used as a delay now
-  - type: VentCrittersRule
-    playerRatio: 35 # DeltaV: Clown spiders are very robust
-    table: # DeltaV: EntityTable instead of spawn entries
-      id: MobClownSpider
 
 - type: entity
   id: ZombieOutbreak
