@@ -91,14 +91,14 @@
     - id: SlimesSpawn
     - id: SolarFlare
     - id: SnakeSpawn
-    - id: Shade
+    - id: Easymob
     - id: SpiderClownSpawn
     - id: SpiderSpawn
     - id: HonkbotSpawn
     - id: VentClog
-    - id: Dino
+    - id: Hardmob
     - id: Spacemob
-    - id: MiscHostile
+    - id: Easymob
     - id: Dragon
 
 - type: entityTable
@@ -551,8 +551,9 @@
       Mess: 200
   - type: VentClogRule
 
+
 - type: entity
-  id: SlimesSpawn
+  id: MedumMob
   parent: BaseStationEventShortDelay
   components:
   - type: StationEvent
@@ -563,10 +564,6 @@
     minimumPlayers: 1
     weight: 5
     duration: 30 # DeltaV: was 60, used as a delay now
-    chaos: # Goobstation
-      Hostile: 10
-      Friend: 10
-      Medical: 50
   - type: VentCrittersRule
     table: !type:GroupSelector # DeltaV: EntityTable instead of spawn entries
       children:
@@ -575,24 +572,7 @@
       - id: MobAdultSlimesYellowAngry
 
 - type: entity
-  id: Shade
-  parent: BaseStationEventShortDelay
-  components:
-  - type: StationEvent
-    startAnnouncement: station-event-vent-creatures-start-announcement
-    startAudio:
-      path: /Audio/Announcements/aliens.ogg
-    earliestStart: 20
-    minimumPlayers: 1
-    weight: 5
-    duration: 30 # DeltaV: was 60, used as a delay now
-  - type: VentCrittersRule
-    table: !type:GroupSelector # DeltaV: EntityTable instead of spawn entries
-      children:
-      - id: MobBloodCultShade
-
-- type: entity
-  id: Dino
+  id: Hardmob
   parent: BaseStationEventShortDelay
   components:
   - type: StationEvent
@@ -637,7 +617,7 @@
       - id: MobKangarooSpace
 
 - type: entity
-  id: MiscHostile
+  id: Easymob
   parent: BaseStationEventShortDelay
   components:
   - type: StationEvent
@@ -651,6 +631,7 @@
   - type: VentCrittersRule
     table: !type:GroupSelector # DeltaV: EntityTable instead of spawn entries
       children:
+      - id: MobBloodCultShade
       - id: MobCorgiCerberus
       - id: MobGoliath
       - id: MobArgocyteEnforcer
