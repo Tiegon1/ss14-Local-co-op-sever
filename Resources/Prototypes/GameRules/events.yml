@@ -572,7 +572,7 @@
       - id: MobCobraSpace
       - id: MobGiantSpiderAngry
       - id: MobClownSpider
-      - id: MobPenguinSyndy
+      - id: MobGrenadePenguin
       - id: MobLaserRaptor
       - id: MobArgocyteEnforcer
       - id: MobHivelord
@@ -651,7 +651,7 @@
       - id: MobCorgiCerberus
       - id: MobArgocyteFounder # not hostile
       - id: MobCarpHolo
-      - id: MobCarpRainbo
+      - id: MobCarpRainbow
       - id: MobCarpMagic
       - id: MobCarp
       - id: MobArgocytePouncer
