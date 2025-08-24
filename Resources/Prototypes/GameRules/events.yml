@@ -600,6 +600,9 @@
       - id: MobDinosaurRaptor
       - id: MobDinosaurCompy
       - id: MobGoliath
+      - id: MobRatking
+      - id: MobXenoPraetorian
+
 
 
 - type: entity
@@ -622,6 +625,9 @@
       - id: MobDinosaurTrike
       - id: MobDinosaurTrex
       - id: MobDragon
+      - id: MobRatKingBuff
+      - id: MobXenoQueen
+      - id: MobArgocyteLeviathing
 
 - type: entity
   id: Easymob
@@ -642,6 +648,9 @@
       - id: MobCorgiCerberus
       - id: MobArgocyteFounder # not hostile
       - id: MobCarpHolo
+      - id: MobCarpRainbo
+      - id: MobCarpMagic
+      - id: MobCarp
       - id: MobArgocytePouncer
       - id: MobGhoulProphet  # not hostile
       - id: MobMothSyndy
@@ -649,7 +658,12 @@
       - id: MobArgocyteSwiper
       - id: MobHonkBot
       - id: MobXenoSpitter
-
+      - id: MobIronCrab
+      - id: MobQuartzCrab
+      - id: MobUraniumCrab
+      - id: MobSilverCrab
+      - id: MobArgocyteMolder
+      - id: MobJonkBot
 
 - type: entity
   id: ZombieOutbreak
