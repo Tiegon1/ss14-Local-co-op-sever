@@ -576,6 +576,8 @@
       - id: MobLaserRaptor
       - id: MobArgocyteEnforcer
       - id: MobHivelord
+      - id: MobDinosaurDilo
+
 
 - type: entity
   id: Hardmob
@@ -624,6 +626,7 @@
       - id: MobDinosaurStego
       - id: MobDinosaurTrike
       - id: MobDinosaurTrex
+      - id: MobDinosaurKentro
       - id: MobDragon
       - id: MobRatKingBuff
       - id: MobXenoQueen
@@ -658,12 +661,16 @@
       - id: MobArgocyteSwiper
       - id: MobHonkBot
       - id: MobXenoSpitter
+      - id: MobXenoDrong
       - id: MobIronCrab
       - id: MobQuartzCrab
       - id: MobUraniumCrab
       - id: MobSilverCrab
       - id: MobArgocyteMolder
       - id: MobJonkBot
+      - id: MobArgocyteHarvester
+      - id: MobArgocyteGlider
+      - id: MobArgocyteCrawler
 
 - type: entity
   id: ZombieOutbreak
