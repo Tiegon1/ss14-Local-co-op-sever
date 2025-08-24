@@ -93,6 +93,7 @@
     - id: VentClog
     - id: Hardmob
     - id: Easymob
+    - id: Hardestmob
 
 - type: entityTable
   id: BasicAntagEventsTable
@@ -571,6 +572,10 @@
       - id: MobCobraSpace
       - id: MobGiantSpiderAngry
       - id: MobClownSpider
+      - id: MobPenguinSyndy
+      - id: MobLaserRaptor
+      - id: MobArgocyteEnforcer
+      - id: MobHivelord
 
 - type: entity
   id: Hardmob
@@ -592,11 +597,30 @@
       - id: MobDinosaurPara
       - id: MobDinosaurSpino
       - id: MobDinosaurCompy
+      - id: MobDinosaurRaptor
+      - id: MobDinosaurCompy
+      - id: MobGoliath
+
+
+- type: entity
+  id: Hardestmob
+  parent: BaseStationEventShortDelay
+  components:
+  - type: StationEvent
+    startAnnouncement: station-event-vent-creatures-start-announcement
+    startAudio:
+      path: /Audio/Announcements/aliens.ogg
+    earliestStart: 1
+    minimumPlayers: 1
+    weight: 3
+    duration: 30 # DeltaV: was 60, used as a delay now
+  - type: VentCrittersRule
+    table: !type:GroupSelector # DeltaV: EntityTable instead of spawn entries
+      children:
+      - id: MobDinosaurSpino
       - id: MobDinosaurStego
       - id: MobDinosaurTrike
       - id: MobDinosaurTrex
-      - id: MobDinosaurRaptor
-      - id: MobDinosaurCompy
       - id: MobDragon
 
 - type: entity
@@ -616,19 +640,15 @@
       children:
       - id: MobBloodCultShade
       - id: MobCorgiCerberus
-      - id: MobGoliath
-      - id: MobArgocyteEnforcer
-      - id: MobArgocyteFounder
-      - id: MobHivelord
+      - id: MobArgocyteFounder # not hostile
       - id: MobCarpHolo
-      - id: MobLaserRaptor
       - id: MobArgocytePouncer
-      - id: MobGhoulProphet
+      - id: MobGhoulProphet  # not hostile
       - id: MobMothSyndy
       - id: MobCatSyndy
-      - id: MobPenguinSyndy
       - id: MobArgocyteSwiper
       - id: MobHonkBot
+      - id: MobXenoSpitter
 
 
 - type: entity
