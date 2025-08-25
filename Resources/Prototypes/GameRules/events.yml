@@ -654,7 +654,7 @@
     weight: 10
     duration: 30 # DeltaV: was 60, used as a delay now
   - type: VentCrittersRule
-    min: 4
+    min: 5
     max: 20
     playerRatio: 1
     table: !type:GroupSelector # DeltaV: EntityTable instead of spawn entries
@@ -673,7 +673,7 @@
       - id: MobArgocyteSwiper
       - id: MobHonkBot
       - id: MobXenoSpitter
-      - id: MobXenoDrong
+      - id: MobXenoDrone
       - id: MobIronCrab
       - id: MobQuartzCrab
       - id: MobUraniumCrab
