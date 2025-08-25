@@ -89,7 +89,7 @@
     - id: PowerGridCheck
     - id: RandomSentience
     - id: SolarFlare
-    - id: Easymob
+    - id: MediumMob
     - id: VentClog
     - id: Hardmob
     - id: Easymob
@@ -547,7 +547,7 @@
 
 
 - type: entity
-  id: MedumMob
+  id: MediumMob
   parent: BaseStationEventShortDelay
   components:
   - type: StationEvent
@@ -559,6 +559,9 @@
     weight: 5
     duration: 30 # DeltaV: was 60, used as a delay now
   - type: VentCrittersRule
+    min: 2
+    max: 5
+    playerRatio: 1
     table: !type:GroupSelector # DeltaV: EntityTable instead of spawn entries
       children:
       - id: MobAdultSlimesBlueAngry
@@ -574,6 +577,7 @@
       - id: MobClownSpider
       - id: MobGrenadePenguin
       - id: MobLaserRaptor
+        weight: 10
       - id: MobArgocyteEnforcer
       - id: MobHivelord
       - id: MobDinosaurDilo
