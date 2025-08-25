@@ -559,8 +559,8 @@
     weight: 5
     duration: 30 # DeltaV: was 60, used as a delay now
   - type: VentCrittersRule
-    min: 2
-    max: 5
+    min: 3
+    max: 10
     playerRatio: 1
     table: !type:GroupSelector # DeltaV: EntityTable instead of spawn entries
       children:
@@ -608,7 +608,7 @@
       - id: MobDinosaurRaptor
       - id: MobDinosaurCompy
       - id: MobGoliath
-      - id: MobRatking
+      - id: MobRatKing
       - id: MobXenoPraetorian
 
 
@@ -623,10 +623,10 @@
       path: /Audio/Announcements/aliens.ogg
     earliestStart: 1
     minimumPlayers: 1
-    weight: 3
+    weight: 2
     duration: 30 # DeltaV: was 60, used as a delay now
   - type: VentCrittersRule
-    min: 2
+    min: 1
     max: 5
     playerRatio: 1
     table: !type:GroupSelector # DeltaV: EntityTable instead of spawn entries
@@ -651,11 +651,11 @@
       path: /Audio/Announcements/aliens.ogg
     earliestStart: 1
     minimumPlayers: 1
-    weight: 5
+    weight: 10
     duration: 30 # DeltaV: was 60, used as a delay now
   - type: VentCrittersRule
-    min: 2
-    max: 5
+    min: 4
+    max: 20
     playerRatio: 1
     table: !type:GroupSelector # DeltaV: EntityTable instead of spawn entries
       children:
