@@ -577,7 +577,6 @@
       - id: MobClownSpider
       - id: MobGrenadePenguin
       - id: MobLaserRaptor
-        weight: 10
       - id: MobArgocyteEnforcer
       - id: MobHivelord
       - id: MobDinosaurDilo
