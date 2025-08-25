@@ -596,6 +596,9 @@
     weight: 3
     duration: 30 # DeltaV: was 60, used as a delay now
   - type: VentCrittersRule
+    min: 2
+    max: 5
+    playerRatio: 1
     table: !type:GroupSelector # DeltaV: EntityTable instead of spawn entries
       children:
       - id: MobDinosaurCompy
@@ -624,6 +627,9 @@
     weight: 3
     duration: 30 # DeltaV: was 60, used as a delay now
   - type: VentCrittersRule
+    min: 2
+    max: 5
+    playerRatio: 1
     table: !type:GroupSelector # DeltaV: EntityTable instead of spawn entries
       children:
       - id: MobDinosaurSpino
@@ -649,6 +655,9 @@
     weight: 5
     duration: 30 # DeltaV: was 60, used as a delay now
   - type: VentCrittersRule
+    min: 2
+    max: 5
+    playerRatio: 1
     table: !type:GroupSelector # DeltaV: EntityTable instead of spawn entries
       children:
       - id: MobBloodCultShade
