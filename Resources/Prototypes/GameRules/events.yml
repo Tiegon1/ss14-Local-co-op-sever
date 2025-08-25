@@ -89,7 +89,7 @@
     - id: PowerGridCheck
     - id: RandomSentience
     - id: SolarFlare
-    - id: Easymob
+    - id: MediumMob
     - id: VentClog
     - id: Hardmob
     - id: Easymob
@@ -547,7 +547,7 @@
 
 
 - type: entity
-  id: MedumMob
+  id: MediumMob
   parent: BaseStationEventShortDelay
   components:
   - type: StationEvent
