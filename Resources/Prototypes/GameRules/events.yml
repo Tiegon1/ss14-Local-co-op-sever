@@ -560,11 +560,11 @@
       path: /Audio/Announcements/aliens.ogg
     earliestStart: 20
     minimumPlayers: 1
-    weight: 5
+    weight: 7
     duration: 30 # DeltaV: was 60, used as a delay now
   - type: VentCrittersRule
-    min: 3
-    max: 10
+    min: 4
+    max: 15
     playerRatio: 1
     table: !type:GroupSelector # DeltaV: EntityTable instead of spawn entries
       children:
@@ -584,6 +584,7 @@
       - id: MobArgocyteEnforcer
       - id: MobHivelord
       - id: MobDinosaurDilo
+      - id: MobCatSyndy
 
 
 - type: entity
@@ -596,11 +597,11 @@
       path: /Audio/Announcements/aliens.ogg
     earliestStart: 1
     minimumPlayers: 1
-    weight: 3
+    weight: 6
     duration: 30 # DeltaV: was 60, used as a delay now
   - type: VentCrittersRule
     min: 2
-    max: 5
+    max: 7
     playerRatio: 1
     table: !type:GroupSelector # DeltaV: EntityTable instead of spawn entries
       children:
@@ -627,11 +628,11 @@
       path: /Audio/Announcements/aliens.ogg
     earliestStart: 1
     minimumPlayers: 1
-    weight: 2
+    weight: 5
     duration: 30 # DeltaV: was 60, used as a delay now
   - type: VentCrittersRule
     min: 1
-    max: 5
+    max: 6
     playerRatio: 1
     table: !type:GroupSelector # DeltaV: EntityTable instead of spawn entries
       children:
@@ -658,8 +659,8 @@
     weight: 10
     duration: 30 # DeltaV: was 60, used as a delay now
   - type: VentCrittersRule
-    min: 5
-    max: 20
+    min: 6
+    max: 25
     playerRatio: 1
     table: !type:GroupSelector # DeltaV: EntityTable instead of spawn entries
       children:
@@ -672,8 +673,6 @@
       - id: MobCarp
       - id: MobArgocytePouncer
       - id: MobGhoulProphet  # not hostile
-      - id: MobMothSyndy
-      - id: MobCatSyndy
       - id: MobArgocyteSwiper
       - id: MobHonkBot
       - id: MobXenoSpitter
@@ -687,6 +686,7 @@
       - id: MobArgocyteHarvester
       - id: MobArgocyteGlider
       - id: MobArgocyteCrawler
+      - id: MobMothSyndy
 
 - type: entity
   id: ZombieOutbreak
