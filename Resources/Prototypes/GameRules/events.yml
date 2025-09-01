@@ -565,7 +565,7 @@
   - type: VentCrittersRule
     min: 5
     max: 9
-    playerRatio: 1
+    playerRatio: 0
     table: !type:GroupSelector # DeltaV: EntityTable instead of spawn entries
       children:
       - id: MobAdultSlimesBlueAngry
@@ -595,14 +595,14 @@
     startAnnouncement: station-event-vent-creatures-start-announcement
     startAudio:
       path: /Audio/Announcements/aliens.ogg
-    earliestStart: 1
+    earliestStart: 20
     minimumPlayers: 1
     weight: 6
     duration: 30 # DeltaV: was 60, used as a delay now
   - type: VentCrittersRule
     min: 2
     max: 7
-    playerRatio: 1
+    playerRatio: 0
     table: !type:GroupSelector # DeltaV: EntityTable instead of spawn entries
       children:
       - id: MobDinosaurCompy
@@ -626,14 +626,14 @@
     startAnnouncement: station-event-vent-creatures-start-announcement
     startAudio:
       path: /Audio/Announcements/aliens.ogg
-    earliestStart: 1
+    earliestStart: 20
     minimumPlayers: 1
     weight: 5
     duration: 30 # DeltaV: was 60, used as a delay now
   - type: VentCrittersRule
     min: 1
     max: 6
-    playerRatio: 1
+    playerRatio: 0
     table: !type:GroupSelector # DeltaV: EntityTable instead of spawn entries
       children:
       - id: MobDinosaurSpino
@@ -654,14 +654,14 @@
     startAnnouncement: station-event-vent-creatures-start-announcement
     startAudio:
       path: /Audio/Announcements/aliens.ogg
-    earliestStart: 1
+    earliestStart: 20
     minimumPlayers: 1
     weight: 10
     duration: 30 # DeltaV: was 60, used as a delay now
   - type: VentCrittersRule
     min: 9
     max: 15
-    playerRatio: 1
+    playerRatio: 0
     table: !type:GroupSelector # DeltaV: EntityTable instead of spawn entries
       children:
       - id: MobBloodCultShade
