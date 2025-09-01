@@ -74,8 +74,21 @@ public sealed class VentCrittersRule : StationEventSystem<VentCrittersRuleCompon
             return;
 
         var players = _antag.GetTotalPlayerCount(_player.Sessions);
-        var min = comp.Min * players / comp.PlayerRatio;
-        var max = comp.Max * players / comp.PlayerRatio;
+
+        // only use player count in formula if player ratio is greater than zero, else disable it
+        int min;
+        int max;
+        if (comp.PlayerRatio > 0)
+        {
+            min = comp.Min * players / comp.PlayerRatio;
+            max = comp.Max * players / comp.PlayerRatio;
+        }
+        else // player ratio <= 0
+        {
+            min = comp.Min;
+            max = comp.Max;
+        }
+
         var count = Math.Max(RobustRandom.Next(min, max), 1);
         for (int i = 0; i < count; i++)
         {
