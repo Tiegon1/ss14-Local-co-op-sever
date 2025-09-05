@@ -584,7 +584,6 @@
       - id: MobLaserRaptor
       - id: MobArgocyteEnforcer
       - id: MobHivelord
-      - id: MobDinosaurDilo
 
 
 - type: entity
@@ -605,16 +604,13 @@
     playerRatio: 0
     table: !type:GroupSelector # DeltaV: EntityTable instead of spawn entries
       children:
-      - id: MobDinosaurCompy
-      - id: MobDinosaurAnki
       - id: MobDinosaurPara
-      - id: MobDinosaurSpino
       - id: MobDinosaurCompy
       - id: MobDinosaurRaptor
-      - id: MobDinosaurCompy
       - id: MobGoliath
       - id: MobRatKing
       - id: MobXenoPraetorian
+      - id: MobDinosaurDilo
 
 
 - type: entity
@@ -644,6 +640,7 @@
       - id: MobRatKingBuff
       - id: MobXenoQueen
       - id: MobArgocyteLeviathing
+      - id: MobDinosaurAnki
 
 - type: entity
   id: Easymob
