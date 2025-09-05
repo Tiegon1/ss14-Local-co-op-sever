@@ -609,7 +609,6 @@
       - id: MobDinosaurRaptor
       - id: MobGoliath
       - id: MobRatKing
-      - id: MobXenoPraetorian
       - id: MobDinosaurDilo
 
 
@@ -638,9 +637,40 @@
       - id: MobDinosaurKentro
       - id: MobDragon
       - id: MobRatKingBuff
-      - id: MobXenoQueen
       - id: MobArgocyteLeviathing
       - id: MobDinosaurAnki
+
+- type: entity
+  id: Xeno
+  parent: BaseStationEventShortDelay
+  components:
+  - type: StationEvent
+    startAnnouncement: station-event-vent-creatures-start-announcement
+    startAudio:
+      path: /Audio/Announcements/aliens.ogg
+    earliestStart: 20
+    minimumPlayers: 1
+    weight: 5
+    duration: 30 # DeltaV: was 60, used as a delay now
+  - type: VentCrittersRule
+    min: 1
+    max: 6
+    playerRatio: 0
+    table: !type:GroupSelector # DeltaV: EntityTable instead of spawn entries
+      children:
+      - id: MobXenoQueen
+      - id: MobXenoPraetorian
+      - id: MobXenoSpitter
+      - id: MobXenoDrone
+      - id: MobXenoRavager
+      - id: MobXenoRunner
+      - id: MobXenoPraetorian
+      - id: MobXenoSpitter
+      - id: MobXenoDrone
+      - id: MobXenoRavager
+      - id: MobXenoRunner
+      - id: MobXenoSpitter
+      - id: MobXenoDrone     #Dupes as a basic workaround to affect spawn chances  
 
 - type: entity
   id: Easymob
@@ -671,8 +701,6 @@
       - id: MobGhoulProphet  # not hostile
       - id: MobArgocyteSwiper
       - id: MobHonkBot
-      - id: MobXenoSpitter
-      - id: MobXenoDrone
       - id: MobIronCrab
       - id: MobQuartzCrab
       - id: MobUraniumCrab
