@@ -55,6 +55,7 @@
 # SPDX-FileCopyrightText: 2024 username <113782077+whateverusername0@users.noreply.github.com>
 # SPDX-FileCopyrightText: 2025 ArsCatalyst <Heartflareburst@gmail.com>
 # SPDX-FileCopyrightText: 2025 Aviu00 <93730715+Aviu00@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 Huhm-1 <cameronhillard40@gmail.com>
 # SPDX-FileCopyrightText: 2025 Icepick <122653407+Icepicked@users.noreply.github.com>
 # SPDX-FileCopyrightText: 2025 Tay <td12233a@gmail.com>
 # SPDX-FileCopyrightText: 2025 VMSolidus <evilexecutive@gmail.com>
@@ -26712,15 +26713,11 @@ entities:
     - type: Transform
       pos: -33.5,26.5
       parent: 2
-    - type: SiloUtilizer
-      silo: 706
   - uid: 7864
     components:
     - type: Transform
       pos: -2.5,27.5
       parent: 2
-    - type: SiloUtilizer
-      silo: 706
   - uid: 11737
     components:
     - type: Transform
@@ -106423,8 +106420,6 @@ entities:
     - type: Transform
       pos: -34.5,24.5
       parent: 2
-    - type: SiloUtilizer
-      silo: 706
 - proto: CleanerDispenser
   entities:
   - uid: 18399
@@ -132302,15 +132297,11 @@ entities:
     - type: Transform
       pos: -31.5,34.5
       parent: 2
-    - type: SiloUtilizer
-      silo: 706
   - uid: 5726
     components:
     - type: Transform
       pos: -31.5,36.5
       parent: 2
-    - type: SiloUtilizer
-      silo: 706
 - proto: EZNutrientChemistryBottle
   entities:
   - uid: 10308
@@ -234944,49 +234935,6 @@ entities:
     - type: Transform
       pos: 21.319107,-61.46958
       parent: 2
-- proto: MaterialSilo
-  entities:
-  - uid: 706
-    components:
-    - type: Transform
-      pos: -3.5,16.5
-      parent: 2
-    - type: DeviceLinkSource
-      linkedPorts:
-        7864:
-        - - MaterialSilo
-          - MaterialSiloUtilizer
-        5107:
-        - - MaterialSilo
-          - MaterialSiloUtilizer
-        5108:
-        - - MaterialSilo
-          - MaterialSiloUtilizer
-        5178:
-        - - MaterialSilo
-          - MaterialSiloUtilizer
-        3875:
-        - - MaterialSilo
-          - MaterialSiloUtilizer
-        21740:
-        - - MaterialSilo
-          - MaterialSiloUtilizer
-        5725:
-        - - MaterialSilo
-          - MaterialSiloUtilizer
-        5726:
-        - - MaterialSilo
-          - MaterialSiloUtilizer
-        16382:
-        - - MaterialSilo
-          - MaterialSiloUtilizer
-- proto: MaterialSiloCircuitboard
-  entities:
-  - uid: 3122
-    components:
-    - type: Transform
-      pos: -13.454271,20.391523
-      parent: 2
 - proto: MaterialWoodPlank
   entities:
   - uid: 276
@@ -235110,8 +235058,6 @@ entities:
     - type: Transform
       pos: -0.5,-62.5
       parent: 2
-    - type: SiloUtilizer
-      silo: 706
 - proto: MedkitAdvancedFilled
   entities:
   - uid: 21719
@@ -246357,8 +246303,6 @@ entities:
     - type: Transform
       pos: -34.5,26.5
       parent: 2
-    - type: SiloUtilizer
-      silo: 706
 - proto: PsychBed
   entities:
   - uid: 21969
@@ -258162,8 +258106,6 @@ entities:
     - type: Transform
       pos: -66.5,-19.5
       parent: 2
-    - type: SiloUtilizer
-      silo: 706
 - proto: SecurityWhistle
   entities:
   - uid: 18084
@@ -261631,20 +261573,6 @@ entities:
     - type: Transform
       pos: -37.5,-65.5
       parent: 2
-- proto: SiloRelay
-  entities:
-  - uid: 16381
-    components:
-    - type: Transform
-      pos: -52.5,45.5
-      parent: 2
-  - uid: 16382
-    components:
-    - type: Transform
-      pos: -52.5,45.5
-      parent: 2
-    - type: SiloUtilizer
-      silo: 706
 - proto: SilverRingGem
   entities:
   - uid: 340

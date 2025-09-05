@@ -51,6 +51,7 @@
 # SPDX-FileCopyrightText: 2024 eoineoineoin <github@eoinrul.es>
 # SPDX-FileCopyrightText: 2024 lzk <124214523+lzk228@users.noreply.github.com>
 # SPDX-FileCopyrightText: 2025 Aviu00 <93730715+Aviu00@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 Huhm-1 <cameronhillard40@gmail.com>
 # SPDX-FileCopyrightText: 2025 Icepick <122653407+Icepicked@users.noreply.github.com>
 # SPDX-FileCopyrightText: 2025 QueerCats <jansencheng3@gmail.com>
 # SPDX-FileCopyrightText: 2025 Tay <td12233a@gmail.com>
@@ -164579,13 +164580,6 @@ entities:
     - type: Transform
       rot: 1.5707963267948966 rad
       pos: -18.5,-65.5
-      parent: 2
-- proto: SiloRelay
-  entities:
-  - uid: 25176
-    components:
-    - type: Transform
-      pos: -47.5,44.5
       parent: 2
 - proto: SilverOre1
   entities:
