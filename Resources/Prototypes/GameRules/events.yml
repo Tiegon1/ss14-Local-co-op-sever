@@ -95,6 +95,8 @@
     - id: Hardmob
     - id: Easymob
     - id: Hardestmob
+    - id: SyndyBomb
+
 
 - type: entityTable
   id: BasicAntagEventsTable
@@ -579,12 +581,10 @@
       - id: MobCobraSpace
       - id: MobGiantSpiderAngry
       - id: MobClownSpider
-      - id: MobGrenadePenguin
       - id: MobLaserRaptor
       - id: MobArgocyteEnforcer
       - id: MobHivelord
       - id: MobDinosaurDilo
-      - id: MobCatSyndy
 
 
 - type: entity
@@ -615,7 +615,6 @@
       - id: MobGoliath
       - id: MobRatKing
       - id: MobXenoPraetorian
-
 
 
 - type: entity
@@ -686,7 +685,28 @@
       - id: MobArgocyteHarvester
       - id: MobArgocyteGlider
       - id: MobArgocyteCrawler
+
+- type: entity
+  id: SyndyBomb
+  parent: BaseStationEventShortDelay
+  components:
+  - type: StationEvent
+    startAnnouncement: station-event-vent-creatures-start-announcement
+    startAudio:
+      path: /Audio/Announcements/aliens.ogg
+    earliestStart: 20
+    minimumPlayers: 1
+    weight: 10
+    duration: 30 # DeltaV: was 60, used as a delay now
+  - type: VentCrittersRule
+    min: 3
+    max: 10  # evil :)
+    playerRatio: 0
+    table: !type:GroupSelector # DeltaV: EntityTable instead of spawn entries
+      children:
+      - id: MobCatSyndy
       - id: MobMothSyndy
+      - id: MobGrenadePenguin
 
 - type: entity
   id: ZombieOutbreak
