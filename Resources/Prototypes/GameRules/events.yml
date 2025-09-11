@@ -772,7 +772,7 @@
     playerRatio: 0
     table: !type:GroupSelector # DeltaV: EntityTable instead of spawn entries
       children:
-      - id: MobMothSyndy
+      - id: MobGrenadePenguin
 
 - type: entity
   id: ZombieOutbreak
