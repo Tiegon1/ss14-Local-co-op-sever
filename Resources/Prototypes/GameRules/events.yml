@@ -95,7 +95,9 @@
     - id: Hardmob
     - id: Easymob
     - id: Hardestmob
-    - id: SyndyBomb
+    - id: SyndyCat
+    - id: SyndyMoth
+    - id: SyndyPenguin
 
 
 - type: entityTable
@@ -712,7 +714,7 @@
       - id: MobArgocyteCrawler
 
 - type: entity
-  id: SyndyBomb
+  id: SyndyMoth
   parent: BaseStationEventShortDelay
   components:
   - type: StationEvent
@@ -721,7 +723,7 @@
       path: /Audio/Announcements/aliens.ogg
     earliestStart: 20
     minimumPlayers: 1
-    weight: 10
+    weight: 11
     duration: 30 # DeltaV: was 60, used as a delay now
   - type: VentCrittersRule
     min: 3
@@ -729,9 +731,48 @@
     playerRatio: 0
     table: !type:GroupSelector # DeltaV: EntityTable instead of spawn entries
       children:
-      - id: MobCatSyndy
       - id: MobMothSyndy
-      - id: MobGrenadePenguin
+
+
+- type: entity
+  id: SyndyCat
+  parent: BaseStationEventShortDelay
+  components:
+  - type: StationEvent
+    startAnnouncement: station-event-vent-creatures-start-announcement
+    startAudio:
+      path: /Audio/Announcements/aliens.ogg
+    earliestStart: 20
+    minimumPlayers: 1
+    weight: 6
+    duration: 30 # DeltaV: was 60, used as a delay now
+  - type: VentCrittersRule
+    min: 1
+    max: 4 
+    playerRatio: 0
+    table: !type:GroupSelector # DeltaV: EntityTable instead of spawn entries
+      children:
+      - id: MobCatSyndy
+
+- type: entity
+  id: SyndyPenguin
+  parent: BaseStationEventShortDelay
+  components:
+  - type: StationEvent
+    startAnnouncement: station-event-vent-creatures-start-announcement
+    startAudio:
+      path: /Audio/Announcements/aliens.ogg
+    earliestStart: 20
+    minimumPlayers: 1
+    weight: 3
+    duration: 30 # DeltaV: was 60, used as a delay now
+  - type: VentCrittersRule
+    min: 1
+    max: 3  # evil :)
+    playerRatio: 0
+    table: !type:GroupSelector # DeltaV: EntityTable instead of spawn entries
+      children:
+      - id: MobMothSyndy
 
 - type: entity
   id: ZombieOutbreak
