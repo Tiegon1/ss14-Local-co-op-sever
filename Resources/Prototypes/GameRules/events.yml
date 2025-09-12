@@ -652,7 +652,7 @@
       path: /Audio/Announcements/aliens.ogg
     earliestStart: 20
     minimumPlayers: 1
-    weight: 5
+    weight: 15
     duration: 30 # DeltaV: was 60, used as a delay now
   - type: VentCrittersRule
     min: 4
