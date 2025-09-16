@@ -199,6 +199,7 @@
       - Fires
       - Spacing
     - type: SyncSprite
+    - type: VentCritterSpawnLocation
 
 - type: entity
   id: Firelock
