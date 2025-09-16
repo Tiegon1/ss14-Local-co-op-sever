@@ -139,6 +139,11 @@
     equippedPrefix: 0
     slots:
     - HEAD
+  - type: InputMover
+  - type: MobMover
+  - type: HTN
+    rootTask:
+      task: SimpleHostileCompound
   - type: GhostRole
     prob: 1
     name: ghost-role-information-SyndiRoach-name
