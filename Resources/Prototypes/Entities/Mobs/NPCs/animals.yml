@@ -1317,7 +1317,7 @@
   name: gorilla
   parent: [ SimpleMobBase, MobCombat ]
   id: MobGorilla
-  description: Smashes, roars, looks cool. Don't stand near one.
+  description: Smashes, roars, looks cool. Now Trained by NT! stand near one!.
   components:
   - type: Sprite
     drawdepth: Mobs
@@ -1363,7 +1363,7 @@
   - type: FactionException
   - type: NpcFactionMember
     factions:
-    - Passive
+    - PetsNT
   - type: HTN
     rootTask:
       task: SimpleHostileCompound
