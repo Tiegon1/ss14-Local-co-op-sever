@@ -656,7 +656,7 @@
     duration: 30 # DeltaV: was 60, used as a delay now
   - type: VentCrittersRule
     min: 4
-    max: 10
+    max: 8
     playerRatio: 0
     table: !type:GroupSelector # DeltaV: EntityTable instead of spawn entries
       children:
@@ -688,7 +688,7 @@
     duration: 30 # DeltaV: was 60, used as a delay now
   - type: VentCrittersRule
     min: 8
-    max: 10
+    max: 8
     playerRatio: 0
     table: !type:GroupSelector # DeltaV: EntityTable instead of spawn entries
       children:
@@ -727,7 +727,7 @@
     duration: 30 # DeltaV: was 60, used as a delay now
   - type: VentCrittersRule
     min: 3
-    max: 10  # evil :)
+    max: 8  # evil :)
     playerRatio: 0
     table: !type:GroupSelector # DeltaV: EntityTable instead of spawn entries
       children:

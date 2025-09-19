@@ -16,7 +16,7 @@
     Light: 0.5
     FullSafe: 0.1
   #balanced
-    Balanced: 3
+    Balanced: 0.5
     DelayedForce: 1
     Rapid: 1
     BalancedSecret: 1
@@ -24,18 +24,18 @@
     NonSensivity: 1
     Sensivity: 1
   #Hard
-    Fast: 0.5
-    Strenght: 0.5
-    Inconstancy: 0.5
-    InconstancyParticle: 0.5
-    FullUnknown: 0.5
-    Jumping: 0.3
-    Invisibility: 0.5
+    Fast: 1
+    Strenght: 1
+    Inconstancy: 1
+    InconstancyParticle: 1
+    FullUnknown: 1
+    Jumping: 1
+    Invisibility: 1
   #Complex
-    FastUnknown: 0.2
-    JumpingUnknown: 0.1
-    InconstancyParticleUnknown: 0.1
-    InvisibilityJumping: 0.1
+    FastUnknown: 1
+    JumpingUnknown: 1
+    InconstancyParticleUnknown: 1
+    InvisibilityJumping: 1
 
 
 # Easy x0.5 point production
