@@ -156,7 +156,7 @@
     startAnnouncementColor: "#18abf5"
     startAudio:
       path: /Audio/Announcements/announce.ogg
-    weight: 8
+    weight: 10
     duration: 35
     chaos: # Goobstation
       Anomaly: 100

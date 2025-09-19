@@ -476,8 +476,8 @@
   parent: BaseGameRule
   components:
   - type: RampingStationEventScheduler
-    averageChaos: 14
-    averageEndTime: 90
+    averageChaos: 16
+    averageEndTime: 100
     scheduledGameRules: !type:NestedSelector
       tableId: BasicGameRulesTable
 
