@@ -36,7 +36,7 @@
     JumpingUnknown: 1
     InconstancyParticleUnknown: 1
     InvisibilityJumping: 1
-
+    InvisibilityJumpingReflect: 1
 
 # Easy x0.5 point production
 
@@ -233,3 +233,32 @@
   - type: StealthOnMove
     passiveVisibilityRate: -0.37
     movementVisibilityRate: 0.20
+
+- type: anomalyBehavior
+  id: InvisibilityJumpingReflect
+  earnPointModifier: 2.1
+  description: anomaly-behavior-invisibility
+  components:
+  - type: ChaoticJump
+    jumpMinInterval: 15
+    jumpMaxInterval: 25
+    rangeMin: 1
+    rangeMax: 1
+    effect: PuddleSparkle
+  - type: Stealth
+    minVisibility: -1 # Goobstation - Proper invisibility
+    maxVisibility: 1.2
+  - type: StealthOnMove
+    passiveVisibilityRate: -0.37
+    movementVisibilityRate: 0.20
+  - type: Reflect
+    reflectProb: 0.5
+    reflects:
+      - Energy
+
+- type: anomalyBehavior
+  id: veryRapid
+  earnPointModifier: 1.50
+  description: anomaly-behavior-rapid
+  pulseFrequencyModifier: 0.2
+  pulsePowerModifier: 0.2
