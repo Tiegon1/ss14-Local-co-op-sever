@@ -37,6 +37,8 @@
     InconstancyParticleUnknown: 1
     InvisibilityJumping: 1
     InvisibilityJumpingReflect: 1
+    veryRapid: 1
+#    veryRapidJumpingUnknown: 1
 
 # Easy x0.5 point production
 
@@ -262,3 +264,23 @@
   description: anomaly-behavior-rapid
   pulseFrequencyModifier: 0.2
   pulsePowerModifier: 0.2
+
+#- type: anomalyBehavior
+#  id: veryRapidJumpingUnknown
+#  earnPointModifier: 1.9
+#  - type: rapid
+#  description: anomaly-behavior-rapid
+#  pulseFrequencyModifier: 0.2
+#  pulsePowerModifier: 0.2
+#  description: anomaly-behavior-moving
+#  components:
+#  - type: ChaoticJump
+#    jumpMinInterval: 15
+#    jumpMaxInterval: 25
+#    rangeMin: 1
+#    rangeMax: 1
+#    effect: PuddleSparkle
+#  - type: SecretDataAnomaly
+#    randomStartSecretMin: 3
+#    randomStartSecretMax: 5
+#
