@@ -27,6 +27,7 @@
     - type: Physics
       bodyType: Static
       canCollide: false
+    - type: VentCritterSpawnLocation  
     - type: AmbientSound
       enabled: false
       volume: -8

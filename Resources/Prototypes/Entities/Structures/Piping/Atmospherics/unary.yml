@@ -119,6 +119,7 @@
     - type: Construction
       graph: GasUnary
       node: passivevent
+    - type: VentCritterSpawnLocation
     - type: AtmosMonitoringConsoleDevice
       navMapBlip: GasVentOpening
     - type: GuideHelp
@@ -175,6 +176,7 @@
     - type: Construction
       graph: GasUnary
       node: ventscrubber
+    - type: VentCritterSpawnLocation
     - type: AmbientSound
       enabled: true
       volume: -12
