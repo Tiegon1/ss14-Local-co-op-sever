@@ -568,25 +568,35 @@
     weight: 7
     duration: 30 # DeltaV: was 60, used as a delay now
   - type: VentCrittersRule
-    min: 5
-    max: 9
-    playerRatio: 0
-    table: !type:GroupSelector # DeltaV: EntityTable instead of spawn entries
-      children:
-      - id: MobAdultSlimesBlueAngry
-      - id: MobAdultSlimesGreenAngry
-      - id: MobAdultSlimesYellowAngry
-      - id: MobSpiderSpace
-      - id: MobBearSpace
-      - id: MobKangarooSpace
-      - id: MobPurpleSnake
-      - id: MobSmallPurpleSnake
-      - id: MobCobraSpace
-      - id: MobGiantSpiderAngry
-      - id: MobClownSpider
-      - id: MobLaserRaptor
-      - id: MobArgocyteEnforcer
-      - id: MobHivelord
+    entries: # 14 rolls at prob of 0.007 is around 9.8% chance that each spawn point (vent and etc) will get a mob   (14 * 0.007 = 0.098) 
+    - id: MobAdultSlimesBlueAngry
+      prob: 0.007
+    - id: MobAdultSlimesGreenAngry
+      prob: 0.007
+    - id: MobAdultSlimesYellowAngry
+      prob: 0.007
+    - id: MobSpiderSpace
+      prob: 0.007
+    - id: MobBearSpace
+      prob: 0.007
+    - id: MobKangarooSpace
+      prob: 0.007
+    - id: MobPurpleSnake
+      prob: 0.007
+    - id: MobSmallPurpleSnake
+      prob: 0.007
+    - id: MobCobraSpace
+      prob: 0.007
+    - id: MobGiantSpiderAngry
+      prob: 0.007
+    - id: MobClownSpider
+      prob: 0.007
+    - id: MobLaserRaptor
+      prob: 0.007
+    - id: MobArgocyteEnforcer
+      prob: 0.007
+    - id: MobHivelord
+      prob: 0.007
 
 
 - type: entity
@@ -602,17 +612,19 @@
     weight: 6
     duration: 30 # DeltaV: was 60, used as a delay now
   - type: VentCrittersRule
-    min: 2
-    max: 7
-    playerRatio: 0
-    table: !type:GroupSelector # DeltaV: EntityTable instead of spawn entries
-      children:
-      - id: MobDinosaurPara
-      - id: MobDinosaurCompy
-      - id: MobDinosaurRaptor
-      - id: MobGoliath
-      - id: MobRatKing
-      - id: MobDinosaurDilo
+    entries: # 6 rolls at prob of 0.01 is around 6% chance that each spawn point will get a mob   (6 * 0.01 = 0.06) 
+    - id: MobDinosaurPara
+      prob: 0.01
+    - id: MobDinosaurCompy
+      prob: 0.01
+    - id: MobDinosaurRaptor
+      prob: 0.01
+    - id: MobGoliath
+      prob: 0.01
+    - id: MobRatKing
+      prob: 0.01
+    - id: MobDinosaurDilo
+      prob: 0.01
 
 
 - type: entity
@@ -628,20 +640,25 @@
     weight: 5
     duration: 30 # DeltaV: was 60, used as a delay now
   - type: VentCrittersRule
-    min: 1
-    max: 6
-    playerRatio: 0
-    table: !type:GroupSelector # DeltaV: EntityTable instead of spawn entries
-      children:
-      - id: MobDinosaurSpino
-      - id: MobDinosaurStego
-      - id: MobDinosaurTrike
-      - id: MobDinosaurTrex
-      - id: MobDinosaurKentro
-      - id: MobDragon
-      - id: MobRatKingBuff
-      - id: MobArgocyteLeviathing
-      - id: MobDinosaurAnki
+    entries: # 9 rolls at prob of 0.005 is around 4.5% chance that each spawn point will get a mob   (9 * 0.005 = 0.045)
+    - id: MobDinosaurSpino
+      prob: 0.005
+    - id: MobDinosaurStego
+      prob: 0.005
+    - id: MobDinosaurTrike
+      prob: 0.005
+    - id: MobDinosaurTrex
+      prob: 0.005
+    - id: MobDinosaurKentro
+      prob: 0.005
+    - id: MobDragon
+      prob: 0.005
+    - id: MobRatKingBuff
+      prob: 0.005
+    - id: MobArgocyteLeviathing
+      prob: 0.005
+    - id: MobDinosaurAnki
+      prob: 0.005
 
 - type: entity
   id: Xeno
@@ -656,24 +673,19 @@
     weight: 15
     duration: 30 # DeltaV: was 60, used as a delay now
   - type: VentCrittersRule
-    min: 4
-    max: 8
-    playerRatio: 0
-    table: !type:GroupSelector # DeltaV: EntityTable instead of spawn entries
-      children:
-      - id: MobXenoQueen
-      - id: MobXenoPraetorian
-      - id: MobXenoSpitter
-      - id: MobXenoDrone
-      - id: MobXenoRavager
-      - id: MobXenoRunner
-      - id: MobXenoPraetorian
-      - id: MobXenoSpitter
-      - id: MobXenoDrone
-      - id: MobXenoRavager
-      - id: MobXenoRunner
-      - id: MobXenoSpitter
-      - id: MobXenoDrone     #Dupes as a basic workaround to affect spawn chances  
+    entries: # 6 rolls at an average prob of 0.014 is around 8.4% chance that each spawn point will get a mob   (6 * 0.014 = 0.084)
+    - id: MobXenoQueen
+      prob: 0.007
+    - id: MobXenoPraetorian
+      prob: 0.014
+    - id: MobXenoSpitter
+      prob: 0.021
+    - id: MobXenoDrone
+      prob: 0.021
+    - id: MobXenoRavager
+      prob: 0.014
+    - id: MobXenoRunner
+      prob: 0.014
 
 - type: entity
   id: Easymob
@@ -688,31 +700,47 @@
     weight: 10
     duration: 30 # DeltaV: was 60, used as a delay now
   - type: VentCrittersRule
-    min: 8
-    max: 8
-    playerRatio: 0
-    table: !type:GroupSelector # DeltaV: EntityTable instead of spawn entries
-      children:
-      - id: MobBloodCultShade
-      - id: MobCorgiCerberus
-      - id: MobArgocyteFounder # not hostile
-      - id: MobCarpHolo
-      - id: MobCarpRainbow
-      - id: MobCarpMagic
-      - id: MobCarp
-      - id: MobArgocytePouncer
-      - id: MobGhoulProphet  # not hostile
-      - id: MobArgocyteSwiper
-      - id: MobHonkBot
-      - id: MobIronCrab
-      - id: MobQuartzCrab
-      - id: MobUraniumCrab
-      - id: MobSilverCrab
-      - id: MobArgocyteMolder
-      - id: MobJonkBot
-      - id: MobArgocyteHarvester
-      - id: MobArgocyteGlider
-      - id: MobArgocyteCrawler
+    entries: # 20 rolls at prob of 0.007 is around 14% chance that each spawn point will get a mob   (20 * 0.007 = 0.14)
+    - id: MobBloodCultShade
+      prob: 0.007
+    - id: MobCorgiCerberus
+      prob: 0.007
+    - id: MobArgocyteFounder # not hostile
+      prob: 0.007
+    - id: MobCarpHolo
+      prob: 0.007
+    - id: MobCarpRainbow
+      prob: 0.007
+    - id: MobCarpMagic
+      prob: 0.007
+    - id: MobCarp
+      prob: 0.007
+    - id: MobArgocytePouncer
+      prob: 0.007
+    - id: MobGhoulProphet  # not hostile
+      prob: 0.007
+    - id: MobArgocyteSwiper
+      prob: 0.007
+    - id: MobHonkBot
+      prob: 0.007
+    - id: MobIronCrab
+      prob: 0.007
+    - id: MobQuartzCrab
+      prob: 0.007
+    - id: MobUraniumCrab
+      prob: 0.007
+    - id: MobSilverCrab
+      prob: 0.007
+    - id: MobArgocyteMolder
+      prob: 0.007
+    - id: MobJonkBot
+      prob: 0.007
+    - id: MobArgocyteHarvester
+      prob: 0.007
+    - id: MobArgocyteGlider
+      prob: 0.007
+    - id: MobArgocyteCrawler
+      prob: 0.007
 
 - type: entity
   id: SyndyMoth
@@ -727,12 +755,9 @@
     weight: 7
     duration: 30 # DeltaV: was 60, used as a delay now
   - type: VentCrittersRule
-    min: 3
-    max: 8  # evil :)
-    playerRatio: 0
-    table: !type:GroupSelector # DeltaV: EntityTable instead of spawn entries
-      children:
-      - id: MobMothSyndy
+    entries:
+    - id: MobMothSyndy
+      prob: 0.20 # evil :)
 
 
 - type: entity
@@ -748,12 +773,9 @@
     weight: 3
     duration: 30 # DeltaV: was 60, used as a delay now
   - type: VentCrittersRule
-    min: 1
-    max: 4 
-    playerRatio: 0
-    table: !type:GroupSelector # DeltaV: EntityTable instead of spawn entries
-      children:
-      - id: MobCatSyndy
+    entries:
+    - id: MobCatSyndy
+      prob: 0.10
 
 - type: entity
   id: SyndyPenguin
@@ -768,12 +790,9 @@
     weight: 1
     duration: 30 # DeltaV: was 60, used as a delay now
   - type: VentCrittersRule
-    min: 1
-    max: 2  
-    playerRatio: 0
-    table: !type:GroupSelector # DeltaV: EntityTable instead of spawn entries
-      children:
-      - id: MobGrenadePenguin
+    entries:
+    - id: MobGrenadePenguin
+      prob: 0.05
 
 - type: entity
   id: ZombieOutbreak
