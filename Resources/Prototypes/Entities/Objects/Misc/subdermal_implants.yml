@@ -233,6 +233,7 @@
       implantAction: ActionActivateScramImplant
     - type: TriggerImplantAction
     - type: RandomTeleport
+    - type: ScramImplant
 
 - type: entity
   parent: BaseSubdermalImplant
@@ -381,6 +382,7 @@
    - type: Tag
      tags:
        - MindShield
+       - FragileImplant # Funky
 
 # Centcomm implants
 

@@ -62,14 +62,23 @@
 # SPDX-FileCopyrightText: 2024 metalgearsloth <31366439+metalgearsloth@users.noreply.github.com>
 # SPDX-FileCopyrightText: 2024 wafehling <wafehling@users.noreply.github.com>
 # SPDX-FileCopyrightText: 2024 yglop <95057024+yglop@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 Lillian Industries <47704287+luegamer@users.noreply.github.com>
 # SPDX-FileCopyrightText: 2025 Nemanja <98561806+EmoGarbage404@users.noreply.github.com>
 # SPDX-FileCopyrightText: 2025 QueerCats <jansencheng3@gmail.com>
+# SPDX-FileCopyrightText: 2025 ScarKy0 <scarky0@onet.eu>
 # SPDX-FileCopyrightText: 2025 Steve <marlumpy@gmail.com>
 # SPDX-FileCopyrightText: 2025 Tay <td12233a@gmail.com>
+# SPDX-FileCopyrightText: 2025 ThatOneMoon <91613003+ThatOneMoon@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 ThatOneMoon <juozas.dringelis@gmail.com>
+# SPDX-FileCopyrightText: 2025 Toaster <mrtoastymyroasty@gmail.com>
+# SPDX-FileCopyrightText: 2025 Toastermeister <215405651+Toastermeister@users.noreply.github.com>
 # SPDX-FileCopyrightText: 2025 UtopiOne <110351290+UtopiOne@users.noreply.github.com>
 # SPDX-FileCopyrightText: 2025 marc-pelletier <113944176+marc-pelletier@users.noreply.github.com>
 # SPDX-FileCopyrightText: 2025 pa.pecherskij <pa.pecherskij@interfax.ru>
 # SPDX-FileCopyrightText: 2025 taydeo <td12233a@gmail.com>
+# SPDX-FileCopyrightText: 2026 Doctor-Cpu <77215380+Doctor-Cpu@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2026 MaiaArai <158123176+YaraaraY@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2026 Xcybitt <197952719+Xcybitt@users.noreply.github.com>
 #
 # SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
 
@@ -400,6 +409,9 @@
       Cable: 5
       PlasmaGlass: 15
       MetalRod: 4
+  - type: Tag
+    tags:
+    - ExperimentalVesselMachineBoard
 
 - type: entity
   parent: BaseMachineCircuitboard
@@ -416,6 +428,9 @@
         Capacitor: 5
         PlasmaGlass: 5
         Cable: 5
+    - type: Tag
+      tags:
+      - AnomalySyncronizerCircuitBoard
 
 - type: entity
   parent: BaseMachineCircuitboard
@@ -639,6 +654,25 @@
       state: medical
     - type: MachineBoard
       prototype: ChemDispenserEmpty
+      stackRequirements:
+        Capacitor: 1
+        Glass: 1
+        Steel: 3
+      tagRequirements:
+        GlassBeaker:
+          amount: 2
+          defaultPrototype: Beaker
+
+- type: entity
+  id: ChemDispenserMedicalMachineCircuitboard
+  parent: BaseMachineCircuitboard
+  name: medical chem dispenser machine board
+  description: A machine printed circuit board for a medical chem dispenser.
+  components:
+    - type: Sprite
+      state: medical
+    - type: MachineBoard
+      prototype: ChemDispenserMedical
       stackRequirements:
         Capacitor: 1
         Glass: 1
@@ -1330,6 +1364,24 @@
             defaultPrototype: Beaker
 
 - type: entity
+  id: SmartFridgeMachineCircuitboard
+  parent: BaseMachineCircuitboard
+  name: SmartFridge machine board
+  description: A machine printed circuit board for a SmartFridge.
+  components:
+  - type: Sprite
+    state: service
+  - type: MachineBoard
+    prototype: SmartFridge
+    stackRequirements:
+      Glass: 5
+      Manipulator: 2
+    tagRequirements:
+      GlassBeaker:
+        amount: 2
+        defaultPrototype: Beaker
+
+- type: entity
   id: TelecomServerCircuitboard
   parent: BaseMachineCircuitboard
   name: telecommunication server machine board
@@ -1571,3 +1623,15 @@
     deconstructionTarget: null
     node: advancedheater
 # Assmos Change End
+
+- type: entity
+  parent: BaseMachineCircuitboard
+  id: WashingMachineCircuitboard
+  name: washing machine board
+  components:
+  - type: MachineBoard
+    prototype: WashingMachine
+    stackRequirements:
+      Steel: 1
+      Manipulator: 1
+      Cable: 1

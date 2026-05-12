@@ -44,12 +44,18 @@
 # SPDX-FileCopyrightText: 2024 metalgearsloth <31366439+metalgearsloth@users.noreply.github.com>
 # SPDX-FileCopyrightText: 2024 ninruB <38016303+asperger-sind@users.noreply.github.com>
 # SPDX-FileCopyrightText: 2025 88tv <131759102+88tv@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 Fr0goo <153249069+Fr0goo@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 Fr0goo <frogoofrog@outlook.com>
+# SPDX-FileCopyrightText: 2025 MaiaArai <158123176+YaraaraY@users.noreply.github.com>
 # SPDX-FileCopyrightText: 2025 Tay <td12233a@gmail.com>
 # SPDX-FileCopyrightText: 2025 Unkn0wn_Gh0st <shadowstalkermll@gmail.com>
+# SPDX-FileCopyrightText: 2025 YaraaraY <158123176+YaraaraY@users.noreply.github.com>
 # SPDX-FileCopyrightText: 2025 corresp0nd <46357632+corresp0nd@users.noreply.github.com>
 # SPDX-FileCopyrightText: 2025 pa.pecherskij <pa.pecherskij@interfax.ru>
 # SPDX-FileCopyrightText: 2025 slarticodefast <161409025+slarticodefast@users.noreply.github.com>
 # SPDX-FileCopyrightText: 2025 taydeo <td12233a@gmail.com>
+# SPDX-FileCopyrightText: 2026 Tea <Xerithin@gmail.com>
+# SPDX-FileCopyrightText: 2026 Xcybitt <197952719+Xcybitt@users.noreply.github.com>
 #
 # SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
 
@@ -221,6 +227,40 @@
     component:
     - type: SurgerySpeedModifier
       speedModifier: 1.75
+
+- type: entity
+  parent: [ClothingHandsButcherable, BaseCommandContraband]
+  id: ClothingHandsGlovesCMO
+  name: CMO's surgical grade gloves
+  description: High-quality surgical grade gloves made of nitrile and some other proprietary mixture of fabrics. The tight tolerances of the gloves make it easier to do surgery in them than normally possible with typical medical grade gloves.
+  components:
+  - type: Sprite
+    sprite: Clothing/Hands/Gloves/Color/color.rsi
+    layers:
+    - state: icon
+      color: "#3CB57C"
+  - type: Item
+    inhandVisuals:
+      left:
+      - state: inhand-left
+        color: "#3CB57C"
+      right:
+      - state: inhand-right
+        color: "#3CB57C"
+  - type: Clothing
+    sprite: Clothing/Hands/Gloves/Color/color.rsi
+    clothingVisuals:
+      gloves:
+      - state: equipped-HAND
+        color: "#3CB57C"
+  - type: Fiber
+    fiberMaterial: fibers-nitrile
+  - type: FingerprintMask
+  - type: SurgeryDirtiness # DeltaV - gloves that are likely to be used for surgery should have their bar visible from the getgo
+  - type: ClothingGrantComponent # funky - tie surgery speed to gloves
+    component:
+    - type: SurgerySpeedModifier
+      speedModifier: 2  #nyoom
 ####
 - type: entity
   parent: ClothingHandsButcherable
@@ -259,13 +299,13 @@
 - type: entity
   parent: ClothingHandsButcherable
   id: ClothingHandsGlovesRobohands
-  name: robohands gloves
-  description: Beep boop borp!
+  name: roboticist's gloves
+  description: Tekkou-styled fingerless gloves with a fingerloop. Won't protect you from live wires, but will look GREAT doing it.
   components:
   - type: Sprite
-    sprite: Clothing/Hands/Gloves/robohands.rsi
+    sprite: _Funkystation/Clothing/Hands/Gloves/robohands.rsi
   - type: Clothing
-    sprite: Clothing/Hands/Gloves/robohands.rsi
+    sprite: _Funkystation/Clothing/Hands/Gloves/robohands.rsi
   - type: Fiber
     fiberMaterial: fibers-leather
     fiberColor: fibers-black
@@ -292,6 +332,8 @@
           True: {state: icon-green}
           False: {state: icon}
   - type: Insulated
+    coefficient: 0.0
+    maxSiemensThreshold: 4
   - type: Fiber
     fiberMaterial: fibers-nanomachines
   - type: FingerprintMask
@@ -332,12 +374,16 @@
   description: These tactical gloves are fireproof and shock resistant.
   components:
   - type: Sprite
-    sprite: Clothing/Hands/Gloves/combat.rsi
+    sprite: _Funkystation/Clothing/Hands/Gloves/combat.rsi
   - type: Clothing
-    sprite: Clothing/Hands/Gloves/combat.rsi
+    sprite: _Funkystation/Clothing/Hands/Gloves/combat.rsi
   - type: Insulated
   - type: Fiber
     fiberMaterial: fibers-insulative
+  - type: DamageOnShootProtection #imp
+    damageProtection:
+      flatReductions:
+        Blunt: 4
 
 # can't parent combat gloves since they are butcherable
 - type: entity
@@ -351,6 +397,8 @@
   - type: Clothing
     sprite: Clothing/Hands/Gloves/tacticalmaidgloves.rsi
   - type: Insulated
+    coefficient: 0.0
+    maxSiemensThreshold: 4
   - type: Fiber
     fiberColor: fibers-black
 
@@ -364,6 +412,7 @@
     sprite: Clothing/Hands/Gloves/mercbattle.rsi
   - type: Clothing
     sprite: Clothing/Hands/Gloves/mercbattle.rsi
+  - type: Insulated
   - type: Butcherable
     butcheringType: Knife
     spawned:
@@ -371,6 +420,10 @@
   - type: Fiber
     fiberMaterial: fibers-insulative
     fiberColor: fibers-olive
+  - type: DamageOnShootProtection #imp
+    damageProtection:
+      flatReductions:
+        Blunt: 3
 
 - type: entity
   parent: ClothingHandsButcherable
@@ -514,6 +567,52 @@
     fiberMaterial: fibers-rubber
     fiberColor: fibers-yellow
   - type: FingerprintMask
+
+- type: entity
+  parent: ClothingHandsBase
+  id: ClothingHandsBlueGlovesJanitor
+  name: blue rubber gloves
+  description: High-quality rubber gloves, squeaky to do some cleaning!
+  components:
+  - type: Sprite
+    sprite: Clothing/Hands/Gloves/janitorblue.rsi
+  - type: Clothing
+    sprite: Clothing/Hands/Gloves/janitorblue.rsi
+  - type: Fiber
+    fiberMaterial: fibers-rubber
+    fiberColor: fibers-blue
+  - type: FingerprintMask
+
+- type: entity
+  parent: ClothingHandsBase
+  id: ClothingHandsOrangeGlovesJanitor
+  name: orange rubber gloves
+  description: High-quality rubber gloves, squeaky to do some cleaning!
+  components:
+  - type: Sprite
+    sprite: Clothing/Hands/Gloves/janitororange.rsi
+  - type: Clothing
+    sprite: Clothing/Hands/Gloves/janitororange.rsi
+  - type: Fiber
+    fiberMaterial: fibers-rubber
+    fiberColor: fibers-orange
+  - type: FingerprintMask
+
+- type: entity
+  parent: ClothingHandsBase
+  id: ClothingHandsPurpleGlovesJanitor
+  name: purple rubber gloves
+  description: High-quality rubber gloves, squeaky to do some cleaning!
+  components:
+  - type: Sprite
+    sprite: Clothing/Hands/Gloves/janitorpurple.rsi
+  - type: Clothing
+    sprite: Clothing/Hands/Gloves/janitorpurple.rsi
+  - type: Fiber
+    fiberMaterial: fibers-rubber
+    fiberColor: fibers-purple
+  - type: FingerprintMask
+
 
 #Knuckledusters
 - type: entity
@@ -705,3 +804,55 @@
   - type: Tag
     tags: [] # ignore "WhitelistChameleon" tag
 
+- type: entity
+  parent: [ClothingHandsBase, BaseSecurityContraband]
+  id: ClothingHandsSecurityKnuckleDusters
+  name: security knuckle dusters
+  description: "Cold steel knuckle dusters, makes your punches hit much harder. These make it easier to beat up tiders."
+  components:
+  - type: Sprite
+    sprite: Clothing/Hands/Gloves/KnuckleDusters/knuckleduster.rsi
+    state: knuckleduster
+  - type: Clothing
+    sprite: Clothing/Hands/Gloves/KnuckleDusters/knuckleduster.rsi
+  - type: Fiber
+    fiberColor: fibers-silver
+  - type: MeleeWeapon
+    attackRate: 1.5
+    damage:
+      types:
+        Blunt: 10 #Damaged focus unlike Rigged or Northstars which are stun and speed focus #nerf because you can't slip these out of your hand or disarm it
+    soundHit:
+      collection: Punch
+    animation: WeaponArcFist
+    mustBeEquippedToUse: true
+  - type: Tag
+    tags:
+    - WhitelistChameleon
+
+- type: entity
+  parent: [ClothingHandsBase, BaseSecurityContraband]
+  id: ClothingHandsTruncheonKnuckleDusters
+  name: security truncheon knuckle dusters
+  description: "Knuckle dusters made of steel and plastic, designed to ensure someone gets knocked down and stays down."
+  components:
+  - type: Sprite
+    sprite: Clothing/Hands/Gloves/KnuckleDusters/knuckleduster.rsi
+    state: knuckleduster
+  - type: Clothing
+    sprite: Clothing/Hands/Gloves/KnuckleDusters/knuckleduster.rsi
+  - type: Fiber
+    fiberColor: fibers-silver
+  - type: MeleeWeapon
+    attackRate: 1.5
+    damage:
+      types:
+        Blunt: 12 #these are unshackled, normal knuckles but better. Should be more in line-ish with truncheons.
+    soundHit:
+      collection: Punch
+    bluntStaminaDamageFactor: 1.5
+    animation: WeaponArcFist
+    mustBeEquippedToUse: true
+  - type: Tag
+    tags:
+    - WhitelistChameleon

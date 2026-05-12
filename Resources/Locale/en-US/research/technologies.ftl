@@ -54,7 +54,8 @@ research-technology-uranium-munitions = Uranium Munitions
 research-technology-explosive-technology = Explosive Technology
 research-technology-special-means = Special Means
 research-technology-weaponized-laser-manipulation = Weaponized Laser Manipulation
-research-technology-nonlethal-ammunition = Nonlethal Ammunition
+# Funky - Made name more accurate
+research-technology-nonlethal-ammunition = Less-Lethal Ammunition
 research-technology-practice-ammunition = Practice Ammunition
 research-technology-concentrated-laser-weaponry = Concentrated Laser Weaponry
 research-technology-wave-particle-harnessing = Wave Particle Harnessing
@@ -63,6 +64,7 @@ research-technology-portable-microfusion-weaponry = Portable Microfusion Weaponr
 research-technology-experimental-battery-ammo = Experimental Battery Ammo
 research-technology-basic-shuttle-armament = Shuttle basic armament
 research-technology-advanced-shuttle-weapon = Advanced shuttle weapons
+research-technology-kinetic-modifications = Kinetic Modifications
 
 research-technology-basic-robotics = Basic Robotics
 research-technology-basic-anomalous-research = Basic Anomalous Research
@@ -97,3 +99,5 @@ research-technology-advanced-spray = Advanced Spray
 research-technology-bluespace-cargo-transport = Bluespace Cargo Transport
 research-technology-quantum-fiber-weaving = Quantum Fiber Weaving
 research-technology-bluespace-chemistry = Bluespace Chemistry
+research-technology-homebrewed-implants = Homebrewed Implants
+

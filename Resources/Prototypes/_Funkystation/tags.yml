@@ -3,6 +3,7 @@
 # SPDX-FileCopyrightText: 2025 Binbag <124107163+Binbagg@users.noreply.github.com>
 # SPDX-FileCopyrightText: 2025 Eris <erisfiregamer1@gmail.com>
 # SPDX-FileCopyrightText: 2025 Mish <bluscout78@yahoo.com>
+# SPDX-FileCopyrightText: 2025 SigmaTheDragon <162711378+SigmaTheDragon@users.noreply.github.com>
 # SPDX-FileCopyrightText: 2025 Tay <td12233a@gmail.com>
 # SPDX-FileCopyrightText: 2025 Teasq <Xerithin@gmail.com>
 # SPDX-FileCopyrightText: 2025 TheSecondLord <88201625+TheSecondLord@users.noreply.github.com>
@@ -11,11 +12,20 @@
 # SPDX-FileCopyrightText: 2025 misghast <51974455+misterghast@users.noreply.github.com>
 # SPDX-FileCopyrightText: 2025 mkanke-real <mikekanke@gmail.com>
 # SPDX-FileCopyrightText: 2025 taydeo <td12233a@gmail.com>
+# SPDX-FileCopyrightText: 2026 AftrLite <61218133+AftrLite@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2026 MaiaArai <158123176+YaraaraY@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2026 Steve <marlumpy@gmail.com>
+# SPDX-FileCopyrightText: 2026 Xcybitt <197952719+Xcybitt@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2026 YaraaraY <158123176+YaraaraY@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2026 marc-pelletier <113944176+marc-pelletier@users.noreply.github.com>
 #
 # SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
 
 - type: Tag
   id: DawInstrumentMachineCircuitboard
+
+- type: Tag
+  id: Cash
 
 - type: Tag
   id: ChitinSharkminnow
@@ -82,3 +92,63 @@
 
 - type: Tag
   id: CardboardboxLargeFlat
+
+- type: Tag
+  id: CartridgePistolLarge
+
+- type: Tag
+  id: MagazinePistolLarge
+
+- type: Tag
+  id: RevolverSalamander
+
+- type: Tag
+  id: ListeningBug
+
+- type: Tag
+  id: DefibrillatorCompact
+
+- type: Tag
+  id: OxygenTank
+
+- type: Tag
+  id: NitrogenTank
+
+- type: Tag
+  id: NitrousOxideTank
+
+- type: Tag
+  id: PlasmaTank
+
+- type: Tag
+  id: AirTank
+
+- type: Tag
+  id: ExtendedEmergencyNitrogenTank
+
+- type: Tag
+  id: Multiphase
+
+- type: Tag
+  id: FragileImplant
+
+- type: Tag
+  id: UraniumSheet
+
+- type: Tag
+  id: PlasmaSheet
+
+- type: Tag
+  id: MailEnvelope
+
+- type: Tag
+  id: DAGDUplink
+
+- type: Tag
+  id: FitsInMedDispenser
+  
+- type: Tag
+  id: GrenadeLessLethal
+  
+- type: Tag  
+  id: SafetyGogglesBase

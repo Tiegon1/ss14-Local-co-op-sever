@@ -28,6 +28,9 @@
 // SPDX-FileCopyrightText: 2024 metalgearsloth <31366439+metalgearsloth@users.noreply.github.com>
 // SPDX-FileCopyrightText: 2024 slarticodefast <161409025+slarticodefast@users.noreply.github.com>
 // SPDX-FileCopyrightText: 2025 Tay <td12233a@gmail.com>
+// SPDX-FileCopyrightText: 2025 TheHolyAegis <76066612+TheHolyAegis@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2025 TheHolyAegis <sanderkamphuis719@gmail.com>
+// SPDX-FileCopyrightText: 2025 YaraaraY <158123176+YaraaraY@users.noreply.github.com>
 // SPDX-FileCopyrightText: 2025 pa.pecherskij <pa.pecherskij@interfax.ru>
 // SPDX-FileCopyrightText: 2025 taydeo <td12233a@gmail.com>
 //
@@ -69,6 +72,9 @@ namespace Content.Shared.Roles
 
         [ViewVariables(VVAccess.ReadOnly)]
         public string LocalizedName => Loc.GetString(Name);
+
+        [DataField]
+        public HashSet<ProtoId<JobAlternateTitlePrototype>>? AlternateTitles { get; private set; } = default!;
 
         /// <summary>
         ///     The name of this job as displayed to players.
@@ -113,7 +119,7 @@ namespace Content.Shared.Roles
         ///     Whether this job should show in the ID Card Console.
         ///     If set to null, it will default to SetPreference's value.
         /// </summary>
-        [DataField]
+        [DataField("overrideConsoleVisibility")]
         public bool? OverrideConsoleVisibility { get; private set; } = null;
 
         [DataField("canBeAntag")]

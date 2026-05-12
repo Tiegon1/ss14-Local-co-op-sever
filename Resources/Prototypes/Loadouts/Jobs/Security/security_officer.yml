@@ -6,8 +6,17 @@
 # SPDX-FileCopyrightText: 2024 SpeltIncorrectyl <66873282+SpeltIncorrectyl@users.noreply.github.com>
 # SPDX-FileCopyrightText: 2024 Tadeo <td12233a@gmail.com>
 # SPDX-FileCopyrightText: 2024 metalgearsloth <31366439+metalgearsloth@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 Fr0goo <frogoofrog@outlook.com>
+# SPDX-FileCopyrightText: 2025 Mora <46364955+TrixxedHeart@users.noreply.github.com>
 # SPDX-FileCopyrightText: 2025 Teasq <Xerithin@gmail.com>
+# SPDX-FileCopyrightText: 2025 TrixxedHeart <46364955+TrixxedBit@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 W.xyz() <tptechteam@gmail.com>
 # SPDX-FileCopyrightText: 2025 taydeo <td12233a@gmail.com>
+# SPDX-FileCopyrightText: 2025 w.xyz() <84605679+pirakaplant@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2026 Frogoo <153249069+Fr0goo@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2026 Tea <Xerithin@gmail.com>
+# SPDX-FileCopyrightText: 2026 ThatOneMoon <91613003+ThatOneMoon@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2026 ThatOneMoon <juozas.dringelis@gmail.com>
 #
 # SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
 
@@ -64,51 +73,68 @@
     eyes: ClothingEyesGlassesSecurity
 
 - type: loadout
+  id: SecurityHud
+  equipment:
+    eyes: ClothingEyesHudSecurity
+
+- type: loadout
+  id: SecurityEyepatch
+  equipment:
+    eyes: ClothingEyesEyepatchHudSecurity
+
+- type: loadout
   id: SecurityJamjarGlasses
   equipment:
     eyes: ClothingEyesGlassesSecjar
 
 # Jumpsuit
 - type: loadout
-  id: SecurityJumpsuit
+  id: SecurityFatigues
   equipment:
-    jumpsuit: ClothingUniformJumpsuitSec
+    jumpsuit: ClothingUniformJumpsuitSecBase
+  groupBy: "fatigues"
 
 - type: loadout
-  id: SecurityJumpskirt
+  id: SecurityDress
   equipment:
-    jumpsuit: ClothingUniformJumpskirtSec
+    jumpsuit: ClothingUniformSecurityDressBase
+  groupBy: "dress"
 
 - type: loadout
-  id: SecurityJumpsuitGrey
+  id: SecurityDressSkirt
   equipment:
-    jumpsuit: ClothingUniformJumpsuitSecGrey
+    jumpsuit: ClothingUniformSecurityDressSkirtBase
+  groupBy: "dress"
 
 - type: loadout
-  id: SecurityJumpskirtGrey
-  equipment:
-    jumpsuit: ClothingUniformJumpskirtSecGrey
-
-- type: loadout
-  id: TrooperUniform
-  equipment: 
-    jumpsuit: ClothingUniformSecurityTrooper
-
-- type: loadout
-  id: SeniorOfficerJumpsuit
+  id: SecuritySeniorDress
   effects:
   - !type:GroupLoadoutEffect
     proto: SeniorOfficer
   equipment:
-    jumpsuit: ClothingUniformJumpsuitSeniorOfficer
+    jumpsuit: ClothingUniformSecurityDressSenior
+  groupBy: "dress"
 
 - type: loadout
-  id: SeniorOfficerJumpskirt
+  id: SecuritySeniorDressSkirt
   effects:
   - !type:GroupLoadoutEffect
     proto: SeniorOfficer
   equipment:
-    jumpsuit: ClothingUniformJumpskirtSeniorOfficer
+    jumpsuit: ClothingUniformSecurityDressSkirtSenior
+  groupBy: "dress"
+
+- type: loadout
+  id: SecurityMess
+  equipment:
+    jumpsuit: ClothingUniformSecurityMessBase
+  groupBy: "mess"
+
+- type: loadout
+  id: SecurityMessSkirt
+  equipment:
+    jumpsuit: ClothingUniformSecurityMessSkirtBase
+  groupBy: "mess"
 
 # Back
 - type: loadout
@@ -142,16 +168,25 @@
   id: ArmorVest
   equipment:
     outerClothing: ClothingOuterArmorBasic
+  groupBy: "armor"
 
 - type: loadout
   id: ArmorVestSlim
   equipment:
     outerClothing: ClothingOuterArmorBasicSlim
+  groupBy: "armor"
 
 - type: loadout
   id: SecurityOfficerWintercoat
   equipment:
     outerClothing: ClothingOuterWinterSec
+
+# Gloves - Funky
+
+- type: loadout
+  id: FingerlessGloves
+  equipment:
+    gloves: ClothingHandsGlovesFingerless
 
 # Shoes
 - type: loadout
@@ -183,6 +218,19 @@
   equipment:
     id: SeniorOfficerPDA
 
+# Service Weapon
+- type: loadout
+  id: SecurityOfficerEnergyGun
+  storage:
+    back:
+    - WeaponEnergyGunEnergyPistol
+
+- type: loadout
+  id: SecurityOfficerPistol
+  storage:
+    back:
+    - WeaponPistolMk58
+
 # Misc
 - type: loadout
   id: SecStar
@@ -192,4 +240,4 @@
   storage:
     back:
     - Dinkystar
-    
+

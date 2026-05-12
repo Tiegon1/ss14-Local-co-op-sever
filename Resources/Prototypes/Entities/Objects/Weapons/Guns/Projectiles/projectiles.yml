@@ -45,6 +45,7 @@
 # SPDX-FileCopyrightText: 2023 lzk <124214523+lzk228@users.noreply.github.com>
 # SPDX-FileCopyrightText: 2023 vanx <61917534+Vaaankas@users.noreply.github.com>
 # SPDX-FileCopyrightText: 2023 vanx <vanx#5477>
+# SPDX-FileCopyrightText: 2024 Aiden <aiden@djkraz.com>
 # SPDX-FileCopyrightText: 2024 Aidenkrz <aiden@djkraz.com>
 # SPDX-FileCopyrightText: 2024 Arendian <137322659+Arendian@users.noreply.github.com>
 # SPDX-FileCopyrightText: 2024 Aviu00 <93730715+Aviu00@users.noreply.github.com>
@@ -58,18 +59,25 @@
 # SPDX-FileCopyrightText: 2024 John Space <bigdumb421@gmail.com>
 # SPDX-FileCopyrightText: 2024 Kara <lunarautomaton6@gmail.com>
 # SPDX-FileCopyrightText: 2024 MaloTV <70515562+MaloTV@users.noreply.github.com>
-# SPDX-FileCopyrightText: 2024 Nemanja <98561806+EmoGarbage404@users.noreply.github.com>
 # SPDX-FileCopyrightText: 2024 Plykiya <58439124+Plykiya@users.noreply.github.com>
 # SPDX-FileCopyrightText: 2024 PoTeletubby <ajcraigaz@gmail.com>
 # SPDX-FileCopyrightText: 2024 Tadeo <td12233a@gmail.com>
 # SPDX-FileCopyrightText: 2024 metalgearsloth <31366439+metalgearsloth@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 DrSmugleaf <10968691+DrSmugleaf@users.noreply.github.com>
 # SPDX-FileCopyrightText: 2025 JoulesBerg <104539820+JoulesBerg@users.noreply.github.com>
 # SPDX-FileCopyrightText: 2025 Tay <td12233a@gmail.com>
-# SPDX-FileCopyrightText: 2025 ThatOneMoon <juozas.dringelis@gmail.com>
+# SPDX-FileCopyrightText: 2025 Toaster <mrtoastymyroasty@gmail.com>
+# SPDX-FileCopyrightText: 2025 Toastermeister <215405651+Toastermeister@users.noreply.github.com>
 # SPDX-FileCopyrightText: 2025 kbarkevich <24629810+kbarkevich@users.noreply.github.com>
 # SPDX-FileCopyrightText: 2025 pa.pecherskij <pa.pecherskij@interfax.ru>
-# SPDX-FileCopyrightText: 2025 slarticodefast <161409025+slarticodefast@users.noreply.github.com>
-# SPDX-FileCopyrightText: 2025 taydeo <td12233a@gmail.com>
+# SPDX-FileCopyrightText: 2026 Mora <46364955+TrixxedHeart@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2026 Nemanja <98561806+EmoGarbage404@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2026 ThatOneMoon <91613003+ThatOneMoon@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2026 ThatOneMoon <juozas.dringelis@gmail.com>
+# SPDX-FileCopyrightText: 2026 TrixxedHeart <46364955+TrixxedBit@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2026 Xcybitt <197952719+Xcybitt@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2026 slarticodefast <161409025+slarticodefast@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2026 taydeo <td12233a@gmail.com>
 #
 # SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
 
@@ -128,7 +136,6 @@
   abstract: true
   components:
   - type: Reflective
-  - type: FlyBySound
   - type: Clickable
   - type: Sprite
     noRot: false
@@ -150,15 +157,6 @@
         mask:
         - Impassable
         - BulletImpassable
-      fly-by: &flybyfixture
-        shape: !type:PhysShapeCircle
-          radius: 1.5
-        layer:
-        - Impassable
-        - MidImpassable
-        - HighImpassable
-        - LowImpassable
-        hard: False
   - type: Projectile
     impactEffect: BulletImpactEffect
     damage:
@@ -168,6 +166,7 @@
       path: /Audio/Weapons/Guns/Hits/bullet_hit.ogg
   - type: TimedDespawn
     lifetime: 10
+  - type: LagCompensation
 
 - type: entity
   id: BaseBulletTrigger # Trigger-on-collide bullets
@@ -190,7 +189,6 @@
         mask:
         - Impassable
         - BulletImpassable
-      fly-by: *flybyfixture
 
 - type: entity
   id: BaseBulletPractice
@@ -286,7 +284,6 @@
         mask:
           - Impassable
           - BulletImpassable
-      fly-by: *flybyfixture
   - type: Ammo
   - type: Projectile
     damage:
@@ -314,6 +311,7 @@
       params:
         volume: 5
   - type: Sprite
+    noRot: false
     sprite: Objects/Weapons/Guns/Projectiles/projectiles_tg.rsi
     layers:
     - state: omnilaser
@@ -327,11 +325,19 @@
           bounds: "-0.15,-0.3,0.15,0.3"
         hard: false
         mask:
-        - Opaque # Goobstation
-      fly-by: *flybyfixture
+        - Opaque
+      fly-by: # Inlined definition to avoid anchor issues
+        shape: !type:PhysShapeCircle
+          radius: 0.6
+        layer:
+        - Impassable
+        - MidImpassable
+        - HighImpassable
+        - LowImpassable
+        hard: false
   - type: Ammo
-  - type: StaminaDamageOnCollide
-    damage: 33
+#  - type: StaminaDamageOnCollide # _Funkystation removed stamina damage from disablers
+#    damage: 33
   - type: Projectile
     impactEffect: BulletImpactEffectDisabler
     damage:
@@ -341,6 +347,13 @@
     soundHit:
       collection: WeakHit
     forceSound: true
+  - type: StunOnCollide # _Funkystation change
+    stunAmount: 0 # NO STUN
+    knockdownAmount: 0 # NO KNOCKDOWN
+    slowdownAmount: 1 # YOU WILL CHASE TIDERS WITH YOUR BATON LIKE A REAL SECOFF
+    walkSpeedMultiplier: 0.8
+    runSpeedMultiplier: 0.8
+    slowdownCap: 0.5 # Prevents from being able to be locked into a stand-still
 
 - type: entity
   name : disabler bolt practice
@@ -354,6 +367,7 @@
       params:
         volume: 5
   - type: Sprite
+    noRot: false
     sprite: Objects/Weapons/Guns/Projectiles/projectiles_tg.rsi
     layers:
     - state: omnilaser
@@ -367,8 +381,16 @@
           bounds: "-0.15,-0.3,0.15,0.3"
         hard: false
         mask:
-        - Opaque # Goobstation
-      fly-by: *flybyfixture
+        - Opaque
+      fly-by: # Inlined definition to avoid anchor issues
+        shape: !type:PhysShapeCircle
+          radius: 0.6
+        layer:
+        - Impassable
+        - MidImpassable
+        - HighImpassable
+        - LowImpassable
+        hard: false
   - type: Ammo
   - type: StaminaDamageOnCollide
     damage: 1
@@ -405,7 +427,6 @@
         hard: false
         mask:
         - Opaque
-      fly-by: *flybyfixture
   - type: Projectile
 #   soundHit:  Waiting on serv3
     damage:
@@ -447,7 +468,6 @@
         hard: false
         mask:
         - Opaque
-      fly-by: *flybyfixture
   - type: Projectile
     #   soundHit:  Waiting on serv3
     impactEffect: BulletImpactEffectDisabler
@@ -481,6 +501,45 @@
     heat: 50000
 
 - type: entity
+  parent: BaseBullet
+  id: BasiliskRay
+  name: basilisk ray
+  categories: [ HideSpawnMenu ]
+  components:
+# - type: FlyBySound
+#   sound:
+#      collection: EnergyMiss
+#      params:
+#        volume: 5
+  - type: Sprite
+    sprite: Objects/Weapons/Guns/Projectiles/projectiles_tg.rsi
+    layers:
+    - state: ice
+      shader: unshaded
+  - type: Ammo
+    muzzleFlash: null
+  - type: Physics
+#  - type: Fixtures
+#    fixtures:
+#      projectile:
+#        shape:
+#          !type:PhysShapeAabb
+#          bounds: "-0.2,-0.2,0.2,0.2"
+#        hard: false
+#        mask:
+#        - Opaque
+#      fly-by: *flybyfixture
+  - type: Projectile
+    impactEffect: BulletImpactEffectDisabler
+    damage:
+      types:
+        Cold: 5
+  - type: TimedDespawn
+    lifetime: 3
+  - type: ChangeTemperatureOnCollide
+    heat: -50000
+
+- type: entity
   id: BulletKinetic
   name: kinetic bolt
   parent: BaseBullet
@@ -504,7 +563,7 @@
         Structural: 30
   # Short lifespan
   - type: TimedDespawn
-    lifetime: 0.4
+    lifetime: 0.3
 #  - type: GatheringProjectile # Funky Station
 
 - type: entity
@@ -598,7 +657,6 @@
         hard: false
         mask:
         - Opaque
-      fly-by: *flybyfixture
   - type: Projectile
     damage:
       types:
@@ -797,7 +855,7 @@
     deleteOnCollide: false
     damage:
       types:
-        Blunt: 1
+        Blunt: 20 #on par with two beanbag hits, cause 80 stam damage is that
     soundHit:
       path: /Audio/Effects/gen_hit.ogg
   - type: StaminaDamageOnCollide
@@ -834,6 +892,27 @@
     range: 7
   - type: SpawnOnTrigger
     proto: GrenadeFlashEffect
+  - type: ActiveTimerTrigger
+    timeRemaining: 0.3
+  - type: DeleteOnTrigger
+
+- type: entity
+  id: BulletGrenadeTear
+  name: tear gas grenade
+  parent: BaseBulletTrigger
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: Sprite
+    sprite: Objects/Weapons/Guns/Projectiles/projectiles2.rsi
+    layers:
+      - state: grenade
+  - type: SmokeOnTrigger
+    duration: 10
+    spreadAmount: 30
+    solution:
+      reagents:
+      - ReagentId: TearGas
+        Quantity: 50
   - type: ActiveTimerTrigger
     timeRemaining: 0.3
   - type: DeleteOnTrigger
@@ -1024,6 +1103,7 @@
       params:
         volume: 5
   - type: Sprite
+    noRot: false
     sprite: Objects/Weapons/Guns/Projectiles/projectiles_tg.rsi
     layers:
     - state: omnilaser
@@ -1037,8 +1117,16 @@
           bounds: "-0.15,-0.3,0.15,0.3"
         hard: false
         mask:
-        - Opaque # Goobstation
-      fly-by: *flybyfixture
+        - Opaque
+      fly-by: # Inlined definition to avoid anchor issues
+        shape: !type:PhysShapeCircle
+          radius: 0.6
+        layer:
+        - Impassable
+        - MidImpassable
+        - HighImpassable
+        - LowImpassable
+        hard: false
   - type: Ammo
   - type: StaminaDamageOnCollide
     damage: 15
@@ -1081,7 +1169,15 @@
         hard: false
         mask:
         - Opaque
-      fly-by: *flybyfixture
+      fly-by:
+        shape: !type:PhysShapeCircle
+          radius: 0.6
+        layer:
+        - Impassable
+        - MidImpassable
+        - HighImpassable
+        - LowImpassable
+        hard: false
   - type: Ammo
 
 - type: entity
@@ -1147,6 +1243,10 @@
     deleteOnCollide: false
     soundHit:
       path: /Audio/Weapons/Guns/Hits/bullet_hit.ogg
+    damage:
+      types:
+        Ion: 50
+        Shock: 20
   - type: LightningArcShooter
     arcDepth: 1
     maxLightningArc: 3
@@ -1190,7 +1290,6 @@
         mask:
         - Impassable
         - BulletImpassable
-      fly-by: *flybyfixture
   - type: Ammo
   - type: Projectile
     impactEffect: BulletImpactEffectOrangeDisabler
@@ -1230,3 +1329,44 @@
     proto: BulletDisablerSmg
     count: 3 #bit stronger than a disabler if you hit your shots you goober, still not a 2 hit stun though
     spread: 9
+
+#- type: entity
+#  parent: BaseBullet
+#  id: EnergyCrossbowBoltWizden #imp - see the _Impstation directory for the version we use
+#  categories: [ HideSpawnMenu ]
+#  name: energy bolt
+#  description: This'll hurt.
+#  components:
+#  - type: Reflective
+#    reflective:
+#    - NonEnergy
+#  - type: Ammo
+#    muzzleFlash: null
+#  - type: Sprite
+#    sprite: _Funkystation/Objects/Weapons/Projectiles/energybolts.rsi
+#    layers:
+#    - state: mediumpurp
+#      shader: unshaded
+#  - type: Projectile
+#    damage:
+#      types:
+#        Piercing: 2
+#  - type: StunOnCollide #somewhat mirror to taser stats, meant to be tot 'sidegrade'
+#    stunAmount: 0
+#    knockdownAmount: 2.5
+#    slowdownAmount: 2.5
+#    walkSpeedModifier: 0.2
+#    sprintSpeedModifier: 0.2
+#    drop: false
+#  - type: StaminaDamageOnCollide #additional stam damage to make repeated pushups less of a viable counter
+#    damage: 45
+#  - type: SolutionContainerManager
+#    solutions:
+#      bolt:
+#        maxVol: 1.5
+#        reagents:
+#        - ReagentId: Toxin
+#         Quantity: 1.5
+#  - type: SolutionInjectOnProjectileHit
+#    transferAmount: 1.5
+#    solution: bolt

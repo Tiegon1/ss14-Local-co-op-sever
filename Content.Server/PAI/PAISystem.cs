@@ -17,9 +17,14 @@
 // SPDX-FileCopyrightText: 2024 Leon Friedrich <60421075+ElectroJr@users.noreply.github.com>
 // SPDX-FileCopyrightText: 2024 metalgearsloth <31366439+metalgearsloth@users.noreply.github.com>
 // SPDX-FileCopyrightText: 2025 ArchRBX <5040911+ArchRBX@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2025 Sophia Rustfield <gitlab@catwolf.xyz>
+// SPDX-FileCopyrightText: 2025 SpaceCat~Chan <49094338+SpaceCat-Chan@users.noreply.github.com>
 // SPDX-FileCopyrightText: 2025 Tay <td12233a@gmail.com>
+// SPDX-FileCopyrightText: 2025 archrbx <punk.gear5260@fastmail.com>
+// SPDX-FileCopyrightText: 2025 jackel234 <52829582+jackel234@users.noreply.github.com>
 // SPDX-FileCopyrightText: 2025 pa.pecherskij <pa.pecherskij@interfax.ru>
 // SPDX-FileCopyrightText: 2025 taydeo <td12233a@gmail.com>
+// SPDX-FileCopyrightText: 2026 Currot <carpecarrot@gmail.com>
 //
 // SPDX-License-Identifier: MIT
 
@@ -38,6 +43,9 @@ using Content.Shared.Instruments;
 using Robust.Shared.Random;
 using Robust.Shared.Prototypes;
 using System.Text;
+using Robust.Server.Containers;
+using Content.Shared.PDA;
+using Robust.Shared.Player;
 
 namespace Content.Server.PAI;
 
@@ -49,6 +57,8 @@ public sealed class PAISystem : SharedPAISystem
     [Dependency] private readonly SharedPopupSystem _popup = default!;
     [Dependency] private readonly StoreSystem _store = default!;
     [Dependency] private readonly ToggleableGhostRoleSystem _toggleableGhostRole = default!;
+    [Dependency] private readonly ContainerSystem _containerSystem = default!;
+    [Dependency] private readonly SharedUserInterfaceSystem _ui = default!;
 
     /// <summary>
     /// Possible symbols that can be part of a scrambled pai's name.
@@ -65,6 +75,7 @@ public sealed class PAISystem : SharedPAISystem
         SubscribeLocalEvent<PAIComponent, BeingMicrowavedEvent>(OnMicrowaved);
 
         SubscribeLocalEvent<PAIComponent, PAIShopActionEvent>(OnShop);
+        SubscribeLocalEvent<PAIComponent, PAIOpenPdaActionEvent>(OnOpenPda);
     }
 
     private void OnUseInHand(EntityUid uid, PAIComponent component, UseInHandEvent args)
@@ -140,6 +151,27 @@ public sealed class PAISystem : SharedPAISystem
         _store.ToggleUi(args.Performer, ent, store);
     }
 
+    private void OnOpenPda(Entity<PAIComponent> ent, ref PAIOpenPdaActionEvent args)
+    {
+        if (!_containerSystem.TryGetContainingContainer(ent.Owner, out var container))
+        {
+            // not contained in anything
+            return;
+        }
+        if (!TryComp<PdaComponent>(container.Owner, out var pda_comp) ||
+            !TryComp<UserInterfaceComponent>(container.Owner, out var ui_comp) ||
+            !TryComp<ActorComponent>(ent.Owner, out var actor))
+        {
+            // not contained in a PDA or the PDA has no ui for some reason
+            return;
+        }
+        if (!_ui.TryToggleUi((container.Owner, ui_comp), PdaUiKey.Key, actor.PlayerSession))
+        {
+            // failed to open the ui
+            return;
+        }
+    }
+
     public void PAITurningOff(EntityUid uid)
     {
         //  Close the instrument interface if it was open
@@ -147,6 +179,17 @@ public sealed class PAISystem : SharedPAISystem
         if (HasComp<ActiveInstrumentComponent>(uid))
         {
             _instrumentSystem.ToggleInstrumentUi(uid, uid);
+        }
+
+        //Reset store
+        if (TryComp<StoreComponent>(uid, out var store)) //Basically just remove and re-add the store component to the pAI, then call ResetPAI from Content.Shared.PAI to remove the encryption key component
+        {
+            RemComp<StoreComponent>(uid);
+            store = EnsureComp<StoreComponent>(uid);
+            store.Categories = new() {"PAIAbilities"};
+            store.CurrencyWhitelist.Add("SiliconMemory");
+            store.Balance["SiliconMemory"] = 30;
+            ResetPAI(uid);
         }
 
         //  Stop instrument

@@ -48,8 +48,16 @@
 # SPDX-FileCopyrightText: 2024 slarticodefast <161409025+slarticodefast@users.noreply.github.com>
 # SPDX-FileCopyrightText: 2025 Ilya Mikheev <me@ilyamikcoder.com>
 # SPDX-FileCopyrightText: 2025 Kip <tfraser520@gmail.com>
+# SPDX-FileCopyrightText: 2025 MaiaArai <158123176+YaraaraY@users.noreply.github.com>
 # SPDX-FileCopyrightText: 2025 Mish <bluscout78@yahoo.com>
+# SPDX-FileCopyrightText: 2025 YaraaraY <158123176+YaraaraY@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 ilyamikcoder <me@ilyamikcoder.com>
+# SPDX-FileCopyrightText: 2025 mkanke-real <mikekanke@gmail.com>
 # SPDX-FileCopyrightText: 2025 taydeo <td12233a@gmail.com>
+# SPDX-FileCopyrightText: 2026 SharkSnake98 <peanutbuttersharky@gmail.com>
+# SPDX-FileCopyrightText: 2026 SharkSnake98 <sharksnake87@gmail.com>
+# SPDX-FileCopyrightText: 2026 willow <willowzeta632146@proton.me>
+# SPDX-FileCopyrightText: 2026 TrixxedHeart <46364955+TrixxedBit@users.noreply.github.com>
 #
 # SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
 
@@ -67,9 +75,9 @@
     - !type:DepartmentTimeRequirement
       department: Security
       time: 18000 #5 hrs
-  weight: 20
   startingGear: HoPGear
   icon: "JobIconHeadOfPersonnel"
+  joinNotifyCrew: true
   supervisors: job-supervisors-captain
   canBeAntag: false
   access:
@@ -90,13 +98,15 @@
   # Head level access that isn't their own was deliberately left out, get AA from the captain instead.
   - Chemistry
   - Engineering
+  - Reporter #funkystation
   - Research
-  - Robotics # funkystation
+  - Robotics #funkystation
   - Detective
   - Salvage
   - Security
   - Brig
   - Lawyer
+  - Library #funkystation
   - Logistics #Imp - mish note 2025-07-07 - yes this does mean they can approve orders, this can be removed but then QM would have to give out access manually
   - Cargo
   - Atmospherics
@@ -111,15 +121,36 @@
   - !type:AddComponentSpecial
     components:
       - type: CommandStaff
+  alternateTitles:
+  - HeadOfPersonnelExecutiveOfficer
+  - HeadOfPersonnelEmploymentOfficer
+  - HeadOfPersonnelCrewSupervisor
+  - HeadOfPersonnelHeadOfHospitality
 
 - type: startingGear
   id: HoPGear
   equipment:
-    shoes: ClothingShoesColorBrown
     id: HoPPDA
     gloves: ClothingHandsGlovesHop
     ears: ClothingHeadsetAltCommand
-    belt: BoxFolderClipboard
+    belt: ClothingBeltStorageWaistbag
   storage:
     back:
     - Flash
+    - BoxFolderClipboard
+
+- type: jobAlternateTitle
+  id: HeadOfPersonnelExecutiveOfficer
+  name: job-name-alt-hop-1
+
+- type: jobAlternateTitle
+  id: HeadOfPersonnelEmploymentOfficer
+  name: job-name-alt-hop-2
+
+- type: jobAlternateTitle
+  id: HeadOfPersonnelCrewSupervisor
+  name: job-name-alt-hop-3
+
+- type: jobAlternateTitle
+  id: HeadOfPersonnelHeadOfHospitality
+  name: job-name-alt-hop-4

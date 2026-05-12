@@ -37,12 +37,17 @@
 // SPDX-FileCopyrightText: 2024 Tadeo <td12233a@gmail.com>
 // SPDX-FileCopyrightText: 2024 metalgearsloth <31366439+metalgearsloth@users.noreply.github.com>
 // SPDX-FileCopyrightText: 2024 nikthechampiongr <32041239+nikthechampiongr@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2025 Flux3284 <flux3284@gmail.com>
 // SPDX-FileCopyrightText: 2025 GreyMario <mariomister541@gmail.com>
 // SPDX-FileCopyrightText: 2025 JORJ949 <159719201+JORJ949@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2025 MaiaArai <158123176+YaraaraY@users.noreply.github.com>
 // SPDX-FileCopyrightText: 2025 Tay <td12233a@gmail.com>
+// SPDX-FileCopyrightText: 2025 YaraaraY <158123176+YaraaraY@users.noreply.github.com>
 // SPDX-FileCopyrightText: 2025 ferynn <117872973+ferynn@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2025 flux3824 <flux3824@gmail.com>
 // SPDX-FileCopyrightText: 2025 slarticodefast <161409025+slarticodefast@users.noreply.github.com>
 // SPDX-FileCopyrightText: 2025 taydeo <td12233a@gmail.com>
+// SPDX-FileCopyrightText: 2026 W.xyz() <84605679+pirakaplant@users.noreply.github.com>
 //
 // SPDX-License-Identifier: MIT
 
@@ -75,7 +80,8 @@ using Robust.Shared.Prototypes;
 using Robust.Shared.Random;
 using Robust.Shared.Utility;
 using Content.Server._EinsteinEngines.Silicon.IPC; // Goobstation
-using Content.Server.Access.Components; // Funkystation
+using Content.Server.Access.Components;
+using Robust.Shared.Enums; // Funkystation
 
 namespace Content.Server.Station.Systems;
 
@@ -192,10 +198,10 @@ public sealed class StationSpawningSystem : SharedStationSpawningSystem
             DoJobSpecials(job, jobEntity);
             _identity.QueueIdentityUpdate(jobEntity);
             // #Goobstation - Borg Preferred Name
-            if (profile != null && (prototype.ID == "Borg" || prototype.ID == "StationAi"))
+            if (profile != null && prototype.ID == "Borg")
             {
                 var name = profile.BorgName;
-                if (TryComp<NameIdentifierComponent>(jobEntity, out var nameIdentifier) && (prototype.ID !="StationAi"))
+                if (TryComp<NameIdentifierComponent>(jobEntity, out var nameIdentifier))
                     name = $"{name} {nameIdentifier.FullIdentifier}";
 
                 _metaSystem.SetEntityName(jobEntity, name);
@@ -244,25 +250,17 @@ public sealed class StationSpawningSystem : SharedStationSpawningSystem
         var gearEquippedEv = new StartingGearEquippedEvent(entity.Value);
         RaiseLocalEvent(entity.Value, ref gearEquippedEv);
 
+        JobAlternateTitlePrototype? altTitle = null;
+        if (profile != null && prototype != null && profile.JobAlternateTitles.TryGetValue(prototype.ID, out var altId))
+            _prototypeManager.TryIndex(altId, out altTitle);
+
         if (profile != null)
         {
             if (prototype != null)
-            {
-                if (nameOverride != null)
-                {
-                    SetPdaAndIdCardData(entity.Value, nameOverride, prototype, station);
-                    _metaSystem.SetEntityName(entity.Value, nameOverride);
-                }
-                else
-                {
-                    SetPdaAndIdCardData(entity.Value, profile.Name, prototype, station);
-                    _metaSystem.SetEntityName(entity.Value, profile.Name);
-                }
-            }
-
+                SetPdaAndIdCardData(entity.Value, profile.Name, prototype, station, profile.Gender, altTitle);
 
             _humanoidSystem.LoadProfile(entity.Value, profile);
-
+            _metaSystem.SetEntityName(entity.Value, profile.Name);
             if (profile.FlavorText != "" && _configurationManager.GetCVar(CCVars.FlavorText))
             {
                 AddComp<DetailExaminableComponent>(entity.Value).Content = profile.FlavorText;
@@ -292,7 +290,7 @@ public sealed class StationSpawningSystem : SharedStationSpawningSystem
     /// <param name="characterName">Character name to use for the ID.</param>
     /// <param name="jobPrototype">Job prototype to use for the PDA and ID.</param>
     /// <param name="station">The station this player is being spawned on.</param>
-    public void SetPdaAndIdCardData(EntityUid entity, string characterName, JobPrototype jobPrototype, EntityUid? station)
+    public void SetPdaAndIdCardData(EntityUid entity, string characterName, JobPrototype jobPrototype, EntityUid? station, Gender gender, JobAlternateTitlePrototype? jobAltTitle = null)
     {
         if (!InventorySystem.TryGetSlotEntity(entity, "id", out var idUid))
             return;
@@ -305,7 +303,10 @@ public sealed class StationSpawningSystem : SharedStationSpawningSystem
             return;
 
         _cardSystem.TryChangeFullName(cardId, characterName, card);
-        _cardSystem.TryChangeJobTitle(cardId, jobPrototype.LocalizedName, card);
+        if (jobAltTitle != null)
+            _cardSystem.TryChangeJobTitle(cardId, jobAltTitle.LocalizedName(gender), card);
+        else
+            _cardSystem.TryChangeJobTitle(cardId, jobPrototype.LocalizedName, card);
 
         if (_prototypeManager.TryIndex(jobPrototype.Icon, out var jobIcon))
             _cardSystem.TryChangeJobIcon(cardId, jobIcon, card);

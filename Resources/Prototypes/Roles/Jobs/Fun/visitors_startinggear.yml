@@ -2,9 +2,17 @@
 # SPDX-FileCopyrightText: 2024 IProduceWidgets <107586145+IProduceWidgets@users.noreply.github.com>
 # SPDX-FileCopyrightText: 2024 John Space <bigdumb421@gmail.com>
 # SPDX-FileCopyrightText: 2024 Tadeo <td12233a@gmail.com>
+# SPDX-FileCopyrightText: 2025 CalicoDragon <110030310+CalicoDragon@users.noreply.github.com>
 # SPDX-FileCopyrightText: 2025 Fenn <162015305+TooSillyFennec@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 Smugman <85798843+Smugman@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 Sofia Gilsanz <softie.gd@gmail.com>
+# SPDX-FileCopyrightText: 2025 ThatOneMoon <juozas.dringelis@gmail.com>
 # SPDX-FileCopyrightText: 2025 corresp0nd <46357632+corresp0nd@users.noreply.github.com>
 # SPDX-FileCopyrightText: 2025 taydeo <td12233a@gmail.com>
+# SPDX-FileCopyrightText: 2026 Tea <Xerithin@gmail.com>
+# SPDX-FileCopyrightText: 2026 ThatOneMoon <91613003+ThatOneMoon@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2026 W.xyz() <84605679+pirakaplant@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2026 w.xyz() <84605679+pirakaplant@users.noreply.github.com>
 #
 # SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
 
@@ -22,11 +30,13 @@
     head: ClothingHeadHatCaptain
     neck: ClothingNeckCloakCap
     id: VisitorPDA
-    belt: WeaponDisabler
+#    belt: WeaponDisabler # Funky
+    belt: WeaponEnergyGunEnergyPistol # Funky
     back: ClothingBackpackCaptain
     ears: ClothingHeadsetAltCommand
     outerClothing: ClothingOuterArmorCaptainCarapace
-    pocket1: WeaponDisabler
+#    pocket1: WeaponDisabler # - Why the hell did these jobs get TWO disablers?
+    pocket2: NanotrasenFlippo #Funky
 
 - type: startingGear
   id: VisitorCaptainAlt
@@ -38,11 +48,13 @@
     head: ClothingHeadHatCapcap
     neck: ClothingNeckMantleCap
     id: VisitorPDA
-    belt: WeaponDisabler
+#    belt: WeaponDisabler # Funky
+    belt: WeaponEnergyGunEnergyPistol # Funky
     back: ClothingBackpackSatchelCaptain
     ears: ClothingHeadsetAltCommand
     outerClothing: ClothingOuterArmorCaptainCarapace
-    pocket1: WeaponDisabler
+#    pocket1: WeaponDisabler # Funky
+    pocket2: NanotrasenFlippo #Funky
 
 - type: startingGear
   id: VisitorCE
@@ -56,7 +68,9 @@
     back: ClothingBackpackDuffelEngineering
     ears: ClothingHeadsetAltEngineering # Goobstation
     outerClothing: ClothingOuterVestHazard
-    pocket1: WeaponDisabler
+#    pocket1: WeaponDisabler # Funky
+    pocket1: WeaponEnergyGunEnergyPistol # Funky
+    pocket2: NanotrasenFlippo #Funky
 
 - type: startingGear
   id: VisitorCEAlt
@@ -70,7 +84,9 @@
     back: ClothingBackpackSatchelEngineering
     ears: ClothingHeadsetAltEngineering # Goobstation
     outerClothing: ClothingOuterWinterCE
-    pocket1: WeaponDisabler
+    #    pocket1: WeaponDisabler # Funky
+    pocket1: WeaponEnergyGunEnergyPistol # Funky
+    pocket2: NanotrasenFlippo #Funky
 
 - type: startingGear
   id: VisitorCMO
@@ -85,7 +101,9 @@
     ears: ClothingHeadsetAltMedical # Goobstation
     belt: ClothingBeltMedicalFilled
     outerClothing: ClothingOuterCoatLabCmo
-    pocket1: WeaponDisabler
+    #    pocket1: WeaponDisabler # Funky
+    pocket1: WeaponEnergyGunEnergyPistol # Funky
+    pocket2: NanotrasenFlippo #Funky
 
 - type: startingGear
   id: VisitorCMOAlt
@@ -100,7 +118,9 @@
     ears: ClothingHeadsetAltMedical # Goobstation
     belt: ClothingBeltMedicalFilled
     outerClothing: ClothingOuterCoatLabCmo
-    pocket1: WeaponDisabler
+    #    pocket1: WeaponDisabler # Funky
+    pocket1: WeaponEnergyGunEnergyPistol # Funky
+    pocket2: NanotrasenFlippo #Funky
 
 - type: startingGear
   id: VisitorHOP
@@ -110,11 +130,13 @@
     head: ClothingHeadHatHopcap
     neck: ClothingNeckCloakHop
     id: VisitorPDA
-    belt: WeaponDisabler
+#    belt: WeaponDisabler
+    belt: WeaponEnergyGunEnergyPistol # Funky
     back: ClothingBackpackDebug
     ears: ClothingHeadsetAltCommand
     outerClothing: ClothingOuterWinterHoP
-    pocket1: WeaponDisabler
+#    pocket1: WeaponDisabler # Funky
+    pocket2: NanotrasenFlippo #Funky
 
 - type: startingGear
   id: VisitorHOPAlt
@@ -124,11 +146,13 @@
     head: ClothingHeadHatHopcap
     neck: ClothingNeckMantleHOP
     id: VisitorPDA
-    belt: WeaponDisabler
+#    belt: WeaponDisabler
+    belt: WeaponEnergyGunEnergyPistol # Funky
     back: ClothingBackpackSatchelLeather
     ears: ClothingHeadsetAltCommand
     outerClothing: ClothingOuterWinterHoP
-    pocket1: WeaponDisabler
+#    pocket1: WeaponDisabler # Funky
+    pocket2: NanotrasenFlippo #Funky
 
 - type: startingGear
   id: VisitorHOS
@@ -144,15 +168,18 @@
     ears: ClothingHeadsetAltSecurity
     eyes: ClothingEyesGlassesSecurity
     outerClothing: ClothingOuterCoatHoSTrench
-    pocket1: WeaponDisabler
+#    pocket1: WeaponDisabler # Funky - No RG-2 since they already get a WT-550
     pocket2: MagazinePistolSubMachineGunTopMounted
   inhand:
   - WeaponSubMachineGunWt550
+  storage:
+    back:
+    - NanotrasenFlippo #Funky
 
 - type: startingGear
   id: VisitorHOSAlt
   equipment:
-    jumpsuit: ClothingUniformJumpsuitHosFormal
+    jumpsuit: ClothingUniformMessHosBase
     shoes: ClothingShoesBootsCowboyFancyFilled
     gloves: ClothingHandsGlovesColorWhite
     head: ClothingHeadHatCowboyWhite
@@ -162,10 +189,13 @@
     back: ClothingBackpackSatchelLeather
     ears: ClothingHeadsetAltSecurity
     eyes: ClothingEyesGlassesSecurity
-    pocket1: WeaponDisabler
+#    pocket1: WeaponDisabler # Funky - No RG-2 since they already get a WT-550
     pocket2: MagazinePistolSubMachineGunTopMounted
   inhand:
   - WeaponSubMachineGunWt550
+  storage:
+    back:
+    - NanotrasenFlippo #Funky
 
 - type: startingGear
   id: VisitorRD
@@ -179,7 +209,9 @@
     back: ClothingBackpackScience
     ears: ClothingHeadsetAltScience # Goobstation
     outerClothing: ClothingOuterCoatRD
-    pocket1: WeaponDisabler
+    #    pocket1: WeaponDisabler # Funky
+    pocket1: WeaponEnergyGunEnergyPistol # Funky
+    pocket2: NanotrasenFlippo #Funky
 
 - type: startingGear
   id: VisitorRDAlt
@@ -193,7 +225,9 @@
     back: ClothingBackpackSatchelScience
     ears: ClothingHeadsetAltScience # Goobstation
     outerClothing: ClothingOuterCoatRD
-    pocket1: WeaponDisabler
+    #    pocket1: WeaponDisabler # Funky
+    pocket1: WeaponEnergyGunEnergyPistol # Funky
+    pocket2: NanotrasenFlippo #Funky
 
 - type: startingGear
   id: VisitorQM
@@ -206,8 +240,11 @@
     back: ClothingBackpackCargo
     ears: ClothingHeadsetAltCargo # Goobstation
     outerClothing: ClothingOuterWinterQM
-    pocket1: WeaponDisabler
-    pocket2: AppraisalTool
+    #    pocket1: WeaponDisabler # Funky
+    pocket1: WeaponEnergyGunEnergyPistol # Funky
+    pocket2: NanotrasenFlippo #Funky
+  inhand:
+  - AppraisalTool
 
 - type: startingGear
   id: VisitorQMAlt
@@ -220,15 +257,18 @@
     back: ClothingBackpackSatchelCargo
     ears: ClothingHeadsetAltCargo # Goobstation
     outerClothing: ClothingOuterWinterQM
-    pocket1: WeaponDisabler
-    pocket2: AppraisalTool
+    #    pocket1: WeaponDisabler # Funky
+    pocket1: WeaponEnergyGunEnergyPistol # Funky
+    pocket2: NanotrasenFlippo #Funky
+  inhand:
+  - AppraisalTool
 
 # Security
 
 - type: startingGear
   id: VisitorSecurityCadet
   equipment:
-    jumpsuit: ClothingUniformJumpsuitSec
+    jumpsuit: ClothingUniformJumpsuitCadetBase
     shoes: ClothingShoesBootsCombatFilled
     head: ClothingHeadHelmetBasic
     id: VisitorPDA
@@ -237,15 +277,15 @@
     ears: ClothingHeadsetAltSecurityRegular # Goobstation
     eyes: ClothingEyesGlassesSecurity
     outerClothing: ClothingOuterArmorBasic
-    pocket1: WeaponPistolMk58
-    pocket2: MagazinePistol
+    pocket1: WeaponEnergyGunEnergyPistol # funkystation
+    pocket2: BolaEnergy
   inhand:
   - FlashlightSeclite
 
 - type: startingGear
   id: VisitorSecurityCadetAlt
   equipment:
-    jumpsuit: ClothingUniformJumpsuitSecGrey
+    jumpsuit: ClothingUniformJumpsuitCadetBase
     shoes: ClothingShoesBootsCombatFilled
     head: ClothingHeadHelmetBasic
     neck: SecurityWhistle
@@ -255,15 +295,15 @@
     ears: ClothingHeadsetAltSecurityRegular # Goobstation
     eyes: ClothingEyesGlassesSecurity
     outerClothing: ClothingOuterArmorBasicSlim
-    pocket1: WeaponPistolMk58
-    pocket2: MagazinePistol
+    pocket1: WeaponEnergyGunEnergyPistol # funkystation
+    pocket2: BolaEnergy
   inhand:
   - FlashlightSeclite
 
 - type: startingGear
   id: VisitorSecurityOfficer
   equipment:
-    jumpsuit: ClothingUniformJumpsuitSec
+    jumpsuit: ClothingUniformJumpsuitSecBase
     shoes: ClothingShoesBootsCombatFilled
     head: ClothingHeadHelmetBasic
     id: VisitorPDA
@@ -272,15 +312,15 @@
     ears: ClothingHeadsetAltSecurityRegular # Goobstation
     eyes: ClothingEyesGlassesSecurity
     outerClothing: ClothingOuterArmorBasic
-    pocket1: WeaponPistolMk58
-    pocket2: MagazinePistol
+    pocket1: WeaponEnergyGunEnergyPistol # funkystation
+    pocket2: BolaEnergy
   inhand:
   - FlashlightSeclite
 
 - type: startingGear
   id: VisitorSecurityOfficerAlt
   equipment:
-    jumpsuit: ClothingUniformJumpsuitSecGrey
+    jumpsuit: ClothingUniformSecurityDressBase
     shoes: ClothingShoesBootsCombatFilled
     head: ClothingHeadHatCorpsoft
     neck: SecurityWhistle
@@ -290,8 +330,8 @@
     ears: ClothingHeadsetAltSecurityRegular # Goobstation
     eyes: ClothingEyesGlassesSecurity
     outerClothing: ClothingOuterArmorBasicSlim
-    pocket1: WeaponPistolMk58
-    pocket2: MagazinePistol
+    pocket1: WeaponEnergyGunEnergyPistol # funkystation
+    pocket2: BolaEnergy
   inhand:
   - FlashlightSeclite
 
@@ -334,7 +374,7 @@
 - type: startingGear
   id: VisitorWarden
   equipment:
-    jumpsuit: ClothingUniformJumpsuitWarden
+    jumpsuit: ClothingUniformJumpsuitSecBase
     shoes: ClothingShoesBootsCombatFilled
     gloves: ClothingHandsGlovesCombat
     head: ClothingHeadHatBeretWarden
@@ -345,7 +385,7 @@
     ears: ClothingHeadsetAltSecurityRegular # Goobstation
     eyes: ClothingEyesGlassesSecurity
     outerClothing: ClothingOuterCoatWarden
-    pocket1: WeaponDisabler
+#    pocket1: WeaponDisabler # Funky - No RG-2 since they already get a Kammerer
     pocket2: Zipties
   inhand:
   - FlashlightSeclite
@@ -354,7 +394,7 @@
 - type: startingGear
   id: VisitorWardenAlt
   equipment:
-    jumpsuit: ClothingUniformJumpsuitWarden
+    jumpsuit: ClothingUniformSecurityDressBase
     shoes: ClothingShoesBootsCombatFilled
     gloves: ClothingHandsGlovesCombat
     head: ClothingHeadHatWarden
@@ -364,7 +404,7 @@
     ears: ClothingHeadsetAltSecurityRegular # Goobstation
     eyes: ClothingEyesGlassesSecurity
     outerClothing: ClothingOuterWinterWarden
-    pocket1: WeaponDisabler
+#    pocket1: WeaponDisabler # Funky
     pocket2: Zipties
   inhand:
   - FlashlightSeclite
@@ -490,7 +530,7 @@
 - type: startingGear
   id: VisitorTechnicalAssistantAlt
   equipment:
-    jumpsuit: ClothingUniformJumpsuitEngineeringHazard
+    jumpsuit: ClothingUniformJumpsuitEngineeringCoveralls
     shoes: ClothingShoesColorBlack
     gloves: ClothingHandsGlovesColorYellowBudget
     head: ClothingHeadHatCone
@@ -1689,7 +1729,8 @@
     back: ClothingBackpackDuffelEngineering
     #ears: # No headsets.
     outerClothing: ClothingOuterVestHazard
-    pocket1: WeaponDisabler
+#    pocket1: WeaponDisabler # Funky
+    pocket1: WeaponEnergyGunEnergyPistol # Funky
 
 - type: startingGear
   id: ChallengeVictimCEAlt
@@ -1703,7 +1744,8 @@
     back: ClothingBackpackSatchelEngineering
     #ears: # No headsets.
     outerClothing: ClothingOuterWinterCE
-    pocket1: WeaponDisabler
+#    pocket1: WeaponDisabler # Funky
+    pocket1: WeaponEnergyGunEnergyPistol # Funky
 
 # CHALLENGE
 # carefully consider everything you add to these. These are meant for roles that are placed in survival situations where every item will be a resource.
@@ -1716,7 +1758,8 @@
     head: ClothingHeadHatHopcap
     neck: ClothingNeckCloakHop
     id: VisitorPDA
-    belt: WeaponDisabler
+#    belt: WeaponDisabler # Funky
+    belt: WeaponEnergyGunEnergyPistol # Funky
     back: ClothingBackpackDebug
     #ears: #No headsets.
     outerClothing: ClothingOuterWinterHoP
@@ -1729,7 +1772,8 @@
     head: ClothingHeadHatHopcap
     neck: ClothingNeckMantleHOP
     id: VisitorPDA
-    belt: WeaponDisabler
+    #    belt: WeaponDisabler # Funky
+    belt: WeaponEnergyGunEnergyPistol # Funky
     back: ClothingBackpackSatchelLeather
     #ears: #No headsets.
     outerClothing: ClothingOuterWinterHoP
@@ -1755,7 +1799,7 @@
 - type: startingGear
   id: ChallengeVictimHOSAlt
   equipment:
-    jumpsuit: ClothingUniformJumpsuitHosFormal
+    jumpsuit: ClothingUniformMessHosBase
     shoes: ClothingShoesBootsCowboyFancyFilled
     gloves: ClothingHandsGlovesColorWhite
     head: ClothingHeadHatCowboyWhite

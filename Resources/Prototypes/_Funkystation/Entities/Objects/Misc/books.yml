@@ -1,3 +1,4 @@
+# SPDX-FileCopyrightText: 2025 Komoni <131829655+Komonighub@users.noreply.github.com>
 # SPDX-FileCopyrightText: 2025 corresp0nd <46357632+corresp0nd@users.noreply.github.com>
 #
 # SPDX-License-Identifier: AGPL-3.0-or-later
@@ -14,4 +15,40 @@
     - state: corporate-secrets
   - type: GuideHelp
     guides:
+    - CommandSOP
     - CommandTrainingManual
+    - OrderOfSuccession
+
+- type: entity
+  id: BookSOP
+  parent: BaseGuidebook
+  name: A comprehensive collection of NanoTrasen Standard Operating Procedures
+  description: Even looking at the title gives you a headache, you cannot bear looking at the size of the book.
+  components:
+  - type: Sprite
+    layers:
+    - state: paper
+    - state: cover_base
+      color: "#15abab"
+    - state: decor_wingette
+      color: "#5334e0"
+    - state: icon_briefcase
+  - type: MeleeWeapon
+    wideAnimationRotation: 180
+    attackRate: 0.10 # VERY slow attack speed so it cannot be used as an actual weapon but can still be used to bash the clown over the head
+    resetOnHandSelected: false # This makes it so you don't have a cooldown of 15 seconds when taking it out of your bag
+    damage:
+      types:
+        Blunt: 10
+  - type: GuideHelp
+    guides:
+    - LegalSOP
+    - MedicalSOP
+    - ServiceSOP
+    - EngineeringSOP
+    - CargoSOP
+    - ScienceSOP
+    - CommandSOP # No idea why this was not in here before
+    - OrderOfSuccession # I find that this counts as SOP, good for an IAA to have
+    - SecuritySOP # Sec SOP
+    - AlertLevelsSOP # All alert level SOPs

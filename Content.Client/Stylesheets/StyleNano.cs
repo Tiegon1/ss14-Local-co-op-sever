@@ -49,17 +49,23 @@
 // SPDX-FileCopyrightText: 2024 Skye <57879983+Rainbeon@users.noreply.github.com>
 // SPDX-FileCopyrightText: 2024 Tadeo <td12233a@gmail.com>
 // SPDX-FileCopyrightText: 2024 Willhelm53 <97707302+Willhelm53@users.noreply.github.com>
-// SPDX-FileCopyrightText: 2024 chromiumboy <50505512+chromiumboy@users.noreply.github.com>
 // SPDX-FileCopyrightText: 2024 eoineoineoin <github@eoinrul.es>
 // SPDX-FileCopyrightText: 2024 ike709 <ike709@users.noreply.github.com>
 // SPDX-FileCopyrightText: 2024 maylokana <88361930+maylokana@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2025 AirFryerBuyOneGetOneFree <airfryerbuyonegetonefree@gmail.com>
+// SPDX-FileCopyrightText: 2025 EmillyCoelho <167008606+Ichaie@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2025 Janet Blackquill <uhhadd@gmail.com>
 // SPDX-FileCopyrightText: 2025 McBosserson <148172569+McBosserson@users.noreply.github.com>
 // SPDX-FileCopyrightText: 2025 Pieter-Jan Briers <pieterjan.briers+git@gmail.com>
 // SPDX-FileCopyrightText: 2025 SaffronFennec <firefoxwolf2020@protonmail.com>
+// SPDX-FileCopyrightText: 2025 TGRCDev <tgrc@tgrc.dev>
+// SPDX-FileCopyrightText: 2025 chromiumboy <50505512+chromiumboy@users.noreply.github.com>
 // SPDX-FileCopyrightText: 2025 corresp0nd <46357632+corresp0nd@users.noreply.github.com>
 // SPDX-FileCopyrightText: 2025 taydeo <td12233a@gmail.com>
+// SPDX-FileCopyrightText: 2025 w.xyz() <84605679+pirakaplant@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2026 W.xyz() <tptechteam@gmail.com>
 //
-// SPDX-License-Identifier: MIT
+// SPDX-License-Identifier: AGPL-3.0-or-later
 
 using System.Linq;
 using System.Numerics;
@@ -104,6 +110,8 @@ namespace Content.Client.Stylesheets
 
     }
     // STLYE SHEETS WERE A MISTAKE. KILL ALL OF THIS WITH FIRE
+    [Obsolete("Please use the new sheetlet system to define styles, and remove all references to this class as it may be deleted in the future")]
+    // i did :)
     public sealed class StyleNano : StyleBase
     {
         public const string StyleClassBorderedWindowPanel = "BorderedWindowPanel";
@@ -131,6 +139,10 @@ namespace Content.Client.Stylesheets
         public const string StyleClassChatFilterOptionButton = "chatFilterOptionButton";
         public const string StyleClassStorageButton = "storageButton";
         public const string StyleClassInset = "Inset";
+
+        public const string StyleClassConsoleHeading = "ConsoleHeading";
+        public const string StyleClassConsoleSubHeading = "ConsoleSubHeading";
+        public const string StyleClassConsoleText = "ConsoleText";
 
         public const string StyleClassSliderRed = "Red";
         public const string StyleClassSliderGreen = "Green";
@@ -220,9 +232,54 @@ namespace Content.Client.Stylesheets
 
         public static readonly Color ChatBackgroundColor = Color.FromHex("#25252ADD");
 
-        //Bwoink
+        // DeltaV - AAC button variables
+        public static readonly string CommandButtonClass = "CommandButton";
+        public static readonly string EngineeringButtonClass = "EngineeringButton";
+        public static readonly string EpistemicsButtonClass = "EpistemicsButton";
+        public static readonly string JusticeButtonClass = "JusticeButton";
+        public static readonly string LogisticsButtonClass = "LogisticsButton";
+        public static readonly string MedicalButtonClass = "MedicalButton";
+        public static readonly string SecurityButtonClass = "SecurityButton";
+        public static readonly string ServiceButtonClass = "ServiceButton";
+
+        // DeltaV - AAC button colors
+        public static readonly Color CommandButtonColorDefault = Color.FromHex("#404A58");
+        public static readonly Color CommandColorHovered = Color.FromHex("#4F587B");
+        public static readonly Color EngineeringButtonColorDefault = Color.FromHex("#77684B");
+        public static readonly Color EngineeringColorHovered = Color.FromHex("#776D71");
+        public static readonly Color EpistemicsButtonColorDefault = Color.FromHex("#6F5973");
+        public static readonly Color EpistemicsColorHovered = Color.FromHex("#71638E");
+        public static readonly Color LogisticsButtonColorDefault = Color.FromHex("#61503A");
+        public static readonly Color LogisticsColorHovered = Color.FromHex("#675C64");
+        public static readonly Color JusticeButtonColorDefault = Color.FromHex("#4F3D4C");
+        public static readonly Color JusticeColorHovered = Color.FromHex("#5C4B5A");
+        public static readonly Color MedicalButtonColorDefault = Color.FromHex("#49687D");
+        public static readonly Color MedicalColorHovered = Color.FromHex("#556E95");
+        public static readonly Color SecurityButtonColorDefault = Color.FromHex("#724449");
+        public static readonly Color SecurityColorHovered = Color.FromHex("#745370");
+        public static readonly Color ServiceButtonColorDefault = Color.FromHex("#607952");
+        public static readonly Color ServiceColorHovered = Color.FromHex("#667A76");
+        // End DeltaV
+
+		//Bwoink
         public const string StyleClassPinButtonPinned = "pinButtonPinned";
         public const string StyleClassPinButtonUnpinned = "pinButtonUnpinned";
+
+        // i'm not sure what the missing symbols were referencing, and this is getting obseleted anyway so:
+        public const string ButtonOpenRight = "OpenRight";
+        public const string ButtonOpenLeft = "OpenLeft";
+        public const string ButtonOpenBoth = "OpenBoth";
+        public const string ButtonSquare = "OpenBoth";
+        public const string ButtonCaution = "negative";
+        public const string StyleClassLabelHeading = "LabelHeading";
+        public const string StyleClassLabelSubText = "LabelSubText";
+        public const string StyleClassRedTopButton = "negative";
+        public const string ClassHighDivider = "HighDivider";
+        public const string ClassLowDivider = "LowDivider";
+        public const string ClassAngleRect = "AngleRect";
+
+        //Manifest
+        public const string StyleClassCrewManifestGender = "CrewManifestGender";
 
         public static string StyleClassTraitBackground = "TraitBackground";
         public static string StyleClassTraitCost = "TraitCost";
@@ -249,6 +306,7 @@ namespace Content.Client.Stylesheets
             var notoSansBold18 = resCache.NotoStack(variation: "Bold", size: 18);
             var notoSansBold20 = resCache.NotoStack(variation: "Bold", size: 20);
             var notoSansMono = resCache.GetFont("/EngineFonts/NotoSans/NotoSansMono-Regular.ttf", size: 12);
+
             var windowHeaderTex = resCache.GetTexture("/Textures/Interface/Nano/window_header.png");
             var windowHeader = new StyleBoxTexture
             {
@@ -525,10 +583,8 @@ namespace Content.Client.Stylesheets
             itemListItemBackgroundTransparent.SetContentMarginOverride(StyleBox.Margin.Vertical, 2);
             itemListItemBackgroundTransparent.SetContentMarginOverride(StyleBox.Margin.Horizontal, 4);
 
-            var squareTex = resCache.GetTexture("/Textures/Interface/Nano/square.png");
-            var listContainerButton = new StyleBoxTexture
+            var listContainerButton = new StyleBoxFlat
             {
-                Texture = squareTex,
                 ContentMarginLeftOverride = 10
             };
 
@@ -1099,11 +1155,11 @@ namespace Content.Client.Stylesheets
                 }),
 
                 // small number for the entity counter in the entity menu
-                new StyleRule(new SelectorElement(typeof(Label), new[] {ContextMenuElement.StyleClassEntityMenuIconLabel}, null, null), new[]
-                {
-                    new StyleProperty("font", notoSans10),
-                    new StyleProperty(Label.StylePropertyAlignMode, Label.AlignMode.Right),
-                }),
+                //new StyleRule(new SelectorElement(typeof(Label), new[] {ContextMenuElement.StyleClassEntityMenuIconLabel}, null, null), new[]
+                //{
+                //    new StyleProperty("font", notoSans10),
+                //    new StyleProperty(Label.StylePropertyAlignMode, Label.AlignMode.Right),
+                //}),
 
                 // hotbar slot
                 new StyleRule(new SelectorElement(typeof(RichTextLabel), new[] {StyleClassHotbarSlotNumber}, null, null), new[]
@@ -1274,12 +1330,12 @@ namespace Content.Client.Stylesheets
                         new StyleProperty(Button.StylePropertyModulateSelf, ButtonColorDefault),
                     }),
 
-                new StyleRule(
-                    new SelectorElement(typeof(MenuButton), new[] {MenuButton.StyleClassRedTopButton}, null, new[] {Button.StylePseudoClassNormal}),
-                    new[]
-                    {
-                        new StyleProperty(Button.StylePropertyModulateSelf, ButtonColorDefaultRed),
-                    }),
+                //new StyleRule(
+                //    new SelectorElement(typeof(MenuButton), new[] {MenuButton.StyleClassRedTopButton}, null, new[] {Button.StylePseudoClassNormal}),
+                //    new[]
+                //    {
+                //        new StyleProperty(Button.StylePropertyModulateSelf, ButtonColorDefaultRed),
+                //    }),
 
                 new StyleRule(
                     new SelectorElement(typeof(MenuButton), null, null, new[] {Button.StylePseudoClassNormal}),
@@ -1302,12 +1358,12 @@ namespace Content.Client.Stylesheets
                         new StyleProperty(Button.StylePropertyModulateSelf, ButtonColorHovered),
                     }),
 
-                new StyleRule(
-                    new SelectorElement(typeof(MenuButton), new[] {MenuButton.StyleClassRedTopButton}, null, new[] {Button.StylePseudoClassHover}),
-                    new[]
-                    {
-                        new StyleProperty(Button.StylePropertyModulateSelf, ButtonColorHoveredRed),
-                    }),
+                //new StyleRule(
+                //    new SelectorElement(typeof(MenuButton), new[] {MenuButton.StyleClassRedTopButton}, null, new[] {Button.StylePseudoClassHover}),
+                //    new[]
+                //    {
+                //        new StyleProperty(Button.StylePropertyModulateSelf, ButtonColorHoveredRed),
+                //    }),
 
                 new StyleRule(
                     new SelectorElement(typeof(Label), new[] {MenuButton.StyleClassLabelTopButton}, null, null),
@@ -1345,6 +1401,11 @@ namespace Content.Client.Stylesheets
                     .Class(StyleClassItemStatusNotHeld)
                     .Prop("font", notoSansItalic10)
                     .Prop("font-color", ItemStatusNotHeldColor),
+
+                Element<RichTextLabel>()
+                    .Class(StyleClassCrewManifestGender)
+                    .Prop("font", notoSansItalic10)
+                    .Prop("font-style", "italic"),
 
                 Element<RichTextLabel>()
                     .Class(StyleClassItemStatus)
@@ -1595,6 +1656,19 @@ namespace Content.Client.Stylesheets
                 Element<Button>().Class("ButtonColorGreen")
                     .Prop(Control.StylePropertyModulateSelf, ButtonColorGoodDefault),
 
+                // Accept button (merge with green button?) ---
+                Element<Button>().Class("ButtonAccept")
+                    .Prop(Control.StylePropertyModulateSelf, ButtonColorGoodDefault),
+
+                Element<Button>().Class("ButtonAccept").Pseudo(ContainerButton.StylePseudoClassNormal)
+                    .Prop(Control.StylePropertyModulateSelf, ButtonColorGoodDefault),
+
+                Element<Button>().Class("ButtonAccept").Pseudo(ContainerButton.StylePseudoClassHover)
+                    .Prop(Control.StylePropertyModulateSelf, ButtonColorGoodHovered),
+
+                Element<Button>().Class("ButtonAccept").Pseudo(ContainerButton.StylePseudoClassDisabled)
+                    .Prop(Control.StylePropertyModulateSelf, ButtonColorGoodDisabled),
+
                 Element<Button>().Class("ButtonColorGreen").Pseudo(ContainerButton.StylePseudoClassNormal)
                     .Prop(Control.StylePropertyModulateSelf, ButtonColorGoodDefault),
 
@@ -1797,6 +1871,89 @@ namespace Content.Client.Stylesheets
                 // Shitmed Change End
 
                 // Silicon law edit ui
+                // DeltaV - AAC button styles
+                Element<ContainerButton>()
+                    .Class(CommandButtonClass)
+                    .Pseudo(ContainerButton.StylePseudoClassNormal)
+                    .Prop(Control.StylePropertyModulateSelf, CommandButtonColorDefault),
+
+                Element<ContainerButton>()
+                    .Class(CommandButtonClass)
+                    .Pseudo(ContainerButton.StylePseudoClassHover)
+                    .Prop(Control.StylePropertyModulateSelf, CommandColorHovered),
+
+                Element<ContainerButton>()
+                    .Class(EngineeringButtonClass)
+                    .Pseudo(ContainerButton.StylePseudoClassNormal)
+                    .Prop(Control.StylePropertyModulateSelf, EngineeringButtonColorDefault),
+
+                Element<ContainerButton>()
+                    .Class(EngineeringButtonClass)
+                    .Pseudo(ContainerButton.StylePseudoClassHover)
+                    .Prop(Control.StylePropertyModulateSelf, EngineeringColorHovered),
+
+                Element<ContainerButton>()
+                    .Class(EpistemicsButtonClass)
+                    .Pseudo(ContainerButton.StylePseudoClassNormal)
+                    .Prop(Control.StylePropertyModulateSelf, EpistemicsButtonColorDefault),
+
+                Element<ContainerButton>()
+                    .Class(EpistemicsButtonClass)
+                    .Pseudo(ContainerButton.StylePseudoClassHover)
+                    .Prop(Control.StylePropertyModulateSelf, EpistemicsColorHovered),
+
+                Element<ContainerButton>()
+                    .Class(LogisticsButtonClass)
+                    .Pseudo(ContainerButton.StylePseudoClassNormal)
+                    .Prop(Control.StylePropertyModulateSelf, LogisticsButtonColorDefault),
+
+                Element<ContainerButton>()
+                    .Class(LogisticsButtonClass)
+                    .Pseudo(ContainerButton.StylePseudoClassHover)
+                    .Prop(Control.StylePropertyModulateSelf, LogisticsColorHovered),
+
+                Element<ContainerButton>()
+                    .Class(MedicalButtonClass)
+                    .Pseudo(ContainerButton.StylePseudoClassNormal)
+                    .Prop(Control.StylePropertyModulateSelf, MedicalButtonColorDefault),
+
+                Element<ContainerButton>()
+                    .Class(MedicalButtonClass)
+                    .Pseudo(ContainerButton.StylePseudoClassHover)
+                    .Prop(Control.StylePropertyModulateSelf, MedicalColorHovered),
+
+                Element<ContainerButton>()
+                    .Class(SecurityButtonClass)
+                    .Pseudo(ContainerButton.StylePseudoClassNormal)
+                    .Prop(Control.StylePropertyModulateSelf, SecurityButtonColorDefault),
+
+                Element<ContainerButton>()
+                    .Class(SecurityButtonClass)
+                    .Pseudo(ContainerButton.StylePseudoClassHover)
+                    .Prop(Control.StylePropertyModulateSelf, SecurityColorHovered),
+
+                Element<ContainerButton>()
+                    .Class(ServiceButtonClass)
+                    .Pseudo(ContainerButton.StylePseudoClassNormal)
+                    .Prop(Control.StylePropertyModulateSelf, ServiceButtonColorDefault),
+
+                Element<ContainerButton>()
+                    .Class(ServiceButtonClass)
+                    .Pseudo(ContainerButton.StylePseudoClassHover)
+                    .Prop(Control.StylePropertyModulateSelf, ServiceColorHovered),
+
+                Element<ContainerButton>()
+                    .Class(JusticeButtonClass)
+                    .Pseudo(ContainerButton.StylePseudoClassNormal)
+                    .Prop(Control.StylePropertyModulateSelf, JusticeButtonColorDefault),
+
+                Element<ContainerButton>()
+                    .Class(JusticeButtonClass)
+                    .Pseudo(ContainerButton.StylePseudoClassHover)
+                    .Prop(Control.StylePropertyModulateSelf, JusticeColorHovered),
+                // End DeltaV
+
+				// Silicon law edit ui
                 Element<Label>().Class(SiliconLawContainer.StyleClassSiliconLawPositionLabel)
                     .Prop(Label.StylePropertyFontColor, NanoGold),
                 // Pinned button style
@@ -1813,26 +1970,7 @@ namespace Content.Client.Stylesheets
                     new[]
                     {
                         new StyleProperty(TextureButton.StylePropertyTexture, resCache.GetTexture("/Textures/Interface/Bwoink/un_pinned.png"))
-                    }),
-
-                // Trait selector styling
-                Element<PanelContainer>().Class(StyleClassTraitBackground)
-                    .Prop(PanelContainer.StylePropertyPanel, new StyleBoxFlat
-                    {
-                        BackgroundColor = Color.FromHex("#25252A"),
-                        BorderColor = Color.FromHex("#404040"),
-                        BorderThickness = new Thickness(1),
-                        ContentMarginLeftOverride = 4,
-                        ContentMarginRightOverride = 4
-                    }),
-
-                Element<Label>().Class(StyleClassTraitCost)
-                    .Prop(Label.StylePropertyFont, notoSansBold12)
-                    .Prop(Label.StylePropertyFontColor, new Color(200, 200, 200)),
-
-                Element<PanelContainer>()
-                    .Class(StyleClassInset)
-                    .Prop(PanelContainer.StylePropertyPanel, insetBack),
+                    })
             }).ToList());
         }
     }

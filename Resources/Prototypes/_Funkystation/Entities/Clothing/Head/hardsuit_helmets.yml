@@ -1,5 +1,7 @@
 # SPDX-FileCopyrightText: 2024 UtopiOne <110351290+UtopiOne@users.noreply.github.com>
 # SPDX-FileCopyrightText: 2025 QueerCats <jansencheng3@gmail.com>
+# SPDX-FileCopyrightText: 2025 ThatOneMoon <91613003+ThatOneMoon@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 ThatOneMoon <juozas.dringelis@gmail.com>
 # SPDX-FileCopyrightText: 2025 taydeo <td12233a@gmail.com>
 #
 # SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
@@ -36,18 +38,133 @@
 
 # Helldivers, Funky
 - type: entity
-  parent: ClothingHeadHelmetHardsuitGoliath
+  parent: [ ClothingHeadHardsuitBase, ClothingHeadSuitWithLightBase ]
   id: ClothingHeadHelmetHelldiver
-  name: salvage NT-01 tactical helmet
-  description: This armor is the NanoTrasen standard issue, made from the same titanium alloy as the Goliath hull.
+  name: diving hardsuit helmet
+  description: A unique variant of the classic mining hardsuit helmet, given to only the most dedicated of salvagers.
   components:
-  - type: BreathMask
   - type: Sprite
     sprite: _Goobstation/Clothing/Head/Helmets/helldiver.rsi
   - type: Clothing
     sprite: _Goobstation/Clothing/Head/Helmets/helldiver.rsi
-  - type: HideLayerClothing
-    slots:
-    - Hair
-    - HeadTop
-    - HeadSide
+  - type: PressureProtection
+    highPressureMultiplier: 0.525
+    lowPressureMultiplier: 1000
+  - type: PointLight
+    radius: 7
+    energy: 3
+  - type: Armor
+    modifiers:
+      coefficients:
+        Blunt: 0.90
+        Slash: 0.90
+        Piercing: 0.90
+        Radiation: 0.55
+  - type: ExplosionResistance
+    damageCoefficient: 0.9
+
+# Carp Scale 
+
+- type: entity
+  parent: [ ClothingHeadHardsuitBase, ClothingHeadSuitWithLightBase ]
+  id: ClothingHeadHelmetHardsuitCarpScale
+  name: carp scale hardsuit helmet
+  description: A hardsuit fitted with a striking vissage. 
+  components:
+  - type: Sprite
+    sprite: _Funkystation/Clothing/Head/Hardsuits/carp_scale.rsi
+  - type: Clothing
+    sprite: _Funkystation/Clothing/Head/Hardsuits/carp_scale.rsi
+    clothingVisuals:
+      head:
+      - state: off-equipped-HELMET
+      - state: equipped-head-unshaded
+        shader: unshaded        
+  - type: PressureProtection
+    highPressureMultiplier: 0.525
+    lowPressureMultiplier: 1000
+  - type: PointLight
+    radius: 6
+    energy: 3
+  - type: Armor
+    modifiers:
+      coefficients:
+        Blunt: 0.9
+        Slash: 0.9
+        Piercing: 0.95
+        Heat: 0.9
+        Radiation: 0.55
+  - type: ExplosionResistance
+    damageCoefficient: 0.9
+
+# Hivelord    
+
+- type: entity
+  parent: [ ClothingHeadHardsuitBase, ClothingHeadSuitWithLightBase ]
+  id: ClothingHeadHelmetHardsuitHivelord
+  name: hivelord hardsuit helmet
+  description: A hardsuit fitted with a striking vissage. 
+  components:
+  - type: Sprite
+    sprite: _Funkystation/Clothing/Head/Hardsuits/hivelord.rsi
+  - type: Clothing
+    sprite: _Funkystation/Clothing/Head/Hardsuits/hivelord.rsi
+    clothingVisuals:
+      head:
+      - state: off-equipped-HELMET
+      - state: equipped-head-unshaded
+        shader: unshaded    
+  - type: PressureProtection
+    highPressureMultiplier: 0.525
+    lowPressureMultiplier: 1000
+  - type: PointLight
+    radius: 7
+    energy: 3
+  - type: Armor
+    modifiers:
+      coefficients:
+        Blunt: 0.9
+        Slash: 0.9
+        Piercing: 0.90
+        Radiation: 0.40
+  - type: ExplosionResistance
+    damageCoefficient: 0.9
+  - type: SolutionContainerManager
+    solutions:
+      leaky:
+        maxVol: 20
+  - type: SolutionRegeneration
+    solution: leaky
+    generated:
+      reagents:
+      - ReagentId: HivelordEssence
+        Quantity: 0.5   
+  - type: LeakyObject        
+
+# This is a very jank way to make the healing effect and could probably be replaced by something else, but it works,
+# Because only this helmet is meant to produce this regent, the proto ID is being kept here. 
+
+- type: reagent
+  id: HivelordEssence
+  name: reagent-name-hivelord-essence
+  group: Medicine
+  desc: reagent-desc-hivelord-essence
+  physicalDesc: reagent-physical-desc-gloopy
+  flavor: medicine
+  color: "#c7e4e8"
+  metabolisms:
+    Medicine:
+      metabolismRate: 0.05
+      effects:
+      - !type:HealthChange
+        damage:
+          groups:
+            Brute: -0.4
+          types:
+            Poison: -0.1
+            Heat: -0.1
+            Shock: -0.1
+            Cold: -0.1
+      # Helps you stop bleeding to an extent.
+      - !type:ModifyBleedAmount
+        amount: -0.25  

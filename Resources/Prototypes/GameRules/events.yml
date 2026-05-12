@@ -99,6 +99,7 @@
     - id: SyndyCat
     - id: SyndyMoth
     - id: SyndyPenguin
+    - id: MalignRiftSpawn # Funky
 
 
 - type: entityTable
@@ -118,6 +119,7 @@
     - id: FalseAlarm
     - id: DerelictCyborgSpawn
     - id: WizardSpawn
+    - id: ColossusSpawn # Funky
 
 - type: entity
   id: BaseStationEvent

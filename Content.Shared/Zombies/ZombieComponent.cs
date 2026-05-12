@@ -26,6 +26,8 @@
 // SPDX-FileCopyrightText: 2025 Tay <td12233a@gmail.com>
 // SPDX-FileCopyrightText: 2025 pa.pecherskij <pa.pecherskij@interfax.ru>
 // SPDX-FileCopyrightText: 2025 taydeo <td12233a@gmail.com>
+// SPDX-FileCopyrightText: 2026 QueerCats <jansencheng3@gmail.com>
+// SPDX-FileCopyrightText: 2026 Terkala <appleorange64@gmail.com>
 //
 // SPDX-License-Identifier: MIT
 
@@ -58,7 +60,13 @@ public sealed partial class ZombieComponent : Component
     /// being invincible by bundling up.
     /// </summary>
     [ViewVariables(VVAccess.ReadWrite)]
-    public float MinZombieInfectionChance = 0.25f;
+    public float MinZombieInfectionChance = 0.10f;
+
+    /// <summary>
+    /// Infection chance multiplier
+    /// </summary>
+    [ViewVariables(VVAccess.ReadWrite)]
+    public float ZombieInfectionChanceMultiplier = 1.0f;
 
     [ViewVariables(VVAccess.ReadWrite)]
     public float ZombieMovementSpeedDebuff = 0.70f;
@@ -130,11 +138,11 @@ public sealed partial class ZombieComponent : Component
     {
         DamageDict = new ()
         {
-            { "Blunt", -0.6 },
-            { "Slash", -0.3 },
-            { "Piercing", -0.3 },
-            { "Heat", -0.02 },
-            { "Shock", -0.02 }
+            { "Blunt", -0.35 },
+            { "Slash", -0.35 },
+            { "Piercing", -0.35 },
+            { "Heat", -0.15 },
+            { "Shock", -0.15 }
         }
     };
 
@@ -152,9 +160,9 @@ public sealed partial class ZombieComponent : Component
     {
         DamageDict = new()
         {
-            { "Blunt", -2 },
-            { "Slash", -2 },
-            { "Piercing", -2 }
+            { "Blunt", -5 }, //funkystation
+            { "Slash", -5 }, //funkystation
+            { "Piercing", -5 } //funkystation
         }
     };
 
@@ -169,6 +177,27 @@ public sealed partial class ZombieComponent : Component
             { "Slash", 13 },
             { "Piercing", 7 },
             { "Structural", 10 }
+        }
+    };
+
+    /// <summary>
+    /// The damage modifier on zombies
+    /// </summary>
+    [DataField]
+    public DamageModifierSet DamageModifier = new()
+    {
+        Coefficients = new ()
+        {
+            {"Blunt", 0.9f},
+            {"Slash", 0.9f},
+            {"Piercing", 0.9f},
+            {"Heat", 0.9f},
+            {"Shock", 0.9f},
+            {"Cold", 0.9f},
+            {"Caustic", 0.9f},
+            {"Poison", 0.9f},
+            {"Radiation", 0.9f},
+            {"Cellular", 0.9f},
         }
     };
 

@@ -30,8 +30,10 @@
 # SPDX-FileCopyrightText: 2024 metalgearsloth <31366439+metalgearsloth@users.noreply.github.com>
 # SPDX-FileCopyrightText: 2024 slarticodefast <161409025+slarticodefast@users.noreply.github.com>
 # SPDX-FileCopyrightText: 2024 username <113782077+whateverusername0@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 Komoni <131829655+Komonighub@users.noreply.github.com>
 # SPDX-FileCopyrightText: 2025 taydeo <td12233a@gmail.com>
 # SPDX-FileCopyrightText: 2025 vectorassembly <vectorassembly@icloud.com>
+# SPDX-FileCopyrightText: 2026 otokonoko-dev <248204705+otokonoko-dev@users.noreply.github.com>
 #
 # SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
 
@@ -57,6 +59,8 @@
       map: [ "overlay" ]
   - type: Paper
     contentSize: 12000
+  - type: BookPagination # Funky Station - Book pages instead of scrolling
+    linesPerPage: 19
   - type: ActivatableUI
     key: enum.PaperUiKey.Key
     requiresComplex: false
@@ -282,7 +286,8 @@
   - type: GuideHelp
     guides:
     - Security
-    - Antagonists
+    # - Antagonists
+    - SecuritySOP
 
 - type: entity
   id: BookHowToKeepStationClean

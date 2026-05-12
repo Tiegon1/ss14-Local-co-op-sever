@@ -33,7 +33,18 @@
 # SPDX-FileCopyrightText: 2024 slarticodefast <161409025+slarticodefast@users.noreply.github.com>
 # SPDX-FileCopyrightText: 2024 strO0pwafel <153459934+strO0pwafel@users.noreply.github.com>
 # SPDX-FileCopyrightText: 2025 Tay <td12233a@gmail.com>
+# SPDX-FileCopyrightText: 2025 Xcybitt <xcybitt@gmail.com>
+# SPDX-FileCopyrightText: 2025 YaraaraY <158123176+YaraaraY@users.noreply.github.com>
 # SPDX-FileCopyrightText: 2025 taydeo <td12233a@gmail.com>
+# SPDX-FileCopyrightText: 2025 vectorassembly <vectorassembly@icloud.com>
+# SPDX-FileCopyrightText: 2026 Doctor-Cpu <77215380+Doctor-Cpu@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2026 Fr0goo <frogoofrog@outlook.com>
+# SPDX-FileCopyrightText: 2026 MaiaArai <158123176+YaraaraY@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2026 Frogoo <153249069+Fr0goo@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2026 MaiaArai <158123176+YaraaraY@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2026 Tea <Xerithin@gmail.com>
+# SPDX-FileCopyrightText: 2026 Teasq <Xerithin@gmail.com>
+# SPDX-FileCopyrightText: 2026 Xcybitt <197952719+Xcybitt@users.noreply.github.com>
 #
 # SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
 
@@ -49,7 +60,7 @@
     sprite: Clothing/OuterClothing/WinterCoats/coat.rsi
   - type: TemperatureProtection
     heatingCoefficient: 1.1
-    coolingCoefficient: 0.1
+    coolingCoefficient: 0.4
   - type: Item
     size: Normal
   - type: Armor
@@ -67,6 +78,8 @@
         reagents:
         - ReagentId: Fiber
           Quantity: 30
+      stain:
+        maxVol: 5
   - type: Tag
     tags:
     - ClothMade
@@ -90,56 +103,48 @@
         ents: []
 
 - type: entity
-  parent: ClothingOuterWinterCoatToggleable
+  parent: ClothingOuterWinterCoat
   id: ClothingOuterWinterAtmos
-  name: atmospherics winter coat
+  name: insulated atmos coat
+  description: If you're cold, he's cold. Get Tropico out of the Atmospheric bay.
   components:
   - type: Sprite
-    sprite: Clothing/OuterClothing/WinterCoats/coat.rsi
-    layers:
-    - state: ATMOS-icon
-  - type: Item
-    inhandVisuals:
-      left:
-      - state: ATMOS-inhand-left
-      right:
-      - state: ATMOS-inhand-right
+    sprite: _Funkystation/Clothing/OuterClothing/WinterCoats/atmos_insulated_coat.rsi
   - type: Clothing
-    sprite: Clothing/OuterClothing/WinterCoats/coat.rsi
-    clothingVisuals:
-      outerClothing:
-      - state: ATMOS-equipped-OUTERCLOTHING
-  - type: ToggleableClothing
-    clothingPrototype: ClothingHeadHatHoodWinterEngineer
+    sprite: _Funkystation/Clothing/OuterClothing/WinterCoats/atmos_insulated_coat.rsi
+  - type: Item
+    size: Normal
 
 - type: entity
-  parent: ClothingOuterWinterCoatToggleable
+  parent: ClothingOuterWinterCoat
   id: ClothingOuterWinterBar
   name: bartender winter coat
   components:
   - type: Sprite
-    sprite: Clothing/OuterClothing/WinterCoats/coat.rsi
-    layers:
-    - state: BAR-icon
-  - type: Item
-    inhandVisuals:
-      left:
-      - state: BAR-inhand-left
-      right:
-      - state: BAR-inhand-right
+    sprite: _Funkystation/Clothing/OuterClothing/WinterCoats/bar_coat.rsi
   - type: Clothing
-    sprite: Clothing/OuterClothing/WinterCoats/coat.rsi
-    clothingVisuals:
-      outerClothing:
-      - state: BAR-equipped-OUTERCLOTHING
-  - type: ToggleableClothing
-    clothingPrototype: ClothingHeadHatHoodWinterBartender
+    sprite: _Funkystation/Clothing/OuterClothing/WinterCoats/bar_coat.rsi
+  - type: Item
+    size: Normal
 
 - type: entity
-  parent: [ClothingOuterWinterCoatToggleable, BaseCommandContraband]
+  parent: [ClothingOuterWinterCoatToggleable, BaseCommandContraband, AllowBackStorageClothingCombat]
   id: ClothingOuterWinterCap
+  description: It's one of your spare carapace sewn into a durathread winter coat specially made for you. Or so they say. It's comfortable enough, at least.
   name: captain's winter coat
   components:
+  - type: Armor
+    modifiers:
+      coefficients:
+        Blunt: 0.55
+        Slash: 0.55
+        Piercing: 0.65
+        Heat: 0.55
+        Caustic: 0.9
+  - type: ExplosionResistance
+    damageCoefficient: 0.7
+  - type: StaminaResistance
+    damageCoefficient: 0.8
   - type: Sprite
     sprite: Clothing/OuterClothing/WinterCoats/coat.rsi
     layers:
@@ -182,32 +187,23 @@
     clothingPrototype: ClothingHeadHatHoodWinterCargo
 
 - type: entity
-  parent: [ClothingOuterWinterCoatToggleable, BaseCommandContraband]
+  parent: [ClothingOuterWinterCoat, BaseCommandContraband]
   id: ClothingOuterWinterCE
-  name: chief engineer's winter coat
+  name: insulated chief engineer's coat
+  description: Was your hardsuit stolen again?
   components:
   - type: Sprite
-    sprite: Clothing/OuterClothing/WinterCoats/coat.rsi
-    layers:
-    - state: CE-icon
-  - type: Item
-    inhandVisuals:
-      left:
-      - state: CE-inhand-left
-      right:
-      - state: CE-inhand-right
+    sprite: _Funkystation/Clothing/OuterClothing/WinterCoats/CE_insulated_coat.rsi
   - type: Clothing
-    sprite: Clothing/OuterClothing/WinterCoats/coat.rsi
-    clothingVisuals:
-      outerClothing:
-      - state: CE-equipped-OUTERCLOTHING
-  - type: ToggleableClothing
-    clothingPrototype: ClothingHeadHatHoodWinterCE
+    sprite: _Funkystation/Clothing/OuterClothing/WinterCoats/CE_insulated_coat.rsi
+  - type: Item
+    size: Normal
 
 - type: entity
   parent: [ ClothingOuterWinterCoatToggleable, BaseCentcommContraband ]
   id: ClothingOuterWinterCentcom
   name: CentComm winter coat
+  description: A special winter coat built to ensure maximum comfort for the wearer. Seems to be sewn with the utmost care and the best materials possible.
   components:
   - type: Sprite
     sprite: Clothing/OuterClothing/WinterCoats/coat.rsi
@@ -234,41 +230,20 @@
   description: A coat specifically designed for work inside cold storage, sorely needed by cold-blooded lizard chefs.
   components:
   - type: Sprite
-    sprite: Clothing/OuterClothing/WinterCoats/coat.rsi
-    layers:
-    - state: CHEF-icon
-  - type: Item
-    inhandVisuals:
-      left:
-      - state: CHEF-inhand-left
-      right:
-      - state: CHEF-inhand-right
+    sprite: _Funkystation/Clothing/OuterClothing/Coats/chef_freezer_coat.rsi
   - type: Clothing
-    sprite: Clothing/OuterClothing/WinterCoats/coat.rsi
-    clothingVisuals:
-      outerClothing:
-      - state: CHEF-equipped-OUTERCLOTHING
+    sprite: _Funkystation/Clothing/OuterClothing/Coats/chef_freezer_coat.rsi
 
 - type: entity
-  parent: ClothingOuterWinterCoatToggleable
+  parent: ClothingOuterWinterCoat
   id: ClothingOuterWinterChem
-  name: chemistry winter coat
+  name: chemistry insulated labcoat
+  description: A fluffy insulated labcoat tucked beneath a tough acid-resistant apron. Kind of makes you look like a bartender. Maybe serve some drinks.
   components:
   - type: Sprite
-    sprite: Clothing/OuterClothing/WinterCoats/coat.rsi
-    layers:
-    - state: CHEM-icon
-  - type: Item
-    inhandVisuals:
-      left:
-      - state: CHEM-inhand-left
-      right:
-      - state: CHEM-inhand-right
+    sprite: _Funkystation/Clothing/OuterClothing/WinterCoats/chemistrycoat.rsi
   - type: Clothing
-    sprite: Clothing/OuterClothing/WinterCoats/coat.rsi
-    clothingVisuals:
-      outerClothing:
-      - state: CHEM-equipped-OUTERCLOTHING
+    sprite: _Funkystation/Clothing/OuterClothing/WinterCoats/chemistrycoat.rsi
   - type: Armor
     modifiers:
       coefficients:
@@ -276,29 +251,17 @@
         Heat: 0.90
         Caustic: 0.75
     priceMultiplier: 0.15
-  - type: ToggleableClothing
-    clothingPrototype: ClothingHeadHatHoodWinterChem
 
 - type: entity
-  parent: [ClothingOuterWinterCoatToggleable, BaseCommandContraband]
+  parent: [ClothingOuterWinterCoat, BaseCommandContraband]
   id: ClothingOuterWinterCMO
-  name: chief medical officer's winter coat
+  name: chief medical officer's insulated lab coat
+  description: A large and expensive labcoat fitted with extra insulation for particularly cold operating rooms.
   components:
   - type: Sprite
-    sprite: Clothing/OuterClothing/WinterCoats/coat.rsi
-    layers:
-    - state: CMO-icon
-  - type: Item
-    inhandVisuals:
-      left:
-      - state: CMO-inhand-left
-      right:
-      - state: CMO-inhand-right
+    sprite: _Funkystation/Clothing/OuterClothing/WinterCoats/cmocoat.rsi
   - type: Clothing
-    sprite: Clothing/OuterClothing/WinterCoats/coat.rsi
-    clothingVisuals:
-      outerClothing:
-      - state: CMO-equipped-OUTERCLOTHING
+    sprite: _Funkystation/Clothing/OuterClothing/WinterCoats/cmocoat.rsi
   - type: Armor
     modifiers:
       coefficients:
@@ -306,8 +269,6 @@
         Heat: 0.90
         Caustic: 0.75
     priceMultiplier: 0.15
-  - type: ToggleableClothing
-    clothingPrototype: ClothingHeadHatHoodWinterCMO
 
 - type: entity
   parent: ClothingOuterWinterCoat
@@ -320,48 +281,28 @@
     sprite: Clothing/OuterClothing/WinterCoats/coatclown.rsi
 
 - type: entity
-  parent: ClothingOuterWinterCoatToggleable
+  parent: ClothingOuterWinterCoat
   id: ClothingOuterWinterEngi
-  name: engineering winter coat
+  name: insulated engineering coat
+  description: Atmos messed up and the air is at a cool 20 Kelvin? Better bundle up.
   components:
   - type: Sprite
-    sprite: Clothing/OuterClothing/WinterCoats/coat.rsi
-    layers:
-    - state: ENGI-icon
-  - type: Item
-    inhandVisuals:
-      left:
-      - state: ENGI-inhand-left
-      right:
-      - state: ENGI-inhand-right
+    sprite: _Funkystation/Clothing/OuterClothing/WinterCoats/engineer_insulated_coat.rsi
   - type: Clothing
-    sprite: Clothing/OuterClothing/WinterCoats/coat.rsi
-    clothingVisuals:
-      outerClothing:
-      - state: ENGI-equipped-OUTERCLOTHING
-  - type: ToggleableClothing
-    clothingPrototype: ClothingHeadHatHoodWinterEngineer
+    sprite: _Funkystation/Clothing/OuterClothing/WinterCoats/engineer_insulated_coat.rsi
+  - type: Item
+    size: Normal
 
 - type: entity
-  parent: ClothingOuterWinterCoatToggleable
+  parent: ClothingOuterWinterCoat
   id: ClothingOuterWinterGen
-  name: genetics winter coat
+  name: genetics insulated labcoat
+  description: An insulated labcoat meant to withstand the harsh chill of genome freezers.
   components:
   - type: Sprite
-    sprite: Clothing/OuterClothing/WinterCoats/coat.rsi
-    layers:
-    - state: GENE-icon
-  - type: Item
-    inhandVisuals:
-      left:
-      - state: GENE-inhand-left
-      right:
-      - state: GENE-inhand-right
+    sprite: _Funkystation/Clothing/OuterClothing/WinterCoats/geneticistcoat.rsi
   - type: Clothing
-    sprite: Clothing/OuterClothing/WinterCoats/coat.rsi
-    clothingVisuals:
-      outerClothing:
-      - state: GENE-equipped-OUTERCLOTHING
+    sprite: _Funkystation/Clothing/OuterClothing/WinterCoats/geneticistcoat.rsi
   - type: Armor
     modifiers:
       coefficients:
@@ -369,32 +310,19 @@
         Heat: 0.90
         Caustic: 0.9
     priceMultiplier: 0.15
-  - type: ToggleableClothing
-    clothingPrototype: ClothingHeadHatHoodWinterSci
 
 - type: entity
-  parent: [ClothingOuterWinterCoatToggleable, BaseCommandContraband]
+  parent: [ClothingOuterWinterCoat, BaseCommandContraband]
   id: ClothingOuterWinterHoP
   name: head of personnel's winter coat
+  description: A warm and fuzzy coat, perfect for drafting your latest form, alongside a cup of hot cocoa.
   components:
   - type: Sprite
-    sprite: Clothing/OuterClothing/WinterCoats/coat.rsi
-    layers:
-    - state: HOP-icon
-  - type: Item
-    inhandVisuals:
-      left:
-      - state: HOP-inhand-left
-      right:
-      - state: HOP-inhand-right
+    sprite: _Funkystation/Clothing/OuterClothing/WinterCoats/hop_coat.rsi
   - type: Clothing
-    sprite: Clothing/OuterClothing/WinterCoats/coat.rsi
-    clothingVisuals:
-      outerClothing:
-      - state: HOP-equipped-OUTERCLOTHING
-  - type: ToggleableClothing
-    clothingPrototype: ClothingHeadHatHoodWinterHOP
-
+    sprite: _Funkystation/Clothing/OuterClothing/WinterCoats/hop_coat.rsi
+  - type: Item
+    size: Normal
 
 ##########################################################
 - type: entity
@@ -404,11 +332,10 @@
   description: A sturdy, utilitarian winter coat designed to protect a head of security from any brig-bound threats and hypothermic events.
   components:
   - type: Sprite
-    sprite: Clothing/OuterClothing/WinterCoats/coathosarmored.rsi
+    sprite: _Funkystation/Clothing/OuterClothing/WinterCoats/hos_wintercoat.rsi
   - type: Clothing
-    sprite: Clothing/OuterClothing/WinterCoats/coathosarmored.rsi
-  - type: ToggleableClothing
-    clothingPrototype: ClothingHeadHatHoodWinterHOS
+    sprite: _Funkystation/Clothing/OuterClothing/WinterCoats/hos_wintercoat.rsi
+
 ##########################################################
 
 - type: entity
@@ -439,6 +366,7 @@
   parent: ClothingOuterWinterCoatToggleable
   id: ClothingOuterWinterHydro
   name: hydroponics winter coat
+  description: A normal winter coat dyed with hydroponics' colours.
   components:
   - type: Sprite
     sprite: Clothing/OuterClothing/WinterCoats/coat.rsi
@@ -462,6 +390,7 @@
   parent: ClothingOuterWinterCoatToggleable
   id: ClothingOuterWinterJani
   name: janitorial winter coat
+  description:  A purple winter coat sewn with some padding and coating to help keep you clean.
   components:
   - type: Sprite
     sprite: Clothing/OuterClothing/WinterCoats/coat.rsi
@@ -489,25 +418,15 @@
     clothingPrototype: ClothingHeadHatHoodWinterJani
 
 - type: entity
-  parent: ClothingOuterWinterCoatToggleable
+  parent: ClothingOuterWinterCoat
   id: ClothingOuterWinterMed
-  name: medical winter coat
+  name: medical insulated labcoat
+  description: A medical-grade labcoat fitted with extra insulation. Still quite handy against caustic spills, while staying comfortably warm.
   components:
   - type: Sprite
-    sprite: Clothing/OuterClothing/WinterCoats/coat.rsi
-    layers:
-    - state: MED-icon
-  - type: Item
-    inhandVisuals:
-      left:
-      - state: MED-inhand-left
-      right:
-      - state: MED-inhand-right
+    sprite: _Funkystation/Clothing/OuterClothing/WinterCoats/medicalcoat.rsi
   - type: Clothing
-    sprite: Clothing/OuterClothing/WinterCoats/coat.rsi
-    clothingVisuals:
-      outerClothing:
-      - state: MED-equipped-OUTERCLOTHING
+    sprite: _Funkystation/Clothing/OuterClothing/WinterCoats/medicalcoat.rsi
   - type: Armor
     modifiers:
       coefficients:
@@ -515,8 +434,6 @@
         Heat: 0.90
         Caustic: 0.9
     priceMultiplier: 0.15
-  - type: ToggleableClothing
-    clothingPrototype: ClothingHeadHatHoodWinterMed
 
 - type: entity
   parent: ClothingOuterWinterCoatToggleable
@@ -545,6 +462,7 @@
   parent: ClothingOuterWinterCoatToggleable
   id: ClothingOuterWinterMiner
   name: mining winter coat
+  description:  A winter coat coloured with salvage colours. Comfortable, but not spacefaring.
   components:
   - type: Sprite
     sprite: Clothing/OuterClothing/WinterCoats/coat.rsi
@@ -568,6 +486,7 @@
   parent: ClothingOuterWinterCoatToggleable
   id: ClothingOuterWinterPara
   name: paramedic winter coat
+  description:  A medical winter coat coloured with paramedic colours. Tragically, you can't seem to fit a siren on it.
   components:
   - type: Sprite
     sprite: Clothing/OuterClothing/WinterCoats/coat.rsi
@@ -598,22 +517,13 @@
   parent: [ClothingOuterWinterCoatToggleable, BaseCommandContraband]
   id: ClothingOuterWinterQM
   name: quartermaster's winter coat
+  description:  A normal winter coat dyed with the quartermaster's colours. Comfortable and cost efficient, what else could you ask for?
   components:
   - type: Sprite
-    sprite: Clothing/OuterClothing/WinterCoats/coat.rsi
-    layers:
-    - state: QM-icon
+    sprite: _Funkystation/Clothing/OuterClothing/WinterCoats/qm_winter_coat.rsi
   - type: Item
-    inhandVisuals:
-      left:
-      - state: QM-inhand-left
-      right:
-      - state: QM-inhand-right
   - type: Clothing
-    sprite: Clothing/OuterClothing/WinterCoats/coat.rsi
-    clothingVisuals:
-      outerClothing:
-      - state: QM-equipped-OUTERCLOTHING
+    sprite: _Funkystation/Clothing/OuterClothing/WinterCoats/qm_winter_coat.rsi
   - type: ToggleableClothing
     clothingPrototype: ClothingHeadHatHoodWinterQM
 
@@ -622,6 +532,7 @@
   parent: [ClothingOuterWinterCoatToggleable, BaseCommandContraband]
   id: ClothingOuterWinterRD
   name: research director's winter coat
+  description:  A normal winter coat dyed with the research director's colours. Seems to have some slimy residue. Probably from when you cuddled Smile.
   components:
   - type: Sprite
     sprite: Clothing/OuterClothing/WinterCoats/coat.rsi
@@ -652,6 +563,7 @@
   parent: ClothingOuterWinterCoatToggleable
   id: ClothingOuterWinterRobo
   name: robotics winter coat
+  description:  A normal winter coat dyed with robotics' colours.
   components:
   - type: Sprite
     sprite: Clothing/OuterClothing/WinterCoats/coat.rsi
@@ -676,6 +588,7 @@
   parent: ClothingOuterWinterCoatToggleable
   id: ClothingOuterWinterSci
   name: science winter coat
+  description:  A normal winter coat dyed with science's colours.
   components:
   - type: Sprite
     sprite: Clothing/OuterClothing/WinterCoats/coat.rsi
@@ -703,48 +616,39 @@
     clothingPrototype: ClothingHeadHatHoodWinterSci
 
 - type: entity
-  parent: [ClothingOuterWinterCoatToggleable, BaseSecurityContraband]
+  parent: [ClothingOuterWinterCoatToggleable, BaseSecurityContraband, AllowBackStorageClothingCombat]
   id: ClothingOuterWinterSec
   name: security winter coat
+  description: A winter coat outfitted with standard type I armored vest padding with some modifications as to fit both the padding and the insulation.
   components:
   - type: Sprite
-    sprite: Clothing/OuterClothing/WinterCoats/coat.rsi
-    layers:
-    - state: SEC-icon
-  - type: Item
-    inhandVisuals:
-      left:
-      - state: SEC-inhand-left
-      right:
-      - state: SEC-inhand-right
+    sprite: _Funkystation/Clothing/OuterClothing/WinterCoats/sec_wintercoat.rsi
   - type: Clothing
-    sprite: Clothing/OuterClothing/WinterCoats/coat.rsi
-    clothingVisuals:
-      outerClothing:
-      - state: SEC-equipped-OUTERCLOTHING
+    sprite: _Funkystation/Clothing/OuterClothing/WinterCoats/sec_wintercoat.rsi
+  - type: Armor
+    modifiers:
+      coefficients:
+        Blunt: 0.7
+        Slash: 0.7
+        Piercing: 0.7
+        Heat: 0.85
+  - type: ExplosionResistance
+    damageCoefficient: 0.90
+  - type: StaminaResistance
+    damageCoefficient: 0.80
   - type: ToggleableClothing
     clothingPrototype: ClothingHeadHatHoodWinterSec
 
 - type: entity
-  parent: ClothingOuterWinterCoatToggleable
+  parent: ClothingOuterWinterCoat
   id: ClothingOuterWinterViro
-  name: virology winter coat
+  name: virology insulated labcoat
+  description: A sterile, padded labcoat meant to protect from both types of cold.
   components:
   - type: Sprite
-    sprite: Clothing/OuterClothing/WinterCoats/coat.rsi
-    layers:
-    - state: VIRO-icon
-  - type: Item
-    inhandVisuals:
-      left:
-      - state: VIRO-inhand-left
-      right:
-      - state: VIRO-inhand-right
+    sprite: _Funkystation/Clothing/OuterClothing/WinterCoats/virologycoat.rsi
   - type: Clothing
-    sprite: Clothing/OuterClothing/WinterCoats/coat.rsi
-    clothingVisuals:
-      outerClothing:
-      - state: VIRO-equipped-OUTERCLOTHING
+    sprite: _Funkystation/Clothing/OuterClothing/WinterCoats/virologycoat.rsi
   - type: Armor
     modifiers:
       coefficients:
@@ -752,8 +656,6 @@
         Heat: 0.90
         Caustic: 0.9
     priceMultiplier: 0.15
-  - type: ToggleableClothing
-    clothingPrototype: ClothingHeadHatHoodWinterSci
 
 ################################################################
 - type: entity
@@ -763,11 +665,10 @@
   description: A sturdy, utilitarian winter coat designed to protect a warden from any brig-bound threats and hypothermic events.
   components:
   - type: Sprite
-    sprite: Clothing/OuterClothing/WinterCoats/coatwardenarmored.rsi
+    sprite: _Funkystation/Clothing/OuterClothing/WinterCoats/ward_wintercoat.rsi
   - type: Clothing
-    sprite: Clothing/OuterClothing/WinterCoats/coatwardenarmored.rsi
-  - type: ToggleableClothing
-    clothingPrototype: ClothingHeadHatHoodWinterWarden
+    sprite: _Funkystation/Clothing/OuterClothing/WinterCoats/ward_wintercoat.rsi
+
 ################################################################
 
 - type: entity
@@ -920,17 +821,17 @@
     sprite: Clothing/OuterClothing/WinterCoats/coat.rsi
     layers:
     - state: coatybits-icon
-      color: "#3f3f3f"
+      color: "#251F32"
     - state: winterbits-icon
   - type: Item
     inhandVisuals:
       left:
       - state: coatybits-inhand-left
-        color: "#3f3f3f"
+        color: "#251F32"
       - state: winterbits-inhand-left
       right:
       - state: coatybits-inhand-right
-        color: "#3f3f3f"
+        color: "#251F32"
       - state: winterbits-inhand-right
   - type: Clothing
     sprite: Clothing/OuterClothing/WinterCoats/coat.rsi
@@ -951,24 +852,24 @@
     sprite: Clothing/OuterClothing/WinterCoats/coat.rsi
     layers:
     - state: coatybits-icon
-      color: "#9C0DE1"
+      color: "#7864C6"
     - state: winterbits-icon
   - type: Item
     inhandVisuals:
       left:
       - state: coatybits-inhand-left
-        color: "#9C0DE1"
+        color: "#7864C6"
       - state: winterbits-inhand-left
       right:
       - state: coatybits-inhand-right
-        color: "#9C0DE1"
+        color: "#7864C6"
       - state: winterbits-inhand-right
   - type: Clothing
     sprite: Clothing/OuterClothing/WinterCoats/coat.rsi
     clothingVisuals:
       outerClothing:
       - state: coatybits-equipped-OUTERCLOTHING
-        color: "#9C0DE1"
+        color: "#7864C6"
       - state: winterbits-equipped-OUTERCLOTHING
   - type: ToggleableClothing
     clothingPrototype: ClothingHeadHatHoodWinterColorPurple
@@ -982,24 +883,24 @@
     sprite: Clothing/OuterClothing/WinterCoats/coat.rsi
     layers:
     - state: coatybits-icon
-      color: "#940000"
+      color: "#71111F"
     - state: winterbits-icon
   - type: Item
     inhandVisuals:
       left:
       - state: coatybits-inhand-left
-        color: "#940000"
+        color: "#71111F"
       - state: winterbits-inhand-left
       right:
       - state: coatybits-inhand-right
-        color: "#940000"
+        color: "#71111F"
       - state: winterbits-inhand-right
   - type: Clothing
     sprite: Clothing/OuterClothing/WinterCoats/coat.rsi
     clothingVisuals:
       outerClothing:
       - state: coatybits-equipped-OUTERCLOTHING
-        color: "#940000"
+        color: "#71111F"
       - state: winterbits-equipped-OUTERCLOTHING
   - type: ToggleableClothing
     clothingPrototype: ClothingHeadHatHoodWinterColorRed
@@ -1013,24 +914,24 @@
     sprite: Clothing/OuterClothing/WinterCoats/coat.rsi
     layers:
     - state: coatybits-icon
-      color: "#0089EF"
+      color: "#4572E3"
     - state: winterbits-icon
   - type: Item
     inhandVisuals:
       left:
       - state: coatybits-inhand-left
-        color: "#0089EF"
+        color: "#4572E3"
       - state: winterbits-inhand-left
       right:
       - state: coatybits-inhand-right
-        color: "#0089EF"
+        color: "#4572E3"
       - state: winterbits-inhand-right
   - type: Clothing
     sprite: Clothing/OuterClothing/WinterCoats/coat.rsi
     clothingVisuals:
       outerClothing:
       - state: coatybits-equipped-OUTERCLOTHING
-        color: "#0089EF"
+        color: "#4572E3"
       - state: winterbits-equipped-OUTERCLOTHING
   - type: ToggleableClothing
     clothingPrototype: ClothingHeadHatHoodWinterColorBlue
@@ -1044,24 +945,24 @@
     sprite: Clothing/OuterClothing/WinterCoats/coat.rsi
     layers:
     - state: coatybits-icon
-      color: "#723A02"
+      color: "#4F342F"
     - state: winterbits-icon
   - type: Item
     inhandVisuals:
       left:
       - state: coatybits-inhand-left
-        color: "#723A02"
+        color: "#4F342F"
       - state: winterbits-inhand-left
       right:
       - state: coatybits-inhand-right
-        color: "#723A02"
+        color: "#4F342F"
       - state: winterbits-inhand-right
   - type: Clothing
     sprite: Clothing/OuterClothing/WinterCoats/coat.rsi
     clothingVisuals:
       outerClothing:
       - state: coatybits-equipped-OUTERCLOTHING
-        color: "#723A02"
+        color: "#4F342F"
       - state: winterbits-equipped-OUTERCLOTHING
   - type: ToggleableClothing
     clothingPrototype: ClothingHeadHatHoodWinterColorBrown
@@ -1075,24 +976,24 @@
     sprite: Clothing/OuterClothing/WinterCoats/coat.rsi
     layers:
     - state: coatybits-icon
-      color: "#999999"
+      color: "#9C9FAD"
     - state: winterbits-icon
   - type: Item
     inhandVisuals:
       left:
       - state: coatybits-inhand-left
-        color: "#999999"
+        color: "#9C9FAD"
       - state: winterbits-inhand-left
       right:
       - state: coatybits-inhand-right
-        color: "#999999"
+        color: "#9C9FAD"
       - state: winterbits-inhand-right
   - type: Clothing
     sprite: Clothing/OuterClothing/WinterCoats/coat.rsi
     clothingVisuals:
       outerClothing:
       - state: coatybits-equipped-OUTERCLOTHING
-        color: "#999999"
+        color: "#9C9FAD"
       - state: winterbits-equipped-OUTERCLOTHING
   - type: ToggleableClothing
     clothingPrototype: ClothingHeadHatHoodWinterColorGray
@@ -1106,24 +1007,24 @@
     sprite: Clothing/OuterClothing/WinterCoats/coat.rsi
     layers:
     - state: coatybits-icon
-      color: "#5ABF2F"
+      color: "#61A53F"
     - state: winterbits-icon
   - type: Item
     inhandVisuals:
       left:
       - state: coatybits-inhand-left
-        color: "#5ABF2F"
+        color: "#61A53F"
       - state: winterbits-inhand-left
       right:
       - state: coatybits-inhand-right
-        color: "#5ABF2F"
+        color: "#61A53F"
       - state: winterbits-inhand-right
   - type: Clothing
     sprite: Clothing/OuterClothing/WinterCoats/coat.rsi
     clothingVisuals:
       outerClothing:
       - state: coatybits-equipped-OUTERCLOTHING
-        color: "#5ABF2F"
+        color: "#61A53F"
       - state: winterbits-equipped-OUTERCLOTHING
   - type: ToggleableClothing
     clothingPrototype: ClothingHeadHatHoodWinterColorGreen
@@ -1137,24 +1038,24 @@
     sprite: Clothing/OuterClothing/WinterCoats/coat.rsi
     layers:
     - state: coatybits-icon
-      color: "#C09F72"
+      color: "#B28B78"
     - state: winterbits-icon
   - type: Item
     inhandVisuals:
       left:
       - state: coatybits-inhand-left
-        color: "#C09F72"
+        color: "#B28B78"
       - state: winterbits-inhand-left
       right:
       - state: coatybits-inhand-right
-        color: "#C09F72"
+        color: "#B28B78"
       - state: winterbits-inhand-right
   - type: Clothing
     sprite: Clothing/OuterClothing/WinterCoats/coat.rsi
     clothingVisuals:
       outerClothing:
       - state: coatybits-equipped-OUTERCLOTHING
-        color: "#C09F72"
+        color: "#B28B78"
       - state: winterbits-equipped-OUTERCLOTHING
   - type: ToggleableClothing
     clothingPrototype: ClothingHeadHatHoodWinterColorLightBrown
@@ -1168,24 +1069,24 @@
     sprite: Clothing/OuterClothing/WinterCoats/coat.rsi
     layers:
     - state: coatybits-icon
-      color: "#EF8100"
+      color: "#F1641F"
     - state: winterbits-icon
   - type: Item
     inhandVisuals:
       left:
       - state: coatybits-inhand-left
-        color: "#EF8100"
+        color: "#F1641F"
       - state: winterbits-inhand-left
       right:
       - state: coatybits-inhand-right
-        color: "#EF8100"
+        color: "#F1641F"
       - state: winterbits-inhand-right
   - type: Clothing
     sprite: Clothing/OuterClothing/WinterCoats/coat.rsi
     clothingVisuals:
       outerClothing:
       - state: coatybits-equipped-OUTERCLOTHING
-        color: "#EF8100"
+        color: "#F1641F"
       - state: winterbits-equipped-OUTERCLOTHING
   - type: ToggleableClothing
     clothingPrototype: ClothingHeadHatHoodWinterColorOrange
@@ -1199,24 +1100,24 @@
     sprite: Clothing/OuterClothing/WinterCoats/coat.rsi
     layers:
     - state: coatybits-icon
-      color: "#EAE8E8"
+      color: "#E6E7f0"
     - state: winterbits-icon
   - type: Item
     inhandVisuals:
       left:
       - state: coatybits-inhand-left
-        color: "#EAE8E8"
+        color: "#E6E7f0"
       - state: winterbits-inhand-left
       right:
       - state: coatybits-inhand-right
-        color: "#EAE8E8"
+        color: "#E6E7f0"
       - state: winterbits-inhand-right
   - type: Clothing
     sprite: Clothing/OuterClothing/WinterCoats/coat.rsi
     clothingVisuals:
       outerClothing:
       - state: coatybits-equipped-OUTERCLOTHING
-        color: "#EAE8E8"
+        color: "#E6E7F0"
       - state: winterbits-equipped-OUTERCLOTHING
   - type: ToggleableClothing
     clothingPrototype: ClothingHeadHatHoodWinterColorWhite
@@ -1230,24 +1131,24 @@
     sprite: Clothing/OuterClothing/WinterCoats/coat.rsi
     layers:
     - state: coatybits-icon
-      color: "#EBE216"
+      color: "#F8C53A"
     - state: winterbits-icon
   - type: Item
     inhandVisuals:
       left:
       - state: coatybits-inhand-left
-        color: "#EBE216"
+        color: "#F8C53A"
       - state: winterbits-inhand-left
       right:
       - state: coatybits-inhand-right
-        color: "#EBE216"
+        color: "#F8C53A"
       - state: winterbits-inhand-right
   - type: Clothing
     sprite: Clothing/OuterClothing/WinterCoats/coat.rsi
     clothingVisuals:
       outerClothing:
       - state: coatybits-equipped-OUTERCLOTHING
-        color: "#EBE216"
+        color: "#F8C53A"
       - state: winterbits-equipped-OUTERCLOTHING
   - type: ToggleableClothing
     clothingPrototype: ClothingHeadHatHoodWinterColorYellow

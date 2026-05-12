@@ -32,6 +32,9 @@
             "name": "icon-chemist"
         },
         {
+            "name": "icon-chem"
+        },
+        {
             "name": "icon-clown"
         },
         {
@@ -59,13 +62,13 @@
             "name": "icon-grappling-gun"
         },
         {
-            "name": "icon-harvesting"
-        },
-        {
             "name": "icon-light-replacer"
         },
         {
             "name": "icon-mining"
+        },
+        {
+            "name": "icon-mining-adv"
         },
         {
             "name": "icon-mop"
@@ -129,6 +132,9 @@
         },
         {
             "name": "service"
+        },
+        {
+            "name": "icon-cooking"
         },
         {
             "name": "syndicateborgbomb"

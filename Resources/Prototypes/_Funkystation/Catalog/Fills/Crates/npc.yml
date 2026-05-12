@@ -1,0 +1,26 @@
+# SPDX-FileCopyrightText: 2025 Dragon232347 <122056448+Dragon232347@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2026 SigmaTheDragon <162711378+SigmaTheDragon@users.noreply.github.com>
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later
+
+- type: entity
+  id: CrateNPCMeowl
+  parent: CrateLivestock
+  name: meowl crate
+  description: A crate containing three of the deadliest beings known.
+  components:
+  - type: StorageFill
+    contents:
+      - id: MobMeowl
+        amount: 3
+
+- type: entity
+  id: CrateNPCMiniDragonFriendly
+  parent: CrateLivestock
+  name: domesticated mini dragon crate
+  description: A crate containing an incredibly rare domesticated mini dragon.
+  components:
+  - type: StorageFill
+    contents:
+      - id: MobMiniDragonFriendly
+        amount: 1

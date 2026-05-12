@@ -2,10 +2,14 @@
 # SPDX-FileCopyrightText: 2023 Velcroboy <107660393+IamVelcroboy@users.noreply.github.com>
 # SPDX-FileCopyrightText: 2023 phunnyguy <90366172+phunnyguy@users.noreply.github.com>
 # SPDX-FileCopyrightText: 2024 Aidenkrz <aiden@djkraz.com>
-# SPDX-FileCopyrightText: 2024 Ed <96445749+TheShuEd@users.noreply.github.com>
 # SPDX-FileCopyrightText: 2024 Piras314 <p1r4s@proton.me>
 # SPDX-FileCopyrightText: 2024 lzk <124214523+lzk228@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 Ed <96445749+TheShuEd@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 ThatOneMoon <91613003+ThatOneMoon@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 ThatOneMoon <juozas.dringelis@gmail.com>
+# SPDX-FileCopyrightText: 2025 Toastermeister <215405651+Toastermeister@users.noreply.github.com>
 # SPDX-FileCopyrightText: 2025 taydeo <td12233a@gmail.com>
+# SPDX-FileCopyrightText: 2026 Xcybitt <197952719+Xcybitt@users.noreply.github.com>
 #
 # SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
 
@@ -22,7 +26,7 @@
   - type: Food
     transferAmount: 3
   - type: Sprite
-    sprite: Objects/Consumable/Food/taco.rsi
+    sprite: Objects/Consumable/Food/taco_sequence.rsi
     layers:
     - state: tacoshell_back
     - map: ["foodSequenceLayers"]
@@ -36,12 +40,207 @@
         - ReagentId: Nutriment
           Quantity: 6.66
   - type: FoodSequenceStartPoint
-    key: taco
+    key: Taco
     maxLayers: 3
-    startPosition: -0.2, 0
-    offset: 0.1, 0
+    startPosition: -0.15, 0
+    offset: 0.15, 0
     minLayerOffset: 0, 0
     maxLayerOffset: 0, 0.05
     nameGeneration: food-sequence-taco-gen
     contentSeparator: ", "
   - type: Appearance
+
+# Old tacos
+
+- type: entity
+  parent: FoodInjectableBase
+  id: FoodTacoBase
+  abstract: true
+  components:
+  - type: FlavorProfile
+    flavors:
+      - meaty
+      - cheesy
+  - type: Food
+    transferAmount: 3
+  - type: Sprite
+    sprite: Objects/Consumable/Food/taco.rsi
+  - type: SolutionContainerManager
+    solutions:
+      food:
+        maxVol: 15
+        reagents:
+        - ReagentId: Nutriment
+          Quantity: 6
+        - ReagentId: Vitamin
+          Quantity: 4
+  - type: Item
+    sprite: Objects/Consumable/Food/taco.rsi
+    storedRotation: -90
+  - type: Tag
+    tags:
+      - Meat
+
+- type: entity
+  name: beef taco
+  parent: FoodTacoBase
+  id: FoodTacoBeef
+  description: A very basic and run of the mill beef taco, now with cheese!
+  components:
+  - type: Food
+  - type: Sprite
+    state: beeftaco
+  - type: SolutionContainerManager
+    solutions:
+      food:
+        maxVol: 40
+        reagents:
+        - ReagentId: Nutriment
+          Quantity: 20
+        - ReagentId: Vitamin
+          Quantity: 5
+        - ReagentId: Protein
+          Quantity: 5
+        - ReagentId: Cheesium
+          Quantity: 2          
+
+- type: entity
+  name: chicken taco
+  parent: FoodTacoBase
+  id: FoodTacoChicken
+  description: A very basic and run of the mill chicken taco, now with cheese!
+  components:
+  - type: Food
+  - type: Sprite
+    state: chickentaco
+  - type: SolutionContainerManager
+    solutions:
+      food:
+        maxVol: 40
+        reagents:
+        - ReagentId: Nutriment
+          Quantity: 20
+        - ReagentId: Vitamin
+          Quantity: 5
+        - ReagentId: Protein
+          Quantity: 5
+        - ReagentId: Cheesium
+          Quantity: 2          
+
+- type: entity
+  name: seafood taco
+  parent: FoodTacoBase
+  id: FoodTacoFish
+  description: Sounds kinda gross, but it's actually not that bad.
+  components:
+  - type: FlavorProfile
+    flavors:
+      - onion
+      - fishy
+  - type: Food
+  - type: Sprite
+    state: fishtaco
+  - type: SolutionContainerManager
+    solutions:
+      food:
+        maxVol: 60
+        reagents:
+        - ReagentId: Nutriment
+          Quantity: 18
+        - ReagentId: Vitamin
+          Quantity: 15
+        - ReagentId: Protein
+          Quantity: 15
+        - ReagentId: Allicin
+          Quantity: 2
+
+- type: entity
+  name: rat taco
+  parent: FoodTacoBase
+  id: FoodTacoRat
+  description: Yeah, that looks about right...
+  components:
+  - type: Food
+  - type: Sprite
+    state: rattaco
+  - type: SolutionContainerManager
+    solutions:
+      food:
+        maxVol: 40
+        reagents:
+        - ReagentId: Nutriment
+          Quantity: 15
+        - ReagentId: Vitamin
+          Quantity: 5
+        - ReagentId: Protein
+          Quantity: 5
+        - ReagentId: Cheesium
+          Quantity: 2          
+
+- type: entity
+  name: beef taco supreme
+  parent: FoodTacoBase
+  id: FoodTacoBeefSupreme
+  description: It's like a regular beef taco, but surpeme!
+  components:
+  - type: Food
+  - type: Sprite
+    state: beeftacosupreme
+  - type: SolutionContainerManager
+    solutions:
+      food:
+        maxVol: 60
+        reagents:
+        - ReagentId: Nutriment
+          Quantity: 33
+        - ReagentId: Vitamin
+          Quantity: 10
+        - ReagentId: Allicin
+          Quantity: 2
+        - ReagentId: Protein
+          Quantity: 5
+        - ReagentId: Cheesium
+          Quantity: 4          
+
+- type: entity
+  name: chicken taco supreme
+  parent: FoodTacoBase
+  id: FoodTacoChickenSupreme
+  description: It's like a regular chicken taco, but surpeme!
+  components:
+  - type: Food
+  - type: Sprite
+    state: chickentacosupreme
+  - type: SolutionContainerManager
+    solutions:
+      food:
+        maxVol: 60
+        reagents:
+        - ReagentId: Nutriment
+          Quantity: 33
+        - ReagentId: Vitamin
+          Quantity: 10
+        - ReagentId: Allicin
+          Quantity: 2
+        - ReagentId: Protein
+          Quantity: 5
+        - ReagentId: Cheesium
+          Quantity: 4          
+
+- type: entity
+  name: soft taco
+  parent: FoodMealBase
+  id: FoodMealSoftTaco
+  description: Take a bite!
+  components:
+  - type: FlavorProfile
+    flavors:
+      - cheesy
+      - tomato
+      - meaty
+      - onion
+  - type: Sprite
+    state: softtaco
+  - type: Tag
+    tags:
+      - Meat

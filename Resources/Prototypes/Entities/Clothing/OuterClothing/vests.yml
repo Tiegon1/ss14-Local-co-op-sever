@@ -13,16 +13,23 @@
 # SPDX-FileCopyrightText: 2024 Tadeo <td12233a@gmail.com>
 # SPDX-FileCopyrightText: 2024 wafehling <wafehling@users.noreply.github.com>
 # SPDX-FileCopyrightText: 2024 whateverusername0 <whateveremail>
+# SPDX-FileCopyrightText: 2025 MaiaArai <158123176+YaraaraY@users.noreply.github.com>
 # SPDX-FileCopyrightText: 2025 McBosserson <148172569+McBosserson@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 Minemoder5000 <minemoder50000@gmail.com>
 # SPDX-FileCopyrightText: 2025 QueerCats <jansencheng3@gmail.com>
 # SPDX-FileCopyrightText: 2025 Tay <td12233a@gmail.com>
 # SPDX-FileCopyrightText: 2025 Teasq <Xerithin@gmail.com>
+# SPDX-FileCopyrightText: 2025 ThatOneMoon <91613003+ThatOneMoon@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 ThatOneMoon <juozas.dringelis@gmail.com>
+# SPDX-FileCopyrightText: 2025 YaraaraY <158123176+YaraaraY@users.noreply.github.com>
 # SPDX-FileCopyrightText: 2025 ZarathushtraSpitama <bloodcunt@protonmail.com>
 # SPDX-FileCopyrightText: 2025 corresp0nd <46357632+corresp0nd@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 ferynn <117872973+ferynn@users.noreply.github.com>
 # SPDX-FileCopyrightText: 2025 ferynn <witchy.girl.me@gmail.com>
 # SPDX-FileCopyrightText: 2025 slarticodefast <161409025+slarticodefast@users.noreply.github.com>
 # SPDX-FileCopyrightText: 2025 starch <starchpersonal@gmail.com>
 # SPDX-FileCopyrightText: 2025 taydeo <td12233a@gmail.com>
+# SPDX-FileCopyrightText: 2026 2DSiggy <siggymaxwell@gmail.com>
 #
 # SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
 
@@ -47,26 +54,52 @@
   - type: ExplosionResistance
     damageCoefficient: 0.9
 
+#Elite web vest
+- type: entity
+  parent: [ClothingOuterStorageBase, AllowBackStorageClothingCombat, BaseSyndicateContraband]
+  id: ClothingOuterVestWebElite
+  name: aramid web vest #Funky Change, elite to aramid
+  description: A synthetic armor vest. This one has added webbing and heat resistant fibers.
+  components:
+  - type: Sprite
+    sprite: Clothing/OuterClothing/Vests/elitevest.rsi
+  - type: Clothing
+    sprite: Clothing/OuterClothing/Vests/elitevest.rsi
+  - type: TemperatureProtection
+    heatingCoefficient: 0.1
+    coolingCoefficient: 0.1
+  - type: Armor
+    modifiers:
+      coefficients:
+        Blunt: 0.5
+        Slash: 0.5
+        Piercing: 0.7
+        Heat: 0.3
+        Radiation: 0.5
+        Caustic: 0.5
+  - type: ExplosionResistance
+    damageCoefficient: 0.5
+  - type: FireResistance
+    damageCoefficient: 0.15
+
 #Mercenary web vest
 - type: entity
-  parent: [ClothingOuterStorageBase, AllowBackStorageClothingCombat, BaseMajorContraband] #web vest so it should have some pockets for ammo \\ Goobstation - issue #733 fix, changed from minor to major contraband
+  parent: [ClothingOuterStorageBase, AllowBackStorageClothingCombat, BaseSecurityCargoContraband]
   id: ClothingOuterVestWebMerc
-  name: merc web vest
-  description: A high-quality armored vest made from a hard synthetic material. It's surprisingly flexible and light, despite formidable armor plating.
+  name: mercenary web vest
+  description: A high-quality armored vest is commonly used by mercenaries. It's surprisingly flexible and light, made for fighting hostile wildlife.
   components:
   - type: Sprite
     sprite: Clothing/OuterClothing/Vests/mercwebvest.rsi
   - type: Clothing
     sprite: Clothing/OuterClothing/Vests/mercwebvest.rsi
-  - type: Armor
+  - type: Armor # Armor meant more for salvage, but with recuded pirece resist as that is something they dont deal wiht very often.
     modifiers:
       coefficients:
-        Blunt: 0.7 #slightly better overall protection but slightly worse than bulletproof armor against bullets seems sensible
-        Slash: 0.7
-        Piercing: 0.5
-        Heat: 0.9
-  - type: ExplosionResistance
-    damageCoefficient: 0.9
+        Blunt: 0.6
+        Slash: 0.6
+        Piercing: 0.7
+        Caustic: 0.75
 
 #Detective's vest
 - type: entity
@@ -112,9 +145,9 @@
   description: A neat bartender vest, reinforced with kevlar.
   components:
   - type: Sprite
-    sprite: Clothing/OuterClothing/Vests/vest.rsi
+    sprite: _Funkystation/Clothing/OuterClothing/Vests/vest.rsi
   - type: Clothing
-    sprite: Clothing/OuterClothing/Vests/vest.rsi
+    sprite: _Funkystation/Clothing/OuterClothing/Vests/vest.rsi
   - type: Storage
     maxItemSize: Normal
     grid:

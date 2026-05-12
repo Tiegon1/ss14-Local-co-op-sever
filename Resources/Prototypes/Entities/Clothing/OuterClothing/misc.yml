@@ -24,10 +24,14 @@
 # SPDX-FileCopyrightText: 2024 keronshb <54602815+keronshb@users.noreply.github.com>
 # SPDX-FileCopyrightText: 2024 lzk <124214523+lzk228@users.noreply.github.com>
 # SPDX-FileCopyrightText: 2025 88tv <131759102+88tv@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 MaiaArai <158123176+YaraaraY@users.noreply.github.com>
 # SPDX-FileCopyrightText: 2025 QueerCats <jansencheng3@gmail.com>
+# SPDX-FileCopyrightText: 2025 RedBookcase <Usualmoves@gmail.com>
 # SPDX-FileCopyrightText: 2025 RedBookcase <crazykid1590@gmail.com>
 # SPDX-FileCopyrightText: 2025 Tay <td12233a@gmail.com>
+# SPDX-FileCopyrightText: 2025 YaraaraY <158123176+YaraaraY@users.noreply.github.com>
 # SPDX-FileCopyrightText: 2025 corresp0nd <46357632+corresp0nd@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 taydeo <t  d12233a@gmail.com>
 # SPDX-FileCopyrightText: 2025 taydeo <td12233a@gmail.com>
 #
 # SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
@@ -55,9 +59,9 @@
   description: A darker apron designed for bartenders.
   components:
   - type: Sprite
-    sprite: Clothing/OuterClothing/Misc/apronbar.rsi
+    sprite: _Funkystation/Clothing/OuterClothing/Misc/apronbar.rsi
   - type: Clothing
-    sprite: Clothing/OuterClothing/Misc/apronbar.rsi
+    sprite: _Funkystation/Clothing/OuterClothing/Misc/apronbar.rsi
   - type: Tag
     tags:
     - Apron
@@ -87,9 +91,9 @@
   description: An apron-jacket used by a high class chef.
   components:
   - type: Sprite
-    sprite: Clothing/OuterClothing/Misc/apronchef.rsi
+    sprite: _Funkystation/Clothing/OuterClothing/Misc/apronchef.rsi
   - type: Clothing
-    sprite: Clothing/OuterClothing/Misc/apronchef.rsi
+    sprite: _Funkystation/Clothing/OuterClothing/Misc/apronchef.rsi
   - type: Tag
     tags:
     - Apron
@@ -102,9 +106,9 @@
   description: An apron-jacket used by a high class chef.
   components:
   - type: Sprite
-    sprite: Clothing/OuterClothing/Misc/chef.rsi
+    sprite: _Funkystation/Clothing/OuterClothing/Misc/chef.rsi
   - type: Clothing
-    sprite: Clothing/OuterClothing/Misc/chef.rsi
+    sprite: _Funkystation/Clothing/OuterClothing/Misc/chef.rsi
 
 - type: entity
   parent: ClothingOuterBase
@@ -135,9 +139,9 @@
   description: An ordinary cardboard box with holes cut in the sides.
   components:
   - type: Sprite
-    sprite: Clothing/OuterClothing/Misc/cardborg.rsi
+    sprite: _Funkystation/Clothing/OuterClothing/Misc/carborg_box.rsi
   - type: Clothing
-    sprite: Clothing/OuterClothing/Misc/cardborg.rsi
+    sprite: _Funkystation/Clothing/OuterClothing/Misc/carborg_box.rsi
   - type: TypingIndicatorClothing
     proto: robot
   - type: Tag
@@ -164,9 +168,9 @@
   description: A warm and comfy classic poncho.
   components:
   - type: Sprite
-    sprite: Clothing/OuterClothing/Misc/classicponcho.rsi
+    sprite: _Funkystation/Clothing/OuterClothing/Misc/poncho_classic.rsi
   - type: Clothing
-    sprite: Clothing/OuterClothing/Misc/classicponcho.rsi
+    sprite: _Funkystation/Clothing/OuterClothing/Misc/poncho_classic.rsi
   - type: AddAccentClothing
     accent: SpanishAccent
 
@@ -199,9 +203,9 @@
   description: A warm and comfy poncho.
   components:
   - type: Sprite
-    sprite: Clothing/OuterClothing/Misc/poncho.rsi
+    sprite: _Funkystation/Clothing/OuterClothing/Misc/poncho.rsi
   - type: Clothing
-    sprite: Clothing/OuterClothing/Misc/poncho.rsi
+    sprite: _Funkystation/Clothing/OuterClothing/Misc/poncho.rsi
   - type: AddAccentClothing
     accent: SpanishAccent
 
@@ -212,9 +216,9 @@
   description: Ho ho ho!
   components:
   - type: Sprite
-    sprite: Clothing/OuterClothing/Misc/santa.rsi
+    sprite: _Funkystation/Clothing/OuterClothing/Misc/santa_suit.rsi
   - type: Clothing
-    sprite: Clothing/OuterClothing/Misc/santa.rsi
+    sprite: _Funkystation/Clothing/OuterClothing/Misc/santa_suit.rsi
 
 - type: entity
   abstract: true
@@ -242,9 +246,9 @@
   description: A bizarre gem-encrusted blue robe that radiates magical energies.
   components:
   - type: Sprite
-    sprite: Clothing/OuterClothing/Misc/wizard.rsi
+    sprite: _Funkystation/Clothing/OuterClothing/Misc/wizard.rsi
   - type: Clothing
-    sprite: Clothing/OuterClothing/Misc/wizard.rsi
+    sprite: _Funkystation/Clothing/OuterClothing/Misc/wizard.rsi
 
 - type: entity
   parent: ClothingOuterWizardBase
@@ -264,9 +268,9 @@
   description: 'Skub is crudely written on the outside of this cylindrical suit.'
   components:
   - type: Sprite
-    sprite: Clothing/OuterClothing/Misc/skubbody.rsi
+    sprite: _Funkystation/Clothing/OuterClothing/Misc/skub_suit.rsi
   - type: Clothing
-    sprite: Clothing/OuterClothing/Misc/skubbody.rsi
+    sprite: _Funkystation/Clothing/OuterClothing/Misc/skub_suit.rsi
 
 - type: entity
   parent: ClothingOuterBase
@@ -297,13 +301,19 @@
   description: Spooky!!!
   components:
   - type: Sprite
-    sprite: Clothing/OuterClothing/Misc/ghostsheet.rsi
+    sprite: _Funkystation/Clothing/OuterClothing/Misc/sheet_ghost.rsi
   - type: Clothing
-    sprite: Clothing/OuterClothing/Misc/ghostsheet.rsi
+    sprite: _Funkystation/Clothing/OuterClothing/Misc/sheet_ghost.rsi
   - type: Construction
     graph: GhostSheet
     node: ghost_sheet
   - type: IdentityBlocker
+  - type: HideLayerClothing
+    slots:
+    - Hair
+    - Snout
+    - HeadTop
+    - HeadSide
 
 - type: entity
   parent: ClothingOuterBase

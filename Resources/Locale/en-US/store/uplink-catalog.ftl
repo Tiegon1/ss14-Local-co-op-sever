@@ -100,6 +100,9 @@
 uplink-pistol-viper-name = Viper
 uplink-pistol-viper-desc = A small, easily concealable, but somewhat underpowered gun. Retrofitted with a fully automatic receiver. Uses pistol magazines (.35 auto).
 
+uplink-estoc-bundle-name = Estoc DMR Bundle
+uplink-estoc-bundle-desc = A designated marksman rifle, fitted with a mid-range optic for longer-range combat. Bundled with two rifle magazines (.20 rifle).
+
 uplink-revolver-python-name = Python
 uplink-revolver-python-desc = A brutally simple, effective, and loud Syndicate revolver. Comes loaded with armor-piercing rounds. Uses .45 magnum.
 
@@ -129,6 +132,9 @@ uplink-gloves-north-star-desc = A pair of gloves that reduce your punching coold
 
 uplink-gloves-knuckleduster-name = Syndicate Knuckle Dusters
 uplink-gloves-knuckleduster-desc = A pair of plastitanium knuckle dusters that let you punch hard enough to break the captains jaw into pieces.
+
+uplink-hushpup-name = Hushpup Bundle
+uplink-hushpup-desc = A powerful silenced shotgun with a low magazine capacity. Comes with a spare box of buckshot. Uses 12 gauge shotgun ammo.
 
 # Explosives
 uplink-explosive-grenade-name = Explosive Grenade
@@ -189,6 +195,9 @@ uplink-pistol-magazine-desc = Pistol magazine with 12 catridges. Compatible with
 uplink-pistol-magazine-c20r-name = SMG magazine (.35 auto)
 uplink-pistol-magazine-c20r-desc = Rifle magazine with 30 catridges. Compatible with C-20r.
 
+uplink-estoc-ammo-name = Rifle magazine (.20 rifle)
+uplink-estoc-ammo-desc = A rifle magazine with 25 cartridges. Compatible with the Estoc DMR and M-90.
+
 uplink-pistol-magazine-caseless-name = Pistol Magazine (.25 caseless)
 uplink-pistol-magazine-caseless-desc = Pistol magazine with 10 catridges. Compatible with the Cobra.
 
@@ -199,7 +208,7 @@ uplink-mosin-ammo-name = Ammunition box (.30 rifle)
 uplink-mosin-ammo-desc = A box of 60 cartridges for the surplus rifle.
 
 uplink-sniper-ammo-name = Ammunition box (.60 antimateriel)
-uplink-sniper-ammo-desc = A box of 10 cartridges for the Hristov sniper rifle.
+uplink-sniper-ammo-desc = A box of 10 cartridges for the Hristov sniper rifle and Anaconda Revolver.
 
 uplink-hyposhell-name = Box of hyposhells
 uplink-hyposhell-desc = A box containing four hyposhells, shotgun shells that can hold 7u of any chemical.
@@ -242,6 +251,7 @@ uplink-reinforcement-radio-nukeops-desc =  Radio in a nuclear operative of extre
 
 uplink-reinforcement-radio-cyborg-assault-name = Syndicate Assault Cyborg Teleporter
 uplink-reinforcement-radio-cyborg-assault-desc =  A lean, mean killing machine with access to an Energy Sword, LMG, Cryptographic Sequencer, and a Pinpointer.
+uplink-reinforcement-radio-cyborg-assault-dagd-desc = A lean, mean killing machine with access to an Energy Sword, LMG, Cryptographic Sequencer, and a Pinpointer. Comes bundled with a few Syndicate IDs for you and your buddies, just to make sure you're on the Cyborg's good side.
 
 uplink-stealth-box-name = Stealth Box
 uplink-stealth-box-desc = A box outfitted with stealth technology. Sneak around unnoticed, but don't move too fast or you'll be revealed!
@@ -278,6 +288,9 @@ uplink-singularity-beacon-desc = A device that attracts singularities. Has to be
 
 uplink-antimov-law-name = Antimov Law Circuit
 uplink-antimov-law-desc = A very dangerous Lawset to use when you want to cause the A.I. to go haywire, use with caution.
+
+uplink-syndie-freeform-law-name = Syndicate Freeform Law Board
+uplink-syndie-freeform-law-desc = A highly advanced Law Board that can accept custom law entries, allowing you to easily make the A.I. go haywire. Be careful what laws you input, though.
 
 # Implants
 uplink-storage-implanter-name = Storage Implanter
@@ -457,6 +470,9 @@ uplink-clothing-thieving-gloves-desc = Discreetly steal from pockets and improve
 uplink-clothing-outer-vest-web-name = Web Vest
 uplink-clothing-outer-vest-web-desc = A synthetic armor vest. This one has added webbing and ballistic plates.
 
+uplink-clothing-outer-vest-web-aramid-name = Aramid Web Vest
+uplink-clothing-outer-vest-web-aramid-desc = A synthetic armor vest. This one has added webbing and heat resistant fibers.
+
 uplink-clothing-shoes-boots-mag-syndie-name = Blood-red Magboots
 uplink-clothing-shoes-boots-mag-syndie-desc = A pair of boots that prevent slipping and, in zero gravity, allow you to move normally, at the cost of a slight slowdown. Additionally, they have jetpack functionality and come fueled, but don't last for long.
 
@@ -589,13 +605,13 @@ uplink-bribe-name = Lobbying Bundle
 uplink-bribe-desc = A heartfelt gift that can help you sway someone's opinion. Real or counterfeit? Yes.
 
 uplink-hypodart-name = Hypodart
-uplink-hypodart-desc = A seemingly unremarkable dart with an enlarged reservoir for chemicals. It can store up to 7u reagents in itself, and instantly inject when it hits the target. Starts empty.
+uplink-hypodart-desc = A seemingly unremarkable dart with an enlarged reservoir for chemicals. It can store up to 9u reagents in itself, and instantly inject when it hits the target. Starts empty.
 
 uplink-barber-scissors-name = Barber Scissors
 uplink-barber-scissors-desc = A good tool to give your fellow agent a nice haircut, unless you want to give it to yourself.
 
 uplink-backpack-syndicate-name = Syndicate backpack
-uplink-backpack-syndicate-desc = A lightweight explosion-proof backpack for holding various traitor goods
+uplink-backpack-syndicate-desc = A lightweight explosion-proof backpack for holding various traitor goods.
 
 uplink-cameraBug-name = Camera bug
 uplink-cameraBug-desc = A portable device that allows you to view the station's cameras.
@@ -609,6 +625,9 @@ uplink-business-card-desc = A business card that you can give to someone to demo
 uplink-fake-mindshield-name = Fake Mindshield
 uplink-fake-mindshield-desc = A togglable implant capable of mimicking the same transmissions a real mindshield puts out when on, tricking capable Heads-up displays into thinking you have a mindshield (Nanotrasen brand implanter not provided.)
 
+uplink-contraband-lighter-name = Contraband Lighter box
+uplink-contraband-lighter-desc = A mystery box guaranteed to contain a syndicate branded lighter. No fuel required
+
 uplink-smuggler-satchel-name = Smuggler's Satchel
 uplink-smuggler-satchel-desc = A handy, suspicious looking satchel. Just flat enough to fit underneath floor tiles.
 
@@ -619,7 +638,7 @@ uplink-autoinjector-cart-sedative-name = Syndicate Sedative Cartridge
 uplink-autoinjector-cart-sedative-desc = Contains one Syndicate branded autoinjector cartridge. Can provide almost instant (but temporary) sedation upon injection. Contains ONE dose of 15u of Nocturine.
 
 uplink-autoinjector-cart-gunshot-name = Syndicate Gunshot Cartridge
-uplink-autoinjector-cart-gunshot-desc = Contains one Syndicate branded autoinjector cartridge. Provides a single dose of Puncturase and Tranexamic acid, designed to stabilise a patient who has been shot. Contains ONE dose of 10u Puncturase and 5u Tranexamic Acid
+uplink-autoinjector-cart-gunshot-desc = Contains one Syndicate branded autoinjector cartridge. Provides a single dose of Puncturase and Tranexamic acid, designed to stabilise a patient who has been shot. Contains ONE dose of 10u Puncturase and 5u Tranexamic Acid.
 
 uplink-syndicate-autoinjector-softcase-name = Cartridge Autoinjector Soft Case (Filled)
 uplink-syndicate-autoinjector-softcase-desc = Contains 4 different cartridges for use in an autoinjector. Provide enough chems to stabilise a patient. One for airloss, critical injury, brute injury and burns. Each is single use!
@@ -638,3 +657,45 @@ uplink-emp-flashlight-desc = Looks and functions like a regular flashlight, with
 
 uplink-reagent-implanter-name = Empty Reagent Implanter
 uplink-reagent-implanter-desc = Can be filled with up to 45 units of any chemical. Once implanted, you can activate the implant to inject up to 15 units of the stored chemical into your bloodstream. Has 3 uses, and cannot be refilled.
+
+uplink-revolver-python-bundle-name = Python Bundle
+uplink-revolver-python-bundle-desc = When you need to down a lot of armored targets. Comes with a loaded AP Python and two speedloaders. Aim true.
+
+uplink-hidden-radio-botany-name = Hidden Uplink
+uplink-hidden-radio-botany-desc = An uplink disguised as a plant analyzer. Keep it for yourself or give it to a trusted ally to aid your mission. Telecrystals not included.
+
+uplink-food-pepper-shaker-lead-name = Lead Pepper Shaker
+uplink-food-pepper-shaker-lead-desc = Add a little spice to the crews life for what they have left of it. Contained 15 units of lead.
+
+uplink-pitcher-napalm-name = Pitcher Full of Napalm
+uplink-pitcher-napalm-desc = Nothing quite like waking up to the smell of napalm in the morning. A pitcher full of 50 units of Napalm.
+
+uplink-d4-sharp-name = Extra Sharp D4
+uplink-d4-sharp-desc = Anyone who steps on this is going to roll a natural one and on the floor rolling in pain.
+
+uplink-emergency-medipen-mute-name = Mute Toxin Auto Injector
+uplink-emergency-medipen-mute-desc = An auto injector disguised as an emergency medipen filled with 15 units of mute toxin.
+
+uplink-clothing-shoes-white-no-sound-name = Mute Mime Shoes
+uplink-clothing-shoes-white-no-sound-desc = A silent threat. No one will hear you coming in this special pair of shoes.
+
+uplink-hidden-uplink-radio-science-name = Hidden Uplink
+uplink-hidden-uplink-radio-science-desc = An uplink disguised as a anomaly scanner. Keep it for yourself or give it to a trusted ally to aid your mission. Telecrystals not included.
+
+uplink-clothing-syndi-head-cone-name = Hidden Compartment Warning Cone
+uplink-clothing-syndi-head-cone-desc = An unassuming cone thats hiding a secret. Use it to secretly stash goods or to plant surprises for later.
+
+uplink-network-configurator-with-trigger-name = Network Configurator With Signaler
+uplink-network-configurator-with-trigger-desc = It may look and work like a regular network configurator but it hides a hidden long range signaler for all your triggering needs.
+
+uplink-utility-knife-syndi-name = Chemical Utility Knife
+uplink-utility-knife-syndi-desc = A utility knife with special grooves that can hold up to 10 units of chemicals.
+
+uplink-apprasial-tool-radio-jammer-name = Disguised Radio Jammer
+uplink-apprasial-tool-radio-jammer-desc = A radio jammer hidden inside an apprasial tool. You can both jam their comms and price check the corpse!
+
+uplink-lead-chemistry-vial-name = Lead Vial
+uplink-lead-chemistry-vial-desc = A small vial containing 15 units of lead.
+
+uplink-clothing-head-faceshield-flash-protection-name = Flash Protection Faceshield
+uplink-clothing-head-faceshield-flash-protection-desc = A medical faceshield with a special flash reflective coating. Neither blood nor the bright lights will stop your work.

@@ -1,4 +1,5 @@
 # SPDX-FileCopyrightText: 2025 mkanke-real <mikekanke@gmail.com>
+# SPDX-FileCopyrightText: 2026 YaraaraY <158123176+YaraaraY@users.noreply.github.com>
 #
 # SPDX-License-Identifier: MIT
 
@@ -18,3 +19,25 @@
       amount: 3
     - id: UniformShortsRedWithTop
       amount: 3
+    - id: FoodPackingPeanut
+      amount: 13
+
+- type: entity
+  parent: BaseItem
+  id: TrainWhistle
+  name: train whistle
+  description: Choo Choo!
+  components:
+  - type: Item
+    sprite: _Funkystation/Objects/Fun/train_whistle.rsi
+    size: Tiny
+  - type: Sprite
+    sprite: _Funkystation/Objects/Fun/train_whistle.rsi
+    state: icon
+  - type: UseDelay
+    delay: 3
+  - type: EmitSoundOnUse
+    sound:
+      collection: TrainWhistle
+  - type: Whistle
+    distance: 3

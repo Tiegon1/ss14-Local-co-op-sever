@@ -18,13 +18,23 @@
 # SPDX-FileCopyrightText: 2024 Plykiya <58439124+Plykiya@users.noreply.github.com>
 # SPDX-FileCopyrightText: 2024 Tadeo <td12233a@gmail.com>
 # SPDX-FileCopyrightText: 2024 Ubaser <134914314+UbaserB@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 VMSolidus <evilexecutive@gmail.com>
 # SPDX-FileCopyrightText: 2024 username <113782077+whateverusername0@users.noreply.github.com>
 # SPDX-FileCopyrightText: 2024 whateverusername0 <whateveremail>
+# SPDX-FileCopyrightText: 2025 2DSiggy <siggymaxwell@gmail.com>
 # SPDX-FileCopyrightText: 2025 Skye <57879983+Rainbeon@users.noreply.github.com>
 # SPDX-FileCopyrightText: 2025 Tay <td12233a@gmail.com>
 # SPDX-FileCopyrightText: 2025 jackel234 <52829582+jackel234@users.noreply.github.com>
 # SPDX-FileCopyrightText: 2025 kbarkevich <24629810+kbarkevich@users.noreply.github.com>
 # SPDX-FileCopyrightText: 2025 taydeo <td12233a@gmail.com>
+# SPDX-FileCopyrightText: 2026 Delta <112193783+DeltaDnDsolutions@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2026 MaiaArai <158123176+YaraaraY@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2026 Mora <46364955+TrixxedHeart@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2026 Spatison <137375981+Spatison@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2026 YaraaraY <158123176+YaraaraY@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2026 hivehum <ketchupfaced@gmail.com>
+# SPDX-FileCopyrightText: 2026 unknown <daniel.thomas.staal@gmail.com>
+# SPDX-FileCopyrightText: 2026 unknown <kit.ds.kat@gmail.com>
 #
 # SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
 
@@ -39,6 +49,7 @@
     species: Moth
     hideLayersOnEquip:
     - HeadTop
+    - Tail
   - type: Hunger
   - type: Thirst
   - type: Icon
@@ -72,6 +83,7 @@
       Burn:
         sprite: Mobs/Effects/burn_damage.rsi
   - type: MothAccent
+  - type: Carriable
   - type: Vocal
     sounds:
       Male: UnisexMoth
@@ -82,7 +94,7 @@
   - type: Flammable
     damage:
       types:
-        Heat: 4.5 # moths burn more easily
+        Heat: 2.5 # moths burn more easily
   - type: Temperature # Moths hate the heat and thrive in the cold.
     heatDamageThreshold: 320
     coldDamageThreshold: 230
@@ -133,7 +145,6 @@
       - map: [ "belt" ]
       - map: [ "id" ]
       - map: [ "outerClothing" ]
-      - map: [ "enum.HumanoidVisualLayers.Tail" ] #in the utopian future we should probably have a wings enum inserted here so everyhting doesn't break
       - map: [ "back" ]
       - map: [ "neck" ]
       - map: [ "enum.HumanoidVisualLayers.FacialHair" ]
@@ -142,6 +153,7 @@
       - map: [ "enum.HumanoidVisualLayers.HeadTop" ]
       - map: [ "mask" ]
       - map: [ "head" ]
+      - map: [ "enum.HumanoidVisualLayers.Tail" ] #in the utopian future we should probably have a wings enum inserted here so everyhting doesn't break
       - map: [ "pocket1" ]
       - map: [ "pocket2" ]
       - map: [ "clownedon" ] # Dynamically generated
@@ -154,13 +166,46 @@
         shader: unshaded
         visible: false
   - type: Inventory
+    displacements:
+      gloves:
+        sizeMaps:
+          32:
+            sprite: _Funkystation/Mobs/Species/Moth/displacement.rsi
+            state: gloves
+      shoes:
+        sizeMaps:
+          32:
+            sprite: _Funkystation/Mobs/Species/Moth/displacement.rsi
+            state: shoes
+      ears:
+        sizeMaps:
+          32:
+            sprite: _Funkystation/Mobs/Species/Moth/displacement.rsi
+            state: ears
     femaleDisplacements:
       jumpsuit:
         sizeMaps:
           32:
-            sprite: Mobs/Species/Human/displacement.rsi
-            state: jumpsuit-female
-
+            sprite: _Funkystation/Mobs/Species/Moth/displacement.rsi
+            state: jumpsuit_female
+    maleDisplacements:
+      jumpsuit:
+        sizeMaps:
+          32:
+            sprite: _Funkystation/Mobs/Species/Moth/displacement.rsi
+            state: jumpsuit_male
+  - type: Hands
+    leftHandDisplacement:
+      sizeMaps:
+        32:
+          sprite: _Funkystation/Mobs/Species/Moth/displacement.rsi
+          state: inhand_left
+    rightHandDisplacement:
+      sizeMaps:
+        32:
+          sprite: _Funkystation/Mobs/Species/Moth/displacement.rsi
+          state: inhand_right
+  - type: FootprintOwner
 
 - type: entity
   parent: BaseSpeciesDummy
@@ -171,9 +216,45 @@
     species: Moth
   - type: Inventory
     femaleDisplacements:
+      gloves:
+        sizeMaps:
+          32:
+            sprite: _Funkystation/Mobs/Species/Moth/displacement.rsi
+            state: gloves
+      shoes:
+        sizeMaps:
+          32:
+            sprite: _Funkystation/Mobs/Species/Moth/displacement.rsi
+            state: shoes
+      ears:
+        sizeMaps:
+          32:
+            sprite: _Funkystation/Mobs/Species/Moth/displacement.rsi
+            state: ears
       jumpsuit:
         sizeMaps:
           32:
-            sprite: Mobs/Species/Human/displacement.rsi
-            state: jumpsuit-female
+            sprite: _Funkystation/Mobs/Species/Moth/displacement.rsi
+            state: jumpsuit_female
+    maleDisplacements:
+      gloves:
+        sizeMaps:
+          32:
+            sprite: _Funkystation/Mobs/Species/Moth/displacement.rsi
+            state: gloves
+      shoes:
+        sizeMaps:
+          32:
+            sprite: _Funkystation/Mobs/Species/Moth/displacement.rsi
+            state: shoes
+      ears:
+        sizeMaps:
+          32:
+            sprite: _Funkystation/Mobs/Species/Moth/displacement.rsi
+            state: ears
+      jumpsuit:
+        sizeMaps:
+          32:
+            sprite: _Funkystation/Mobs/Species/Moth/displacement.rsi
+            state: jumpsuit_male
 

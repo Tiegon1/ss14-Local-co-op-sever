@@ -27,29 +27,42 @@
 # SPDX-FileCopyrightText: 2024 Tadeo <td12233a@gmail.com>
 # SPDX-FileCopyrightText: 2024 terezi <147006836+terezi-station@users.noreply.github.com>
 # SPDX-FileCopyrightText: 2024 yglop <95057024+yglop@users.noreply.github.com>
-# SPDX-FileCopyrightText: 2025 Huhm-1 <cameronhillard40@gmail.com>
+# SPDX-FileCopyrightText: 2025 Huhm-1 <180088676+Huhm-1@users.noreply.github.com>
 # SPDX-FileCopyrightText: 2025 K3-1R <150430196+K3-1R@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 Kit <nikkiestes0@gmail.com>
 # SPDX-FileCopyrightText: 2025 Spanky <scott@wearejacob.com>
 # SPDX-FileCopyrightText: 2025 Tay <td12233a@gmail.com>
 # SPDX-FileCopyrightText: 2025 mkanke-real <mikekanke@gmail.com>
+# SPDX-FileCopyrightText: 2025 salpphie <53307242+salpphie@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 salpphie <alyssa.thomas51@gmail.com>
 # SPDX-FileCopyrightText: 2025 slarticodefast <161409025+slarticodefast@users.noreply.github.com>
 # SPDX-FileCopyrightText: 2025 taydeo <td12233a@gmail.com>
-# SPDX-FileCopyrightText: 2025 willow <willowzeta632146@proton.me>
 # SPDX-FileCopyrightText: 2025 willowzeta <willowzeta632146@proton.me>
-# SPDX-FileCopyrightText: 2025 wilowzeta <willowzeta632146@proton.me>
+# SPDX-FileCopyrightText: 2026 EmillyCoelho <167008606+EmilyCoelhoBR@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2026 Huhm-1 <cameronhillard40@gmail.com>
+# SPDX-FileCopyrightText: 2026 Ichaie <ichaicoelho@gmail.com>
+# SPDX-FileCopyrightText: 2026 willow <willowzeta632146@proton.me>
+# SPDX-FileCopyrightText: 2026 wilowzeta <willowzeta632146@proton.me>
 #
 # SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
 
 - type: gameMapPool
   id: DefaultMapPool
   maps: #funkystation
-  - Cluster
-  - Omega
-  - Box
-  - Bagel
+  # low pop
+  - Eden
+# - open slot
   - roid_outpost
-  - Amber
-  - Elkridge
+  - Packed
+# - open slot
+  # high pop
+  - Bagel
   - Core
-
+  - Fland
+  - Box
+# - Oasis #waiting playtest
+# - open slot
+  # backup maps
+  # comment and uncomment as needed
+  - Court
 

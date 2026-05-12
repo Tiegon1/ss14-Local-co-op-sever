@@ -32,10 +32,12 @@
 # SPDX-FileCopyrightText: 2025 DevilishMilk <michaellapjr@gmail.com>
 # SPDX-FileCopyrightText: 2025 Mish <bluscout78@yahoo.com>
 # SPDX-FileCopyrightText: 2025 Tay <td12233a@gmail.com>
+# SPDX-FileCopyrightText: 2025 Terkala <appleorange64@gmail.com>
 # SPDX-FileCopyrightText: 2025 corresp0nd <46357632+corresp0nd@users.noreply.github.com>
 # SPDX-FileCopyrightText: 2025 misghast <51974455+misterghast@users.noreply.github.com>
 # SPDX-FileCopyrightText: 2025 pa.pecherskij <pa.pecherskij@interfax.ru>
 # SPDX-FileCopyrightText: 2025 taydeo <td12233a@gmail.com>
+# SPDX-FileCopyrightText: 2026 QueerCats <jansencheng3@gmail.com>
 #
 # SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
 
@@ -46,6 +48,20 @@
   name: survival-title
   showInVote: false # secret
   description: survival-description
+  rules:
+    - MeteorSwarmScheduler
+    - RampingStationEventScheduler
+    - SpaceTrafficControlEventScheduler
+    - SpaceTrafficControlFriendlyEventScheduler
+    - BasicRoundstartVariation
+
+- type: gamePreset
+  id: SecretSurvival
+  alias:
+    - secretsurvival
+  name: secret-title
+  showInVote: false # secret
+  description: secret-description
   rules:
     - MeteorSwarmScheduler
     - RampingStationEventScheduler
@@ -69,6 +85,19 @@
     - BasicRoundstartVariation
 
 - type: gamePreset
+  id: SecretKesslerSyndrome
+  alias:
+    - secretkessler
+  name: secret-title
+  showInVote: false # secret
+  description: secret-description
+  rules:
+    - KesslerSyndromeScheduler
+    - RampingStationEventScheduler
+    - SpaceTrafficControlEventScheduler
+    - BasicRoundstartVariation
+
+- type: gamePreset
   id: AllAtOnce
   alias:
   - all
@@ -79,7 +108,7 @@
     - Nukeops
     - Traitor
     - Revolutionary
-    - Zombie
+    - medZombies
     - BlobGameMode # Goobstation antag
     - SubGamemodesRule
     - MeteorSwarmScheduler
@@ -103,7 +132,7 @@
     - Nukeops
     - Traitor
     - Revolutionary
-    - Zombie
+    - medZombies
     - Wizard
     - BlobGameMode # Goobstation antag
     - SubGamemodesRule
@@ -207,6 +236,22 @@
     - BasicRoundstartVariation
 
 - type: gamePreset
+  id: SecretTraitor
+  alias:
+    - secrettraitor
+  name: secret-title
+  description: secret-description
+  showInVote: false
+  rules:
+    - DummyNonAntagChance
+    - Traitor
+    - SubGamemodesRule
+    - BasicStationEventScheduler
+    - MeteorSwarmScheduler
+    - SpaceTrafficControlEventScheduler
+    - BasicRoundstartVariation
+
+- type: gamePreset
   id: Deathmatch
   alias:
     - deathmatch
@@ -236,6 +281,22 @@
     - BasicRoundstartVariation
 
 - type: gamePreset
+  id: SecretNukeops
+  alias:
+    - secretnukeops
+  name: secret-title
+  description: secret-description
+  showInVote: false
+  rules:
+    - Nukeops
+    - DummyNonAntagChance
+    - SubGamemodesRule
+    - BasicStationEventScheduler
+    - MeteorSwarmScheduler
+    - SpaceTrafficControlEventScheduler
+    - BasicRoundstartVariation
+
+- type: gamePreset
   id: Revolutionary
   alias:
     - rev
@@ -254,11 +315,28 @@
   - BasicRoundstartVariation
 
 - type: gamePreset
-  id: Wizard
+  id: SecretRevolutionary
   alias:
-  - wizard
-  name: wizard-title
-  description: wizard-description
+    - secretrevs
+    - secretrevolutionaries
+  name: secret-title
+  description: secret-description
+  showInVote: false
+  rules:
+  - DummyNonAntagChance
+  - Revolutionary
+  - SubGamemodesRule
+  - BasicStationEventScheduler
+  - MeteorSwarmScheduler
+  - SpaceTrafficControlEventScheduler
+  - BasicRoundstartVariation
+
+- type: gamePreset
+  id: SecretWizard
+  alias:
+  - secretwizard
+  name: secret-title
+  description: secret-description
   showInVote: false
   rules:
   - Wizard
@@ -274,14 +352,58 @@
   - zombie
   - zombies
   - Zombies
-  - zz14
-  - zomber
   name: zombie-title
   description: zombie-description
   showInVote: false
   rules:
-  - Zombie
-  - BasicStationEventScheduler
+  - medZombies
+  - CalmTraitor
+  - BasicStationEventSchedulerNoAntag
+  - MeteorSwarmScheduler
+  - SpaceTrafficControlEventScheduler
+  - BasicRoundstartVariation
+
+- type: gamePreset
+  id: SecretZombieMedium
+  alias:
+  - secretzombie
+  name: secret-title
+  description: secret-description
+  showInVote: false
+  rules:
+  - medZombies
+  - CalmTraitor
+  - BasicStationEventSchedulerNoAntag
+  - MeteorSwarmScheduler
+  - SpaceTrafficControlEventScheduler
+  - BasicRoundstartVariation
+
+- type: gamePreset
+  id: SecretLowZombie
+  alias:
+  - secretZombieLow
+  name: secret-title
+  description: secret-description
+  showInVote: false
+  rules:
+  - lowZombies
+  - CalmTraitor
+  - BasicStationEventSchedulerNoAntag
+  - MeteorSwarmScheduler
+  - SpaceTrafficControlEventScheduler
+  - BasicRoundstartVariation
+
+- type: gamePreset
+  id: SecretZombieHigh
+  alias:
+  - secretZombieHigh
+  name: secret-title
+  description: secret-description
+  showInVote: false
+  rules:
+  - highZombies
+  - CalmTraitor
+  - BasicStationEventSchedulerNoAntag
   - MeteorSwarmScheduler
   - SpaceTrafficControlEventScheduler
   - BasicRoundstartVariation
@@ -296,8 +418,8 @@
   description: zombieteors-description
   showInVote: false
   rules:
-  - Zombie
-  - BasicStationEventScheduler
+  - medZombies
+  - BasicStationEventSchedulerNoAntag
   - KesslerSyndromeScheduler
   - SpaceTrafficControlEventScheduler
   - BasicRoundstartVariation
