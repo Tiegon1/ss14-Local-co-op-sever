@@ -37,6 +37,7 @@
     InconstancyParticleUnknown: 1
     InvisibilityJumping: 1
     InvisibilityJumpingReflect: 1
+    GravityWell: 1
     veryRapid: 1
 #    veryRapidJumpingUnknown: 1
 
@@ -257,6 +258,19 @@
     reflectProb: 0.5
     reflects:
       - Energy
+
+- type: anomalyBehavior
+  id: GravityWell
+  earnPointModifier: 1.8
+  description: anomaly-behavior-gravity-well
+  components:
+  - type: GravityWell
+    baseRadialAcceleration: 8
+    baseTangentialAcceleration: 0.5
+    maxRange: 4
+  - type: SingularityDistortion
+    intensity: 1200
+    falloffPower: 2.5
 
 - type: anomalyBehavior
   id: veryRapid
