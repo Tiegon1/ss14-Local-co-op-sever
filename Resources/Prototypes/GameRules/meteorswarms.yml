@@ -63,6 +63,9 @@
     MeteorRockUranium: 0.5
     MeteorRockBananium: 0.5
     MeteorRockBSCrystal: 0.5 # Goobstation
+    MeteorXenoSmall: 8
+    MeteorXenoMedium: 5
+    MeteorXenoLarge: 4
 
 # Event Schedulers
 
