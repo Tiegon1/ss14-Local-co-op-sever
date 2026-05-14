@@ -107,3 +107,4 @@ anomaly-behavior-inconstancy = [color=crimson]Impermanence has been detected. Pa
 anomaly-behavior-fast = [color=crimson]The pulsation frequency is strongly increased.[/color]
 anomaly-behavior-strenght = [color=crimson]The pulsation power is significantly increased.[/color]
 anomaly-behavior-moving = [color=crimson]Coordinate instability was detected.[/color]
+anomaly-behavior-gravity-well = [color=crimson]A strong gravitational distortion was detected — the anomaly pulls nearby objects and warps space.[/color]
