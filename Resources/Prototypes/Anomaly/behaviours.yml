@@ -23,6 +23,7 @@
     Reflect: 1
     NonSensivity: 1
     Sensivity: 1
+    PulsingGravity: 1
   #Hard
     Fast: 1
     Strenght: 1
@@ -82,6 +83,20 @@
   description: anomaly-behavior-rapid
   pulseFrequencyModifier: 0.5
   pulsePowerModifier: 0.5
+
+- type: anomalyBehavior
+  id: PulsingGravity
+  earnPointModifier: 1.1
+  description: anomaly-behavior-pulsing-gravity
+  components:
+  - type: GravityWell
+    baseRadialAcceleration: 6
+    baseTangentialAcceleration: 0.5
+    maxRange: 4
+    gravPulsePeriod: 3
+  - type: SingularityDistortion
+    intensity: 800
+    falloffPower: 2.5
 
 - type: anomalyBehavior
   id: BalancedSecret

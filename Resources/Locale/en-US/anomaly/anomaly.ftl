@@ -108,3 +108,4 @@ anomaly-behavior-fast = [color=crimson]The pulsation frequency is strongly incre
 anomaly-behavior-strenght = [color=crimson]The pulsation power is significantly increased.[/color]
 anomaly-behavior-moving = [color=crimson]Coordinate instability was detected.[/color]
 anomaly-behavior-gravity-well = [color=crimson]A strong gravitational distortion was detected — the anomaly pulls nearby objects and warps space.[/color]
+anomaly-behavior-pulsing-gravity = [color=crimson]Periodic gravitational pulses have been detected—objects are intermittently drawn toward the anomaly.[/color]
