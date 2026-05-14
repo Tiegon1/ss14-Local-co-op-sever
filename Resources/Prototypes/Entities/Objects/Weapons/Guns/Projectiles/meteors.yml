@@ -269,7 +269,7 @@
         shape:
           !type:PhysShapeCircle
           radius: 0.25
-        density: 100
+        density: 50
         hard: false
         layer:
         - LargeMobLayer
@@ -277,12 +277,12 @@
         - Impassable
         - BulletImpassable
   - type: Explosive
-    totalIntensity: 50
+    totalIntensity: 20
   - type: Destructible
     thresholds:
     - trigger:
         !type:DamageTrigger
-        damage: 300
+        damage: 200
       behaviors:
       - !type:DoActsBehavior
         acts: [ "Destruction" ]
@@ -294,8 +294,8 @@
         weightedEntityTable: "MeteorSpawnXenoTable"
         minSpawn: 2
         maxSpawn: 4
-        spawnAfter: 0.5
-
+        spawnAfter: 1
+        
 - type: entity
   parent: BaseMeteor
   id: MeteorXenoMedium
@@ -310,7 +310,7 @@
         shape:
           !type:PhysShapeCircle
           radius: 0.3
-        density: 100
+        density: 75
         hard: false
         layer:
         - LargeMobLayer
@@ -318,12 +318,12 @@
         - Impassable
         - BulletImpassable
   - type: Explosive
-    totalIntensity: 100
+    totalIntensity: 50
   - type: Destructible
     thresholds:
     - trigger:
         !type:DamageTrigger
-        damage: 500
+        damage: 400
       behaviors:
       - !type:DoActsBehavior
         acts: [ "Destruction" ]
@@ -336,7 +336,7 @@
         spawnOffset: 2
         minSpawn: 3
         maxSpawn: 6
-        spawnAfter: 0.5
+        spawnAfter: 1
 
 - type: entity
   parent: BaseMeteor
@@ -347,12 +347,12 @@
   - type: Sprite
     state: big
   - type: Explosive
-    totalIntensity: 150
+    totalIntensity: 75
   - type: Destructible
     thresholds:
     - trigger:
         !type:DamageTrigger
-        damage: 1200
+        damage: 800
       behaviors:
       - !type:DoActsBehavior
         acts: [ "Destruction" ]
@@ -365,4 +365,4 @@
         spawnOffset: 3
         minSpawn: 5
         maxSpawn: 8
-        spawnAfter: 0.5
+        spawnAfter: 1

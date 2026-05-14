@@ -63,9 +63,6 @@
     MeteorRockUranium: 0.5
     MeteorRockBananium: 0.5
     MeteorRockBSCrystal: 0.5 # Goobstation
-    MeteorXenoSmall: 8
-    MeteorXenoMedium: 5
-    MeteorXenoLarge: 4
 
 # Event Schedulers
 
@@ -168,8 +165,10 @@
     minimumPlayers: 1
   - type: MeteorSwarm
     meteors:
-      MeteorSmall: 7
-      MeteorMedium: 3
+      MeteorSmall: 4
+      MeteorMedium: 2
+      MeteorXenoSmall: 4
+      MeteorXenoMedium: 1
 
 - type: entity
   parent: GameRuleMeteorSwarm
@@ -179,9 +178,11 @@
     weight: 1
   - type: MeteorSwarm
     meteors:
-      MeteorSmall: 3
-      MeteorMedium: 6
+      MeteorSmall: 1
+      MeteorMedium: 3
       MeteorLarge: 1
+      MeteorXenoSmall: 2
+      MeteorXenoMedium: 3
 
 - type: entity
   parent: GameRuleMeteorSwarm
@@ -191,9 +192,12 @@
     weight: 1
   - type: MeteorSwarm
     meteors:
-      MeteorSmall: 2
-      MeteorMedium: 4
-      MeteorLarge: 4
+      MeteorSmall: 1
+      MeteorMedium: 2
+      MeteorLarge: 2    
+      MeteorXenoSmall: 1
+      MeteorXenoMedium: 2
+      MeteorXenoLarge: 2
 
 - type: entity
   parent: GameRuleMeteorSwarm
