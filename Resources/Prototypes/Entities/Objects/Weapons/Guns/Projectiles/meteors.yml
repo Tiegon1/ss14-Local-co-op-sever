@@ -242,3 +242,127 @@
       - !type:SpillBehavior
         solution: blood
       - !type:ExplodeBehavior
+
+
+# Xeno-spawning meteors
+- type: weightedRandomEntity
+  id: MeteorSpawnXenoTable
+  weights:
+    MobXenoDrone: 4
+    MobXenoRunner: 3
+    MobXenoSpitter: 2
+    MobXenoRavager: 1
+    MobXenoPraetorian: 0.5
+    MobXenoQueen: 0.1
+
+- type: entity
+  parent: BaseMeteor
+  id: MeteorXenoSmall
+  name: xeno seed meteor
+  suffix: Small
+  components:
+  - type: Sprite
+    state: small
+  - type: Fixtures
+    fixtures:
+      projectile:
+        shape:
+          !type:PhysShapeCircle
+          radius: 0.25
+        density: 100
+        hard: false
+        layer:
+        - LargeMobLayer
+        mask:
+        - Impassable
+        - BulletImpassable
+  - type: Explosive
+    totalIntensity: 50
+  - type: Destructible
+    thresholds:
+    - trigger:
+        !type:DamageTrigger
+        damage: 300
+      behaviors:
+      - !type:DoActsBehavior
+        acts: [ "Destruction" ]
+      - !type:PlaySoundBehavior
+        sound:
+          collection: MetalBreak
+      - !type:ExplodeBehavior
+      - !type:WeightedSpawnEntityBehavior
+        weightedEntityTable: "MeteorSpawnXenoTable"
+        minSpawn: 2
+        maxSpawn: 4
+        spawnAfter: 0.5
+
+- type: entity
+  parent: BaseMeteor
+  id: MeteorXenoMedium
+  name: xeno seed meteor
+  suffix: Medium
+  components:
+  - type: Sprite
+    state: medium
+  - type: Fixtures
+    fixtures:
+      projectile:
+        shape:
+          !type:PhysShapeCircle
+          radius: 0.3
+        density: 100
+        hard: false
+        layer:
+        - LargeMobLayer
+        mask:
+        - Impassable
+        - BulletImpassable
+  - type: Explosive
+    totalIntensity: 100
+  - type: Destructible
+    thresholds:
+    - trigger:
+        !type:DamageTrigger
+        damage: 500
+      behaviors:
+      - !type:DoActsBehavior
+        acts: [ "Destruction" ]
+      - !type:PlaySoundBehavior
+        sound:
+          collection: MetalBreak
+      - !type:ExplodeBehavior
+      - !type:WeightedSpawnEntityBehavior
+        weightedEntityTable: "MeteorSpawnXenoTable"
+        spawnOffset: 2
+        minSpawn: 3
+        maxSpawn: 6
+        spawnAfter: 0.5
+
+- type: entity
+  parent: BaseMeteor
+  id: MeteorXenoLarge
+  name: xeno seed meteor
+  suffix: Large
+  components:
+  - type: Sprite
+    state: big
+  - type: Explosive
+    totalIntensity: 150
+  - type: Destructible
+    thresholds:
+    - trigger:
+        !type:DamageTrigger
+        damage: 1200
+      behaviors:
+      - !type:DoActsBehavior
+        acts: [ "Destruction" ]
+      - !type:PlaySoundBehavior
+        sound:
+          collection: MetalBreak
+      - !type:ExplodeBehavior
+      - !type:WeightedSpawnEntityBehavior
+        weightedEntityTable: "MeteorSpawnXenoTable"
+        spawnOffset: 3
+        minSpawn: 5
+        maxSpawn: 8
+        spawnAfter: 0.5
