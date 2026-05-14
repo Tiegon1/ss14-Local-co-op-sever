@@ -408,7 +408,7 @@
       0: Alive
       100: SoftCritical
       150: HardCritical
-      200: Dead
+      400: Dead
   - type: MobState
     allowedStates:
     - Alive
