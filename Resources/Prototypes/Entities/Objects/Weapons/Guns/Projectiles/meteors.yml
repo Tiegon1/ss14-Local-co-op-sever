@@ -269,7 +269,7 @@
         shape:
           !type:PhysShapeCircle
           radius: 0.25
-        density: 50
+        density: 100
         hard: false
         layer:
         - LargeMobLayer
@@ -277,12 +277,12 @@
         - Impassable
         - BulletImpassable
   - type: Explosive
-    totalIntensity: 20
+    totalIntensity: 10
   - type: Destructible
     thresholds:
     - trigger:
         !type:DamageTrigger
-        damage: 200
+        damage: 800
       behaviors:
       - !type:DoActsBehavior
         acts: [ "Destruction" ]
@@ -294,7 +294,7 @@
         weightedEntityTable: "MeteorSpawnXenoTable"
         minSpawn: 1
         maxSpawn: 2
-        spawnAfter: 1
+        spawnAfter: 2
         
 - type: entity
   parent: BaseMeteor
@@ -310,7 +310,7 @@
         shape:
           !type:PhysShapeCircle
           radius: 0.3
-        density: 75
+        density: 100
         hard: false
         layer:
         - LargeMobLayer
@@ -318,12 +318,12 @@
         - Impassable
         - BulletImpassable
   - type: Explosive
-    totalIntensity: 50
+    totalIntensity: 20
   - type: Destructible
     thresholds:
     - trigger:
         !type:DamageTrigger
-        damage: 400
+        damage: 1000
       behaviors:
       - !type:DoActsBehavior
         acts: [ "Destruction" ]
@@ -336,7 +336,7 @@
         spawnOffset: 2
         minSpawn: 2
         maxSpawn: 4
-        spawnAfter: 1
+        spawnAfter: 2
 
 - type: entity
   parent: BaseMeteor
@@ -347,12 +347,12 @@
   - type: Sprite
     state: big
   - type: Explosive
-    totalIntensity: 75
+    totalIntensity: 50
   - type: Destructible
     thresholds:
     - trigger:
         !type:DamageTrigger
-        damage: 800
+        damage: 2000
       behaviors:
       - !type:DoActsBehavior
         acts: [ "Destruction" ]
@@ -365,4 +365,4 @@
         spawnOffset: 3
         minSpawn: 4
         maxSpawn: 6
-        spawnAfter: 1
+        spawnAfter: 2
