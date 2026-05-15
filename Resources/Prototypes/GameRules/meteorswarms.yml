@@ -165,9 +165,9 @@
     minimumPlayers: 1
   - type: MeteorSwarm
     meteors:
-      MeteorSmall: 4
+      MeteorSmall: 6
       MeteorMedium: 2
-      MeteorXenoSmall: 4
+      MeteorXenoSmall: 2
       MeteorXenoMedium: 1
 
 - type: entity
@@ -179,10 +179,10 @@
   - type: MeteorSwarm
     meteors:
       MeteorSmall: 1
-      MeteorMedium: 3
+      MeteorMedium: 4
       MeteorLarge: 1
       MeteorXenoSmall: 2
-      MeteorXenoMedium: 3
+      MeteorXenoMedium: 2
 
 - type: entity
   parent: GameRuleMeteorSwarm
