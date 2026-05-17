@@ -157,13 +157,24 @@ public sealed partial class SalvageSystem
     {
         component.Missions.Clear();
 
+        // Enumerate available difficulties once
+        var diffs = _prototypeManager.EnumeratePrototypes<Content.Shared.Procedural.SalvageDifficultyPrototype>().ToList();
+        if (diffs.Count == 0)
+        {
+            // fallback to moderate if none loaded
+            diffs.Add(_prototypeManager.Index<Content.Shared.Procedural.SalvageDifficultyPrototype>("Moderate"));
+        }
+
         for (var i = 0; i < MissionLimit; i++)
         {
+            // Choose uniformly at random from available prototypes
+            var chosen = diffs[_random.Next(diffs.Count)];
+
             var mission = new SalvageMissionParams
             {
                 Index = component.NextIndex,
                 Seed = _random.Next(),
-                Difficulty = "Moderate",
+                Difficulty = chosen.ID,
             };
 
             component.Missions[component.NextIndex++] = mission;

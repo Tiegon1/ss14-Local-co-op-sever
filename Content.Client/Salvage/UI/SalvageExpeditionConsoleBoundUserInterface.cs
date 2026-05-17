@@ -64,24 +64,21 @@ public sealed class SalvageExpeditionConsoleBoundUserInterface : BoundUserInterf
             var offering = new OfferingWindowOption();
             offering.Title = Loc.GetString($"salvage-expedition-type");
 
-            var difficultyId = "Moderate";
-            var difficultyProto = _protoManager.Index<SalvageDifficultyPrototype>(difficultyId);
+            var difficultyId = string.IsNullOrWhiteSpace(missionParams.Difficulty) ? "Moderate" : missionParams.Difficulty;
+            var difficultyProto = _protoManager.Index<Content.Shared.Procedural.SalvageDifficultyPrototype>(difficultyId);
             // TODO: Selectable difficulty soon.
             var mission = salvage.GetMission(difficultyProto, missionParams.Seed);
 
-            // Difficulty
-            // Details
+            // Difficulty label
             offering.AddContent(new Label()
             {
                 Text = Loc.GetString("salvage-expedition-window-difficulty")
             });
 
-            var difficultyColor = difficultyProto.Color;
-
             offering.AddContent(new Label
             {
-                Text = Loc.GetString("salvage-expedition-difficulty-Moderate"),
-                FontColorOverride = difficultyColor,
+                Text = Loc.GetString($"salvage-expedition-difficulty-{difficultyProto.ID}"),
+                FontColorOverride = difficultyProto.Color,
                 HorizontalAlignment = Control.HAlignment.Left,
                 Margin = new Thickness(0f, 0f, 0f, 5f),
             });
