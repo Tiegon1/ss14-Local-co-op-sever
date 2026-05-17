@@ -52,3 +52,42 @@
   configs:
     DefenseStructure: CarpStatue
     Megafauna: MobDragonDungeon
+
+# Dinosaur salvage faction
+- type: salvageFaction
+  id: Dinosaurs
+  desc: salvage-faction-dinosaurs
+  entries:
+    - proto: MobDinosaurCompy
+      cost: 1
+      prob: 0.20
+    - proto: MobDinosaurDilo
+      cost: 2
+      prob: 0.15
+    - proto: MobDinosaurRaptor
+      cost: 3
+      prob: 0.20
+    - proto: MobDinosaurAnki
+      cost: 8
+      prob: 0.05
+    - proto: MobDinosaurKentro
+      cost: 6
+      prob: 0.06
+    - proto: MobDinosaurPara
+      cost: 5
+      prob: 0.06
+    - proto: MobDinosaurSpino
+      cost: 12
+      prob: 0.03
+    - proto: MobDinosaurStego
+      cost: 10
+      prob: 0.03
+    - proto: MobDinosaurTrex
+      cost: 15
+      prob: 0.02
+    - proto: MobDinosaurTrike
+      cost: 9
+      prob: 0.04
+  configs:
+    DefenseStructure: DinoStatue
+    Megafauna: MobDinosaurTrex
