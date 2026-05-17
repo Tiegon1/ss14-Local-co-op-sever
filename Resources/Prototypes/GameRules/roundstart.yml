@@ -519,7 +519,7 @@
   components:
   - type: RampingStationEventScheduler
     averageChaos: 12
-    averageEndTime: 100
+    averageEndTime: 180 #  1 = minute
     scheduledGameRules: !type:NestedSelector
       tableId: BasicGameRulesTable
 
