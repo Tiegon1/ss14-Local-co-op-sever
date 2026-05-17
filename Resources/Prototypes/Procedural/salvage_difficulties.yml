@@ -4,6 +4,14 @@
 # SPDX-License-Identifier: MIT
 
 - type: salvageDifficulty
+  id: Easy
+  lootBudget: 15
+  mobBudget: 12.5
+  modifierBudget: 1
+  color: "#9FED5896"
+  recommendedPlayers: 1
+
+- type: salvageDifficulty
   id: Moderate
   lootBudget: 30
   mobBudget: 25
@@ -11,7 +19,24 @@
   color: "#52B4E996"
   recommendedPlayers: 2
 
-    #9FED5896
-    #EFB34196
-    #DE3A3A96
-    #D381C996
+- type: salvageDifficulty
+  id: Hard
+  lootBudget: 60
+  mobBudget: 50
+  modifierBudget: 4
+  color: "#DE3A3A96"
+  recommendedPlayers: 4
+
+- type: salvageDifficulty
+  id: VeryHard
+  lootBudget: 120
+  mobBudget: 100
+  modifierBudget: 8
+  color: "#D381C996"
+  recommendedPlayers: 6
+
+  # example colors:
+  #9FED5896
+  #EFB34196
+  #DE3A3A96
+  #D381C996
