@@ -36,13 +36,12 @@
   desc: salvage-faction-carps
   entries:
     - proto: MobCarpDungeon
-    # These do too much damage for salvage, need nerfs
-    #- proto: MobCarpHolo
-    #  cost: 5
-    #  prob: 0.1
-    #- proto: MobCarpMagic
-    #  cost: 5
-    #  prob: 0.1
+    - proto: MobCarpHolo
+      cost: 5
+      prob: 0.1
+      proto: MobCarpMagic
+      cost: 5
+      prob: 0.1
     - proto: MobCarpRainbow # carp version of rouny...
       cost: 3
       prob: 0.05
