@@ -39,7 +39,7 @@
     - proto: MobCarpHolo
       cost: 5
       prob: 0.1
-      proto: MobCarpMagic
+    - proto: MobCarpMagic
       cost: 5
       prob: 0.1
     - proto: MobCarpRainbow # carp version of rouny...
