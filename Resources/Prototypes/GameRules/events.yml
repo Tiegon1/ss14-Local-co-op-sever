@@ -724,7 +724,7 @@
     - id: MobArgocyteSwiper
       prob: 0.003
     - id: MobHonkBot
-      prob: 0.003
+      prob: 0.0003
     - id: MobIronCrab
       prob: 0.003
     - id: MobQuartzCrab
@@ -736,7 +736,7 @@
     - id: MobArgocyteMolder
       prob: 0.003
     - id: MobJonkBot
-      prob: 0.003
+      prob: 0.0003
     - id: MobArgocyteHarvester
       prob: 0.003
     - id: MobArgocyteGlider

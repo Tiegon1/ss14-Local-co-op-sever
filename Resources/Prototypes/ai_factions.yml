@@ -70,7 +70,8 @@
   - AllHostile
   - Wizard
   - Dragon
-
+  - Syndicate
+  
 - type: npcFaction
   id: SimpleHostile
   hostile:
