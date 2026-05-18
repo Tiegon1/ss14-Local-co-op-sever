@@ -34,6 +34,7 @@
     - AllHostile
     - Wizard
     - BloodCultist # Blood cultists
+    - Dino # dinosaurs
 
 - type: npcFaction
   id: NanoTrasen
@@ -49,6 +50,7 @@
   - Heretic # goob edit - heretics
   - Blob # Goobstation - Blob
   - Wizard
+  - Dino # dinosaurs
 
 - type: npcFaction
   id: Mouse
@@ -71,6 +73,7 @@
   - Wizard
   - Dragon
   - Syndicate
+  - Dino # dinosaurs
   
 - type: npcFaction
   id: SimpleHostile
@@ -87,6 +90,7 @@
   - Wizard
   - Dragon
   - BloodCultist # Blood cultists
+  - Dino # dinosaurs
 
 - type: npcFaction
   id: SimpleNeutral
@@ -106,6 +110,7 @@
   - Blob # Goobstation - Blob
   - Wizard
   - BloodCultist # Blood cultists
+  - Dino # dinosaurs
 
 - type: npcFaction
   id: Xeno
@@ -122,6 +127,7 @@
   - Wizard
   - Dragon
   - BloodCultist # Blood cultists
+  - Dino # dinosaurs
 
 - type: npcFaction
   id: Zombie
@@ -141,6 +147,7 @@
   - Wizard
   - Dragon
   - BloodCultist # Blood cultists
+  - Dino # dinosaurs
 
 - type: npcFaction
   id: Revolutionary
@@ -153,6 +160,7 @@
   - Blob
   - Wizard
   - BloodCultist # Blood cultists
+  - Dino # dinosaurs
 
 - type: npcFaction
   id: AllHostile
@@ -173,6 +181,7 @@
   - Blob # Goobstation - Blob
   - Wizard
   - BloodCultist # Blood cultists
+  - Dino # dinosaurs
 
 - type: npcFaction
   id: Wizard
@@ -190,3 +199,23 @@
   - Revolutionary
   - AllHostile
   - BloodCultist # Blood cultists
+  - Dino # dinosaurs
+
+- type: npcFaction
+  id: Dino
+  hostile:
+    - NanoTrasen
+    - SimpleHostile
+    - PetsNT
+    - AllHostile
+    - Xeno
+    - Zombie
+    - Dragon
+    - Syndicate
+    - Heretic # goob edit - heretics
+    - Blob # Goobstation - Blob
+    - Wizard
+    - BloodCultist # Blood cultists
+    - Revolutionary
+    - SimpleNeutral
+    - Passive
