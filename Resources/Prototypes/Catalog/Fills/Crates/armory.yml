@@ -114,3 +114,16 @@
       amount: 2
     - id: TearGasGrenade
       amount: 4
+
+- type: entity
+  id: CrateArmorySMGcr20
+  parent: [ CrateWeaponSecure, BaseSecurityContraband ]
+  name: SMG cratecr20
+  description: Contains two high-powered, semiautomatic rifles with four mags. Requires Armory access to open.
+  components:
+  - type: StorageFill
+    contents:
+      - id: WeaponSubMachineGunC20r
+        amount: 2
+      - id: MagazinePistolSubMachineGun
+        amount: 4

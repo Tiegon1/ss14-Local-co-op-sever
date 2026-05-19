@@ -38,7 +38,7 @@
     sprite: Objects/Weapons/Guns/Shotguns/enforcer.rsi
     state: icon
   product: CrateArmoryShotgun
-  cost: 7000
+  cost: 11000
   category: cargoproduct-category-name-armory
   group: market
 
@@ -89,5 +89,15 @@
     state: icon
   product: CrateArmoryPistols
   cost: 5200
+  category: cargoproduct-category-name-armory
+  group: market
+
+- type: cargoProduct
+  id: ArmorySmgcr20
+  icon:
+    sprite: Objects/Weapons/Guns/SMGs/c20r.rsi
+    state: icon
+  product: CrateArmorySMGcr20
+  cost: 12000
   category: cargoproduct-category-name-armory
   group: market
