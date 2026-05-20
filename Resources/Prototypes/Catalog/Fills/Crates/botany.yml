@@ -139,5 +139,5 @@
   components:
   - type: StorageFill
     contents:
-      - id: HydroponicsTrayMachineCircutboard
+      - id: HydroponicsTrayMachineCircuitboard
         amount: 5
