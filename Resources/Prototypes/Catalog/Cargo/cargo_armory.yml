@@ -101,3 +101,14 @@
   cost: 12000
   category: cargoproduct-category-name-armory
   group: market
+
+- type: cargoProduct
+  id: ArmorySmgAtreides
+  icon:
+    sprite: Objects/Weapons/Guns/SMGs/atreides.rsi
+    state: icon
+  product: CrateArmorySMGAtreides
+  cost: 20000
+  category: cargoproduct-category-name-armory
+  group: market
+  

@@ -127,3 +127,16 @@
         amount: 2
       - id: MagazinePistolSubMachineGun
         amount: 4
+
+- type: entity
+  id: CrateArmorySMGAtreides
+  parent: [ CrateWeaponSecure, BaseSecurityContraband ]
+  name: SMG crateAtreides
+  description: Contains two high-powered, semiautomatic rifles with four mags. Requires Armory access to open.
+  components:
+  - type: StorageFill
+    contents:
+      - id: WeaponSubMachineGunAtreides
+        amount: 2
+      - id: MagazinePistolSubMachineGun
+        amount: 4
