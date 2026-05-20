@@ -62,3 +62,23 @@
   cost: 750
   category: cargoproduct-category-name-hydroponics
   group: market
+
+- type: cargoProduct
+  id: HydroponicsTray
+  icon:
+    sprite: Objects/Specific/Chemistry/jug.rsi
+    state: jug
+  product: CrateHydroponicsTray
+  cost: 3000
+  category: cargoproduct-category-name-hydroponics
+  group: market
+
+- type: cargoProduct
+  id: HydroponicsTrayBoards
+  icon:
+    sprite: Objects/Specific/Chemistry/jug.rsi
+    state: jug
+  product: CrateHydroponicsTrayBoards
+  cost: 5000
+  category: cargoproduct-category-name-hydroponics
+  group: market

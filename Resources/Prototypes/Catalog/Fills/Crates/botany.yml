@@ -119,3 +119,25 @@
       - id: WatermelonSeeds
       - id: PeaSeeds
       - id: CherrySeeds
+
+- type: entity
+  id: CrateHydroponicsTray
+  parent: CrateHydroponics
+  name: Hydroponics tray crate
+  description: A single Hydroponics tray Fully Assembled.
+  components:
+  - type: StorageFill
+    contents:
+      - id: HydroponicsTrayEmpty
+        amount: 1
+
+- type: entity
+  id: CrateHydroponicsTrayBoards
+  parent: CrateHydroponics
+  name: Hydroponics Boards crate
+  description: A Five Hydroponics tray boards.
+  components:
+  - type: StorageFill
+    contents:
+      - id: HydroponicsTrayMachineCircutboard
+        amount: 5
