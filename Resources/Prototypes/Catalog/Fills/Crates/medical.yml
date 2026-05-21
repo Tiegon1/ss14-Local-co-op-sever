@@ -203,3 +203,20 @@
         amount: 2
       - id: ClothingMaskSterile
         amount: 2
+
+- type: entity
+  id: CratePatches
+  parent: CrateMedical
+  name: patch crate
+  description: Crate filled with various medical patches.
+  components:
+  - type: StorageFill
+    contents:
+      - id: MedicalPatchBasic
+        amount: 10
+      - id: MedicalPatchRapid
+        amount: 10
+      - id: MedicalPatchTherapeutic
+        amount: 10
+      - id: MedicalPatchLarge
+        amount: 10
