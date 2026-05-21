@@ -707,8 +707,6 @@
       prob: 0.003
     - id: MobCorgiCerberus
       prob: 0.003
-    - id: MobArgocyteFounder # not hostile
-      prob: 0.003
     - id: MobCarpHolo
       prob: 0.003
     - id: MobCarpRainbow
@@ -718,8 +716,6 @@
     - id: MobCarp
       prob: 0.003
     - id: MobArgocytePouncer
-      prob: 0.003
-    - id: MobGhoulProphet  # not hostile
       prob: 0.003
     - id: MobArgocyteSwiper
       prob: 0.003
@@ -759,9 +755,9 @@
   - type: VentCrittersRule
     entries:
     - id: MobMothSyndy
-      prob: 0.05    
+      prob: 0.03    
     - id: MobCatSyndy
-      prob: 0.03
+      prob: 0.01
     - id: MobGrenadePenguin
       prob: 0.001
 
