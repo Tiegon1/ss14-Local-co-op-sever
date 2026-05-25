@@ -645,15 +645,15 @@
   - type: VentCrittersRule
     entries: # 9 rolls at prob of 0.005 is around 4.5% chance that each spawn point will get a mob   (9 * 0.005 = 0.045)
     - id: MobDinosaurSpino
-      prob: 0.005
+      prob: 0.003
     - id: MobDinosaurStego
-      prob: 0.005
+      prob: 0.003
     - id: MobDinosaurTrike
-      prob: 0.005
+      prob: 0.003
     - id: MobDinosaurTrex
-      prob: 0.005
+      prob: 0.002
     - id: MobDinosaurKentro
-      prob: 0.005
+      prob: 0.003
     - id: MobDragon
       prob: 0.005
     - id: MobRatKingBuff
@@ -661,7 +661,7 @@
     - id: MobArgocyteLeviathing
       prob: 0.005
     - id: MobDinosaurAnki
-      prob: 0.005
+      prob: 0.003
 
 - type: entity
   id: Xeno
@@ -673,7 +673,7 @@
       path: /Audio/Announcements/aliens.ogg
     earliestStart: 20
     minimumPlayers: 1
-    weight: 15
+    weight: 4
     duration: 30 # DeltaV: was 60, used as a delay now
   - type: VentCrittersRule
     entries: # 6 rolls at an average prob of 0.014 is around 8.4% chance that each spawn point will get a mob   (6 * 0.014 = 0.084)
