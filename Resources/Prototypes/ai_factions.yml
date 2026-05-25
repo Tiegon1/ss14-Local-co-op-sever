@@ -35,6 +35,7 @@
     - Wizard
     - BloodCultist # Blood cultists
     - Dino # dinosaurs
+    - SimpleHostile
 
 - type: npcFaction
   id: NanoTrasen
@@ -51,6 +52,7 @@
   - Blob # Goobstation - Blob
   - Wizard
   - Dino # dinosaurs
+  - Revolutionary
 
 - type: npcFaction
   id: Mouse
