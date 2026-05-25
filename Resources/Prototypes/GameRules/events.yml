@@ -599,7 +599,8 @@
       prob: 0.003
     - id: MobHivelord
       prob: 0.003
-
+    - id: MobShark
+      prob: 0.003
 
 - type: entity
   id: Hardmob
