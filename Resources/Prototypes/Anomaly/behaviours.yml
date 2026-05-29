@@ -299,9 +299,13 @@
   id: Infection
   earnPointModifier: 1.50
   description: anomaly-behavior-infection
-  infectionRange: 5
-  baseInfectionChance: 0.05
-  updateInterval: 2
+  components:
+  - type: Organ
+    slotId: "tumor"
+  - type: ZombieTumorOrgan
+    infectionRange: 5
+    baseInfectionChance: 0.05
+    updateInterval: 2
 
 #- type: anomalyBehavior
 #  id: veryRapidJumpingUnknown
