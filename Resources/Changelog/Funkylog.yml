@@ -8154,3 +8154,27 @@ Entries:
       message: Fixed a chanting bug with Blood Cult
   id: 934
   time: '2026-05-10T06:43:04.0000000+00:00'
+- author: TrixxedHeart
+  changes:
+    - type: Fix
+      message: >-
+        Core: Fixed missing HV wire in Engineering that disconnected the entire
+        power grid from the singulo/tesla
+    - type: Fix
+      message: 'Core: Fixed routing for the mail system'
+    - type: Fix
+      message: 'Core: Fixed incorrect access on psychologist''s door'
+    - type: Fix
+      message: 'Core: Fixed duplicate beacons on the grav gen'
+    - type: Add
+      message: 'Core: Added missing Service intercom to Chapel'
+    - type: Add
+      message: 'Core: Added missing box of hugs to Theater'
+  id: 935
+  time: '2026-05-22T20:30:19.0000000+00:00'
+- author: Dusty-Plant
+  changes:
+    - type: Fix
+      message: Hopefully fixed Bramble's spacing issues.
+  id: 936
+  time: '2026-05-28T21:26:29.0000000+00:00'

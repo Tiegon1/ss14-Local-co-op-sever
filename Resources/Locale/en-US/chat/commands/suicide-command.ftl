@@ -18,3 +18,4 @@ suicide-command-default-text-self = You attempt to bite your own tongue!
 suicide-command-already-dead = You can't suicide. You're dead.
 suicide-command-no-mind = You have no mind!
 suicide-command-denied = You cannot suicide right now.
+suicide-command-disabled = The suicide command is currently disabled.

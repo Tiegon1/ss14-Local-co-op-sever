@@ -40,8 +40,10 @@
 using Content.Server.GameTicking;
 using Content.Server.Popups;
 using Content.Shared.Administration;
+using Content.Shared.CCVar;
 using Content.Shared.Chat;
 using Content.Shared.Mind;
+using Robust.Shared.Configuration;
 using Robust.Shared.Console;
 using Robust.Shared.Enums;
 
@@ -51,6 +53,7 @@ namespace Content.Server.Chat.Commands
     internal sealed class SuicideCommand : IConsoleCommand
     {
         [Dependency] private readonly IEntityManager _e = default!;
+        [Dependency] private readonly IConfigurationManager _cfg = default!;
 
         public string Command => "suicide";
 
@@ -63,6 +66,12 @@ namespace Content.Server.Chat.Commands
             if (shell.Player is not { } player)
             {
                 shell.WriteError(Loc.GetString("shell-cannot-run-command-from-server"));
+                return;
+            }
+
+            if (!_cfg.GetCVar(CCVars.SuicideCommandEnabled))
+            {
+                shell.WriteLine(Loc.GetString("suicide-command-disabled"));
                 return;
             }
 
