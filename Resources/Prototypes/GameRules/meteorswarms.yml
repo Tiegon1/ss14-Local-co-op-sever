@@ -72,9 +72,9 @@
   components:
   - type: GameRule
   - type: BasicStationEventScheduler
-    minimumTimeUntilFirstEvent: 1800 # 30 min
+    minimumTimeUntilFirstEvent: 120 # 20 min
     minMaxEventTiming:
-      min: 300 # 12.5 min
+      min: 200 # 8 min
       max: 930 # 17.5 min
     scheduledGameRules: !type:NestedSelector
       tableId: BasicMeteorSwarmEventsTable
