@@ -109,3 +109,4 @@ anomaly-behavior-strenght = [color=crimson]The pulsation power is significantly 
 anomaly-behavior-moving = [color=crimson]Coordinate instability was detected.[/color]
 anomaly-behavior-gravity-well = [color=crimson]A strong gravitational distortion was detected — the anomaly pulls nearby objects and warps space.[/color]
 anomaly-behavior-pulsing-gravity = [color=crimson]Periodic gravitational pulses have been detected—objects are intermittently drawn toward the anomaly.[/color]
+anomaly-behavior-infection = [color=crimson] IT'S INFECTING NEARBY LIFEFORMS! [/color]

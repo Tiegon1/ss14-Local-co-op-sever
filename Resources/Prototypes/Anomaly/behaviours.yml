@@ -40,6 +40,7 @@
     InvisibilityJumpingReflect: 1
     GravityWell: 1
     veryRapid: 1
+    Infection: 1
 #    veryRapidJumpingUnknown: 1
 
 # Easy x0.5 point production
@@ -293,6 +294,14 @@
   description: anomaly-behavior-rapid
   pulseFrequencyModifier: 0.2
   pulsePowerModifier: 0.2
+
+- type: anomalyBehavior
+  id: Infection
+  earnPointModifier: 1.50
+  description: anomaly-behavior-infection
+  infectionRange: 5
+  baseInfectionChance: 0.05
+  updateInterval: 2
 
 #- type: anomalyBehavior
 #  id: veryRapidJumpingUnknown
