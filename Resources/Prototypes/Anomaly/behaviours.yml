@@ -303,8 +303,8 @@
   - type: Organ
     slotId: "tumor"
   - type: ZombieTumorOrgan
-    infectionRange: 5
-    baseInfectionChance: 0.05
+    infectionRange: 10
+    baseInfectionChance: 0.20
     updateInterval: 2
 
 #- type: anomalyBehavior
