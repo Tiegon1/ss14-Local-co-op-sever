@@ -47,6 +47,7 @@
 - type: cargoBountyCategory
   id: botanyCategory
   name: bounty-category-botany
+  maxTargets: 4
   entries:
   - name: bounty-item-carrot
     minAmount: 5
@@ -173,6 +174,7 @@
 - type: cargoBountyCategory
   id: scienceCategory
   name: bounty-category-science
+  maxTargets: 2
   entries:
   - name: bounty-item-tech-disk-terminal
     minAmount: 1
@@ -255,7 +257,7 @@
       - BiochemicalStasis
   - name: bounty-item-advanced-syringe
     minAmount: 1
-    maxAmount: 8
+    maxAmount: 1
     rewardPer: 750
     whitelist:
       tags:
@@ -264,7 +266,7 @@
       - BiochemicalStasis
   - name: bounty-item-chimp-handcannon
     minAmount: 1
-    maxAmount: 4
+    maxAmount: 1
     rewardPer: 1500
     whitelist:
       tags:
@@ -478,6 +480,7 @@
 - type: cargoBountyCategory
   id: kitchenCategory
   name: bounty-category-kitchen
+  maxTargets: 4
   entries:
   - name: bounty-item-super-bite-burger
     minAmount: 1
@@ -814,6 +817,7 @@
 - type: cargoBountyCategory
   id: weaponCategory
   name: bounty-category-weaponry
+  maxTargets: 4
   idPrefix: SYN
   entries:
   - name: bounty-item-shiv
@@ -1164,6 +1168,7 @@
 - type: cargoBountyCategory
   id: EngineeringCategory
   name: bounty-category-engineering
+  maxTargets: 4
   entries:
   - name: bounty-item-holofan-projector
     minAmount: 1

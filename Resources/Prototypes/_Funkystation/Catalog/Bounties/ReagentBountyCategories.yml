@@ -103,6 +103,7 @@
 - type: cargoBountyCategory
   id: chemistryCategory
   name: bounty-category-chemistry
+  maxTargets: 4
   entries:
 # Basics
 # Ingredients
