@@ -380,99 +380,99 @@
 #      tags:
 #      - BoxCardboard
 
-# Medical
-- type: cargoBountyCategory
-  id: medicalCategory
-  name: bounty-category-medical
-  entries:
-  - name: bounty-item-biosynthectic-eyes
-    minAmount: 2
-    maxAmount: 5
-    rewardPer: 1250
-    whitelist:
-      tags:
-      - BiosynthecticEyes
-  - name: bounty-item-biosynthectic-lung
-    minAmount: 2
-    maxAmount: 5
-    rewardPer: 1250
-    whitelist:
-      components:
-      - BiosynthecticLung
-  - name: bounty-item-biosynthectic-liver
-    minAmount: 2
-    maxAmount: 5
-    rewardPer: 1250
-    whitelist:
-      tags:
-      - BiosynthecticLiver
-  - name: bounty-item-biosynthectic-heart
-    minAmount: 2
-    maxAmount: 5
-    rewardPer: 1750
-    whitelist:
-      tags:
-      - BiosynthecticHeart
-  - name: bounty-item-autoinjector-cartrige
-    minAmount: 4
-    maxAmount: 8
-    rewardPer: 550
-    whitelist:
-      tags:
-      - AutoinjectorCartridge
-  - name: bounty-item-medical-autoinjector
-    minAmount: 1
-    maxAmount: 3
-    rewardPer: 1500
-    whitelist:
-      tags:
-      - MedicalAutoinjector
-  - name: bounty-item-health-analyzer
-    minAmount: 3
-    maxAmount: 8
-    rewardPer: 450
-    whitelist:
-     tags:
-      - DiscreteHealthAnalyzer
-  - name: bounty-item-cybernetic-medical-eyes
-    minAmount: 1
-    maxAmount: 3
-    rewardPer: 6500
-    whitelist:
-      tags:
-      - CyberneticMedicalEyes
-    requiredResearch:
-      - CyberneticEnhancements
-  - name: bounty-item-defibrillator
-    minAmount: 2
-    maxAmount: 8
-    rewardPer: 850
-    whitelist:
-      tags:
-      - Defibrillator
-  - name: bounty-item-medical-hud
-    minAmount: 2
-    maxAmount: 8
-    rewardPer: 950
-    whitelist:
-      tags:
-      - HudMedical
-  - name: bounty-item-medsec-hud
-    minAmount: 2
-    maxAmount: 5
-    rewardPer: 2500
-    whitelist:
-      tags:
-      - MedSecHud
-  - name: bounty-item-surgery-advanced-tool
-    minAmount: 2
-    maxAmount: 5
-    rewardPer: 8000
-    whitelist:
-      tags:
-      - AdvancedSurgeryTool
-    requiredResearch:
-      - AdvancedTreatment
+# # Medical
+# - type: cargoBountyCategory
+#   id: medicalCategory
+#   name: bounty-category-medical
+#   entries:
+#   - name: bounty-item-biosynthectic-eyes
+#     minAmount: 2
+#     maxAmount: 5
+#     rewardPer: 1250
+#     whitelist:
+#       tags:
+#       - BiosynthecticEyes
+#   - name: bounty-item-biosynthectic-lung
+#     minAmount: 2
+#     maxAmount: 5
+#     rewardPer: 1250
+#     whitelist:
+#       components:
+#       - BiosynthecticLung
+#   - name: bounty-item-biosynthectic-liver
+#     minAmount: 2
+#     maxAmount: 5
+#     rewardPer: 1250
+#     whitelist:
+#       tags:
+#       - BiosynthecticLiver
+#   - name: bounty-item-biosynthectic-heart
+#     minAmount: 2
+#     maxAmount: 5
+#     rewardPer: 1750
+#     whitelist:
+#       tags:
+#       - BiosynthecticHeart
+#   - name: bounty-item-autoinjector-cartrige
+#     minAmount: 4
+#     maxAmount: 8
+#     rewardPer: 550
+#     whitelist:
+#       tags:
+#       - AutoinjectorCartridge
+#   - name: bounty-item-medical-autoinjector
+#     minAmount: 1
+#     maxAmount: 3
+#     rewardPer: 1500
+#     whitelist:
+#       tags:
+#       - MedicalAutoinjector
+#   - name: bounty-item-health-analyzer
+#     minAmount: 3
+#     maxAmount: 8
+#     rewardPer: 450
+#     whitelist:
+#      tags:
+#       - DiscreteHealthAnalyzer
+#   - name: bounty-item-cybernetic-medical-eyes
+#     minAmount: 1
+#     maxAmount: 3
+#     rewardPer: 6500
+#     whitelist:
+#       tags:
+#       - CyberneticMedicalEyes
+#     requiredResearch:
+#       - CyberneticEnhancements
+#   - name: bounty-item-defibrillator
+#     minAmount: 2
+#     maxAmount: 8
+#     rewardPer: 850
+#     whitelist:
+#       tags:
+#       - Defibrillator
+#   - name: bounty-item-medical-hud
+#     minAmount: 2
+#     maxAmount: 8
+#     rewardPer: 950
+#     whitelist:
+#       tags:
+#       - HudMedical
+#   - name: bounty-item-medsec-hud
+#     minAmount: 2
+#     maxAmount: 5
+#     rewardPer: 2500
+#     whitelist:
+#       tags:
+#       - MedSecHud
+#   - name: bounty-item-surgery-advanced-tool
+#     minAmount: 2
+#     maxAmount: 5
+#     rewardPer: 8000
+#     whitelist:
+#       tags:
+#       - AdvancedSurgeryTool
+#     requiredResearch:
+#       - AdvancedTreatment
 
 # Kitchen
 - type: cargoBountyCategory
@@ -716,92 +716,92 @@
 #      - ToySidearm
 
 # Security
-- type: cargoBountyCategory
-  id: securityCategory
-  name: bounty-category-security
-  entries:
-  - name: bounty-item-disabler-smg
-    minAmount: 2
-    maxAmount: 6
-    rewardPer: 3500
-    whitelist:
-      tags:
-      - DisablerSMG
-    requiredResearch:
-      - AdvancedRiotControl
-  - name: bounty-item-truncheon
-    minAmount: 4
-    maxAmount: 8
-    rewardPer: 1250
-    whitelist:
-      tags:
-      - Truncheon
+# - type: cargoBountyCategory
+#   id: securityCategory
+#   name: bounty-category-security
+#   entries:
+#   - name: bounty-item-disabler-smg
+#     minAmount: 2
+#     maxAmount: 6
+#     rewardPer: 3500
+#     whitelist:
+#       tags:
+#       - DisablerSMG
+#     requiredResearch:
+#       - AdvancedRiotControl
+#   - name: bounty-item-truncheon
+#     minAmount: 4
+#     maxAmount: 8
+#     rewardPer: 1250
+#     whitelist:
+#       tags:
+#       - Truncheon
 #    requiredResearch: # Funky
 #      - AdvancedRiotControl
-  - name: bounty-item-xray-cannon
-    minAmount: 2
-    maxAmount: 6
-    rewardPer: 4500
-    whitelist:
-      tags:
-      - XrayCannon
-    requiredResearch:
-      - WaveParticleHarnessing
-  - name: bounty-item-laser-cannon
-    minAmount: 2
-    maxAmount: 6
-    rewardPer: 4500
-    whitelist:
-      tags:
-      - LaserCannon
-    requiredResearch:
-      - ConcentratedLaserWeaponry
-  - name: bounty-item-svalinn-pistol
-    minAmount: 2
-    maxAmount: 10
-    rewardPer: 2500
-    whitelist:
-      tags:
-      - SvalinnPistol
-    requiredResearch:
-      - ExperimentalBatteryAmmo
-  - name: bounty-item-security-hud
-    minAmount: 2
-    maxAmount: 8
-    rewardPer: 900
-    whitelist:
-      tags:
-      - HudSecurity
-  - name: bounty-item-medsec-hud
-    minAmount: 2
-    maxAmount: 5
-    rewardPer: 2500
-    whitelist:
-      tags:
-      - MedSecHud
-  - name: bounty-item-cybernetic-security-eyes
-    minAmount: 1
-    maxAmount: 3
-    rewardPer: 6500
-    whitelist:
-      tags:
-      - CyberneticSecurityEyes
-    requiredResearch:
-      - CyberneticEnhancements
-  - name: bounty-item-combat-knife
-    minAmount: 2
-    maxAmount: 8
-    rewardPer: 900
-    whitelist:
-      tags:
-      - CombatKnife
-  - name: bounty-item-grenade-flashbang
-    minAmount: 5
-    maxAmount: 12
-    rewardPer: 700
-    whitelist:
-      components:
-      - Flashbang
+  # - name: bounty-item-xray-cannon
+  #   minAmount: 2
+  #   maxAmount: 6
+  #   rewardPer: 4500
+  #   whitelist:
+  #     tags:
+  #     - XrayCannon
+  #   requiredResearch:
+  #     - WaveParticleHarnessing
+  # - name: bounty-item-laser-cannon
+  #   minAmount: 2
+  #   maxAmount: 6
+  #   rewardPer: 4500
+  #   whitelist:
+  #     tags:
+  #     - LaserCannon
+  #   requiredResearch:
+  #     - ConcentratedLaserWeaponry
+  # - name: bounty-item-svalinn-pistol
+  #   minAmount: 2
+  #   maxAmount: 10
+  #   rewardPer: 2500
+  #   whitelist:
+  #     tags:
+  #     - SvalinnPistol
+  #   requiredResearch:
+  #     - ExperimentalBatteryAmmo
+  # - name: bounty-item-security-hud
+  #   minAmount: 2
+  #   maxAmount: 8
+  #   rewardPer: 900
+  #   whitelist:
+  #     tags:
+  #     - HudSecurity
+  # - name: bounty-item-medsec-hud
+  #   minAmount: 2
+  #   maxAmount: 5
+  #   rewardPer: 2500
+  #   whitelist:
+  #     tags:
+  #     - MedSecHud
+  # - name: bounty-item-cybernetic-security-eyes
+  #   minAmount: 1
+  #   maxAmount: 3
+  #   rewardPer: 6500
+  #   whitelist:
+  #     tags:
+  #     - CyberneticSecurityEyes
+  #   requiredResearch:
+  #     - CyberneticEnhancements
+  # - name: bounty-item-combat-knife
+  #   minAmount: 2
+  #   maxAmount: 8
+  #   rewardPer: 900
+  #   whitelist:
+  #     tags:
+  #     - CombatKnife
+  # - name: bounty-item-grenade-flashbang
+  #   minAmount: 5
+  #   maxAmount: 12
+  #   rewardPer: 700
+  #   whitelist:
+  #     components:
+  #     - Flashbang
 #  - name: bounty-item-stun-baton # Funky
 #    minAmount: 3
 #    maxAmount: 5
@@ -1000,52 +1000,52 @@
 #      - Pen
 
 # Robotics
-- type: cargoBountyCategory
-  id: roboticsCategory
-  name: bounty-category-robotics
-  entries:
-  - name: bounty-item-flash
-    minAmount: 2
-    maxAmount: 6
-    rewardPer: 900
-    whitelist:
-      components:
-      - Flash
-  - name: bounty-item-borg-arm
-    minAmount: 2
-    maxAmount: 4
-    rewardPer: 750
-    whitelist:
-      tags:
-      - BorgArm
-  - name: bounty-item-borg-head
-    minAmount: 2
-    maxAmount: 4
-    rewardPer: 750
-    whitelist:
-      tags:
-      - BorgHead
-  - name: bounty-item-borg-leg
-    minAmount: 2
-    maxAmount: 4
-    rewardPer: 750
-    whitelist:
-      tags:
-      - BorgLeg
-  - name: bounty-item-borg-torso
-    minAmount: 2
-    maxAmount: 4
-    rewardPer: 750
-    whitelist:
-      tags:
-      - BorgTorso
-  - name: bounty-item-borg-module
-    minAmount: 2
-    maxAmount: 5
-    rewardPer: 1200
-    whitelist:
-      components:
-      - BorgModule
+# - type: cargoBountyCategory
+#   id: roboticsCategory
+#   name: bounty-category-robotics
+#   entries:
+#   - name: bounty-item-flash
+#     minAmount: 2
+#     maxAmount: 6
+#     rewardPer: 900
+#     whitelist:
+#       components:
+#       - Flash
+#   - name: bounty-item-borg-arm
+#     minAmount: 2
+#     maxAmount: 4
+#     rewardPer: 750
+#     whitelist:
+#       tags:
+#       - BorgArm
+#   - name: bounty-item-borg-head
+#     minAmount: 2
+#     maxAmount: 4
+#     rewardPer: 750
+#     whitelist:
+#       tags:
+#       - BorgHead
+#   - name: bounty-item-borg-leg
+#     minAmount: 2
+#     maxAmount: 4
+#     rewardPer: 750
+#     whitelist:
+#       tags:
+#       - BorgLeg
+#   - name: bounty-item-borg-torso
+#     minAmount: 2
+#     maxAmount: 4
+#     rewardPer: 750
+#     whitelist:
+#       tags:
+#       - BorgTorso
+#   - name: bounty-item-borg-module
+#     minAmount: 2
+#     maxAmount: 5
+#     rewardPer: 1200
+#     whitelist:
+#       components:
+#       - BorgModule
 # Currently impossible due to the lack of creatable cargo borg modules
 #  - name: bounty-item-borg-module-cargo
 #    minAmount: 2
@@ -1054,61 +1054,61 @@
 #    whitelist:
 #      tags:
 #      - BorgModuleCargo
-  - name: bounty-item-borg-module-engineering
-    minAmount: 2
-    maxAmount: 5
-    rewardPer: 1500
-    whitelist:
-      tags:
-      - BorgModuleEngineering
-    requiredResearch:
-      - AdvancedToolsTechnology
-  - name: bounty-item-borg-module-generic
-    minAmount: 2
-    maxAmount: 5
-    rewardPer: 1500
-    whitelist:
-      tags:
-      - BorgModuleGeneric
-  - name: bounty-item-borg-module-janitor
-    minAmount: 2
-    maxAmount: 5
-    rewardPer: 1500
-    whitelist:
-      tags:
-      - BorgModuleJanitor
-    requiredResearch:
-      - AdvancedCleaning
-  - name: bounty-item-borg-module-medical
-    minAmount: 2
-    maxAmount: 5
-    rewardPer: 1500
-    whitelist:
-      tags:
-      - BorgModuleMedical
-  - name: bounty-item-borg-module-service
-    minAmount: 2
-    maxAmount: 5
-    rewardPer: 1500
-    whitelist:
-      tags:
-      - BorgModuleService
-    requiredResearch:
-      - Hydroponics
-  - name: bounty-item-bot
-    minAmount: 1
-    maxAmount: 3
-    rewardPer: 2200
-    whitelist:
-      tags:
-      - Bot
-  - name: bounty-item-brain
-    minAmount: 1
-    maxAmount: 1
-    rewardPer: 10000
-    whitelist:
-      components:
-      - Brain
+  # - name: bounty-item-borg-module-engineering
+  #   minAmount: 2
+  #   maxAmount: 5
+  #   rewardPer: 1500
+  #   whitelist:
+  #     tags:
+  #     - BorgModuleEngineering
+  #   requiredResearch:
+  #     - AdvancedToolsTechnology
+  # - name: bounty-item-borg-module-generic
+  #   minAmount: 2
+  #   maxAmount: 5
+  #   rewardPer: 1500
+  #   whitelist:
+  #     tags:
+  #     - BorgModuleGeneric
+  # - name: bounty-item-borg-module-janitor
+  #   minAmount: 2
+  #   maxAmount: 5
+  #   rewardPer: 1500
+  #   whitelist:
+  #     tags:
+  #     - BorgModuleJanitor
+  #   requiredResearch:
+  #     - AdvancedCleaning
+  # - name: bounty-item-borg-module-medical
+  #   minAmount: 2
+  #   maxAmount: 5
+  #   rewardPer: 1500
+  #   whitelist:
+  #     tags:
+  #     - BorgModuleMedical
+  # - name: bounty-item-borg-module-service
+  #   minAmount: 2
+  #   maxAmount: 5
+  #   rewardPer: 1500
+  #   whitelist:
+  #     tags:
+  #     - BorgModuleService
+  #   requiredResearch:
+  #     - Hydroponics
+  # - name: bounty-item-bot
+  #   minAmount: 1
+  #   maxAmount: 3
+  #   rewardPer: 2200
+  #   whitelist:
+  #     tags:
+  #     - Bot
+  # - name: bounty-item-brain
+  #   minAmount: 1
+  #   maxAmount: 1
+  #   rewardPer: 10000
+  #   whitelist:
+  #     components:
+  #     - Brain
 
 #- type: cargoBountyCategory
 #  id: musicCategory
@@ -1167,7 +1167,7 @@
   entries:
   - name: bounty-item-holofan-projector
     minAmount: 1
-    maxAmount: 4
+    maxAmount: 2
     rewardPer: 1000
     whitelist:
       tags:
@@ -1176,7 +1176,7 @@
       - AdvancedAtmospherics
   - name: bounty-item-jaws-of-life
     minAmount: 1
-    maxAmount: 4
+    maxAmount: 1
     rewardPer: 2750
     whitelist:
       tags:
@@ -1185,7 +1185,7 @@
       - AdvancedToolsTechnology
   - name: bounty-item-powerdrill
     minAmount: 1
-    maxAmount: 4
+    maxAmount: 1
     rewardPer: 1500
     whitelist:
       tags:
@@ -1193,22 +1193,22 @@
     requiredResearch:
       - AdvancedToolsTechnology
   - name: bounty-item-toolbox
-    minAmount: 4
-    maxAmount: 8
+    minAmount: 2
+    maxAmount: 4
     rewardPer: 750
     whitelist:
       tags:
       - Toolbox
   - name: bounty-item-battery
-    minAmount: 5
-    maxAmount: 20
+    minAmount: 2
+    maxAmount: 5
     rewardPer: 300
     whitelist:
       components:
       - Battery
   - name: bounty-item-hi-viz-vest
-    minAmount: 2
-    maxAmount: 5
+    minAmount: 1
+    maxAmount: 3
     rewardPer: 1500
     whitelist:
       tags:

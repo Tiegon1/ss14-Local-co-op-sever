@@ -4,100 +4,100 @@
 # SPDX-License-Identifier: AGPL-3.0-or-later
 
 # Bar
-- type: cargoBountyCategory
-  id: barCategory
-  name: bounty-category-bar
-  entries:
-  - name: bounty-item-bahama-mama
-    minAmount: 90
-    maxAmount: 90
-    rewardPer: 65
-    reagent: BahamaMama
-  - name: bounty-item-erika-suprise
-    minAmount: 90
-    maxAmount: 90
-    rewardPer: 65
-    reagent: ErikaSurprise
-  - name: bounty-item-bloody-mary
-    minAmount: 90
-    maxAmount: 90
-    rewardPer: 65
-    reagent: BloodyMary
-  - name: bounty-item-blue-hawaiian
-    minAmount: 60
-    maxAmount: 60
-    rewardPer: 65
-    reagent: BlueHawaiian
-  - name: bounty-item-andalusia
-    minAmount: 60
-    maxAmount: 60
-    rewardPer: 65
-    reagent: Andalusia
-  - name: bounty-item-watermelon-wakeup
-    minAmount: 60
-    maxAmount: 60
-    rewardPer: 75
-    reagent: WatermelonWakeup
-  - name: bounty-item-xeno-basher
-    minAmount: 120
-    maxAmount: 120
-    rewardPer: 65
-    reagent: XenoBasher
-  - name: bounty-item-cogchamp
-    minAmount: 60
-    maxAmount: 60
-    rewardPer: 75
-    reagent: CogChamp
-  - name: bounty-item-demons-blood
-    minAmount: 60
-    maxAmount: 60
-    rewardPer: 75
-    reagent: DemonsBlood
-  - name: bounty-item-cosmopolitan
-    minAmount: 60
-    maxAmount: 60
-    rewardPer: 75
-    reagent: Cosmopolitan
-  - name: bounty-item-beepsky-smash
-    minAmount: 60
-    maxAmount: 60
-    rewardPer: 75
-    reagent: BeepskySmash
-  - name: bounty-item-classic-martini
-    minAmount: 60
-    maxAmount: 60
-    rewardPer: 65
-    reagent: Martini
-  - name: bounty-item-posca
-    minAmount: 60
-    maxAmount: 60
-    rewardPer: 65
-    reagent: Posca
-  - name: bounty-item-the-martinez
-    minAmount: 90
-    maxAmount: 90
-    rewardPer: 70
-    reagent: TheMartinez
-  - name: bounty-item-doctors-delight
-    minAmount: 60
-    maxAmount: 60
-    rewardPer: 100
-    reagent: DoctorsDelight
-  - name: bounty-item-tayquila
-    minAmount: 60
-    maxAmount: 60
-    rewardPer: 100
-    reagent: Tayquila
-  - name: bounty-item-fever-dream
-    minAmount: 60
-    maxAmount: 60
-    rewardPer: 100
-    reagent: FeverDream
-  - name: bounty-item-gargle-blaster
-    minAmount: 60
-    maxAmount: 60
-    rewardPer: 100
-    reagent: GargleBlaster
+# - type: cargoBountyCategory
+#   id: barCategory
+#   name: bounty-category-bar
+#   entries:
+#   - name: bounty-item-bahama-mama
+#     minAmount: 90
+#     maxAmount: 90
+#     rewardPer: 65
+#     reagent: BahamaMama
+#   - name: bounty-item-erika-suprise
+#     minAmount: 90
+#     maxAmount: 90
+#     rewardPer: 65
+#     reagent: ErikaSurprise
+#   - name: bounty-item-bloody-mary
+#     minAmount: 90
+#     maxAmount: 90
+#     rewardPer: 65
+#     reagent: BloodyMary
+#   - name: bounty-item-blue-hawaiian
+#     minAmount: 60
+#     maxAmount: 60
+#     rewardPer: 65
+#     reagent: BlueHawaiian
+#   - name: bounty-item-andalusia
+#     minAmount: 60
+#     maxAmount: 60
+#     rewardPer: 65
+#     reagent: Andalusia
+#   - name: bounty-item-watermelon-wakeup
+#     minAmount: 60
+#     maxAmount: 60
+#     rewardPer: 75
+#     reagent: WatermelonWakeup
+#   - name: bounty-item-xeno-basher
+#     minAmount: 120
+#     maxAmount: 120
+#     rewardPer: 65
+#     reagent: XenoBasher
+#   - name: bounty-item-cogchamp
+#     minAmount: 60
+#     maxAmount: 60
+#     rewardPer: 75
+#     reagent: CogChamp
+#   - name: bounty-item-demons-blood
+#     minAmount: 60
+#     maxAmount: 60
+#     rewardPer: 75
+#     reagent: DemonsBlood
+#   - name: bounty-item-cosmopolitan
+#     minAmount: 60
+#     maxAmount: 60
+#     rewardPer: 75
+#     reagent: Cosmopolitan
+#   - name: bounty-item-beepsky-smash
+#     minAmount: 60
+#     maxAmount: 60
+#     rewardPer: 75
+#     reagent: BeepskySmash
+#   - name: bounty-item-classic-martini
+#     minAmount: 60
+#     maxAmount: 60
+#     rewardPer: 65
+#     reagent: Martini
+#   - name: bounty-item-posca
+#     minAmount: 60
+#     maxAmount: 60
+#     rewardPer: 65
+#     reagent: Posca
+#   - name: bounty-item-the-martinez
+#     minAmount: 90
+#     maxAmount: 90
+#     rewardPer: 70
+#     reagent: TheMartinez
+#   - name: bounty-item-doctors-delight
+#     minAmount: 60
+#     maxAmount: 60
+#     rewardPer: 100
+#     reagent: DoctorsDelight
+#   - name: bounty-item-tayquila
+#     minAmount: 60
+#     maxAmount: 60
+#     rewardPer: 100
+#     reagent: Tayquila
+#   - name: bounty-item-fever-dream
+#     minAmount: 60
+#     maxAmount: 60
+#     rewardPer: 100
+#     reagent: FeverDream
+#   - name: bounty-item-gargle-blaster
+#     minAmount: 60
+#     maxAmount: 60
+#     rewardPer: 100
+#     reagent: GargleBlaster
 
 # Chem
 - type: cargoBountyCategory
