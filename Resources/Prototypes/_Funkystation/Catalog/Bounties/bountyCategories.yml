@@ -944,21 +944,21 @@
   name: bounty-category-clothing
   entries:
   - name: bounty-item-bandana
-    minAmount: 5
-    maxAmount: 10
+    minAmount: 1
+    maxAmount: 3
     rewardPer: 400
     whitelist:
       tags:
       - Bandana
   - name: bounty-item-hi-viz-vest
-    minAmount: 2
-    maxAmount: 5
+    minAmount: 1
+    maxAmount: 3
     rewardPer: 1500
     whitelist:
       tags:
       - HiViz
   - name: bounty-item-warm-cloth
-    minAmount: 5
+    minAmount: 1
     maxAmount: 10
     rewardPer: 400
     whitelist:
@@ -1168,7 +1168,7 @@
 - type: cargoBountyCategory
   id: EngineeringCategory
   name: bounty-category-engineering
-  maxTargets: 4
+  maxTargets: 2
   entries:
   - name: bounty-item-holofan-projector
     minAmount: 1
