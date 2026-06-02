@@ -321,6 +321,7 @@
 - type: cargoBountyCategory
   id: miscCategory
   name: bounty-category-misc
+  maxTargets: 2
   entries:
   - name: bounty-item-baseball-bat
     minAmount: 3

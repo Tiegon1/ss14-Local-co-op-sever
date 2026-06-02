@@ -1,0 +1,103 @@
+# SPDX-FileCopyrightText: 2021 Timrod <timrod@gmail.com>
+# SPDX-FileCopyrightText: 2022 Cheackraze <71046427+Cheackraze@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2022 Kara <lunarautomaton6@gmail.com>
+# SPDX-FileCopyrightText: 2022 Moony <moonheart08@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2022 Peptide90 <78795277+Peptide90@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2023 Chief-Engineer <119664036+Chief-Engineer@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2023 Moony <moony@hellomouse.net>
+# SPDX-FileCopyrightText: 2023 Nemanja <98561806+EmoGarbage404@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 Aidenkrz <aiden@djkraz.com>
+# SPDX-FileCopyrightText: 2024 Emisse <99158783+Emisse@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 Icepick <122653407+Icepicked@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 Kira Bridgeton <161087999+Verbalase@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 Leon Friedrich <60421075+ElectroJr@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 NkoKirkto <153374559+NkoKirkto@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 NkoKirkto <halloleute640mail.com>
+# SPDX-FileCopyrightText: 2024 Piras314 <p1r4s@proton.me>
+# SPDX-FileCopyrightText: 2024 Tadeo <td12233a@gmail.com>
+# SPDX-FileCopyrightText: 2024 metalgearsloth <31366439+metalgearsloth@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 username <113782077+whateverusername0@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 yglop <95057024+yglop@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 Tay <td12233a@gmail.com>
+# SPDX-FileCopyrightText: 2025 Terkala <appleorange64@gmail.com>
+# SPDX-FileCopyrightText: 2025 kbarkevich <24629810+kbarkevich@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 pa.pecherskij <pa.pecherskij@interfax.ru>
+# SPDX-FileCopyrightText: 2025 taydeo <td12233a@gmail.com>
+# SPDX-FileCopyrightText: 2025 terkala <appleorange64@gmail.com>
+# SPDX-FileCopyrightText: 2026 mkanke-real <mikekanke@gmail.com>
+# SPDX-FileCopyrightText: 2026 willow <willowzeta632146@proton.me>
+# SPDX-FileCopyrightText: 2026 wilowzeta <willowzeta632146@proton.me>
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
+
+- type: gameMap
+  id: TBagel
+  mapName: 'TBagel Station'
+  mapPath: /Maps/Tbagel.yml #Funkystation - Robotics(Based on Goob Version)
+  minPlayers: 35
+  maxPlayers: 90
+  stations:
+    Bagel:
+      stationProto: StandardNanotrasenStation
+      components:
+        - type: StationNameSetup
+          mapNameTemplate: '{0} Bagel Station {1}'
+          nameGenerator:
+            !type:NanotrasenNameGenerator
+            prefixCreator: '14'
+        - type: StationEmergencyShuttle
+          emergencyShuttlePath: /Maps/Shuttles/emergency_lox.yml
+        - type: StationCargoShuttle
+          path: /Maps/_Funkystation/Shuttles/BagelCargoShuttle.yml
+        - type: StationJobs
+          availableJobs:
+            #command
+            Captain: [ 1, 1 ]
+            # Magistrate: [ 1, 1 ]
+            # NanotrasenRepresentative: [ 1, 1 ]
+            # InternalAffairsAgent: [ 2, 2 ]
+            #service
+            HeadOfPersonnel: [ 1, 1 ]
+            Bartender: [ 1, 2 ]
+            Botanist: [ 2, 2 ]
+            Chef: [ 2, 2 ]
+            Janitor: [ 2, 2 ]
+            Chaplain: [ 1, 1 ]
+            Librarian: [ 1, 1 ]
+            ServiceWorker: [ 2, 4 ]
+            #engineering
+            ChiefEngineer: [ 1, 1 ]
+            StationEngineer: [ 7, 7 ]
+            TechnicalAssistant: [ 4, 4 ]
+            #medical
+            ChiefMedicalOfficer: [ 1, 1 ]
+            Chemist: [ 2, 2 ]
+            MedicalDoctor: [ 3, 5 ]
+            Paramedic: [ 1, 1 ]
+            MedicalIntern: [ 4, 4 ]
+            Psychologist: [ 1, 1 ]
+            #science
+            ResearchDirector: [ 1, 1 ]
+            Scientist: [ 4, 4 ]
+            Roboticist: [ 1, 1 ]
+            ResearchAssistant: [ 4, 4 ]
+            #security (10)
+            HeadOfSecurity: [ 1, 1 ]
+            Warden: [ 1, 1 ]
+            SecurityOfficer: [ 6, 6 ]
+            Detective: [ 1, 1 ]
+            SecurityCadet: [ 4, 4 ]
+            Lawyer: [ 2, 2 ]
+            #supply
+            Quartermaster: [ 1, 1 ]
+            SalvageSpecialist: [ 3, 3 ]
+            CargoTechnician: [ 3, 4 ]
+            #civilian
+            Passenger: [ -1, -1 ]
+            Clown: [ 1, 1 ]
+            Mime: [ 1, 1 ]
+            Musician: [ 1, 1 ]
+            Reporter: [ 2, 2 ]
+            #silicon
+            StationAi: [ 1, 1 ]
+            Borg: [ 2, 4 ]
