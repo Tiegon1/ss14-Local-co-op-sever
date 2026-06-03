@@ -33,7 +33,7 @@
 - type: gameMap
   id: TBagel
   mapName: 'TBagel Station'
-  mapPath: /Maps/Tbagel.yml #Funkystation - Robotics(Based on Goob Version)
+  mapPath: /Maps/tbagel.yml #Funkystation - Robotics(Based on Goob Version)
   minPlayers: 35
   maxPlayers: 90
   stations:
