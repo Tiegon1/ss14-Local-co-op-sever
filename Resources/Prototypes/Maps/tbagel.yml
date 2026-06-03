@@ -52,7 +52,7 @@
         - type: StationJobs
           availableJobs:
             #command
-            Captain: [ 1, 1 ]
+            #Captain: [ 1, 1 ]
             # Magistrate: [ 1, 1 ]
             # NanotrasenRepresentative: [ 1, 1 ]
             # InternalAffairsAgent: [ 2, 2 ]
