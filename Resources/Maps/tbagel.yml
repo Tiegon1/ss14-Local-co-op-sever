@@ -4,8 +4,8 @@ meta:
   engineVersion: 268.0.0
   forkId: ""
   forkVersion: ""
-  time: 06/03/2026 07:13:04
-  entityCount: 28621
+  time: 06/03/2026 20:57:29
+  entityCount: 28615
 maps:
 - 3201
 grids:
@@ -10106,7 +10106,8 @@ entities:
           -2,-2:
             0: 65532
           -2,-1:
-            0: 191
+            0: 159
+            3: 32
             1: 24576
           -2,-5:
             0: 30583
@@ -10370,10 +10371,10 @@ entities:
             0: 56797
           5,-8:
             0: 15359
-            3: 32768
+            4: 32768
           5,-7:
             0: 61491
-            3: 136
+            4: 136
           5,-6:
             0: 65535
           5,-5:
@@ -10384,9 +10385,9 @@ entities:
             0: 65311
           6,-8:
             0: 127
-            3: 28672
+            4: 28672
           6,-7:
-            3: 119
+            4: 119
             0: 61952
           6,-6:
             0: 61695
@@ -11647,7 +11648,7 @@ entities:
             0: 17
             1: 76
           17,-7:
-            4: 1
+            5: 1
             1: 9352
           17,-9:
             0: 4352
@@ -11745,17 +11746,17 @@ entities:
           -13,7:
             1: 39312
           -12,8:
-            5: 12
-            6: 3072
+            6: 12
+            7: 3072
           -11,5:
             0: 63351
           -11,6:
             0: 4607
             1: 49152
           -11,8:
-            5: 1
+            6: 1
             1: 17476
-            6: 256
+            7: 256
           -11,7:
             1: 17484
           -10,5:
@@ -11963,30 +11964,30 @@ entities:
             0: 65535
           -12,9:
             0: 16
-            7: 3084
+            8: 3084
           -13,9:
             1: 39305
           -13,10:
             1: 63897
           -13,11:
             1: 35033
-            7: 12288
+            8: 12288
           -12,10:
-            4: 12
-            7: 3072
+            5: 12
+            8: 3072
           -12,11:
-            7: 12
+            8: 12
           -12,12:
             0: 26350
           -11,9:
-            7: 257
+            8: 257
             1: 17476
           -11,10:
-            4: 1
-            7: 256
+            5: 1
+            8: 256
             1: 17476
           -11,11:
-            7: 1
+            8: 1
             1: 1092
           -11,12:
             0: 255
@@ -12038,8 +12039,8 @@ entities:
             1: 61158
           -13,12:
             1: 34952
-            6: 48
-            5: 12288
+            7: 48
+            6: 12288
           -12,13:
             0: 26214
           -13,13:
@@ -12076,7 +12077,7 @@ entities:
             1: 4369
           -9,13:
             1: 12835
-            7: 2176
+            8: 2176
           -9,14:
             1: 65535
           -9,15:
@@ -12084,7 +12085,7 @@ entities:
           -9,16:
             1: 50372
           -8,13:
-            7: 816
+            8: 816
             1: 34952
           -8,14:
             1: 24575
@@ -12094,11 +12095,11 @@ entities:
             1: 64719
           -7,14:
             1: 253
-            7: 57344
+            8: 57344
             0: 1024
           -7,15:
             1: 61440
-            7: 238
+            8: 238
             0: 1024
           -7,16:
             1: 65524
@@ -12149,7 +12150,7 @@ entities:
           -14,11:
             0: 4369
             1: 8736
-            7: 32768
+            8: 32768
           -14,9:
             1: 57344
           -14,10:
@@ -12157,8 +12158,8 @@ entities:
           -14,12:
             0: 1
             1: 8738
-            6: 128
-            5: 32768
+            7: 128
+            6: 32768
           -17,12:
             0: 52232
           -16,13:
@@ -12817,6 +12818,29 @@ entities:
           - 0
           - 0
         - volume: 2500
+          temperature: 293.14975
+          moles:
+          - 20.078888
+          - 75.53487
+          - 0
+          - 0
+          - 0
+          - 0
+          - 0
+          - 0
+          - 0
+          - 0
+          - 0
+          - 0
+          - 0
+          - 0
+          - 0
+          - 0
+          - 0
+          - 0
+          - 0
+          - 0
+        - volume: 2500
           temperature: 235
           moles:
           - 27.225372
@@ -12964,17 +12988,6 @@ entities:
     - type: Transform
       pos: 31.477634,-79.4623
       parent: 60
-- proto: ActionToggleBlock
-  entities:
-  - uid: 27989
-    mapInit: true
-    paused: true
-    components:
-    - type: Transform
-      parent: 27988
-    - type: InstantAction
-      originalIconColor: '#FFFFFFFF'
-      container: 27988
 - proto: ActionToggleInternals
   entities:
   - uid: 166
@@ -14801,7 +14814,7 @@ entities:
       pos: -29.5,37.5
       parent: 60
     - type: Door
-      secondsUntilStateChange: -253078.05
+      secondsUntilStateChange: -254132.05
       state: Opening
     - type: DeviceLinkSource
       lastSignals:
@@ -21575,18 +21588,6 @@ entities:
       parent: 60
     - type: BallisticAmmoProvider
       unspawnedCount: 12
-- proto: BoxShotgunIncendiary
-  entities:
-  - uid: 8452
-    components:
-    - type: Transform
-      pos: -26.37179,0.860095
-      parent: 60
-  - uid: 8458
-    components:
-    - type: Transform
-      pos: -26.676668,0.8844856
-      parent: 60
 - proto: BoxSterileMask
   entities:
   - uid: 7282
@@ -73087,13 +73088,6 @@ entities:
     - type: Transform
       pos: -12.442651,-50.453358
       parent: 60
-- proto: ClothingOuterArmorBulletproof
-  entities:
-  - uid: 24181
-    components:
-    - type: Transform
-      pos: -26.739395,1.6341343
-      parent: 60
 - proto: ClothingOuterCardborg
   entities:
   - uid: 5366
@@ -75699,20 +75693,6 @@ entities:
         - 0
         - 0
         - 0
-- proto: CrateSecurityRiot
-  entities:
-  - uid: 27986
-    components:
-    - type: Transform
-      pos: -23.5,-0.5
-      parent: 60
-- proto: CrateSecurityTrackingMindshieldImplants
-  entities:
-  - uid: 3189
-    components:
-    - type: Transform
-      pos: -27.5,-0.5
-      parent: 60
 - proto: CrateServiceBooks
   entities:
   - uid: 26965
@@ -130213,6 +130193,32 @@ entities:
     - type: Transform
       pos: -6.5,-2.5
       parent: 60
+    - type: EntityStorage
+      air:
+        volume: 200
+        immutable: False
+        temperature: 293.14673
+        moles:
+        - 1.7459903
+        - 6.568249
+        - 0
+        - 0
+        - 0
+        - 0
+        - 0
+        - 0
+        - 0
+        - 0
+        - 0
+        - 0
+        - 0
+        - 0
+        - 0
+        - 0
+        - 0
+        - 0
+        - 0
+        - 0
 - proto: LockerChemistryFilled
   entities:
   - uid: 7228
@@ -133887,6 +133893,55 @@ entities:
     - type: Transform
       pos: -14.5,-52.5
       parent: 60
+- proto: PaperMemo
+  entities:
+  - uid: 2098
+    components:
+    - type: Transform
+      pos: -25.757656,-0.4719383
+      parent: 60
+    - type: Paper
+      stampState: paper_stamp-centcom
+      stampedBy:
+      - hasIcon: True
+        stampFont: null
+        stampLargeIcon: large_stamp-centcom
+        stampedColor: '#006600FF'
+        stampedName: stamp-component-stamped-name-centcom
+      - hasIcon: True
+        stampFont: null
+        stampLargeIcon: large_stamp-centcomintern
+        stampedColor: '#496600FF'
+        stampedName: stamp-component-stamped-name-cci
+      - hasIcon: True
+        stampFont: null
+        stampLargeIcon: large_stamp-syndicate
+        stampedColor: '#850000FF'
+        stampedName: stamp-component-stamped-name-syndicate
+      - hasIcon: True
+        stampFont: null
+        stampLargeIcon: large_stamp-wiz
+        stampedColor: '#881BC1FF'
+        stampedName: Wizard
+      - hasIcon: True
+        stampFont: null
+        stampLargeIcon: large_stamp-clown
+        stampedColor: '#FF33CCFF'
+        stampedName: stamp-component-stamped-name-clown
+      content: >2
+            [color=#1b67a5]█▄ █ ▀█▀    [head=3]Memo[/head]
+            █ ▀█    █      From: [NAME]
+              To: [RECIPIENT]
+              Subject: [SUBJECT] [/color]Missing Armory
+              ──────────────────────────────────────────
+              [BODY]
+        IOU one Armory to be delivered later when you can afford it. Currently other stations needed it more.
+
+              ──────────────────────────────────────────
+              Sincerely, [NAME] NanoTrasen Central Command 
+    - type: Physics
+      angularDamping: 0
+      linearDamping: 0
 - proto: PaperOffice
   entities:
   - uid: 24541
@@ -149307,24 +149362,6 @@ entities:
     - type: Transform
       pos: -40.494568,11.691846
       parent: 60
-- proto: RiotBulletShield
-  entities:
-  - uid: 27988
-    components:
-    - type: Transform
-      pos: -26.32866,1.5049202
-      parent: 60
-    - type: Blocking
-      blockingToggleActionEntity: 27989
-    - type: Physics
-      angularDamping: 0
-      linearDamping: 0
-    - type: ActionsContainer
-    - type: ContainerContainer
-      containers:
-        actions: !type:Container
-          ents:
-          - 27989
 - proto: RobocopCircuitBoard
   entities:
   - uid: 24749
