@@ -43,11 +43,8 @@
   startingGear: AtmosphericTechnicianGear
   icon: "JobIconAtmosphericTechnician"
   supervisors: job-supervisors-ce
-  access:
-  - Maintenance
-  - Engineering
-  - External
-  - Atmospherics
+  accessGroups:
+  - AllAccess
   special:
   - !type:GiveItemOnHolidaySpecial
     holiday: FirefighterDay

@@ -41,10 +41,8 @@
   startingGear: ChemistGear
   icon: "JobIconChemist"
   supervisors: job-supervisors-cmo
-  access:
-  - Medical
-  - Chemistry
-  - Maintenance
+  accessGroups:
+  - AllAccess
   alternateTitles:
   - ChemistPharmacist
   - ChemistLabTechnician

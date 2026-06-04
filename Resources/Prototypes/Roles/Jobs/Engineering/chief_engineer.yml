@@ -70,15 +70,8 @@
   joinNotifyCrew: true
   supervisors: job-supervisors-captain
   canBeAntag: false
-  access:
-  - Maintenance
-  - Engineering
-  - Command
-  - External
-  - ChiefEngineer
-  - Atmospherics
-  - Brig
-  - Cryogenics
+  accessGroups:
+  - AllAccess
   special:
   - !type:AddImplantSpecial
     implants: [ MindShieldImplant ]

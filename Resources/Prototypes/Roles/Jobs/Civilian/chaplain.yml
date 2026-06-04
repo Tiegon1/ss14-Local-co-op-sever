@@ -40,9 +40,8 @@
   startingGear: ChaplainGear
   icon: "JobIconChaplain"
   supervisors: job-supervisors-hop
-  access:
-  - Chapel
-  - Maintenance
+  accessGroups:
+  - AllAccess
   special:
   - !type:AddComponentSpecial
     components:

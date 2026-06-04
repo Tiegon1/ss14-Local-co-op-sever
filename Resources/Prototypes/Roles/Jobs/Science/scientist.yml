@@ -47,9 +47,8 @@
   startingGear: ScientistGear
   icon: "JobIconScientist"
   supervisors: job-supervisors-rd
-  access:
-  - Research
-  - Maintenance
+  accessGroups:
+  - AllAccess
   alternateTitles:
   - ScientistXenoarchaeologist
   - ScientistAnomalyResearcher

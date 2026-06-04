@@ -60,10 +60,8 @@
   startingGear: ParamedicGear
   icon: "JobIconParamedic"
   supervisors: job-supervisors-cmo
-  access:
-  - Medical
-  - Maintenance
-  - External # goobstation
+  accessGroups:
+  - AllAccess
   extendedAccess:
   - Chemistry
   alternateTitles:

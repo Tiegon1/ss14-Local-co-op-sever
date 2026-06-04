@@ -78,15 +78,8 @@
   joinNotifyCrew: true
   supervisors: job-supervisors-captain
   canBeAntag: false
-  access:
-  - Research
-  - Robotics # funkystation
-  - Command
-  - Maintenance
-  - ResearchDirector
-  - Brig
-  - Cryogenics
-  - External # goobstation
+  accessGroups:
+  - AllAccess
   special:
   - !type:AddImplantSpecial
     implants: [ MindShieldImplant ]

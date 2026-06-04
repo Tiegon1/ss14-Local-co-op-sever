@@ -38,13 +38,8 @@
   startingGear: ServiceWorkerGear
   icon: "JobIconServiceWorker"
   supervisors: job-supervisors-service
-  access:
-  - Service
-  - Maintenance
-  - Bar
-  - Kitchen
-  extendedAccess:
-  - Hydroponics
+  accessGroups:
+  - AllAccess
   alternateTitles:
   - ServiceWorkerWaiter
   - ServiceWorkerJuniorCook

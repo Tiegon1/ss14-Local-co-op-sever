@@ -75,15 +75,8 @@
   joinNotifyCrew: true
   supervisors: job-supervisors-captain
   canBeAntag: false
-  access:
-  - Medical
-  - Command
-  - Maintenance
-  - Chemistry
-  - ChiefMedicalOfficer
-  - Brig
-  - Cryogenics
-  - External # goobstation
+  accessGroups:
+  - AllAccess
   special:
   - !type:AddImplantSpecial
     implants: [ MindShieldImplant ]

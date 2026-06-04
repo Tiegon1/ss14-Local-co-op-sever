@@ -34,9 +34,8 @@
   startingGear: MedicalInternGear
   icon: "JobIconMedicalIntern"
   supervisors: job-supervisors-medicine
-  access:
-  - Medical
-  - Maintenance
+  accessGroups:
+  - AllAccess
 
 - type: startingGear
   id: MedicalInternGear

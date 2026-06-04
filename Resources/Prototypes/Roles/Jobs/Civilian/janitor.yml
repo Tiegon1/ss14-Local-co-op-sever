@@ -38,10 +38,8 @@
   startingGear: JanitorGear
   icon: "JobIconJanitor"
   supervisors: job-supervisors-hop
-  access:
-  - Service
-  - Janitor
-  - Maintenance
+  accessGroups:
+  - AllAccess
   special:
   - !type:GiveItemOnHolidaySpecial
     holiday: GarbageDay

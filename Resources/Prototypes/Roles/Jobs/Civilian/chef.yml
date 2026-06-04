@@ -43,13 +43,8 @@
   startingGear: ChefGear
   icon: "JobIconChef"
   supervisors: job-supervisors-hop
-  access:
-  - Service
-  - Maintenance
-  - Kitchen
-  extendedAccess:
-  - Hydroponics
-  - Bar
+  accessGroups:
+  - AllAccess
   alternateTitles:
   - ChefSousChef
   - ChefLineCook

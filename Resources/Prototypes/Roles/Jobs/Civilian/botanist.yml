@@ -37,10 +37,8 @@
   startingGear: BotanistGear
   icon: "JobIconBotanist"
   supervisors: job-supervisors-hop
-  access:
-  - Service
-  - Maintenance
-  - Hydroponics
+  accessGroups:
+  - AllAccess
   extendedAccess:
   - Kitchen
   - Bar

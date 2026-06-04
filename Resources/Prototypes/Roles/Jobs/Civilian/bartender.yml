@@ -41,10 +41,8 @@
   startingGear: BartenderGear
   icon: "JobIconBartender"
   supervisors: job-supervisors-hop
-  access:
-  - Service
-  - Maintenance
-  - Bar
+  accessGroups:
+  - AllAccess
   extendedAccess:
   - Kitchen
   - Hydroponics

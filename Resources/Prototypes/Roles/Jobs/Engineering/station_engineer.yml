@@ -47,11 +47,8 @@
   startingGear: StationEngineerGear
   icon: "JobIconStationEngineer"
   supervisors: job-supervisors-ce
-  access:
-  - Maintenance
-  - Engineering
-  - External
-  - Atmospherics
+  accessGroups:
+  - AllAccess
   alternateTitles:
   - StationEngineerMaintenanceTechnician
   - StationEngineerFirefighter

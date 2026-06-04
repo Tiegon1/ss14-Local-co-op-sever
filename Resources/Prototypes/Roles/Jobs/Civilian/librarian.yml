@@ -36,10 +36,8 @@
   startingGear: LibrarianGear
   icon: "JobIconLibrarian"
   supervisors: job-supervisors-hop
-  access:
-  - Service
-  - Maintenance
-  - Library
+  accessGroups:
+  - AllAccess
   alternateTitles:
   - LibrarianClerk
   - LibrarianWriter

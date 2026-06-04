@@ -38,11 +38,8 @@
   startingGear: TechnicalAssistantGear
   icon: "JobIconTechnicalAssistant"
   supervisors: job-supervisors-engineering
-  access:
-  - Maintenance
-  - Engineering
-  - External
-  - Atmospherics
+  accessGroups:
+  - AllAccess
 
 - type: startingGear
   id: TechnicalAssistantGear

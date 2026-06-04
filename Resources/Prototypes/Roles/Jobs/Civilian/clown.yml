@@ -48,9 +48,8 @@
   startingGear: ClownGear
   icon: "JobIconClown"
   supervisors: job-supervisors-hop
-  access:
-  - Theatre
-  - Maintenance
+  accessGroups:
+  - AllAccess
   special:
   - !type:AddComponentSpecial
     components:

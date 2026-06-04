@@ -39,8 +39,8 @@
   startingGear: PassengerGear
   icon: "JobIconPassenger"
   supervisors: job-supervisors-everyone
-  access:
-  - Maintenance
+  accessGroups:
+  - AllAccess
   alternateTitles:
   - AssistantPassenger
   - AssistantVisitor
