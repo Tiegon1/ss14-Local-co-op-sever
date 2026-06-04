@@ -4,8 +4,8 @@ meta:
   engineVersion: 268.0.0
   forkId: ""
   forkVersion: ""
-  time: 06/03/2026 21:25:31
-  entityCount: 28613
+  time: 06/04/2026 06:14:28
+  entityCount: 28624
 maps:
 - 3201
 grids:
@@ -14814,7 +14814,7 @@ entities:
       pos: -29.5,37.5
       parent: 60
     - type: Door
-      secondsUntilStateChange: -254326.2
+      secondsUntilStateChange: -254745.67
       state: Opening
     - type: DeviceLinkSource
       lastSignals:
@@ -72163,8 +72163,11 @@ entities:
   - uid: 6361
     components:
     - type: Transform
-      pos: 35.520084,-27.379148
+      pos: 35.56164,-27.765701
       parent: 60
+    - type: Physics
+      angularDamping: 0
+      linearDamping: 0
 - proto: ClothingHandsGlovesNitrile
   entities:
   - uid: 4119
@@ -75964,6 +75967,16 @@ entities:
     - type: Transform
       pos: 51.3971,-22.413013
       parent: 60
+  - uid: 6794
+    components:
+    - type: Transform
+      pos: 35.741894,-26.621836
+      parent: 60
+  - uid: 6796
+    components:
+    - type: Transform
+      pos: 35.835644,-26.916742
+      parent: 60
   - uid: 12359
     components:
     - type: Transform
@@ -76711,6 +76724,24 @@ entities:
     - type: Transform
       pos: -8.763899,24.5281
       parent: 60
+- proto: DiethylamineChemistryBottle
+  entities:
+  - uid: 2785
+    components:
+    - type: Transform
+      pos: 35.78039,-27.265701
+      parent: 60
+    - type: Physics
+      angularDamping: 0
+      linearDamping: 0
+  - uid: 21161
+    components:
+    - type: Transform
+      pos: 35.488724,-27.203201
+      parent: 60
+    - type: Physics
+      angularDamping: 0
+      linearDamping: 0
 - proto: DiseaseDiagnoser
   entities:
   - uid: 3029
@@ -129850,6 +129881,24 @@ entities:
           - 19463
           - 19464
           - 19465
+- proto: Left4ZedChemistryBottle
+  entities:
+  - uid: 18404
+    components:
+    - type: Transform
+      pos: 35.22831,-27.02533
+      parent: 60
+    - type: Physics
+      angularDamping: 0
+      linearDamping: 0
+  - uid: 21012
+    components:
+    - type: Transform
+      pos: 35.207474,-27.316996
+      parent: 60
+    - type: Physics
+      angularDamping: 0
+      linearDamping: 0
 - proto: LGBTQHandyFlag
   entities:
   - uid: 9548
@@ -149541,6 +149590,24 @@ entities:
     - type: Transform
       pos: -22.577875,-7.9869475
       parent: 60
+- proto: SedinChemistryBottle
+  entities:
+  - uid: 8234
+    components:
+    - type: Transform
+      pos: 35.47831,-26.734451
+      parent: 60
+    - type: Physics
+      angularDamping: 0
+      linearDamping: 0
+  - uid: 8350
+    components:
+    - type: Transform
+      pos: 35.54081,-26.984451
+      parent: 60
+    - type: Physics
+      angularDamping: 0
+      linearDamping: 0
 - proto: SeedExtractor
   entities:
   - uid: 2542
@@ -158984,11 +159051,6 @@ entities:
     - type: Transform
       pos: 42.5,-27.5
       parent: 60
-  - uid: 2785
-    components:
-    - type: Transform
-      pos: 36.5,-29.5
-      parent: 60
   - uid: 3155
     components:
     - type: Transform
@@ -163370,6 +163432,34 @@ entities:
     components:
     - type: Transform
       pos: -34.5,-26.5
+      parent: 60
+- proto: UnstableMutagenChemistryBottle
+  entities:
+  - uid: 8452
+    components:
+    - type: Transform
+      pos: 35.22831,-26.473246
+      parent: 60
+    - type: Physics
+      angularDamping: 0
+      linearDamping: 0
+  - uid: 8458
+    components:
+    - type: Transform
+      pos: 35.22831,-26.785746
+      parent: 60
+    - type: Physics
+      angularDamping: 0
+      linearDamping: 0
+  - uid: 16678
+    components:
+    - type: Transform
+      pos: 35.719315,-36.948612
+      parent: 60
+  - uid: 18403
+    components:
+    - type: Transform
+      pos: 35.228306,-37.033127
       parent: 60
 - proto: UprightPianoInstrument
   entities:
