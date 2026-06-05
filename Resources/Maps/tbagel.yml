@@ -4,8 +4,8 @@ meta:
   engineVersion: 268.0.0
   forkId: ""
   forkVersion: ""
-  time: 06/04/2026 19:41:12
-  entityCount: 28311
+  time: 06/05/2026 17:08:09
+  entityCount: 28312
 maps:
 - 3201
 grids:
@@ -14712,7 +14712,7 @@ entities:
       pos: -29.5,37.5
       parent: 60
     - type: Door
-      secondsUntilStateChange: -257631.47
+      secondsUntilStateChange: -258022.94
       state: Opening
     - type: DeviceLinkSource
       lastSignals:
@@ -15536,7 +15536,7 @@ entities:
       pos: 57.5,14.5
       parent: 60
     - type: Door
-      secondsUntilStateChange: -875.2055
+      secondsUntilStateChange: -1266.6758
       state: Opening
     - type: DeviceLinkSource
       lastSignals:
@@ -15860,7 +15860,7 @@ entities:
       pos: 43.5,-51.5
       parent: 60
     - type: Door
-      secondsUntilStateChange: -514.0725
+      secondsUntilStateChange: -905.5427
       state: Opening
     - type: DeviceLinkSource
       lastSignals:
@@ -132764,6 +132764,55 @@ entities:
     - type: Transform
       pos: -14.5,-52.5
       parent: 60
+- proto: PaperMemo
+  entities:
+  - uid: 3304
+    components:
+    - type: Transform
+      pos: -26.075644,-0.566378
+      parent: 60
+    - type: Paper
+      stampState: paper_stamp-centcom
+      stampedBy:
+      - hasIcon: True
+        stampFont: null
+        stampLargeIcon: large_stamp-centcom
+        stampedColor: '#006600FF'
+        stampedName: stamp-component-stamped-name-centcom
+      - hasIcon: True
+        stampFont: null
+        stampLargeIcon: large_stamp-syndicate
+        stampedColor: '#850000FF'
+        stampedName: stamp-component-stamped-name-syndicate
+      - hasIcon: True
+        stampFont: null
+        stampLargeIcon: large_stamp-centcomintern
+        stampedColor: '#496600FF'
+        stampedName: stamp-component-stamped-name-cci
+      - hasIcon: True
+        stampFont: null
+        stampLargeIcon: large_stamp-wiz
+        stampedColor: '#881BC1FF'
+        stampedName: Wizard
+      - hasIcon: True
+        stampFont: null
+        stampLargeIcon: large_stamp-clown
+        stampedColor: '#FF33CCFF'
+        stampedName: stamp-component-stamped-name-clown
+      content: >2
+            [color=#1b67a5]█▄ █ ▀█▀    [head=3]Memo[/head]
+            █ ▀█    █      From: [NAME]
+              To: [RECIPIENT]
+              Subject: [SUBJECT] [/color]Missing Armory
+              ──────────────────────────────────────────
+              [BODY]
+
+        Your Amory is in another station. 
+
+
+
+        ──────────────────────────────────────────
+              Sincerely, [NAME] Nanotrasen Central Command
 - proto: PaperOffice
   entities:
   - uid: 24541
