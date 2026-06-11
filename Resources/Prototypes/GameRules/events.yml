@@ -100,6 +100,7 @@
     - id: SyndyMoth
 #    - id: SyndyPenguin
     - id: MalignRiftSpawn # Funky
+    - id: SneakySnake
 
 
 - type: entityTable
@@ -600,6 +601,22 @@
     - id: MobHivelord
       prob: 0.003
     - id: MobShark
+      prob: 0.003
+
+- type: entity
+  id: SneakySnake
+  parent: BaseStationEventShortDelay
+  components:
+  - type: StationEvent
+    earliestStart: 20
+    minimumPlayers: 1
+    weight: 3
+    duration: 30 # DeltaV: was 60, used as a delay now
+  - type: VentCrittersRule
+    entries: # 14 rolls at prob of 0.003 is around 4.2% chance that each spawn point (vent and etc) will get a mob   (14 * 0.003 = 0.042) 
+    - id: MobSpiderSpace
+      prob: 0.003
+    - id: MobCobraSpace
       prob: 0.003
 
 - type: entity
