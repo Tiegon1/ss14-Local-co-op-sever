@@ -615,9 +615,11 @@
   - type: VentCrittersRule
     entries: # 14 rolls at prob of 0.003 is around 4.2% chance that each spawn point (vent and etc) will get a mob   (14 * 0.003 = 0.042) 
     - id: MobSpiderSpace
-      prob: 0.003
+      prob: 0.008
     - id: MobCobraSpace
-      prob: 0.003
+      prob: 0.01
+    - id: MobBloodCultShade
+      prob: 0.005      
 
 - type: entity
   id: Hardmob
