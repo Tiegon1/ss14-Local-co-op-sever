@@ -125,10 +125,11 @@
     id: HoSPDA
     gloves: ClothingHandsGlovesCombat
     ears: ClothingHeadsetAltSecurity
-    pocket1: WeaponEnergyGunEnergyPistol # funkystation
+    pocket1: WeaponDisablerPractice # funkystation
+    pocket2: RubberChicken # funkystation
   storage:
     back:
-    - Flash
+    - WeaponRifleFoam
     - SecHypo # Goobstation
     - CartridgeEmergency
 
