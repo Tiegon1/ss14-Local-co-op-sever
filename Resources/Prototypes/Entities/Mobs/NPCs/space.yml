@@ -326,6 +326,100 @@
     factor: 1.5 # times more dangerous than a crew-member
 
 - type: entity
+  name: space spider (fresium)
+  id: MobSpiderSpace (fresium)
+  parent: MobSpaceBasic
+  description: It's so glowing, it looks dangerous.
+  components:
+  - type: Sprite
+    drawdepth: Mobs
+    sprite: Mobs/Animals/spacespider.rsi
+    layers:
+    - map: [ "enum.DamageStateVisualLayers.Base" ]
+      state: spacespider
+    - map: [ "enum.DamageStateVisualLayers.BaseUnshaded" ]
+      state: glow
+      shader: unshaded
+  - type: MobThresholds
+    thresholds:
+      0: Alive
+      90: Dead
+  - type: Stamina
+    critThreshold: 150
+  - type: DamageStateVisuals
+    states:
+      Alive:
+        Base: spacespider
+        BaseUnshaded: glow
+      Dead:
+        Base: spacespider_dead
+  - type: Butcherable
+    spawned:
+    - id: FoodMeatSpider
+      amount: 2
+    - id: EggSpider
+      amount: 1
+      prob: 0.5
+  - type: Bloodstream
+    bloodMaxVolume: 250
+    bloodReagent: Cryoxadone
+  - type: Fixtures
+    fixtures:
+      fix1:
+        shape:
+          !type:PhysShapeCircle
+          radius: 0.35
+        density: 120
+        mask:
+        - MobMask
+        layer:
+        - MobLayer
+  - type: MeleeWeapon
+    soundHit:
+      path: /Audio/Effects/bite.ogg
+    angle: 0
+    animation: WeaponArcBite
+    damage:
+      types:
+        Piercing: 6
+        Poison: 4
+  - type: SolutionContainerManager
+    solutions:
+      melee:
+        reagents:
+        - ReagentId: fresium
+          Quantity: 400
+  - type: MeleeChemicalInjector
+    solution: melee
+    transferAmount: 40
+  - type: ReplacementAccent
+    accent: xeno
+  - type: InteractionPopup
+    successChance: 0.20
+    interactSuccessString: petting-success-tarantula
+    interactFailureString: petting-failure-generic
+  - type: PointLight
+    radius: 1.2
+    energy: 2
+    color: "#4faffb"
+  - type: NoSlip
+  - type: IgnoreSpiderWeb
+  - type: Speech
+    speechVerb: Arachnid
+    speechSounds: Arachnid
+    allowedEmotes: ['Click', 'Chitter']
+  - type: Vocal
+    sounds:
+      Male: UnisexArachnid
+      Female: UnisexArachnid
+      Unsexed: UnisexArachnid
+  - type: TypingIndicator
+    proto: spider
+  - type: CombatPower # Goobstation
+    factor: 1.5 # times more dangerous than a crew-member
+
+
+- type: entity
   id: MobSpiderSpaceSalvage
   parent: MobSpiderSpace
   suffix: "Salvage Ruleset"
