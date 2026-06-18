@@ -857,5 +857,5 @@
         ScaleImpulse: 2.0
         probability: 1.0
         conditions:
-      - !type:ReagentThresholD
-        min: 5
+        - !type:ReagentThreshold
+          min: 5
