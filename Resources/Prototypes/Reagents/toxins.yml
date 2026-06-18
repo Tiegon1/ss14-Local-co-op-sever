@@ -840,3 +840,22 @@
           reagent: BZMetabolites
           min: 0.2
         amount: -8
+
+- type: reagent
+  id: LungeJuice
+  name: reagent-name-LungeJuice
+  group: Toxins
+  desc: reagent-desc-LungeJuice
+  physicalDesc: reagent-physical-desc-strong-Fizzing
+  flavor: Tingling 
+  color: "#4FFFAD"
+  metabolisms:
+    Poison:
+      effects:
+      - !type:Toss
+        BaseImpulse: 40
+        ScaleImpulse: 2.0
+        probability: 1.0
+        conditions:
+      - !type:ReagentThresholD
+        min: 5
