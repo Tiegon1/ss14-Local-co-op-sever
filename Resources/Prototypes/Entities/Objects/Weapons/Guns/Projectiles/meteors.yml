@@ -277,12 +277,12 @@
         - Impassable
         - BulletImpassable
   - type: Explosive
-    totalIntensity: 10
+    totalIntensity: 5
   - type: Destructible
     thresholds:
     - trigger:
         !type:DamageTrigger
-        damage: 800
+        damage: 2000
       behaviors:
       - !type:DoActsBehavior
         acts: [ "Destruction" ]
@@ -294,7 +294,7 @@
         weightedEntityTable: "MeteorSpawnXenoTable"
         minSpawn: 1
         maxSpawn: 2
-        spawnAfter: 2
+        spawnAfter: 3
         
 - type: entity
   parent: BaseMeteor
@@ -318,12 +318,12 @@
         - Impassable
         - BulletImpassable
   - type: Explosive
-    totalIntensity: 20
+    totalIntensity: 7
   - type: Destructible
     thresholds:
     - trigger:
         !type:DamageTrigger
-        damage: 1000
+        damage: 4000
       behaviors:
       - !type:DoActsBehavior
         acts: [ "Destruction" ]
@@ -336,7 +336,7 @@
         spawnOffset: 2
         minSpawn: 2
         maxSpawn: 4
-        spawnAfter: 2
+        spawnAfter: 3
 
 - type: entity
   parent: BaseMeteor
@@ -347,12 +347,12 @@
   - type: Sprite
     state: big
   - type: Explosive
-    totalIntensity: 50
+    totalIntensity: 10
   - type: Destructible
     thresholds:
     - trigger:
         !type:DamageTrigger
-        damage: 2000
+        damage: 6000
       behaviors:
       - !type:DoActsBehavior
         acts: [ "Destruction" ]
@@ -365,4 +365,4 @@
         spawnOffset: 3
         minSpawn: 4
         maxSpawn: 6
-        spawnAfter: 2
+        spawnAfter: 3

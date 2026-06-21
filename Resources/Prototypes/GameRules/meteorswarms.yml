@@ -48,6 +48,7 @@
     - id: GameRuleMeteorSwarmLarge
     - id: GameRuleUristSwarm
     - id: ImmovableRodSpawn
+    - id: GameRuleXenoMeteorSwarm
 
 - type: weightedRandomEntity
   id: MeteorSpawnAsteroidWallTable
@@ -198,6 +199,18 @@
       MeteorXenoSmall: 1
       MeteorXenoMedium: 2
       MeteorXenoLarge: 2
+
+- type: entity
+  parent: GameRuleMeteorSwarm
+  id: GameRuleXenoMeteorSwarm
+  components:
+  - type: StationEvent
+    weight: 1
+  - type: MeteorSwarm
+    meteors:
+      MeteorXenoSmall: 2
+      MeteorXenoMedium: 4
+      MeteorXenoLarge: 4
 
 - type: entity
   parent: GameRuleMeteorSwarm
