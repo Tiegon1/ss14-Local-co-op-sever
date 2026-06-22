@@ -187,3 +187,13 @@
               id: MeleeService
               proto: OrderedTargets
               key: Target
+
+- type: htnCompound
+  id: DestructionCompound
+  branches:
+    - tasks:
+        - !type:HTNPrimitiveTask
+          operator: !type:UtilityOperator
+            proto: NearbyDestructibleTargets
+        - !type:HTNCompoundTask
+          task: MeleeAttackTargetCompound

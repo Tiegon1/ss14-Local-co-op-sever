@@ -26,7 +26,7 @@
     useSound: /Audio/Items/crowbar.ogg
   - type: HTN
     rootTask:
-      task: XenoCompound #maybe someday... But for now it's enough.
+      task: DinoCompound #maybe someday... But for now it's enough.
     blackboard:
       NavSmash: !type:Bool
         true
@@ -221,7 +221,7 @@
         Base: compy_dead
   - type: HTN
     rootTask:
-      task: XenoCompound
+      task: DinoCompound
     blackboard:
       NavClimb: !type:Bool
         true
@@ -357,7 +357,7 @@
         Base: raptor_dead
   - type: HTN
     rootTask:
-      task: XenoCompound
+      task: DinoCompound
     blackboard:
       NavClimb: !type:Bool
         true
