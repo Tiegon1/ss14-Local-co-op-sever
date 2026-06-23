@@ -736,7 +736,7 @@
     - id: MobCarpMagic
       prob: 0.003
     - id: MobCarp
-      prob: 0.003
+      prob: 0.01
     - id: MobArgocyteSwiper
       prob: 0.003
     - id: MobHonkBot
