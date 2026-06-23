@@ -209,29 +209,29 @@
       Power: 100
   - type: BreakerFlipRule
 
-- type: entity
-  id: BureaucraticError
-  parent: BaseGameRule
-  components:
-  - type: StationEvent
-    startAnnouncement: station-event-bureaucratic-error-announcement
-    minimumPlayers: 25
-    weight: 3
-    duration: 1
-  - type: BureaucraticErrorRule
-    ignoredJobs:
-    - StationAi
+# - type: entity
+#   id: BureaucraticError
+#   parent: BaseGameRule
+#   components:
+#   - type: StationEvent
+#     startAnnouncement: station-event-bureaucratic-error-announcement
+#     minimumPlayers: 25
+#     weight: 3
+#     duration: 1
+#   - type: BureaucraticErrorRule
+#     ignoredJobs:
+#     - StationAi
 
-- type: entity
-  id: ClericalError
-  parent: BaseGameRule
-  components:
-  - type: StationEvent
-    startAnnouncement: station-event-clerical-error-announcement
-    minimumPlayers: 15
-    weight: 5
-    duration: 1
-  - type: ClericalErrorRule
+# - type: entity
+#   id: ClericalError
+#   parent: BaseGameRule
+#   components:
+#   - type: StationEvent
+#     startAnnouncement: station-event-clerical-error-announcement
+#     minimumPlayers: 15
+#     weight: 5
+#     duration: 1
+#   - type: ClericalErrorRule
 
 - type: entity
   parent: BaseGameRule
@@ -245,159 +245,159 @@
   - type: RandomEntityStorageSpawnRule
     prototype: MobSkeletonCloset
 
-- type: entity
-  parent: BaseGameRule
-  id: DragonSpawn
-  components:
-  - type: StationEvent
-    weight: 6.0 # funkystation
-    earliestStart: 60 # funkystation
-    reoccurrenceDelay: 30 # funkystation
-    minimumPlayers: 20
-    duration: null
-    chaos: # Goobstation
-      Hostile: 180
-      Friend: 180
-      Combat: 180
-      Death: 180
-      Medical: 140
-    maxChaos:
-      Hostile: 30
-      Combat: -60
-      Power: 50
-      Medical: 50
-      Atmos: 50
-  - type: SpaceSpawnRule
-    spawnDistance: 0
-  - type: AntagSpawner
-    prototype: MobDragon
-  - type: DragonRule
-  - type: AntagObjectives
-    objectives:
-    - CarpRiftsObjective
-    - DragonSurviveObjective
-  - type: AntagSelection
-    agentName: dragon-round-end-agent-name
-    definitions:
-    - spawnerPrototype: SpawnPointGhostDragon
-      min: 1
-      max: 1
-      pickPlayer: false
-      mindRoles:
-      - MindRoleDragon
+# - type: entity
+#   parent: BaseGameRule
+#   id: DragonSpawn
+#   components:
+#   - type: StationEvent
+#     weight: 6.0 # funkystation
+#     earliestStart: 60 # funkystation
+#     reoccurrenceDelay: 30 # funkystation
+#     minimumPlayers: 20
+#     duration: null
+#     chaos: # Goobstation
+#       Hostile: 180
+#       Friend: 180
+#       Combat: 180
+#       Death: 180
+#       Medical: 140
+#     maxChaos:
+#       Hostile: 30
+#       Combat: -60
+#       Power: 50
+#       Medical: 50
+#       Atmos: 50
+#   - type: SpaceSpawnRule
+#     spawnDistance: 0
+#   - type: AntagSpawner
+#     prototype: MobDragon
+#   - type: DragonRule
+#   - type: AntagObjectives
+#     objectives:
+#     - CarpRiftsObjective
+#     - DragonSurviveObjective
+#   - type: AntagSelection
+#     agentName: dragon-round-end-agent-name
+#     definitions:
+#     - spawnerPrototype: SpawnPointGhostDragon
+#       min: 1
+#       max: 1
+#       pickPlayer: false
+#       mindRoles:
+#       - MindRoleDragon
 
-- type: entity
-  parent: BaseGameRule
-  id: NinjaSpawn
-  components:
-  - type: StationEvent
-    weight: 6
-    duration: null
-    earliestStart: 45
-    reoccurrenceDelay: 60 # funkystation
-    minimumPlayers: 30
-    chaos: # Goobstation
-      Hostile: 50
-      Friend: 50
-      Combat: 50
-      Death: 50
-      Medical: 50
-  - type: SpaceSpawnRule
-  - type: AntagLoadProfileRule
-    speciesOverride: Human # funkystation
-    speciesOverrideBlacklist: # funkstation
-    - IPC # funkystation
-  - type: AntagObjectives
-    objectives:
-    - StealResearchObjective
-    - DoorjackObjective
-    - SpiderChargeObjective
-    - TerrorObjective
-    - MassArrestObjective
-    - NinjaSurviveObjective
-  - type: AntagSelection
-    agentName: ninja-round-end-agent-name
-    definitions:
-    - spawnerPrototype: SpawnPointGhostSpaceNinja
-      min: 1
-      max: 1
-      prefRoles: [ SpaceNinja ]
-      pickPlayer: false
-      startingGear: SpaceNinjaGear
-      roleLoadout:
-      - RoleSurvivalEVA
-      briefing:
-        text: ninja-role-greeting
-        color: Green
-        sound: /Audio/Misc/ninja_greeting.ogg
-      components:
-      - type: SpaceNinja
-      - type: NpcFactionMember
-        factions:
-        - Syndicate
-      - type: AutoImplant
-        implants:
-        - DeathAcidifierImplant
-      - type: RandomMetadata
-        nameSegments:
-        - NamesNinjaTitle
-        - NamesNinjaName
-      mindRoles:
-      - MindRoleNinja
+# - type: entity
+#   parent: BaseGameRule
+#   id: NinjaSpawn
+#   components:
+#   - type: StationEvent
+#     weight: 6
+#     duration: null
+#     earliestStart: 45
+#     reoccurrenceDelay: 60 # funkystation
+#     minimumPlayers: 30
+#     chaos: # Goobstation
+#       Hostile: 50
+#       Friend: 50
+#       Combat: 50
+#       Death: 50
+#       Medical: 50
+#   - type: SpaceSpawnRule
+#   - type: AntagLoadProfileRule
+#     speciesOverride: Human # funkystation
+#     speciesOverrideBlacklist: # funkstation
+#     - IPC # funkystation
+#   - type: AntagObjectives
+#     objectives:
+#     - StealResearchObjective
+#     - DoorjackObjective
+#     - SpiderChargeObjective
+#     - TerrorObjective
+#     - MassArrestObjective
+#     - NinjaSurviveObjective
+#   - type: AntagSelection
+#     agentName: ninja-round-end-agent-name
+#     definitions:
+#     - spawnerPrototype: SpawnPointGhostSpaceNinja
+#       min: 1
+#       max: 1
+#       prefRoles: [ SpaceNinja ]
+#       pickPlayer: false
+#       startingGear: SpaceNinjaGear
+#       roleLoadout:
+#       - RoleSurvivalEVA
+#       briefing:
+#         text: ninja-role-greeting
+#         color: Green
+#         sound: /Audio/Misc/ninja_greeting.ogg
+#       components:
+#       - type: SpaceNinja
+#       - type: NpcFactionMember
+#         factions:
+#         - Syndicate
+#       - type: AutoImplant
+#         implants:
+#         - DeathAcidifierImplant
+#       - type: RandomMetadata
+#         nameSegments:
+#         - NamesNinjaTitle
+#         - NamesNinjaName
+#       mindRoles:
+#       - MindRoleNinja
 
-- type: entity
-  parent: BaseGameRule
-  id: ParadoxCloneSpawn
-  components:
-  - type: StationEvent
-    weight: 5
-    duration: null
-    earliestStart: 20
-    reoccurrenceDelay: 20
-    minimumPlayers: 15
-  - type: ParadoxCloneRule
-    objectiveBlacklist:
-      tags:
-      - ParadoxCloneObjectiveBlacklist
-  - type: AntagObjectives
-    objectives:
-    - ParadoxCloneKillObjective
-    - ParadoxCloneLivingObjective
-  - type: AntagRandomSpawn # TODO: improve spawning so they only start in maints
-  - type: AntagSelection
-    agentName: paradox-clone-round-end-agent-name
-    definitions:
-    - spawnerPrototype: SpawnPointGhostParadoxClone
-      min: 1
-      max: 1
-      pickPlayer: false
-      startingGear: ParadoxCloneGear
-      roleLoadout:
-      - RoleSurvivalVoxTank # give vox something to breath in case they don't get a copy
-      briefing:
-        text: paradox-clone-role-greeting
-        color: lightblue
-        sound: /Audio/Misc/paradox_clone_greeting.ogg
-      mindRoles:
-      - MindRoleParadoxClone
+# - type: entity
+#   parent: BaseGameRule
+#   id: ParadoxCloneSpawn
+#   components:
+#   - type: StationEvent
+#     weight: 5
+#     duration: null
+#     earliestStart: 20
+#     reoccurrenceDelay: 20
+#     minimumPlayers: 15
+#   - type: ParadoxCloneRule
+#     objectiveBlacklist:
+#       tags:
+#       - ParadoxCloneObjectiveBlacklist
+#   - type: AntagObjectives
+#     objectives:
+#     - ParadoxCloneKillObjective
+#     - ParadoxCloneLivingObjective
+#   - type: AntagRandomSpawn # TODO: improve spawning so they only start in maints
+#   - type: AntagSelection
+#     agentName: paradox-clone-round-end-agent-name
+#     definitions:
+#     - spawnerPrototype: SpawnPointGhostParadoxClone
+#       min: 1
+#       max: 1
+#       pickPlayer: false
+#       startingGear: ParadoxCloneGear
+#       roleLoadout:
+#       - RoleSurvivalVoxTank # give vox something to breath in case they don't get a copy
+#       briefing:
+#         text: paradox-clone-role-greeting
+#         color: lightblue
+#         sound: /Audio/Misc/paradox_clone_greeting.ogg
+#       mindRoles:
+#       - MindRoleParadoxClone
 
-- type: entity
-  parent: BaseGameRule
-  id: RevenantSpawn
-  components:
-  - type: StationEvent
-    weight: 6
-    duration: 1
-    earliestStart: 45
-    minimumPlayers: 20
-    chaos: # Goobstation
-      Hostile: 20
-      Friend: 20
-      Combat: 40
-      Death: 100
-      Medical: 100
-  - type: RandomSpawnRule
-    prototype: MobRevenant
+# - type: entity
+#   parent: BaseGameRule
+#   id: RevenantSpawn
+#   components:
+#   - type: StationEvent
+#     weight: 6
+#     duration: 1
+#     earliestStart: 45
+#     minimumPlayers: 20
+#     chaos: # Goobstation
+#       Hostile: 20
+#       Friend: 20
+#       Combat: 40
+#       Death: 100
+#       Medical: 100
+#   - type: RandomSpawnRule
+#     prototype: MobRevenant
 
 # disabled until event is rewritten to be more interesting
 - type: entity
