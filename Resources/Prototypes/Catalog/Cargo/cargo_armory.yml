@@ -28,7 +28,7 @@
     sprite: Objects/Weapons/Guns/SMGs/wt550.rsi
     state: icon
   product: CrateArmorySMG
-  cost: 9000
+  cost: 10000
   category: cargoproduct-category-name-armory
   group: market
 
@@ -38,7 +38,7 @@
     sprite: Objects/Weapons/Guns/Shotguns/enforcer.rsi
     state: icon
   product: CrateArmoryShotgun
-  cost: 11000
+  cost: 12000
   category: cargoproduct-category-name-armory
   group: market
 
@@ -78,7 +78,7 @@
     sprite: Objects/Weapons/Guns/Battery/laser_gun.rsi
     state: icon
   product: CrateArmoryLaser
-  cost: 4800
+  cost: 8000
   category: cargoproduct-category-name-armory
   group: market
 
@@ -88,7 +88,7 @@
     sprite: Objects/Weapons/Guns/Pistols/mk58.rsi
     state: icon
   product: CrateArmoryPistols
-  cost: 5200
+  cost: 6000
   category: cargoproduct-category-name-armory
   group: market
 
@@ -98,7 +98,7 @@
     sprite: Objects/Weapons/Guns/SMGs/c20r.rsi
     state: icon
   product: CrateArmorySMGcr20
-  cost: 12000
+  cost: 20000
   category: cargoproduct-category-name-armory
   group: market
 
@@ -108,7 +108,7 @@
     sprite: Objects/Weapons/Guns/SMGs/atreides.rsi
     state: icon
   product: CrateArmorySMGAtreides
-  cost: 20000
+  cost: 40000
   category: cargoproduct-category-name-armory
   group: market
   
