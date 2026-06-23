@@ -602,6 +602,10 @@
       prob: 0.003
     - id: MobShark
       prob: 0.003
+    - id: MobArgocytePouncer
+      prob: 0.003
+    - id: MobCorgiCerberus
+      prob: 0.003
 
 - type: entity
   id: SneakySnake
@@ -692,7 +696,7 @@
       path: /Audio/Announcements/aliens.ogg
     earliestStart: 20
     minimumPlayers: 1
-    weight: 0.5
+    weight: 0.3
     duration: 30 # DeltaV: was 60, used as a delay now
   - type: VentCrittersRule
     entries: # 6 rolls at an average prob of 0.014 is around 8.4% chance that each spawn point will get a mob   (6 * 0.014 = 0.084)
@@ -725,8 +729,6 @@
     entries: # 20 rolls at prob of 0.003 is around 6% chance that each spawn point will get a mob   (20 * 0.003 = 0.06)
     - id: MobBloodCultShade
       prob: 0.003
-    - id: MobCorgiCerberus
-      prob: 0.003
     - id: MobCarpHolo
       prob: 0.003
     - id: MobCarpRainbow
@@ -734,8 +736,6 @@
     - id: MobCarpMagic
       prob: 0.003
     - id: MobCarp
-      prob: 0.003
-    - id: MobArgocytePouncer
       prob: 0.003
     - id: MobArgocyteSwiper
       prob: 0.003
