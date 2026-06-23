@@ -80,7 +80,7 @@
   - type: GhostTakeoverAvailable
   - type: HTN
     rootTask:
-      task: XenoCompound
+      task: DragonCompound
     blackboard:
       NavInteract: !type:Bool
         true
@@ -235,6 +235,19 @@
     speedModifier: 2.5 # fast because dragon strong
     useSound:
       path: /Audio/Items/crowbar.ogg
+  - type: Gun
+    soundGunshot:
+      path: /Audio/Animals/space_dragon_roar.ogg
+    soundEmpty: null
+    projectileSpeed: 5
+  - type: BasicEntityAmmoProvider
+    proto: ProjectileDragonsBreath
+    capacity: 1
+    count: 1
+  - type: RechargeBasicEntityAmmo
+    rechargeCooldown: 5
+    rechargeSound:
+      path: /Audio/Animals/space_dragon_roar.ogg
 
 - type: entity
   parent: BaseMobDragon
