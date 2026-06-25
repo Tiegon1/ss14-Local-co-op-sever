@@ -158,9 +158,10 @@
 - type: htnCompound
   id: MeleeAttackOrderedTargetCompound
   branches:
+    # First branch: normal melee attack
     - preconditions:
-      - !type:KeyExistsPrecondition
-        key: Target
+        - !type:KeyExistsPrecondition
+          key: Target
       tasks:
         - !type:HTNPrimitiveTask
           operator: !type:MoveToOperator
@@ -187,6 +188,20 @@
               id: MeleeService
               proto: OrderedTargets
               key: Target
+
+    # Second branch: if target out of range, attack destructibles instead
+    - preconditions:
+        - !type:KeyExistsPrecondition
+          key: Target
+        - !type:CoordinatesNotInRangePrecondition
+          targetKey: TargetCoordinates
+          rangeKey: MeleeRange
+      tasks:
+        - !type:HTNPrimitiveTask
+          operator: !type:UtilityOperator
+            proto: NearbyDestructibleTargets
+        - !type:HTNCompoundTask
+          task: MeleeAttackTargetCompound              
 
 - type: htnCompound
   id: DestructionCompound
