@@ -663,7 +663,7 @@
       path: /Audio/Announcements/aliens.ogg
     earliestStart: 20
     minimumPlayers: 1
-    weight: 0.5
+    weight: 0.6
     duration: 30 # DeltaV: was 60, used as a delay now
   - type: VentCrittersRule
     entries: # 9 rolls at prob of 0.005 is around 4.5% chance that each spawn point will get a mob   (9 * 0.005 = 0.045)
@@ -678,9 +678,9 @@
     - id: MobDinosaurKentro
       prob: 0.003
     - id: MobDragon
-      prob: 0.005
+      prob: 0.008
     - id: MobRatKingBuff
-      prob: 0.005
+      prob: 0.002
     - id: MobArgocyteLeviathing
       prob: 0.005
     - id: MobDinosaurAnki
