@@ -473,7 +473,7 @@
     startAudio:
       path: /Audio/Announcements/attention.ogg
     endAnnouncement: station-event-gas-leak-end-announcement
-    weight: 8
+    weight: 2
     chaos:
       Atmos: 100
       Medical: 50
@@ -494,52 +494,52 @@
       Medical: 100
   - type: KudzuGrowthRule
 
-- type: entity
-  id: PowerGridCheck
-  parent: BaseStationEventShortDelay
-  components:
-  - type: StationEvent
-    minimumPlayers: 30
-    weight: 4
-    startAnnouncement: station-event-power-grid-check-start-announcement
-    endAnnouncement: station-event-power-grid-check-end-announcement
-    startAudio:
-      path: /Audio/Announcements/power_off.ogg
-      params:
-        volume: -4
-    duration: 60
-    maxDuration: 120
-  - type: PowerGridCheckRule
+# - type: entity
+#   id: PowerGridCheck
+#   parent: BaseStationEventShortDelay
+#   components:
+#   - type: StationEvent
+#     minimumPlayers: 30
+#     weight: 4
+#     startAnnouncement: station-event-power-grid-check-start-announcement
+#     endAnnouncement: station-event-power-grid-check-end-announcement
+#     startAudio:
+#       path: /Audio/Announcements/power_off.ogg
+#       params:
+#         volume: -4
+#     duration: 60
+#     maxDuration: 120
+#   - type: PowerGridCheckRule
 
-- type: entity
-  parent: BaseGameRule
-  id: SolarFlare
-  components:
-  - type: StationEvent
-    weight: 8
-    startAnnouncement: station-event-solar-flare-start-announcement
-    endAnnouncement: station-event-solar-flare-end-announcement
-    startAudio:
-      path: /Audio/Announcements/attention.ogg
-    duration: 120
-    maxDuration: 240
-    chaos: # Goobstation
-      Friend: 20
-  - type: SolarFlareRule
-    onlyJamHeadsets: true
-    affectedChannels:
-    - Common
-    extraChannels:
-    - Command
-    - Engineering
-    - Medical
-    - Science
-    - Security
-    - Service
-    - Supply
-    extraCount: 2
-    lightBreakChancePerSecond: 0.0003
-    doorToggleChancePerSecond: 0.001
+# - type: entity
+#   parent: BaseGameRule
+#   id: SolarFlare
+#   components:
+#   - type: StationEvent
+#     weight: 8
+#     startAnnouncement: station-event-solar-flare-start-announcement
+#     endAnnouncement: station-event-solar-flare-end-announcement
+#     startAudio:
+#       path: /Audio/Announcements/attention.ogg
+#     duration: 120
+#     maxDuration: 240
+#     chaos: # Goobstation
+#       Friend: 20
+#   - type: SolarFlareRule
+#     onlyJamHeadsets: true
+#     affectedChannels:
+#     - Common
+#     extraChannels:
+#     - Command
+#     - Engineering
+#     - Medical
+#     - Science
+#     - Security
+#     - Service
+#     - Supply
+#     extraCount: 2
+#     lightBreakChancePerSecond: 0.0003
+#     doorToggleChancePerSecond: 0.001
 
 - type: entity
   id: VentClog
@@ -815,119 +815,119 @@
 #    - id: MobGrenadePenguin
 #      prob: 0.01
 
-- type: entity
-  id: ZombieOutbreak
-  parent: BaseGameRule
-  components:
-  - type: StationEvent
-    earliestStart: 60 # funkystation
-    minimumPlayers: 40
-    weight: 1.5 # Zombies was happening basically every single survival round, so now it's super rare
-    duration: 1
-    chaos: # Goobstation
-      Hostile: 40
-      Friend: 60
-      Medical: 200
-      Death: 200
-  - type: ZombieRule
-  - type: AntagSelection
-    definitions:
-    - prefRoles: [ InitialInfected ]
-      max: 3
-      playerRatio: 15
-      blacklist:
-        components:
-        - ZombieImmune
-        - AntagImmune
-      briefing:
-        text: zombie-patientzero-role-greeting
-        color: Plum
-        sound: "/Audio/Ambience/Antag/zombie_start.ogg"
-      components:
-      - type: PendingZombie #less time to prepare than normal
-        minInitialInfectedGrace: 300
-        maxInitialInfectedGrace: 450
-      - type: ZombifyOnDeath
-      - type: IncurableZombie
-      - type: InitialInfected
-      mindRoles:
-      - MindRoleInitialInfected
+# - type: entity
+#   id: ZombieOutbreak
+#   parent: BaseGameRule
+#   components:
+#   - type: StationEvent
+#     earliestStart: 60 # funkystation
+#     minimumPlayers: 40
+#     weight: 1.5 # Zombies was happening basically every single survival round, so now it's super rare
+#     duration: 1
+#     chaos: # Goobstation
+#       Hostile: 40
+#       Friend: 60
+#       Medical: 200
+#       Death: 200
+#   - type: ZombieRule
+#   - type: AntagSelection
+#     definitions:
+#     - prefRoles: [ InitialInfected ]
+#       max: 3
+#       playerRatio: 15
+#       blacklist:
+#         components:
+#         - ZombieImmune
+#         - AntagImmune
+#       briefing:
+#         text: zombie-patientzero-role-greeting
+#         color: Plum
+#         sound: "/Audio/Ambience/Antag/zombie_start.ogg"
+#       components:
+#       - type: PendingZombie #less time to prepare than normal
+#         minInitialInfectedGrace: 300
+#         maxInitialInfectedGrace: 450
+#       - type: ZombifyOnDeath
+#       - type: IncurableZombie
+#       - type: InitialInfected
+#       mindRoles:
+#       - MindRoleInitialInfected
 
-- type: entity
-  parent: BaseNukeopsRule
-  id: LoneOpsSpawn
-  components:
-  - type: StationEvent
-    earliestStart: 35
-    weight: 4
-    minimumPlayers: 20
-    duration: 1
-    chaos: # Goobstation
-      Hostile: 20
-      Friend: 40
-      Medical: 200
-      Death: 100
-  - type: RuleGrids
-  - type: LoadMapRule
-    gridPath: /Maps/Shuttles/ShuttleEvent/striker.yml
-  - type: NukeopsRule
-    roundEndBehavior: Nothing
-  - type: AntagSelection
-    definitions:
-    - spawnerPrototype: SpawnPointNukeopsCommander
-      min: 1
-      max: 1
-      prefRoles: [ Nukeops ]
-      pickPlayer: false
-      startingGear: SyndicateLoneOperativeGearFull
-      roleLoadout:
-      - RoleSurvivalNukie
-      components:
-      - type: NukeOperative
-      - type: RandomMetadata
-        nameSegments: # Vocaloid Names Fix
-        - NamesNukieFirstOperator
-        - NamesSyndicateElite
-      - type: NpcFactionMember
-        factions:
-        - Syndicate
-      mindRoles:
-      - MindRoleNukeops
+# - type: entity
+#   parent: BaseNukeopsRule
+#   id: LoneOpsSpawn
+#   components:
+#   - type: StationEvent
+#     earliestStart: 35
+#     weight: 4
+#     minimumPlayers: 20
+#     duration: 1
+#     chaos: # Goobstation
+#       Hostile: 20
+#       Friend: 40
+#       Medical: 200
+#       Death: 100
+#   - type: RuleGrids
+#   - type: LoadMapRule
+#     gridPath: /Maps/Shuttles/ShuttleEvent/striker.yml
+#   - type: NukeopsRule
+#     roundEndBehavior: Nothing
+#   - type: AntagSelection
+#     definitions:
+#     - spawnerPrototype: SpawnPointNukeopsCommander
+#       min: 1
+#       max: 1
+#       prefRoles: [ Nukeops ]
+#       pickPlayer: false
+#       startingGear: SyndicateLoneOperativeGearFull
+#       roleLoadout:
+#       - RoleSurvivalNukie
+#       components:
+#       - type: NukeOperative
+#       - type: RandomMetadata
+#         nameSegments: # Vocaloid Names Fix
+#         - NamesNukieFirstOperator
+#         - NamesSyndicateElite
+#       - type: NpcFactionMember
+#         factions:
+#         - Syndicate
+#       mindRoles:
+#       - MindRoleNukeops
 
-- type: entity
-  parent: BaseTraitorRule
-  id: SleeperAgents
-  components:
-  - type: StationEvent
-    earliestStart: 30
-    weight: 6
-    minimumPlayers: 15
-    maxOccurrences: 1 # can only happen once per round
-    startAnnouncement: station-event-communication-interception
-    startAudio:
-      path: /Audio/Announcements/intercept.ogg
-    duration: null # the rule has to last the whole round not 1 second
-    occursDuringRoundEnd: false
-  - type: AlertLevelInterceptionRule
-  - type: AntagSelection
-    definitions:
-    - prefRoles: [ TraitorSleeper ]
-      fallbackRoles: [ Traitor ]
-      min: 1
-      max: 2
-      playerRatio: 10
-      blacklist:
-        components:
-        - AntagImmune
-      mindRoles:
-      - MindRoleTraitorSleeper
+# - type: entity
+#   parent: BaseTraitorRule
+#   id: SleeperAgents
+#   components:
+#   - type: StationEvent
+#     earliestStart: 30
+#     weight: 6
+#     minimumPlayers: 15
+#     maxOccurrences: 1 # can only happen once per round
+#     startAnnouncement: station-event-communication-interception
+#     startAudio:
+#       path: /Audio/Announcements/intercept.ogg
+#     duration: null # the rule has to last the whole round not 1 second
+#     occursDuringRoundEnd: false
+#   - type: AlertLevelInterceptionRule
+#   - type: AntagSelection
+#     definitions:
+#     - prefRoles: [ TraitorSleeper ]
+#       fallbackRoles: [ Traitor ]
+#       min: 1
+#       max: 2
+#       playerRatio: 10
+#       blacklist:
+#         components:
+#         - AntagImmune
+#       mindRoles:
+#       - MindRoleTraitorSleeper
 
 - type: entity
   id: MassHallucinations
   parent: BaseGameRule
   components:
   - type: StationEvent
-    weight: 7
+    weight: 2
     duration: 150
     maxDuration: 300
     reoccurrenceDelay: 30
@@ -938,47 +938,47 @@
     sounds:
       collection: Paracusia
 
-- type: entity
-  parent: BaseGameRule
-  id: IonStorm
-  components:
-  - type: StationEvent
-    weight: 8
-    reoccurrenceDelay: 20
-    duration: 1
-  - type: IonStormRule
+# - type: entity
+#   parent: BaseGameRule
+#   id: IonStorm
+#   components:
+#   - type: StationEvent
+#     weight: 8
+#     reoccurrenceDelay: 20
+#     duration: 1
+#   - type: IonStormRule
 
-- type: entity
-  id: MimicVendorRule
-  parent: BaseGameRule
-  components:
-  - type: StationEvent
-    earliestStart: 0
-    minimumPlayers: 20
-    maxOccurrences: 1 # this event has diminishing returns on interesting-ness, so we cap it
-    weight: 5
-  - type: MobReplacementRule
+# - type: entity
+#   id: MimicVendorRule
+#   parent: BaseGameRule
+#   components:
+#   - type: StationEvent
+#     earliestStart: 0
+#     minimumPlayers: 20
+#     maxOccurrences: 1 # this event has diminishing returns on interesting-ness, so we cap it
+#     weight: 5
+#   - type: MobReplacementRule
 
-- type: entity
-  id: GreytideVirus
-  parent: BaseStationEventShortDelay
-  components:
-  - type: StationEvent
-    startAudio:
-      path: /Audio/Announcements/attention.ogg
-    weight: 5
-    minimumPlayers: 25
-    reoccurrenceDelay: 20
-  - type: GreytideVirusRule
-    accessGroups:
-    - Cargo
-    - Command
-    - Engineering
-    - Research
-    - Security
-    - Service
-    blacklist:
-    - External # don't space everything
+# - type: entity
+#   id: GreytideVirus
+#   parent: BaseStationEventShortDelay
+#   components:
+#   - type: StationEvent
+#     startAudio:
+#       path: /Audio/Announcements/attention.ogg
+#     weight: 5
+#     minimumPlayers: 25
+#     reoccurrenceDelay: 20
+#   - type: GreytideVirusRule
+#     accessGroups:
+#     - Cargo
+#     - Command
+#     - Engineering
+#     - Research
+#     - Security
+#     - Service
+#     blacklist:
+#     - External # don't space everything
 
 - type: entity
   parent: BaseGameRule
@@ -993,38 +993,38 @@
   - type: RandomSpawnRule
     prototype: RandomSatchelSpawner
 
-- type: entity
-  parent: BaseGameRule
-  id: DerelictCyborgSpawn
-  components:
-  - type: StationEvent
-    weight: 5
-    earliestStart: 15
-    reoccurrenceDelay: 20
-    minimumPlayers: 4
-    duration: null
-  - type: SpaceSpawnRule
-    spawnDistance: 0
-  - type: AntagSpawner
-    prototype: PlayerBorgDerelict
-  - type: AntagSelection
-    definitions:
-    - spawnerPrototype: SpawnPointGhostDerelictCyborg
-      min: 1
-      max: 1
-      pickPlayer: false
+# - type: entity
+#   parent: BaseGameRule
+#   id: DerelictCyborgSpawn
+#   components:
+#   - type: StationEvent
+#     weight: 5
+#     earliestStart: 15
+#     reoccurrenceDelay: 20
+#     minimumPlayers: 4
+#     duration: null
+#   - type: SpaceSpawnRule
+#     spawnDistance: 0
+#   - type: AntagSpawner
+#     prototype: PlayerBorgDerelict
+#   - type: AntagSelection
+#     definitions:
+#     - spawnerPrototype: SpawnPointGhostDerelictCyborg
+#       min: 1
+#       max: 1
+#       pickPlayer: false
 
-- type: entity
-  id: JobDistributionError
-  parent: BaseGameRule
-  components:
-  - type: StationEvent
-    startAnnouncement: station-event-job-distribution-error-announcement
-    minimumPlayers: 25
-    weight: 3
-    duration: 1
-  - type: JobDistributionErrorRule
-    jobs:
-    - SecurityClown
-    - PartyMaker
-    - CommandMaid
+# - type: entity
+#   id: JobDistributionError
+#   parent: BaseGameRule
+#   components:
+#   - type: StationEvent
+#     startAnnouncement: station-event-job-distribution-error-announcement
+#     minimumPlayers: 25
+#     weight: 3
+#     duration: 1
+#   - type: JobDistributionErrorRule
+#     jobs:
+#     - SecurityClown
+#     - PartyMaker
+#     - CommandMaid
