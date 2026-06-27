@@ -606,6 +606,8 @@
       prob: 0.003
     - id: MobCorgiCerberus
       prob: 0.003
+    - id: MobArgocyteCrawler
+      prob: 0.003
 
 - type: entity
   id: SneakySnake
@@ -756,8 +758,6 @@
     - id: MobArgocyteHarvester
       prob: 0.003
     - id: MobArgocyteGlider
-      prob: 0.003
-    - id: MobArgocyteCrawler
       prob: 0.003
 
 - type: entity
