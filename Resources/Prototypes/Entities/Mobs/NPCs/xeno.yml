@@ -516,3 +516,15 @@
       amount: 2
   - type: SolutionTransfer
     maxTransferAmount: 1
+
+- type: entity
+  id: MobPurpleSnakeInfected
+  parent: MobPurpleSnake
+  suffix: infected
+  components:
+  - type: PendingZombie
+    minInitialInfectedGrace: 1
+    maxInitialInfectedGrace: 1
+  - type: ZombifyOnDeath
+  - type: IncurableZombie
+  - type: InitialInfected

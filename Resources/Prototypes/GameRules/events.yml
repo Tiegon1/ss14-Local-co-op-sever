@@ -760,6 +760,23 @@
     - id: MobArgocyteGlider
       prob: 0.003
 
+# - type: entity
+#   id: InfectedMob
+#   parent: BaseStationEventShortDelay
+#   components:
+#   - type: StationEvent
+#     startAnnouncement: station-event-vent-creatures-start-announcement
+#     startAudio:
+#       path: /Audio/Announcements/aliens.ogg
+#     earliestStart: 20
+#     minimumPlayers: 1
+#     weight: 5
+#     duration: 30 # DeltaV: was 60, used as a delay now
+#   - type: VentCrittersRule
+#     entries: # 20 rolls at prob of 0.003 is around 6% chance that each spawn point will get a mob   (20 * 0.003 = 0.06)
+#     - id: MobBloodCultShade
+#       prob: 0.003
+
 - type: entity
   id: SyndyMoth
   parent: BaseStationEventShortDelay
