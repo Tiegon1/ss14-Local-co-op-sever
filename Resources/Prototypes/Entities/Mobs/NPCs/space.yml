@@ -163,6 +163,13 @@
       path: /Audio/Animals/sloth_squeak.ogg
 
 - type: entity
+  id: MobBearSpaceInfected
+  parent: MobBearSpace
+  suffix: infected
+  components:
+  - type: ZombieTumorInfection
+
+- type: entity
   id: MobBearSpaceSalvage
   parent: MobBearSpace
   suffix: "Salvage Ruleset"
@@ -224,6 +231,13 @@
     spawned:
     - id: FoodMeat
       amount: 1
+
+- type: entity
+  id: MobKangarooSpaceInfected
+  parent: MobKangarooSpace
+  suffix: infected
+  components:
+  - type: ZombieTumorInfection
 
 - type: entity
   id: MobKangarooSpaceSalvage
@@ -324,6 +338,15 @@
     proto: spider
   - type: CombatPower # Goobstation
     factor: 1.5 # times more dangerous than a crew-member
+
+
+- type: entity
+  id: MobSpiderSpaceInfected
+  parent: MobSpiderSpace
+  suffix: infected
+  components:
+  - type: ZombieTumorInfection
+
 
 - type: entity
   name: space spider (fresium)
@@ -511,6 +534,13 @@
       radius: 1.1
       energy: 1.5
       color: "#4faffb"
+
+- type: entity
+  id: MobCobraSpaceInfected
+  parent: MobCobraSpace
+  suffix: infected
+  components:
+  - type: ZombieTumorInfection
 
 - type: entity
   id: MobCobraSpaceSalvage
