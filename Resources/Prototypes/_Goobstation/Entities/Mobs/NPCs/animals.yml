@@ -165,6 +165,13 @@
     - Syndicate
 
 - type: entity
+  id: MobMothSyndyInfected
+  parent: MobMothSyndy
+  suffix: infected
+  components:
+  - type: ZombieTumorInfection
+
+- type: entity
   name: syndie bee
   suffix: Angry, syndicate
   parent: [ MobAngryBee ]
