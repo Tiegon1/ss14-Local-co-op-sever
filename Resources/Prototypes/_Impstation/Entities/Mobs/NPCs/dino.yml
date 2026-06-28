@@ -270,14 +270,6 @@
     rules: ghost-role-information-rules-team-antagonist
 
 - type: entity
-  id: MobDinosaurCompyInfected
-  parent: MobDinosaurCompy
-  suffix: infected
-  components:
-  - type: PendingZombie
-  - type: ZombifyOnDeath    
-
-- type: entity
   parent: BaseMobDinosaurSmall
   id: MobDinosaurDilo
   name: dilophosaurus
