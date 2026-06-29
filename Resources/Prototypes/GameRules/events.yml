@@ -738,7 +738,7 @@
     - id: MobCarpMagic
       prob: 0.003
     - id: MobCarp
-      prob: 0.01
+      prob: 0.005
     - id: MobArgocyteSwiper
       prob: 0.003
     - id: MobHonkBot
@@ -759,6 +759,10 @@
       prob: 0.003
     - id: MobArgocyteGlider
       prob: 0.003
+    - id: BaseMobCarpInfected
+      prob: 0.05
+    - id: MobCarpHoloInfected
+      prob: 0.01
 
 # - type: entity
 #   id: InfectedMob
@@ -944,7 +948,7 @@
   parent: BaseGameRule
   components:
   - type: StationEvent
-    weight: 2
+    weight: 1
     duration: 150
     maxDuration: 300
     reoccurrenceDelay: 30
@@ -997,18 +1001,18 @@
 #     blacklist:
 #     - External # don't space everything
 
-- type: entity
-  parent: BaseGameRule
-  id: SmugglerStashVariationPass
-  components:
-  - type: StationEvent
-    earliestStart: 0
-    duration: 1
-    minimumPlayers: 1
-    maxOccurrences: 2
-    weight: 10
-  - type: RandomSpawnRule
-    prototype: RandomSatchelSpawner
+# - type: entity
+#   parent: BaseGameRule
+#   id: SmugglerStashVariationPass
+#   components:
+#   - type: StationEvent
+#     earliestStart: 0
+#     duration: 1
+#     minimumPlayers: 1
+#     maxOccurrences: 2
+#     weight: 10
+#   - type: RandomSpawnRule
+#     prototype: RandomSatchelSpawner
 
 # - type: entity
 #   parent: BaseGameRule
