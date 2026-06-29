@@ -580,16 +580,26 @@
       prob: 0.003
     - id: MobSpiderSpace
       prob: 0.003
+    - id: MobSpiderSpaceInfected
+      prob: 0.001
     - id: MobBearSpace
       prob: 0.003
+    - id: MobBearSpaceInfected
+      prob: 0.001
     - id: MobKangarooSpace
       prob: 0.003
+    - id: MobKangarooSpaceInfected
+      prob: 0.001      
     - id: MobPurpleSnake
       prob: 0.003
     - id: MobSmallPurpleSnake
       prob: 0.003
+    - id: MobPurpleSnakeInfected
+      prob: 0.001
     - id: MobCobraSpace
       prob: 0.003
+    - id: MobCobraSpaceInfected
+      prob: 0.001
     - id: MobGiantSpiderAngry
       prob: 0.003
     - id: MobClownSpider
@@ -602,6 +612,8 @@
       prob: 0.003
     - id: MobShark
       prob: 0.003
+    - id: MobSharkInfected
+      prob: 0.001
     - id: MobArgocytePouncer
       prob: 0.003
     - id: MobCorgiCerberus
