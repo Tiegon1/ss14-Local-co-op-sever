@@ -39,6 +39,49 @@
               proto: NearbyGunTargets
               key: Target
 
+# Includes chasing the enemy since the shutdownState is defaulted to shutting down only after moving to the target
+- type: htnCompound
+  id: GunCombatWithChaseCompound
+  branches:
+    - preconditions:
+      - !type:KeyExistsPrecondition
+        key: Target
+      tasks:
+        - !type:HTNPrimitiveTask
+          operator: !type:UtilityOperator
+            proto: NearbyGunTargets
+            
+        - !type:HTNPrimitiveTask
+          operator: !type:MoveToOperator
+            pathfindInPlanning: true
+            removeKeyOnFinish: true
+            targetKey: TargetCoordinates
+            pathfindKey: TargetPathfind
+            stopOnLineOfSight: true
+            rangeKey: MeleeRange
+          preconditions:
+            - !type:KeyExistsPrecondition
+              key: Target
+            
+        - !type:HTNPrimitiveTask
+          operator: !type:GunOperator
+            targetKey: Target
+          preconditions:
+            - !type:KeyExistsPrecondition
+              key: Target
+            - !type:TargetInRangePrecondition
+              targetKey: Target
+              rangeKey: RangedRange
+            - !type:TargetInLOSPrecondition
+              targetKey: Target
+              rangeKey: RangedRange
+              opaqueKey: true
+          services:
+            - !type:UtilityService
+              id: RangedService
+              proto: NearbyGunTargets
+              key: Target
+
 # Selects ammo in range, then moves to it and picks it up
 - type: htnCompound
   id: PickupAmmoCompound
@@ -97,6 +140,16 @@
         - !type:HTNCompoundTask
           task: GunCombatCompound
 
+# Fight with innate ranged weapon and chase the enemy
+- type: htnCompound
+  id: InnateRangedCombatWithChaseCompound
+  branches:
+    - preconditions:
+        - !type:GunAmmoPrecondition
+          minPercent: 0.001
+      tasks:
+        - !type:HTNCompoundTask
+          task: GunCombatWithChaseCompound
 
 - type: htnCompound
   id: RangedCombatCompound

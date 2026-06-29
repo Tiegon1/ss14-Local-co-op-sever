@@ -27,9 +27,6 @@
   - type: HTN
     rootTask:
       task: DinoCompound #maybe someday... But for now it's enough.
-    blackboard:
-      NavSmash: !type:Bool
-        true
   - type: Sprite
     sprite: _Impstation/Mobs/Aliens/Dinos/anky.rsi
     layers:
@@ -223,13 +220,9 @@
     rootTask:
       task: DinoCompound
     blackboard:
-      NavClimb: !type:Bool
-        true
       NavInteract: !type:Bool
         true
       NavPry: !type:Bool
-        true
-      NavSmash: !type:Bool
         true
   - type: Tool
     qualities:
@@ -288,9 +281,6 @@
   - type: HTN
     rootTask:
       task: SimpleRangedHostileCompound
-    blackboard:
-      NavSmash: !type:Bool
-        true
   - type: MobThresholds
     thresholds:
       0: Alive
@@ -359,13 +349,9 @@
     rootTask:
       task: DinoCompound
     blackboard:
-      NavClimb: !type:Bool
-        true
       NavInteract: !type:Bool
         true
       NavPry: !type:Bool
-        true
-      NavSmash: !type:Bool
         true
   - type: Tool
     qualities:
