@@ -26,7 +26,10 @@
     useSound: /Audio/Items/crowbar.ogg
   - type: HTN
     rootTask:
-      task: DinoCompound #maybe someday... But for now it's enough.
+      task: DinoCompound
+    blackboard:
+      NavSmash: !type:Bool
+        true
   - type: Sprite
     sprite: _Impstation/Mobs/Aliens/Dinos/anky.rsi
     layers:

@@ -62,7 +62,11 @@
           preconditions:
             - !type:KeyExistsPrecondition
               key: Target
-            
+
+        - !type:HTNPrimitiveTask
+          operator: !type:JukeOperator
+            jukeType: AdjacentTile
+
         - !type:HTNPrimitiveTask
           operator: !type:GunOperator
             targetKey: Target

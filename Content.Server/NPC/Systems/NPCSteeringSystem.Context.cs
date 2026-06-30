@@ -211,7 +211,7 @@ public sealed partial class NPCSteeringSystem
         // TODO: Consider melee range or the likes.
         else
         {
-            arrived = direction.Length() <= SharedInteractionSystem.InteractionRange - 0.05f;
+            arrived = direction.Length() <= SharedInteractionSystem.InteractionRange + 0.1f;
         }
 
         // Are we in range
