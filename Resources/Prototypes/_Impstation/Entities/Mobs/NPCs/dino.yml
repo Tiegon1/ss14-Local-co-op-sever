@@ -26,7 +26,7 @@
     useSound: /Audio/Items/crowbar.ogg
   - type: HTN
     rootTask:
-      task: DinoCompound #maybe someday... But for now it's enough.
+      task: DinoCompound
     blackboard:
       NavSmash: !type:Bool
         true
@@ -223,13 +223,9 @@
     rootTask:
       task: DinoCompound
     blackboard:
-      NavClimb: !type:Bool
-        true
       NavInteract: !type:Bool
         true
       NavPry: !type:Bool
-        true
-      NavSmash: !type:Bool
         true
   - type: Tool
     qualities:
@@ -288,9 +284,6 @@
   - type: HTN
     rootTask:
       task: SimpleRangedHostileCompound
-    blackboard:
-      NavSmash: !type:Bool
-        true
   - type: MobThresholds
     thresholds:
       0: Alive
@@ -359,13 +352,9 @@
     rootTask:
       task: DinoCompound
     blackboard:
-      NavClimb: !type:Bool
-        true
       NavInteract: !type:Bool
         true
       NavPry: !type:Bool
-        true
-      NavSmash: !type:Bool
         true
   - type: Tool
     qualities:

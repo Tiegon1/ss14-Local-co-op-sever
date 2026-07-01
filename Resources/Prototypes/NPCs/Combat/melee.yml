@@ -19,6 +19,19 @@
         - !type:HTNCompoundTask
           task: BeforeMeleeAttackTargetCompound
 
+# Selects a target in melee and tries to move to attack it 
+# with greater focus on chasing
+- type: htnCompound
+  id: MeleeCombatWithChaseCompound
+  branches:
+    - tasks:
+        - !type:HTNPrimitiveTask
+          operator: !type:UtilityOperator
+            proto: NearbyMeleeTargets
+        - !type:HTNCompoundTask
+          task: BeforeMeleeAttackTargetWithChaseCompound
+
+# Makes sure it is in a condition to move and then tries to move to and melee target
 - type: htnCompound
   id: BeforeMeleeAttackTargetCompound
   branches:
@@ -64,6 +77,53 @@
         - !type:HTNCompoundTask
           task: MeleeAttackTargetCompound
 
+# Makes sure it is in a condition to move and then tries to move to 
+# and melee target with greater focus on chasing
+- type: htnCompound
+  id: BeforeMeleeAttackTargetWithChaseCompound
+  branches:
+    - preconditions:
+        - !type:BuckledPrecondition
+          isBuckled: true
+      tasks:
+        - !type:HTNPrimitiveTask
+          operator: !type:UnbuckleOperator
+            shutdownState: TaskFinished
+
+    - preconditions:
+        - !type:PulledPrecondition
+          isPulled: true
+      tasks:
+        - !type:HTNPrimitiveTask
+          operator: !type:UnPullOperator
+            shutdownState: TaskFinished
+
+    - preconditions:
+        - !type:InContainerPrecondition
+          isInContainer: true
+      tasks:
+        - !type:HTNCompoundTask
+          task: EscapeCompound
+
+    # Pickup weapon if we don't have one.
+    - preconditions:
+        - !type:ActiveHandComponentPrecondition
+            components:
+              # Just serializer things
+              - type: MeleeWeapon
+                damage:
+                  types:
+                    Blunt: 0
+            invert: true
+      tasks:
+        - !type:HTNCompoundTask
+          task: PickupMeleeCompound
+
+    # Melee combat (unarmed or otherwise)
+    - tasks:
+        - !type:HTNCompoundTask
+          task: MeleeAttackTargetWithChaseCompound
+
 - type: htnCompound
   id: RatServantCombatCompound
   branches:
@@ -83,6 +143,7 @@
         - !type:HTNPrimitiveTask
           operator: !type:UtilityOperator
             proto: OrderedTargets
+
         - !type:HTNCompoundTask
           task: MeleeAttackOrderedTargetCompound
 
@@ -122,9 +183,43 @@
             targetKey: TargetCoordinates
             pathfindKey: TargetPathfind
             rangeKey: MeleeRange
+
         - !type:HTNPrimitiveTask
           operator: !type:JukeOperator
             jukeType: Away
+
+        - !type:HTNPrimitiveTask
+          operator: !type:MeleeOperator
+            targetKey: Target
+          preconditions:
+            - !type:KeyExistsPrecondition
+              key: Target
+            - !type:TargetInRangePrecondition
+              targetKey: Target
+              rangeKey: MeleeRange
+          services:
+            - !type:UtilityService
+              id: MeleeService
+              proto: NearbyMeleeTargets
+              key: Target
+          
+# Tries to melee attack target with no juking and chasing the enemy 
+# since the shutdownState is defaulted to shutting down only after moving to the target             
+- type: htnCompound
+  id: MeleeAttackTargetWithChaseCompound
+  branches:
+    - preconditions:
+      - !type:KeyExistsPrecondition
+        key: Target
+      tasks:
+        - !type:HTNPrimitiveTask
+          operator: !type:MoveToOperator
+            pathfindInPlanning: true
+            removeKeyOnFinish: true
+            targetKey: TargetCoordinates
+            pathfindKey: TargetPathfind
+            rangeKey: MeleeRange
+
         - !type:HTNPrimitiveTask
           operator: !type:MeleeOperator
             targetKey: Target
@@ -140,6 +235,44 @@
               proto: NearbyMeleeTargets
               key: Target
 
+# Move to and melee attack a destructible object with juking to prevent dueling 
+# allies to the death (since they are destructible too, they will still be attacked 
+# occasionally which needs to be fixed somehow)
+- type: htnCompound
+  id: MeleeAttackDestructibleCompound
+  branches:
+    - preconditions:
+      - !type:KeyExistsPrecondition
+        key: Target
+      tasks:
+        - !type:HTNPrimitiveTask
+          operator: !type:MoveToOperator
+            shutdownState: PlanFinished
+            pathfindInPlanning: true
+            removeKeyOnFinish: false
+            targetKey: TargetCoordinates
+            pathfindKey: TargetPathfind
+            rangeKey: MeleeRange
+            
+        - !type:HTNPrimitiveTask
+          operator: !type:JukeOperator
+            jukeType: Away
+        
+        - !type:HTNPrimitiveTask
+          operator: !type:MeleeOperator
+            targetKey: Target
+          preconditions:
+            - !type:KeyExistsPrecondition
+              key: Target
+            - !type:TargetInRangePrecondition
+              targetKey: Target
+              rangeKey: MeleeRange
+          services:
+            - !type:UtilityService
+              id: MeleeService
+              proto: NearbyDestructibleTargets
+              key: Target
+
 - type: htnCompound
   id: EscapeCompound
   branches:
@@ -148,6 +281,7 @@
       operator: !type:ContainerOperator
         targetKey: Target
         shutdownState: TaskFinished
+
     - !type:HTNPrimitiveTask
       operator: !type:EscapeOperator
         targetKey: Target
@@ -170,9 +304,11 @@
             targetKey: TargetCoordinates
             pathfindKey: TargetPathfind
             rangeKey: MeleeRange
+
         - !type:HTNPrimitiveTask
           operator: !type:JukeOperator
             jukeType: Away
+
         - !type:HTNPrimitiveTask
           operator: !type:MeleeOperator
             targetKey: Target
@@ -188,6 +324,7 @@
               proto: OrderedTargets
               key: Target
 
+# Move to and melee attack nearby destructible objects
 - type: htnCompound
   id: DestructionCompound
   branches:
@@ -195,5 +332,6 @@
         - !type:HTNPrimitiveTask
           operator: !type:UtilityOperator
             proto: NearbyDestructibleTargets
+
         - !type:HTNCompoundTask
           task: MeleeAttackTargetCompound

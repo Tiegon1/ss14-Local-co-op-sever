@@ -9,7 +9,7 @@
   branches:
     - tasks:
         - !type:HTNCompoundTask
-          task: MeleeCombatCompound
+          task: MeleeCombatWithChaseCompound
     - tasks:
         - !type:HTNCompoundTask
           task: DestructionCompound
