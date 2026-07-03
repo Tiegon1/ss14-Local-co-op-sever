@@ -1165,57 +1165,91 @@
 #    requiredResearch:
 #      - Instruments
 
-# Engineering
+# # Engineering
+# - type: cargoBountyCategory
+#   id: EngineeringCategory
+#   name: bounty-category-engineering
+#   maxTargets: 2
+#   entries:
+#   - name: bounty-item-holofan-projector
+#     minAmount: 1
+#     maxAmount: 2
+#     rewardPer: 1000
+#     whitelist:
+#       tags:
+#       - HolofanProjector
+#     requiredResearch:
+#       - AdvancedAtmospherics
+#   - name: bounty-item-jaws-of-life
+#     minAmount: 1
+#     maxAmount: 1
+#     rewardPer: 2750
+#     whitelist:
+#       tags:
+#       - JawsOfLife
+#     requiredResearch:
+#       - AdvancedToolsTechnology
+#   - name: bounty-item-powerdrill
+#     minAmount: 1
+#     maxAmount: 1
+#     rewardPer: 1500
+#     whitelist:
+#       tags:
+#       - Powerdrill
+#     requiredResearch:
+#       - AdvancedToolsTechnology
+#   - name: bounty-item-toolbox
+#     minAmount: 2
+#     maxAmount: 4
+#     rewardPer: 750
+#     whitelist:
+#       tags:
+#       - Toolbox
+#   - name: bounty-item-battery
+#     minAmount: 2
+#     maxAmount: 5
+#     rewardPer: 300
+#     whitelist:
+#       components:
+#       - Battery
+#   - name: bounty-item-hi-viz-vest
+#     minAmount: 1
+#     maxAmount: 3
+#     rewardPer: 1500
+#     whitelist:
+#       tags:
+#       - HiViz
+      
+# Combat
 - type: cargoBountyCategory
-  id: EngineeringCategory
-  name: bounty-category-engineering
-  maxTargets: 2
+  id: CombatCategory
+  name: bounty-category-Combat
+  maxTargets: 4
   entries:
-  - name: bounty-item-holofan-projector
+  - name: bounty-item-Raw-Carp-fillet
+    minAmount: 1
+    maxAmount: 10
+    rewardPer: 250
+    whitelist:
+      tags:
+      - FoodMeatFish
+  - name: bounty-item-Space-Carp-Tooth
+    minAmount: 1
+    maxAmount: 20
+    rewardPer: 125
+    whitelist:
+      tags:
+      - MaterialToothSpaceCarp1
+        - name: bounty-item-bear-hide
     minAmount: 1
     maxAmount: 2
-    rewardPer: 1000
+    rewardPer: 2000
     whitelist:
       tags:
-      - HolofanProjector
-    requiredResearch:
-      - AdvancedAtmospherics
-  - name: bounty-item-jaws-of-life
-    minAmount: 1
-    maxAmount: 1
-    rewardPer: 2750
-    whitelist:
-      tags:
-      - JawsOfLife
-    requiredResearch:
-      - AdvancedToolsTechnology
-  - name: bounty-item-powerdrill
-    minAmount: 1
-    maxAmount: 1
-    rewardPer: 1500
-    whitelist:
-      tags:
-      - Powerdrill
-    requiredResearch:
-      - AdvancedToolsTechnology
-  - name: bounty-item-toolbox
-    minAmount: 2
-    maxAmount: 4
-    rewardPer: 750
-    whitelist:
-      tags:
-      - Toolbox
-  - name: bounty-item-battery
-    minAmount: 2
-    maxAmount: 5
-    rewardPer: 300
-    whitelist:
-      components:
-      - Battery
-  - name: bounty-item-hi-viz-vest
+  - name: bounty-item-Sharkminnow-Tooth
     minAmount: 1
     maxAmount: 3
-    rewardPer: 1500
+    rewardPer: 500
     whitelist:
       tags:
-      - HiViz
+      - MaterialToothSharkminnow1
