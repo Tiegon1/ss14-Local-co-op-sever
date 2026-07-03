@@ -939,37 +939,37 @@
     requiredResearch:
       - ExperimentalBatteryAmmo
 
-# Clothing (TODO: replace with something else)
-- type: cargoBountyCategory
-  id: clothingCategory
-  name: bounty-category-clothing
-  entries:
-  - name: bounty-item-bandana
-    minAmount: 1
-    maxAmount: 3
-    rewardPer: 400
-    whitelist:
-      tags:
-      - Bandana
-  - name: bounty-item-hi-viz-vest
-    minAmount: 1
-    maxAmount: 3
-    rewardPer: 1500
-    whitelist:
-      tags:
-      - HiViz
-  - name: bounty-item-warm-cloth
-    minAmount: 1
-    maxAmount: 10
-    rewardPer: 400
-    whitelist:
-      components:
-      - TemperatureProtection
-      tags:
-      - Scarf
-    blacklist:
-      components:
-      - ToggleableClothing
+# # Clothing (TODO: replace with something else)
+# - type: cargoBountyCategory
+#   id: clothingCategory
+#   name: bounty-category-clothing
+#   entries:
+#   - name: bounty-item-bandana
+#     minAmount: 1
+#     maxAmount: 3
+#     rewardPer: 400
+#     whitelist:
+#       tags:
+#       - Bandana
+#   - name: bounty-item-hi-viz-vest
+#     minAmount: 1
+#     maxAmount: 3
+#     rewardPer: 1500
+#     whitelist:
+#       tags:
+#       - HiViz
+#   - name: bounty-item-warm-cloth
+#     minAmount: 1
+#     maxAmount: 10
+#     rewardPer: 400
+#     whitelist:
+#       components:
+#       - TemperatureProtection
+#       tags:
+#       - Scarf
+#     blacklist:
+#       components:
+#       - ToggleableClothing
 
 #- type: cargoBountyCategory
 #  id: libraryCategory
