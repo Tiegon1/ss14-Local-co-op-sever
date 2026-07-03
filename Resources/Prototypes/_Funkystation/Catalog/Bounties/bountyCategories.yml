@@ -1240,12 +1240,13 @@
     whitelist:
       tags:
       - MaterialToothSpaceCarp1
-        - name: bounty-item-bear-hide
+  - name: bounty-item-bear-hide
     minAmount: 1
     maxAmount: 2
     rewardPer: 2000
     whitelist:
       tags:
+      - MaterialHideBear
   - name: bounty-item-Sharkminnow-Tooth
     minAmount: 1
     maxAmount: 3
