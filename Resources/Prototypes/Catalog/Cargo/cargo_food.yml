@@ -141,3 +141,13 @@
   cost: 1100
   category: cargoproduct-category-name-food
   group: market
+
+- type: cargoProduct
+  id: DonkMicrowave
+  icon:
+    sprite: Objects/Consumable/Food/microwave.rsi
+    state: icon
+  product: SyndicateMicrowaveMachineCircuitboard
+  cost: 4000
+  category: cargoproduct-category-name-food
+  group: market
