@@ -9,6 +9,7 @@
   parent: MobFelinidBase
   id: MobFelinid
   components:
+  - type: ZombieTumorImmune
   - type: CombatMode
   - type: InteractionPopup
     successChance: 1

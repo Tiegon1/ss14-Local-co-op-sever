@@ -21,3 +21,5 @@
   save: false
   parent: BaseMobSlimePerson
   id: MobSlimePerson
+  components:
+  - type: ZombieTumorImmune

@@ -25,6 +25,7 @@
   parent: BaseMobDiona
   id: MobDiona
   components:
+    - type: ZombieTumorImmune
     - type: Respirator
       damage:
         types:

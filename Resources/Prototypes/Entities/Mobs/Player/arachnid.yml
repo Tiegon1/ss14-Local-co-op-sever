@@ -17,6 +17,7 @@
   parent: BaseMobArachnid
   id: MobArachnid
   components:
+  - type: ZombieTumorImmune
   - type: Respirator
     damage:
       types:

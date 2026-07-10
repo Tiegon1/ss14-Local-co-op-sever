@@ -26,6 +26,7 @@
   parent: BaseMobGingerbread
   id: MobGingerbread
   components:
+    - type: ZombieTumorImmune
     - type: Respirator
       damage:
         types:
