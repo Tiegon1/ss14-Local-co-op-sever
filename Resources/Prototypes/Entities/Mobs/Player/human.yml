@@ -61,6 +61,8 @@
   name: Urist McHands
   parent: BaseMobHuman
   id: MobHuman
+  components:
+  - type: ZombieTumorImmune
 
 #Syndie
 - type: entity

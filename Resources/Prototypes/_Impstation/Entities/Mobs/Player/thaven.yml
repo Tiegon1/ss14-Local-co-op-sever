@@ -9,3 +9,5 @@
   name: Urist McEars
   parent: BaseMobThaven
   id: MobThaven
+  components:
+  - type: ZombieTumorImmune

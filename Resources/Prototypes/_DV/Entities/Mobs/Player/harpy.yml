@@ -10,6 +10,7 @@
   parent: MobHarpyBase
   id: MobHarpy
   components:
+  - type: ZombieTumorImmune
   - type: CombatMode
   - type: InteractionPopup
     successChance: 1
