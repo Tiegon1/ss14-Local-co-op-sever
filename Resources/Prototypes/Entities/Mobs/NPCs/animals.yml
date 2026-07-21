@@ -3934,6 +3934,7 @@
   id: MobDionaNymph
   description: It's like a cat, only.... branch-ier.
   components:
+  - type: ZombieTumorImmune
   - type: Sprite
     drawdepth: Mobs
     layers:
