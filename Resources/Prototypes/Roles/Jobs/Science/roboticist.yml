@@ -18,10 +18,8 @@
   startingGear: RoboticistGear
   icon: "JobIconRoboticist"
   supervisors: job-supervisors-rd
-  access:
-  - Research
-  - Robotics
-  - Maintenance
+  accessGroups:
+  - AllAccess
   alternateTitles:
   - RoboticistBiomechanicalEngineer
   - RoboticistMechatronicSpecialist

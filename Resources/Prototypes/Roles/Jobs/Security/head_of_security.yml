@@ -94,19 +94,8 @@
   joinNotifyCrew: true
   supervisors: job-supervisors-captain
   canBeAntag: false
-  access:
-  - HeadOfSecurity
-  - Command
-  - Brig
-  - Security
-  - Armory
-  - Maintenance
-  - Service
-  - External
-  - Detective
-  - Cryogenics
-  - GenpopEnter
-  - GenpopLeave
+  accessGroups:
+  - AllAccess
   special:
   - !type:AddImplantSpecial
     implants: [ MindShieldImplant ]

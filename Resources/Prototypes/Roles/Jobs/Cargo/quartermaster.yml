@@ -74,17 +74,8 @@
   joinNotifyCrew: true
   supervisors: job-supervisors-captain
   canBeAntag: false
-  access:
-  - Cargo
-  - Salvage
-  - Quartermaster
-  - Maintenance
-  - External
-  - Command
-  - Brig
-  - Cryogenics
-  - External # goobstation
-  - Logistics #Imp
+  accessGroups:
+  - AllAccess
   special:
   - !type:AddImplantSpecial
     implants: [ MindShieldImplant ]

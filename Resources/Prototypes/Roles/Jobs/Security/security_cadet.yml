@@ -64,17 +64,8 @@
   icon: "JobIconSecurityCadet"
   supervisors: job-supervisors-security
   canBeAntag: false
-  access:
-  - Security
-  - Brig
-  - Maintenance
-  - Service
-  - External
-  - Cryogenics
-  # begin Funkystation: give out missing genpop accesses
-  - GenpopEnter
-  - GenpopLeave
-  # end Funkystation
+  accessGroups:
+  - AllAccess
   special:
   - !type:AddImplantSpecial
     implants: [ MindShieldImplant ]

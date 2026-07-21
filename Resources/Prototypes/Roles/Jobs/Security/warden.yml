@@ -81,17 +81,8 @@
   icon: "JobIconWarden"
   supervisors: job-supervisors-hos
   canBeAntag: false
-  access:
-  - Security
-  - Brig
-  - Armory
-  - Maintenance
-  - Service
-  - External
-  - Detective
-  - Cryogenics
-  - GenpopEnter
-  - GenpopLeave
+  accessGroups:
+  - AllAccess
   special:
   - !type:AddImplantSpecial
     implants: [ MindShieldImplant ]

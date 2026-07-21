@@ -13,10 +13,8 @@
   icon: "JobIconPartyMaker"
   supervisors: job-supervisors-hop
   setPreference: false
-  access:
-  - Service
-  - Maintenance
-  - Theatre
+  accessGroups:
+  - AllAccess
 
 - type: startingGear
   id: PartyMakerGear

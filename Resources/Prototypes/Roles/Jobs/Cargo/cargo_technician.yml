@@ -48,13 +48,8 @@
   startingGear: CargoTechGear
   icon: "JobIconCargoTechnician"
   supervisors: job-supervisors-qm
-  access:
-  - Cargo
-  - Maintenance
-  - Logistics #Imp
-  extendedAccess:
-  - Salvage
-  - External # goobstation
+  accessGroups:
+  - AllAccess
   special:
   - !type:GiveItemOnHolidaySpecial
     holiday: BoxingDay

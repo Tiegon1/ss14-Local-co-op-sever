@@ -29,9 +29,8 @@
   startingGear: ZookeeperGear
   icon: "JobIconZookeeper"
   supervisors: job-supervisors-hop
-  access:
-  - Service
-  - Maintenance
+  accessGroups:
+  - AllAccess
   special:
   - !type:GiveItemOnHolidaySpecial
     holiday: MonkeyDay

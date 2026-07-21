@@ -31,10 +31,8 @@
   startingGear: ReporterGear
   icon: "JobIconReporter"
   supervisors: job-supervisors-hop
-  access:
-  - Service
-  - Maintenance
-  - Reporter
+  accessGroups:
+  - AllAccess
   alternateTitles:
   - ReporterInfluencer
   - ReporterDocumentarian

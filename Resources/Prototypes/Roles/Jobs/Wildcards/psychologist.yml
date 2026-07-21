@@ -28,11 +28,8 @@
   startingGear: PsychologistGear
   icon: "JobIconPsychologist"
   supervisors: job-supervisors-cmo
-  access:
-  - Medical
-  - Maintenance
-  extendedAccess:
-  - Chemistry
+  accessGroups:
+  - AllAccess
   special: # imp
   - !type:AddComponentSpecial
     components:
