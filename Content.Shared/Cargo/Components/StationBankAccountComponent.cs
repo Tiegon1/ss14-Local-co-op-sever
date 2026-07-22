@@ -36,13 +36,13 @@ public sealed partial class StationBankAccountComponent : Component
     [DataField, AutoNetworkedField]
     public Dictionary<ProtoId<CargoAccountPrototype>, int> Accounts = new()
     {
-        { "Cargo",       2000 },
-        { "Engineering", 1000 },
-        { "Medical",     1000 },
-        { "Science",     1000 },
-        { "Security",    1000 },
-        { "Service",     1000 },
-        { "Atmospherics", 1000 }, // Funkystation
+        { "Cargo",       0 },
+        { "Engineering", 0 },
+        { "Medical",     0 },
+        { "Science",     0 },
+        { "Security",    0 },
+        { "Service",     0 },
+        { "Atmospherics", 0 }, // Funkystation
     };
 
     /// <summary>
@@ -51,13 +51,13 @@ public sealed partial class StationBankAccountComponent : Component
     [DataField, AutoNetworkedField]
     public Dictionary<ProtoId<CargoAccountPrototype>, double> RevenueDistribution = new()
     {
-        { "Cargo",       0.00 },
-        { "Engineering", 0.20 }, // Funkystation
-        { "Medical",     0.28 },
-        { "Science",     0.14 },
-        { "Security",    0.18 },
-        { "Service",     0.10 },
-        { "Atmospherics", 0.10 }, // Funkystation
+        { "Cargo",       1.00 },
+        { "Engineering", 0.00 }, // Funkystation
+        { "Medical",     0.00 },
+        { "Science",     0.00 },
+        { "Security",    0.00 },
+        { "Service",     0.00 },
+        { "Atmospherics", 0.00 }, // Funkystation
     };
 
     /// <summary>
