@@ -1243,7 +1243,7 @@
   - name: bounty-item-bear-hide
     minAmount: 1
     maxAmount: 2
-    rewardPer: 10000
+    rewardPer: 15000
     whitelist:
       tags:
       - MaterialHideBear

@@ -772,7 +772,7 @@
     - id: MobArgocyteGlider
       prob: 0.003
     - id: BaseMobCarpInfected
-      prob: 0.05
+      prob: 0.02
     - id: MobCarpHoloInfected
       prob: 0.01
 
