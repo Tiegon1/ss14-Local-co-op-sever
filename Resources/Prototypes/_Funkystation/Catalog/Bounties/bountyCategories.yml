@@ -1253,14 +1253,14 @@
     rewardPer: 2000
     whitelist:
       tags:
-  - MaterialToothSharkminnow1
+      - MaterialToothSharkminnow1
   - name: bounty-item-Snake-Meat
     minAmount: 1
     maxAmount: 3
     rewardPer: 2000
     whitelist:
       tags:
-      - foodmeatsnake
+      - FoodMeatSnake
   - name: bounty-item-Spider-Cutlet
     minAmount: 1
     maxAmount: 3
