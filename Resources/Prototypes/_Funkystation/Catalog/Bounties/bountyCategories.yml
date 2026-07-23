@@ -1229,28 +1229,56 @@
   - name: bounty-item-Raw-Carp-fillet
     minAmount: 1
     maxAmount: 10
-    rewardPer: 250
+    rewardPer: 1000
     whitelist:
       tags:
       - FoodMeatFish
   - name: bounty-item-Space-Carp-Tooth
     minAmount: 1
     maxAmount: 20
-    rewardPer: 125
+    rewardPer: 1000
     whitelist:
       tags:
       - MaterialToothSpaceCarp1
   - name: bounty-item-bear-hide
     minAmount: 1
     maxAmount: 2
-    rewardPer: 2000
+    rewardPer: 10000
     whitelist:
       tags:
       - MaterialHideBear
   - name: bounty-item-Sharkminnow-Tooth
     minAmount: 1
     maxAmount: 3
-    rewardPer: 500
+    rewardPer: 2000
     whitelist:
       tags:
-      - MaterialToothSharkminnow1
+  - MaterialToothSharkminnow1
+  - name: bounty-item-Snake-Meat
+    minAmount: 1
+    maxAmount: 3
+    rewardPer: 2000
+    whitelist:
+      tags:
+      - foodmeatsnake
+  - name: bounty-item-Spider-Cutlet
+    minAmount: 1
+    maxAmount: 3
+    rewardPer: 2000
+    whitelist:
+      tags:
+      - FoodMeatSpiderCutlet
+  - name: bounty-item-Spider-Meat
+    minAmount: 1
+    maxAmount: 3
+    rewardPer: 2000
+    whitelist:
+      tags:
+      - FoodMeatSpider
+  - name: bounty-item-Egg-Spider
+    minAmount: 1
+    maxAmount: 2
+    rewardPer: 10000
+    whitelist:
+      tags:
+      - EggSpider
