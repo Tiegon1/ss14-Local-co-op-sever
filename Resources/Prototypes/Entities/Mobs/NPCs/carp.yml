@@ -177,6 +177,33 @@
   - type: ZombieTumorInfection
 
 - type: entity
+  id: BaseMobCarpWarping
+  parent: BaseMobCarp
+  suffix: Warping
+  components:
+  - type: ChaoticJump
+    jumpMinInterval: 1
+    jumpMaxInterval: 10
+    rangeMin: 1
+    rangeMax: 10
+    effect: PuddleSparkle  
+    
+- type: entity
+  id: BaseMobCarpWarpingPlayerBias
+  parent: BaseMobCarp
+  suffix: WarpingPlayer
+  components:
+  - type: PlayerSeekingChaoticJump
+    jumpMinInterval: 1
+    jumpMaxInterval: 8
+    rangeMin: 1
+    rangeMax: 10
+    seekRange: 20
+    seekProbability: 0.7
+    seekJitter: 0.6
+    effect: PuddleSparkle
+
+- type: entity
   parent: BaseMobCarp
   id: MobCarp
   components:
