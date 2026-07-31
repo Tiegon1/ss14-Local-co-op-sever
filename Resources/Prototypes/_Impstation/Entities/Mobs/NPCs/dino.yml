@@ -444,6 +444,13 @@
     name: ghost-role-information-dino-anki-name
     description: ghost-role-information-dino-anki-description
     rules: ghost-role-information-rules-team-antagonist
+  - type: DamageContacts
+    damage:
+      types:
+        Structural: 25
+    ignoreWhitelist:
+      tags:
+      - Flesh
 
 - type: entity
   parent: BaseMobDinosaur
@@ -493,6 +500,13 @@
     name: ghost-role-information-dino-kentro-name
     description: ghost-role-information-dino-kentro-description
     rules: ghost-role-information-rules-team-antagonist
+  - type: DamageContacts
+    damage:
+      types:
+        Structural: 25
+    ignoreWhitelist:
+      tags:
+      - Flesh
 
 - type: entity
   parent: BaseMobDinosaur
@@ -550,6 +564,13 @@
     name: ghost-role-information-dino-para-name
     description: ghost-role-information-dino-para-description
     rules: ghost-role-information-rules-team-antagonist
+  - type: DamageContacts
+    damage:
+      types:
+        Structural: 20
+    ignoreWhitelist:
+      tags:
+      - Flesh
 
 - type: entity
   parent: BaseMobDinosaurCarnivore
@@ -599,6 +620,13 @@
     name: ghost-role-information-dino-spino-name
     description: ghost-role-information-dino-spino-description
     rules: ghost-role-information-rules-team-antagonist
+  - type: DamageContacts
+    damage:
+      types:
+        Structural: 40
+    ignoreWhitelist:
+      tags:
+      - Flesh
 
 - type: entity
   parent: BaseMobDinosaur
@@ -661,6 +689,13 @@
     name: ghost-role-information-dino-stego-name
     description: ghost-role-information-dino-stego-description
     rules: ghost-role-information-rules-team-antagonist
+  - type: DamageContacts
+    damage:
+      types:
+        Structural: 25
+    ignoreWhitelist:
+      tags:
+      - Flesh
 
 - type: entity
   parent: BaseMobDinosaurCarnivore
@@ -713,7 +748,7 @@
   - type: DamageContacts
     damage:
       types:
-        Structural: 25
+        Structural: 35
     ignoreWhitelist:
       tags:
       - Flesh
@@ -777,3 +812,10 @@
     name: ghost-role-information-dino-trike-name
     description: ghost-role-information-dino-trike-description
     rules: ghost-role-information-rules-team-antagonist
+  - type: DamageContacts
+    damage:
+      types:
+        Structural: 25
+    ignoreWhitelist:
+      tags:
+      - Flesh
