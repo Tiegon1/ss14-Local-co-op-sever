@@ -587,3 +587,38 @@
   - type: Puller
     needsHands: false
   - type: CombatMode # Funkystation: it's spinning time (for bots with rotational sprites)
+
+- type: entity
+  parent: MobSiliconBase
+  id: MobReplicatorDrone
+  name: replicator drone
+  description: A scavenging machine that disassembles nearby scrap and uses the recovered material to grow more of its kind.
+  components:
+  - type: Sprite
+    sprite: Mobs/Silicon/Bots/firebot.rsi
+    state: firebot
+  - type: Replicator
+  - type: HTN
+    rootTask:
+      task: SimpleHostileCompound
+  - type: NpcFactionMember
+    factions:
+    - Replicator
+  - type: CombatMode
+  - type: MeleeWeapon
+    soundHit:
+      path: "/Audio/Items/wirecutter.ogg"
+    angle: 0
+    animation: WeaponArcSlash
+    damage:
+      types:
+        Blunt: 4
+        Slash: 3
+  - type: MovementSpeedModifier
+    baseWalkSpeed: 2.5
+    baseSprintSpeed: 3.5
+  - type: InteractionPopup
+    interactSuccessString: petting-success-firebot
+    interactFailureString: petting-failure-firebot
+    interactSuccessSound:
+      path: /Audio/Ambience/Objects/periodic_beep.ogg

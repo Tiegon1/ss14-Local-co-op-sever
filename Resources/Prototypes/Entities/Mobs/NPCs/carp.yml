@@ -199,7 +199,7 @@
     rangeMin: 1
     rangeMax: 10
     seekRange: 20
-    seekProbability: 0.7
+    seekProbability: 1
     seekJitter: 0.6
     effect: PuddleSparkle
 

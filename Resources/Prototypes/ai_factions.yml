@@ -201,3 +201,20 @@
   - Revolutionary
   - AllHostile
   - BloodCultist # Blood cultists
+
+- type: npcFaction
+  id: Replicator
+  hostile:
+    - NanoTrasen
+    - Syndicate
+    - Xeno
+    - PetsNT
+    - Zombie
+    - Revolutionary
+    - Heretic
+    - Blob
+    - AllHostile
+    - Wizard
+    - BloodCultist
+    - Dino
+    - SimpleHostile

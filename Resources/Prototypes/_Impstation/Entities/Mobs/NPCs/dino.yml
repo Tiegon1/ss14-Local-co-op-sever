@@ -710,6 +710,13 @@
     name: ghost-role-information-dino-trex-name
     description: ghost-role-information-dino-trex-description
     rules: ghost-role-information-rules-team-antagonist
+  - type: DamageContacts
+    damage:
+      types:
+        Structural: 25
+    ignoreWhitelist:
+      tags:
+      - Flesh
 
 - type: entity
   parent: BaseMobDinosaur
