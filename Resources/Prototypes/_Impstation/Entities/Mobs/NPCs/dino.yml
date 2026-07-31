@@ -739,12 +739,11 @@
   - type: MovementSpeedModifier
     baseSprintSpeed : 3.5
     baseWalkSpeed: 2.5
-  - type: GhostRole
-    allowMovement: true
-    makeSentient: true
-    name: ghost-role-information-dino-trex-name
-    description: ghost-role-information-dino-trex-description
-    rules: ghost-role-information-rules-team-antagonist
+  - type: EmitSoundOnSpawn
+    sound:
+      path: /Audio/Animals/t-rex-roar.ogg
+      params:
+        volume: -11
   - type: DamageContacts
     damage:
       types:

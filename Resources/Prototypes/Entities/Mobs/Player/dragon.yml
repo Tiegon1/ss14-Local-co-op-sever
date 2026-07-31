@@ -244,8 +244,6 @@
     count: 1
   - type: RechargeBasicEntityAmmo
     rechargeCooldown: 5
-    rechargeSound:
-      path: /Audio/Animals/space_dragon_roar.ogg
 
 - type: entity
   parent: BaseMobDragon

@@ -16,3 +16,27 @@
     - tasks:
         - !type:HTNCompoundTask
           task: IdleCompound
+
+- type: htnCompound
+  id: RexCompound
+  branches:
+    - tasks:
+        - !type:HTNCompoundTask
+          task: RexMeleeCombatWithChaseCompound
+    - tasks:
+        - !type:HTNCompoundTask
+          task: DestructionCompound
+    - tasks:
+        - !type:HTNCompoundTask
+          task: IdleCompound
+
+- type: htnCompound
+  id: RexMeleeCombatWithChaseCompound
+  branches:
+    - tasks:
+        - !type:HTNPrimitiveTask
+          operator: !type:PlaySoundOperator
+            sound:
+              path: /Audio/Animals/t-rex-roar.ogg
+        - !type:HTNCompoundTask
+          task: MeleeCombatWithChaseCompound
