@@ -792,7 +792,7 @@
     - id: BaseMobCarpInfected
       prob: 0.01
     - id: MobCarpHoloInfected
-      prob: 0.005
+      prob: 0.001
 
 # - type: entity
 #   id: InfectedMob
