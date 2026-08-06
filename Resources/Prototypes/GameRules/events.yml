@@ -101,7 +101,7 @@
 #    - id: SyndyPenguin
     - id: MalignRiftSpawn # Funky
     - id: SneakySnake
-
+    - id: SneakySyndy
 
 - type: entityTable
   id: BasicAntagEventsTable
@@ -640,6 +640,24 @@
       prob: 0.005      
 
 - type: entity
+  id: SneakySyndy
+  parent: BaseStationEventShortDelay
+  components:
+  - type: StationEvent
+    earliestStart: 20
+    minimumPlayers: 1
+    weight: 0.5
+    duration: 30 # DeltaV: was 60, used as a delay now
+  - type: VentCrittersRule
+    entries:
+    - id: MobMothSyndy
+      prob: 0.01    
+    - id: MobCatSyndy
+      prob: 0.008
+    - id: MobGrenadePenguin
+      prob: 0.005
+
+- type: entity
   id: Hardmob
   parent: BaseStationEventShortDelay
   components:
@@ -803,7 +821,7 @@
       path: /Audio/Announcements/aliens.ogg
     earliestStart: 20
     minimumPlayers: 1
-    weight: 1
+    weight: 0.8
     duration: 30 # DeltaV: was 60, used as a delay now
   - type: VentCrittersRule
     entries:
