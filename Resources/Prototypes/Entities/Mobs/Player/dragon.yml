@@ -259,6 +259,43 @@
     - MinorAntagonists
 
 - type: entity
+  parent: BaseMobDragon
+  id: MobiceDragon
+  suffix: "ice"  
+  components:
+  - type: Gun
+    soundGunshot:
+      path: /Audio/Animals/space_dragon_roar.ogg
+    soundEmpty: null
+    projectileSpeed: 5
+  - type: BasicEntityAmmoProvider
+    proto: ProjectileIceBreath
+    capacity: 1
+    count: 1
+  - type: RechargeBasicEntityAmmo
+    rechargeCooldown: 5
+
+- type: entity
+  categories: [ HideSpawnMenu ]
+  id: BreathGun
+  name: icedragon's lung
+  description: For dragon's breathing.
+  components:
+  - type: RechargeBasicEntityAmmo
+    rechargeCooldown: 5
+    rechargeSound:
+      path: /Audio/Animals/space_dragon_roar.ogg
+  - type: BasicEntityAmmoProvider
+    proto: ProjectileIceBreath
+    capacity: 1
+    count: 1
+  - type: Gun
+    soundGunshot:
+      path: /Audio/Animals/space_dragon_roar.ogg
+    soundEmpty: null
+    projectileSpeed: 5
+
+- type: entity
   categories: [ HideSpawnMenu ]
   id: DragonsBreathGun
   name: dragon's lung

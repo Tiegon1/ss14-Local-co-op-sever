@@ -91,6 +91,17 @@
     lifetime: 5
 
 - type: entity
+  categories: [ HideSpawnMenu ]
+  parent: ProjectileDragonsBreath
+  id: ProjectileIceBreath
+  name: Ice breath
+  description: Try not to get Frozen.
+  components: 
+  - type: IgnitionSource
+  temperature: -1000
+  ignited: true
+
+- type: entity
   id: ProjectileAnomalyFireball
   name: fireball
   description: Hovering blob of flame.
