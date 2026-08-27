@@ -127,3 +127,10 @@
   components:
   - type: SalvageMobRestrictions
 
+- type: entity
+  id: MobTickInfected
+  parent: MobTick
+  suffix: infected
+  components:
+  - type: ZombieTumorInfection
+

@@ -737,13 +737,25 @@
     - id: MobXenoPraetorian
       prob: 0.07
     - id: MobXenoSpitter
-      prob: 0.010
+      prob: 0.01
     - id: MobXenoDrone
-      prob: 0.010
+      prob: 0.01
     - id: MobXenoRavager
       prob: 0.007
     - id: MobXenoRunner
-      prob: 0.010
+      prob: 0.01
+    - id: MobXenoQueeninfected
+      prob: 0.0006
+    - id: MobXenoPraetorianinfected
+      prob: 0.007
+    - id: MobXenoSpitterinfected
+      prob: 0.001
+    - id: MobXenoDroneinfected
+      prob: 0.001
+    - id: MobXenoRavagerinfected
+      prob: 0.0007
+    - id: MobXenoRunnerinfected
+      prob: 0.001
 
 - type: entity
   id: Easymob
