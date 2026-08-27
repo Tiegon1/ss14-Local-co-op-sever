@@ -271,6 +271,13 @@
     #     settings: short
 
 - type: entity
+  id: MobAdultSlimesGreenAngryInfected
+  parent: MobAdultSlimesGreenAngry
+  suffix: infected
+  components:
+  - type: ZombieTumorInfection
+
+- type: entity
   name: yellow slime
   parent: MobAdultSlimes
   id: MobAdultSlimesYellow
@@ -308,3 +315,11 @@
     #   - MindRoleGhostRoleTeamAntagonist
     #   raffle:
     #     settings: short
+
+- type: entity
+  id: MobAdultSlimesYellowAngryInfected
+  parent: MobAdultSlimesYellowAngry
+  suffix: infected
+  components:
+  - type: ZombieTumorInfection
+
