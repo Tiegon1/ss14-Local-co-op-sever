@@ -251,9 +251,15 @@
     MobXenoDrone: 2
     MobXenoRunner: 2
     MobXenoSpitter: 1
-    MobXenoRavager: 1
-    MobXenoPraetorian: 0.8
-    MobXenoQueen: 0.3
+    MobXenoRavager: 0.5
+    MobXenoPraetorian: 0.3
+    MobXenoQueen: 0.1
+    MobXenoDroneInfected: 0.2
+    MobXenoRunnerInfected: 0.2
+    MobXenoSpitterInfected: 0.1
+    MobXenoRavagerInfected: 0.05
+    MobXenoPraetorianInfected: 0.03
+    MobXenoQueenInfected: 0.01
 
 - type: entity
   parent: BaseMeteor
