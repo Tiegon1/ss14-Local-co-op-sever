@@ -197,17 +197,17 @@
       Anomaly: 40
   - type: BluespaceLockerRule
 
-- type: entity
-  id: BreakerFlip
-  parent: BaseGameRule
-  components:
-  - type: StationEvent
-    weight: 7
-    duration: 1
-    minimumPlayers: 10
-    chaos: # Goobstation
-      Power: 100
-  - type: BreakerFlipRule
+# - type: entity
+#   id: BreakerFlip
+#   parent: BaseGameRule
+#   components:
+#   - type: StationEvent
+#     weight: 7
+#     duration: 1
+#     minimumPlayers: 10
+#     chaos: # Goobstation
+#       Power: 100
+#   - type: BreakerFlipRule
 
 # - type: entity
 #   id: BureaucraticError
@@ -608,6 +608,8 @@
       prob: 0.003
     - id: MobArgocyteEnforcer
       prob: 0.003
+    - id: MobArgocyteEnforcerInfected
+      prob: 0.0003
     - id: MobHivelord
       prob: 0.003
     - id: MobShark
@@ -616,10 +618,14 @@
       prob: 0.001
     - id: MobArgocytePouncer
       prob: 0.003
+    - id: MobArgocytePouncerInfected
+      prob: 0.003
     - id: MobCorgiCerberus
       prob: 0.003
     - id: MobArgocyteCrawler
       prob: 0.003
+    - id: MobArgocyteCrawlerInfected
+      prob: 0.0003
 
 - type: entity
   id: SneakySnake
@@ -715,6 +721,8 @@
       prob: 0.002
     - id: MobArgocyteLeviathing
       prob: 0.005
+    - id: MobArgocyteLeviathingInfected
+      prob: 0.0005
     - id: MobDinosaurAnki
       prob: 0.003
 
@@ -744,18 +752,18 @@
       prob: 0.007
     - id: MobXenoRunner
       prob: 0.01
-    - id: MobXenoQueeninfected
-      prob: 0.0006
-    - id: MobXenoPraetorianinfected
-      prob: 0.007
-    - id: MobXenoSpitterinfected
-      prob: 0.001
-    - id: MobXenoDroneinfected
-      prob: 0.001
-    - id: MobXenoRavagerinfected
-      prob: 0.0007
-    - id: MobXenoRunnerinfected
-      prob: 0.001
+    # - id: MobXenoQueeninfected
+    #   prob: 0.0006
+    # - id: MobXenoPraetorianinfected
+    #   prob: 0.007
+    # - id: MobXenoSpitterinfected
+    #   prob: 0.001
+    # - id: MobXenoDroneinfected
+    #   prob: 0.001
+    # - id: MobXenoRavagerinfected
+    #   prob: 0.0007
+    # - id: MobXenoRunnerinfected
+    #   prob: 0.001
 
 - type: entity
   id: Easymob
@@ -780,9 +788,11 @@
     - id: MobCarpMagic
       prob: 0.003
     - id: MobCarp
-      prob: 0.005
+      prob: 0.05
     - id: MobArgocyteSwiper
       prob: 0.003
+    - id: MobArgocyteSwiperInfected
+      prob: 0.0003
     - id: MobHonkBot
       prob: 0.0003
     - id: MobIronCrab
@@ -795,16 +805,22 @@
       prob: 0.003
     - id: MobArgocyteMolder
       prob: 0.003
+    - id: MobArgocyteMolderInfected
+      prob: 0.0003
     - id: MobJonkBot
       prob: 0.0003
     - id: MobArgocyteHarvester
       prob: 0.003
+    - id: MobArgocyteHarvesterInfected
+      prob: 0.0003
     - id: MobArgocyteGlider
       prob: 0.003
+    - id: MobArgocyteGliderInfected
+      prob: 0.0003
     - id: BaseMobCarpInfected
-      prob: 0.01
-    - id: MobCarpHoloInfected
       prob: 0.001
+    - id: MobCarpHoloInfected
+      prob: 0.0003
 
 # - type: entity
 #   id: InfectedMob

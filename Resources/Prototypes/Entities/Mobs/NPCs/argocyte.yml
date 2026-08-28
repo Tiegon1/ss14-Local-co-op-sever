@@ -185,6 +185,13 @@
         Slash: 3
 
 - type: entity
+  id: MobArgocyteSkitterInfected
+  parent: MobArgocyteSkitter
+  suffix: infected
+  components:
+  - type: ZombieTumorInfection
+
+- type: entity
   parent: BaseMobArgocyte
   id: MobArgocyteSwiper
   name: swiper
@@ -239,6 +246,13 @@
     baseWalkSpeed : 3.5
 
 - type: entity
+  id: MobArgocyteMolderInfected
+  parent: MobArgocyteMolder
+  suffix: infected
+  components:
+  - type: ZombieTumorInfection
+
+- type: entity
   parent: BaseMobArgocyte
   id: MobArgocytePouncer
   name: pouncer
@@ -266,6 +280,13 @@
       types:
         Blunt: 2.5
         Slash: 7.5
+
+- type: entity
+  id: MobArgocytePouncerInfected
+  parent: MobArgocytePouncer
+  suffix: infected
+  components:
+  - type: ZombieTumorInfection
 
 - type: entity
   parent: BaseMobArgocyte
@@ -300,6 +321,13 @@
     baseWalkSpeed: 4.5
 
 - type: entity
+  id: MobArgocyteGliderInfected
+  parent: MobArgocyteGlider
+  suffix: infected
+  components:
+  - type: ZombieTumorInfection
+
+- type: entity
   parent: BaseMobArgocyte
   id: MobArgocyteHarvester
   name: harvester
@@ -328,6 +356,13 @@
         Blunt: 5
         Slash: 10
         Structural: 5
+
+- type: entity
+  id: MobArgocyteHarvesterInfected
+  parent: MobArgocyteHarvester
+  suffix: infected
+  components:
+  - type: ZombieTumorInfection
 
 - type: entity
   parent: BaseMobArgocyte
@@ -364,6 +399,13 @@
     baseWalkSpeed: 5
 
 - type: entity
+  id: MobArgocyteCrawlerInfected
+  parent: MobArgocyteCrawler
+  suffix: infected
+  components:
+  - type: ZombieTumorInfection
+
+- type: entity
   parent: BaseMobArgocyte
   id: MobArgocyteEnforcer
   name: enforcer
@@ -395,6 +437,13 @@
   - type: MovementSpeedModifier
     baseSprintSpeed : 3.5
     baseWalkSpeed: 3
+
+- type: entity
+  id: MobArgocyteEnforcerInfected
+  parent: MobArgocyteEnforcer
+  suffix: infected
+  components:
+  - type: ZombieTumorInfection
 
 - type: entity
   parent: BaseMobArgocyte
@@ -443,6 +492,13 @@
     baseWalkSpeed: 3
 
 - type: entity
+  id: MobArgocyteFounderInfected
+  parent: MobArgocyteFounder
+  suffix: infected
+  components:
+  - type: ZombieTumorInfection
+
+- type: entity
   parent: BaseMobArgocyte
   id: MobArgocyteLeviathing
   name: leviathing
@@ -484,3 +540,10 @@
       types:
         Blunt: 75
         Structural: 50
+
+- type: entity
+  id: MobArgocyteLeviathingInfected
+  parent: MobArgocyteLeviathing
+  suffix: infected
+  components:
+  - type: ZombieTumorInfection
