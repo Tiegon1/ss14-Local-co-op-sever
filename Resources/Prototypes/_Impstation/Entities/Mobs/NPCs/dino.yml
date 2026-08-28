@@ -95,13 +95,13 @@
       amount: 8
     - id: MaterialBones1
       amount: 8
-  - type: GhostRole
-    allowMovement: true
-    makeSentient: true
-    name: ghost-role-information-dino-name
-    description: ghost-role-information-dino-description
-    rules: ghost-role-information-rules-team-antagonist
-  - type: GhostTakeoverAvailable
+  # - type: GhostRole
+  #   allowMovement: true
+  #   makeSentient: true
+  #   name: ghost-role-information-dino-name
+  #   description: ghost-role-information-dino-description
+  #   rules: ghost-role-information-rules-team-antagonist
+  # - type: GhostTakeoverAvailable
   - type: Barotrauma
     damage:
       types:
@@ -258,12 +258,19 @@
   - type: MovementSpeedModifier
     baseSprintSpeed : 7.5
     baseWalkSpeed: 2.5
-  - type: GhostRole
-    allowMovement: true
-    makeSentient: true
-    name: ghost-role-information-dino-compy-name
-    description: ghost-role-information-dino-compy-description
-    rules: ghost-role-information-rules-team-antagonist
+  # - type: GhostRole
+  #   allowMovement: true
+  #   makeSentient: true
+  #   name: ghost-role-information-dino-compy-name
+  #   description: ghost-role-information-dino-compy-description
+  #   rules: ghost-role-information-rules-team-antagonist
+
+- type: entity
+  id: MobDinosaurCompyInfected
+  parent: MobDinosaurCompy
+  suffix: infected
+  components:
+  - type: ZombieTumorInfection
 
 - type: entity
   parent: BaseMobDinosaurSmall
@@ -325,12 +332,19 @@
   - type: MovementSpeedModifier
     baseSprintSpeed : 4.5
     baseWalkSpeed: 2.5
-  - type: GhostRole
-    allowMovement: true
-    makeSentient: true
-    name: ghost-role-information-dino-dilo-name
-    description: ghost-role-information-dino-dilo-description
-    rules: ghost-role-information-rules-team-antagonist
+  # - type: GhostRole
+  #   allowMovement: true
+  #   makeSentient: true
+  #   name: ghost-role-information-dino-dilo-name
+  #   description: ghost-role-information-dino-dilo-description
+  #   rules: ghost-role-information-rules-team-antagonist
+
+- type: entity
+  id: MobDinosaurDiloInfected
+  parent: MobDinosaurDilo
+  suffix: infected
+  components:
+  - type: ZombieTumorInfection
 
 - type: entity
   parent: BaseMobDinosaurSmall
@@ -389,12 +403,19 @@
   - type: MovementSpeedModifier
     baseSprintSpeed : 6.5
     baseWalkSpeed: 2.5
-  - type: GhostRole
-    allowMovement: true
-    makeSentient: true
-    name: ghost-role-information-dino-raptor-name
-    description: ghost-role-information-dino-raptor-description
-    rules: ghost-role-information-rules-team-antagonist
+  # - type: GhostRole
+  #   allowMovement: true
+  #   makeSentient: true
+  #   name: ghost-role-information-dino-raptor-name
+  #   description: ghost-role-information-dino-raptor-description
+  #   rules: ghost-role-information-rules-team-antagonist
+
+- type: entity
+  id: MobDinosaurRaptorInfected
+  parent: MobDinosaurRaptor
+  suffix: infected
+  components:
+  - type: ZombieTumorInfection
 
 # Large Dinosaurs
 
@@ -438,12 +459,12 @@
   - type: MovementSpeedModifier
     baseSprintSpeed : 2.5
     baseWalkSpeed: 1
-  - type: GhostRole
-    allowMovement: true
-    makeSentient: true
-    name: ghost-role-information-dino-anki-name
-    description: ghost-role-information-dino-anki-description
-    rules: ghost-role-information-rules-team-antagonist
+  # - type: GhostRole
+  #   allowMovement: true
+  #   makeSentient: true
+  #   name: ghost-role-information-dino-anki-name
+  #   description: ghost-role-information-dino-anki-description
+  #   rules: ghost-role-information-rules-team-antagonist
   - type: DamageContacts
     damage:
       types:
@@ -451,6 +472,13 @@
     ignoreWhitelist:
       tags:
       - Flesh
+
+- type: entity
+  id: MobDinosaurAnkiInfected
+  parent: MobDinosaurAnki
+  suffix: infected
+  components:
+  - type: ZombieTumorInfection      
 
 - type: entity
   parent: BaseMobDinosaur
@@ -494,12 +522,12 @@
   - type: MovementSpeedModifier
     baseSprintSpeed : 2.5
     baseWalkSpeed: 1.5
-  - type: GhostRole
-    allowMovement: true
-    makeSentient: true
-    name: ghost-role-information-dino-kentro-name
-    description: ghost-role-information-dino-kentro-description
-    rules: ghost-role-information-rules-team-antagonist
+  # - type: GhostRole
+  #   allowMovement: true
+  #   makeSentient: true
+  #   name: ghost-role-information-dino-kentro-name
+  #   description: ghost-role-information-dino-kentro-description
+  #   rules: ghost-role-information-rules-team-antagonist
   - type: DamageContacts
     damage:
       types:
@@ -507,6 +535,13 @@
     ignoreWhitelist:
       tags:
       - Flesh
+
+- type: entity
+  id: MobDinosaurKentroInfected
+  parent: MobDinosaurKentro
+  suffix: infected
+  components:
+  - type: ZombieTumorInfection  
 
 - type: entity
   parent: BaseMobDinosaur
@@ -558,12 +593,12 @@
   - type: MovementSpeedModifier
     baseSprintSpeed : 4
     baseWalkSpeed: 2.5
-  - type: GhostRole
-    allowMovement: true
-    makeSentient: true
-    name: ghost-role-information-dino-para-name
-    description: ghost-role-information-dino-para-description
-    rules: ghost-role-information-rules-team-antagonist
+  # - type: GhostRole
+  #   allowMovement: true
+  #   makeSentient: true
+  #   name: ghost-role-information-dino-para-name
+  #   description: ghost-role-information-dino-para-description
+  #   rules: ghost-role-information-rules-team-antagonist
   - type: DamageContacts
     damage:
       types:
@@ -571,6 +606,13 @@
     ignoreWhitelist:
       tags:
       - Flesh
+
+- type: entity
+  id: MobDinosaurParaInfected
+  parent: MobDinosaurPara
+  suffix: infected
+  components:
+  - type: ZombieTumorInfection  
 
 - type: entity
   parent: BaseMobDinosaurCarnivore
@@ -629,6 +671,13 @@
       - Flesh
 
 - type: entity
+  id: MobDinosaurSpinoInfected
+  parent: MobDinosaurSpino
+  suffix: infected
+  components:
+  - type: ZombieTumorInfection  
+
+- type: entity
   parent: BaseMobDinosaur
   id: MobDinosaurStego
   name: stegosaurus
@@ -683,12 +732,12 @@
   - type: MovementSpeedModifier
     baseSprintSpeed : 1.5
     baseWalkSpeed: 1
-  - type: GhostRole
-    allowMovement: true
-    makeSentient: true
-    name: ghost-role-information-dino-stego-name
-    description: ghost-role-information-dino-stego-description
-    rules: ghost-role-information-rules-team-antagonist
+  # - type: GhostRole
+  #   allowMovement: true
+  #   makeSentient: true
+  #   name: ghost-role-information-dino-stego-name
+  #   description: ghost-role-information-dino-stego-description
+  #   rules: ghost-role-information-rules-team-antagonist
   - type: DamageContacts
     damage:
       types:
@@ -696,6 +745,13 @@
     ignoreWhitelist:
       tags:
       - Flesh
+
+- type: entity
+  id: MobDinosaurStegoInfected
+  parent: MobDinosaurStego
+  suffix: infected
+  components:
+  - type: ZombieTumorInfection 
 
 - type: entity
   parent: BaseMobDinosaurCarnivore
@@ -753,6 +809,13 @@
       - Flesh
 
 - type: entity
+  id: MobDinosaurTrexInfected
+  parent: MobDinosaurTrex
+  suffix: infected
+  components:
+  - type: ZombieTumorInfection 
+
+- type: entity
   parent: BaseMobDinosaur
   id: MobDinosaurTrike
   name: triceratops
@@ -805,12 +868,12 @@
   - type: MovementSpeedModifier
     baseSprintSpeed : 3
     baseWalkSpeed: 1.5
-  - type: GhostRole
-    allowMovement: true
-    makeSentient: true
-    name: ghost-role-information-dino-trike-name
-    description: ghost-role-information-dino-trike-description
-    rules: ghost-role-information-rules-team-antagonist
+  # - type: GhostRole
+  #   allowMovement: true
+  #   makeSentient: true
+  #   name: ghost-role-information-dino-trike-name
+  #   description: ghost-role-information-dino-trike-description
+  #   rules: ghost-role-information-rules-team-antagonist
   - type: DamageContacts
     damage:
       types:
@@ -818,3 +881,10 @@
     ignoreWhitelist:
       tags:
       - Flesh
+
+- type: entity
+  id: MobDinosaurTrikeInfected
+  parent: MobDinosaurTrike
+  suffix: infected
+  components:
+  - type: ZombieTumorInfection 
