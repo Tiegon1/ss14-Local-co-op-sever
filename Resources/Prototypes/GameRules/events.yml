@@ -566,7 +566,7 @@
     startAnnouncement: station-event-vent-creatures-start-announcement
     startAudio:
       path: /Audio/Announcements/aliens.ogg
-    earliestStart: 20
+    earliestStart: 30
     minimumPlayers: 1
     weight: 3
     duration: 30 # DeltaV: was 60, used as a delay now
@@ -671,7 +671,7 @@
     startAnnouncement: station-event-vent-creatures-start-announcement
     startAudio:
       path: /Audio/Announcements/aliens.ogg
-    earliestStart: 20
+    earliestStart: 40
     minimumPlayers: 1
     weight: 2
     duration: 30 # DeltaV: was 60, used as a delay now
@@ -699,7 +699,7 @@
     startAnnouncement: station-event-vent-creatures-start-announcement
     startAudio:
       path: /Audio/Announcements/aliens.ogg
-    earliestStart: 20
+    earliestStart: 50
     minimumPlayers: 1
     weight: 0.6
     duration: 30 # DeltaV: was 60, used as a delay now
@@ -847,7 +847,7 @@
     startAnnouncement: station-event-vent-creatures-start-announcement
     startAudio:
       path: /Audio/Announcements/aliens.ogg
-    earliestStart: 20
+    earliestStart: 30
     minimumPlayers: 1
     weight: 0.5
     duration: 30 # DeltaV: was 60, used as a delay now

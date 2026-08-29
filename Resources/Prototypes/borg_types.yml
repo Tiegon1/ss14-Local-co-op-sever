@@ -63,8 +63,14 @@
   extraModuleCount: 3
   moduleWhitelist:
     tags:
+    - BorgModuleJanitor
     - BorgModuleGeneric
+    - BorgModuleService
+    - BorgModuleCargo
     - BorgModuleEngineering
+    - BorgModuleSyndicate
+    - BorgModuleSyndicateAssault
+    - BorgModuleMedical  
 
   defaultModules:
   - BorgModuleTool
@@ -100,8 +106,14 @@
   extraModuleCount: 3
   moduleWhitelist:
     tags:
+    - BorgModuleJanitor
     - BorgModuleGeneric
+    - BorgModuleService
     - BorgModuleCargo
+    - BorgModuleEngineering
+    - BorgModuleSyndicate
+    - BorgModuleSyndicateAssault
+    - BorgModuleMedical   
 
   defaultModules:
   - BorgModuleTool
@@ -145,8 +157,14 @@
   extraModuleCount: 3
   moduleWhitelist:
     tags:
-    - BorgModuleGeneric
     - BorgModuleJanitor
+    - BorgModuleGeneric
+    - BorgModuleService
+    - BorgModuleCargo
+    - BorgModuleEngineering
+    - BorgModuleSyndicate
+    - BorgModuleSyndicateAssault
+    - BorgModuleMedical  
 
   defaultModules:
   - BorgModuleTool
@@ -181,8 +199,14 @@
   extraModuleCount: 3
   moduleWhitelist:
     tags:
+    - BorgModuleJanitor
     - BorgModuleGeneric
-    - BorgModuleMedical
+    - BorgModuleService
+    - BorgModuleCargo
+    - BorgModuleEngineering
+    - BorgModuleSyndicate
+    - BorgModuleSyndicateAssault
+    - BorgModuleMedical  
 
   defaultModules:
   - BorgModuleTool
@@ -252,8 +276,14 @@
   extraModuleCount: 3
   moduleWhitelist:
     tags:
+    - BorgModuleJanitor
     - BorgModuleGeneric
     - BorgModuleService
+    - BorgModuleCargo
+    - BorgModuleEngineering
+    - BorgModuleSyndicate
+    - BorgModuleSyndicateAssault
+    - BorgModuleMedical  
 
   defaultModules:
   - BorgModuleTool
