@@ -36,6 +36,7 @@
     - BloodCultist # Blood cultists
     - Dino # dinosaurs
     - SimpleHostile
+    - Clown
 
 - type: npcFaction
   id: NanoTrasen
@@ -53,6 +54,7 @@
   - Wizard
   - Dino # dinosaurs
   - Revolutionary
+  - Clown
 
 - type: npcFaction
   id: Mouse
@@ -60,6 +62,7 @@
   - PetsNT
   - AllHostile
   - Wizard
+  - Clown
 
 - type: npcFaction
   id: Passive
@@ -76,6 +79,7 @@
   - Dragon
   - Syndicate
   - Dino # dinosaurs
+  - Clown
   
 - type: npcFaction
   id: SimpleHostile
@@ -93,6 +97,7 @@
   - Dragon
   - BloodCultist # Blood cultists
   - Dino # dinosaurs
+  - Clown
 
 - type: npcFaction
   id: SimpleNeutral
@@ -113,6 +118,7 @@
   - Wizard
   - BloodCultist # Blood cultists
   - Dino # dinosaurs
+  - Clown
 
 - type: npcFaction
   id: Xeno
@@ -130,6 +136,7 @@
   - Dragon
   - BloodCultist # Blood cultists
   - Dino # dinosaurs
+  - Clown
 
 - type: npcFaction
   id: Zombie
@@ -150,6 +157,7 @@
   - Dragon
   - BloodCultist # Blood cultists
   - Dino # dinosaurs
+  - Clown
 
 - type: npcFaction
   id: Revolutionary
@@ -163,6 +171,7 @@
   - Wizard
   - BloodCultist # Blood cultists
   - Dino # dinosaurs
+  - Clown
 
 - type: npcFaction
   id: AllHostile
@@ -184,6 +193,7 @@
   - Wizard
   - BloodCultist # Blood cultists
   - Dino # dinosaurs
+  - Clown
 
 - type: npcFaction
   id: Wizard
@@ -201,9 +211,10 @@
   - Revolutionary
   - AllHostile
   - BloodCultist # Blood cultists
+  - Clown
 
 - type: npcFaction
-  id: Replicator
+  id: Clown
   hostile:
     - NanoTrasen
     - Syndicate
@@ -218,3 +229,21 @@
     - BloodCultist
     - Dino
     - SimpleHostile
+
+
+# - type: npcFaction
+#   id: Replicator
+#   hostile:
+#     - NanoTrasen
+#     - Syndicate
+#     - Xeno
+#     - PetsNT
+#     - Zombie
+#     - Revolutionary
+#     - Heretic
+#     - Blob
+#     - AllHostile
+#     - Wizard
+#     - BloodCultist
+#     - Dino
+#     - SimpleHostile
