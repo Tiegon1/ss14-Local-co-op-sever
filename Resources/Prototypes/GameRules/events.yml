@@ -340,6 +340,13 @@
       prob: 0.003
     - id: MobArgocyteCrawlerInfected
       prob: 0.0003
+    - id: MobWatcherLavaland
+      prob: 0.01
+    - id: MobWatcherIcewing
+      prob: 0.01
+    - id: MobWatcherMagmawing
+      prob: 0.01
+
 
 - type: entity
   id: SneakySnake
@@ -403,7 +410,12 @@
       prob: 0.01
     - id: MobDinosaurDilo
       prob: 0.01
-
+    - id: MobWatcherLavaland
+      prob: 0.01
+    - id: MobWatcherIcewing
+      prob: 0.01
+    - id: MobWatcherMagmawing
+      prob: 0.01
 
 - type: entity
   id: Hardestmob
@@ -535,6 +547,12 @@
       prob: 0.001
     - id: MobCarpHoloInfected
       prob: 0.0003
+    - id: MobWatcherLavaland
+      prob: 0.01
+    - id: MobWatcherIcewing
+      prob: 0.01
+    - id: MobWatcherMagmawing
+      prob: 0.01
 
 - type: entity
   id: SyndyMoth
