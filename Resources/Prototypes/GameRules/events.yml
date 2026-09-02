@@ -245,160 +245,6 @@
   - type: RandomEntityStorageSpawnRule
     prototype: MobSkeletonCloset
 
-# - type: entity
-#   parent: BaseGameRule
-#   id: DragonSpawn
-#   components:
-#   - type: StationEvent
-#     weight: 6.0 # funkystation
-#     earliestStart: 60 # funkystation
-#     reoccurrenceDelay: 30 # funkystation
-#     minimumPlayers: 20
-#     duration: null
-#     chaos: # Goobstation
-#       Hostile: 180
-#       Friend: 180
-#       Combat: 180
-#       Death: 180
-#       Medical: 140
-#     maxChaos:
-#       Hostile: 30
-#       Combat: -60
-#       Power: 50
-#       Medical: 50
-#       Atmos: 50
-#   - type: SpaceSpawnRule
-#     spawnDistance: 0
-#   - type: AntagSpawner
-#     prototype: MobDragon
-#   - type: DragonRule
-#   - type: AntagObjectives
-#     objectives:
-#     - CarpRiftsObjective
-#     - DragonSurviveObjective
-#   - type: AntagSelection
-#     agentName: dragon-round-end-agent-name
-#     definitions:
-#     - spawnerPrototype: SpawnPointGhostDragon
-#       min: 1
-#       max: 1
-#       pickPlayer: false
-#       mindRoles:
-#       - MindRoleDragon
-
-# - type: entity
-#   parent: BaseGameRule
-#   id: NinjaSpawn
-#   components:
-#   - type: StationEvent
-#     weight: 6
-#     duration: null
-#     earliestStart: 45
-#     reoccurrenceDelay: 60 # funkystation
-#     minimumPlayers: 30
-#     chaos: # Goobstation
-#       Hostile: 50
-#       Friend: 50
-#       Combat: 50
-#       Death: 50
-#       Medical: 50
-#   - type: SpaceSpawnRule
-#   - type: AntagLoadProfileRule
-#     speciesOverride: Human # funkystation
-#     speciesOverrideBlacklist: # funkstation
-#     - IPC # funkystation
-#   - type: AntagObjectives
-#     objectives:
-#     - StealResearchObjective
-#     - DoorjackObjective
-#     - SpiderChargeObjective
-#     - TerrorObjective
-#     - MassArrestObjective
-#     - NinjaSurviveObjective
-#   - type: AntagSelection
-#     agentName: ninja-round-end-agent-name
-#     definitions:
-#     - spawnerPrototype: SpawnPointGhostSpaceNinja
-#       min: 1
-#       max: 1
-#       prefRoles: [ SpaceNinja ]
-#       pickPlayer: false
-#       startingGear: SpaceNinjaGear
-#       roleLoadout:
-#       - RoleSurvivalEVA
-#       briefing:
-#         text: ninja-role-greeting
-#         color: Green
-#         sound: /Audio/Misc/ninja_greeting.ogg
-#       components:
-#       - type: SpaceNinja
-#       - type: NpcFactionMember
-#         factions:
-#         - Syndicate
-#       - type: AutoImplant
-#         implants:
-#         - DeathAcidifierImplant
-#       - type: RandomMetadata
-#         nameSegments:
-#         - NamesNinjaTitle
-#         - NamesNinjaName
-#       mindRoles:
-#       - MindRoleNinja
-
-# - type: entity
-#   parent: BaseGameRule
-#   id: ParadoxCloneSpawn
-#   components:
-#   - type: StationEvent
-#     weight: 5
-#     duration: null
-#     earliestStart: 20
-#     reoccurrenceDelay: 20
-#     minimumPlayers: 15
-#   - type: ParadoxCloneRule
-#     objectiveBlacklist:
-#       tags:
-#       - ParadoxCloneObjectiveBlacklist
-#   - type: AntagObjectives
-#     objectives:
-#     - ParadoxCloneKillObjective
-#     - ParadoxCloneLivingObjective
-#   - type: AntagRandomSpawn # TODO: improve spawning so they only start in maints
-#   - type: AntagSelection
-#     agentName: paradox-clone-round-end-agent-name
-#     definitions:
-#     - spawnerPrototype: SpawnPointGhostParadoxClone
-#       min: 1
-#       max: 1
-#       pickPlayer: false
-#       startingGear: ParadoxCloneGear
-#       roleLoadout:
-#       - RoleSurvivalVoxTank # give vox something to breath in case they don't get a copy
-#       briefing:
-#         text: paradox-clone-role-greeting
-#         color: lightblue
-#         sound: /Audio/Misc/paradox_clone_greeting.ogg
-#       mindRoles:
-#       - MindRoleParadoxClone
-
-# - type: entity
-#   parent: BaseGameRule
-#   id: RevenantSpawn
-#   components:
-#   - type: StationEvent
-#     weight: 6
-#     duration: 1
-#     earliestStart: 45
-#     minimumPlayers: 20
-#     chaos: # Goobstation
-#       Hostile: 20
-#       Friend: 20
-#       Combat: 40
-#       Death: 100
-#       Medical: 100
-#   - type: RandomSpawnRule
-#     prototype: MobRevenant
-
 # disabled until event is rewritten to be more interesting
 - type: entity
   id: FalseAlarm
@@ -414,55 +260,6 @@
       Death: 15
       Medical: 15
   - type: FalseAlarmRule
-
-# - type: entity
-#   parent: BaseWizardRule
-#   id: WizardSpawn
-#   components:
-#   - type: StationEvent
-#     weight: 1 # rare
-#     duration: 1
-#     earliestStart: 30
-#     reoccurrenceDelay: 60
-#     minimumPlayers: 10
-#     chaos:
-#       Hostile: 150
-#       Friend: 150
-#       Combat: 150
-#       Death: 150
-#     maxChaos:
-#       Hostile: 30
-#       Combat: -60
-#       Power: 50
-#       Medical: 50
-#       Atmos: 50
-#   - type: AntagSelection
-#     agentName: wizard-round-end-name
-#     definitions:
-#     - spawnerPrototype: SpawnPointGhostWizard
-#       min: 1
-#       max: 1
-#       playerRatio: 1
-#       pickPlayer: false
-#       startingGear: WizardBlueGear
-#       roleLoadout:
-#       - RoleSurvivalExtended
-#       briefing:
-#         text: wizard-role-greeting
-#         color: Turquoise
-#         # TODO: Need Wizard Start sound
-#         #sound: "/Audio/Ambience/Antag/wizard_start.ogg"
-#       # TODO: WizardComp as needed
-#       components:
-#       - type: NpcFactionMember
-#         factions:
-#         - Wizard
-#       - type: RandomMetadata
-#         nameSegments:
-#         - NamesWizardFirst
-#         - NamesWizardLast
-#       mindRoles:
-#       - MindRoleWizard
 
 - type: entity
   id: GasLeak
@@ -493,53 +290,6 @@
       Friend: 20
       Medical: 100
   - type: KudzuGrowthRule
-
-# - type: entity
-#   id: PowerGridCheck
-#   parent: BaseStationEventShortDelay
-#   components:
-#   - type: StationEvent
-#     minimumPlayers: 30
-#     weight: 4
-#     startAnnouncement: station-event-power-grid-check-start-announcement
-#     endAnnouncement: station-event-power-grid-check-end-announcement
-#     startAudio:
-#       path: /Audio/Announcements/power_off.ogg
-#       params:
-#         volume: -4
-#     duration: 60
-#     maxDuration: 120
-#   - type: PowerGridCheckRule
-
-# - type: entity
-#   parent: BaseGameRule
-#   id: SolarFlare
-#   components:
-#   - type: StationEvent
-#     weight: 8
-#     startAnnouncement: station-event-solar-flare-start-announcement
-#     endAnnouncement: station-event-solar-flare-end-announcement
-#     startAudio:
-#       path: /Audio/Announcements/attention.ogg
-#     duration: 120
-#     maxDuration: 240
-#     chaos: # Goobstation
-#       Friend: 20
-#   - type: SolarFlareRule
-#     onlyJamHeadsets: true
-#     affectedChannels:
-#     - Common
-#     extraChannels:
-#     - Command
-#     - Engineering
-#     - Medical
-#     - Science
-#     - Security
-#     - Service
-#     - Supply
-#     extraCount: 2
-#     lightBreakChancePerSecond: 0.0003
-#     doorToggleChancePerSecond: 0.001
 
 - type: entity
   id: VentClog
@@ -822,23 +572,6 @@
     - id: MobCarpHoloInfected
       prob: 0.0003
 
-# - type: entity
-#   id: InfectedMob
-#   parent: BaseStationEventShortDelay
-#   components:
-#   - type: StationEvent
-#     startAnnouncement: station-event-vent-creatures-start-announcement
-#     startAudio:
-#       path: /Audio/Announcements/aliens.ogg
-#     earliestStart: 20
-#     minimumPlayers: 1
-#     weight: 5
-#     duration: 30 # DeltaV: was 60, used as a delay now
-#   - type: VentCrittersRule
-#     entries: # 20 rolls at prob of 0.003 is around 6% chance that each spawn point will get a mob   (20 * 0.003 = 0.06)
-#     - id: MobBloodCultShade
-#       prob: 0.003
-
 - type: entity
   id: SyndyMoth
   parent: BaseStationEventShortDelay
@@ -1107,3 +840,252 @@
 #     - SecurityClown
 #     - PartyMaker
 #     - CommandMaid
+
+# - type: entity
+#   parent: BaseGameRule
+#   id: DragonSpawn
+#   components:
+#   - type: StationEvent
+#     weight: 6.0 # funkystation
+#     earliestStart: 60 # funkystation
+#     reoccurrenceDelay: 30 # funkystation
+#     minimumPlayers: 20
+#     duration: null
+#     chaos: # Goobstation
+#       Hostile: 180
+#       Friend: 180
+#       Combat: 180
+#       Death: 180
+#       Medical: 140
+#     maxChaos:
+#       Hostile: 30
+#       Combat: -60
+#       Power: 50
+#       Medical: 50
+#       Atmos: 50
+#   - type: SpaceSpawnRule
+#     spawnDistance: 0
+#   - type: AntagSpawner
+#     prototype: MobDragon
+#   - type: DragonRule
+#   - type: AntagObjectives
+#     objectives:
+#     - CarpRiftsObjective
+#     - DragonSurviveObjective
+#   - type: AntagSelection
+#     agentName: dragon-round-end-agent-name
+#     definitions:
+#     - spawnerPrototype: SpawnPointGhostDragon
+#       min: 1
+#       max: 1
+#       pickPlayer: false
+#       mindRoles:
+#       - MindRoleDragon
+
+# - type: entity
+#   parent: BaseGameRule
+#   id: NinjaSpawn
+#   components:
+#   - type: StationEvent
+#     weight: 6
+#     duration: null
+#     earliestStart: 45
+#     reoccurrenceDelay: 60 # funkystation
+#     minimumPlayers: 30
+#     chaos: # Goobstation
+#       Hostile: 50
+#       Friend: 50
+#       Combat: 50
+#       Death: 50
+#       Medical: 50
+#   - type: SpaceSpawnRule
+#   - type: AntagLoadProfileRule
+#     speciesOverride: Human # funkystation
+#     speciesOverrideBlacklist: # funkstation
+#     - IPC # funkystation
+#   - type: AntagObjectives
+#     objectives:
+#     - StealResearchObjective
+#     - DoorjackObjective
+#     - SpiderChargeObjective
+#     - TerrorObjective
+#     - MassArrestObjective
+#     - NinjaSurviveObjective
+#   - type: AntagSelection
+#     agentName: ninja-round-end-agent-name
+#     definitions:
+#     - spawnerPrototype: SpawnPointGhostSpaceNinja
+#       min: 1
+#       max: 1
+#       prefRoles: [ SpaceNinja ]
+#       pickPlayer: false
+#       startingGear: SpaceNinjaGear
+#       roleLoadout:
+#       - RoleSurvivalEVA
+#       briefing:
+#         text: ninja-role-greeting
+#         color: Green
+#         sound: /Audio/Misc/ninja_greeting.ogg
+#       components:
+#       - type: SpaceNinja
+#       - type: NpcFactionMember
+#         factions:
+#         - Syndicate
+#       - type: AutoImplant
+#         implants:
+#         - DeathAcidifierImplant
+#       - type: RandomMetadata
+#         nameSegments:
+#         - NamesNinjaTitle
+#         - NamesNinjaName
+#       mindRoles:
+#       - MindRoleNinja
+
+# - type: entity
+#   parent: BaseGameRule
+#   id: ParadoxCloneSpawn
+#   components:
+#   - type: StationEvent
+#     weight: 5
+#     duration: null
+#     earliestStart: 20
+#     reoccurrenceDelay: 20
+#     minimumPlayers: 15
+#   - type: ParadoxCloneRule
+#     objectiveBlacklist:
+#       tags:
+#       - ParadoxCloneObjectiveBlacklist
+#   - type: AntagObjectives
+#     objectives:
+#     - ParadoxCloneKillObjective
+#     - ParadoxCloneLivingObjective
+#   - type: AntagRandomSpawn # TODO: improve spawning so they only start in maints
+#   - type: AntagSelection
+#     agentName: paradox-clone-round-end-agent-name
+#     definitions:
+#     - spawnerPrototype: SpawnPointGhostParadoxClone
+#       min: 1
+#       max: 1
+#       pickPlayer: false
+#       startingGear: ParadoxCloneGear
+#       roleLoadout:
+#       - RoleSurvivalVoxTank # give vox something to breath in case they don't get a copy
+#       briefing:
+#         text: paradox-clone-role-greeting
+#         color: lightblue
+#         sound: /Audio/Misc/paradox_clone_greeting.ogg
+#       mindRoles:
+#       - MindRoleParadoxClone
+
+# - type: entity
+#   parent: BaseGameRule
+#   id: RevenantSpawn
+#   components:
+#   - type: StationEvent
+#     weight: 6
+#     duration: 1
+#     earliestStart: 45
+#     minimumPlayers: 20
+#     chaos: # Goobstation
+#       Hostile: 20
+#       Friend: 20
+#       Combat: 40
+#       Death: 100
+#       Medical: 100
+#   - type: RandomSpawnRule
+#     prototype: MobRevenant
+# - type: entity
+#   id: PowerGridCheck
+#   parent: BaseStationEventShortDelay
+#   components:
+#   - type: StationEvent
+#     minimumPlayers: 30
+#     weight: 4
+#     startAnnouncement: station-event-power-grid-check-start-announcement
+#     endAnnouncement: station-event-power-grid-check-end-announcement
+#     startAudio:
+#       path: /Audio/Announcements/power_off.ogg
+#       params:
+#         volume: -4
+#     duration: 60
+#     maxDuration: 120
+#   - type: PowerGridCheckRule
+
+# - type: entity
+#   parent: BaseGameRule
+#   id: SolarFlare
+#   components:
+#   - type: StationEvent
+#     weight: 8
+#     startAnnouncement: station-event-solar-flare-start-announcement
+#     endAnnouncement: station-event-solar-flare-end-announcement
+#     startAudio:
+#       path: /Audio/Announcements/attention.ogg
+#     duration: 120
+#     maxDuration: 240
+#     chaos: # Goobstation
+#       Friend: 20
+#   - type: SolarFlareRule
+#     onlyJamHeadsets: true
+#     affectedChannels:
+#     - Common
+#     extraChannels:
+#     - Command
+#     - Engineering
+#     - Medical
+#     - Science
+#     - Security
+#     - Service
+#     - Supply
+#     extraCount: 2
+#     lightBreakChancePerSecond: 0.0003
+#     doorToggleChancePerSecond: 0.001
+
+# - type: entity
+#   parent: BaseWizardRule
+#   id: WizardSpawn
+#   components:
+#   - type: StationEvent
+#     weight: 1 # rare
+#     duration: 1
+#     earliestStart: 30
+#     reoccurrenceDelay: 60
+#     minimumPlayers: 10
+#     chaos:
+#       Hostile: 150
+#       Friend: 150
+#       Combat: 150
+#       Death: 150
+#     maxChaos:
+#       Hostile: 30
+#       Combat: -60
+#       Power: 50
+#       Medical: 50
+#       Atmos: 50
+#   - type: AntagSelection
+#     agentName: wizard-round-end-name
+#     definitions:
+#     - spawnerPrototype: SpawnPointGhostWizard
+#       min: 1
+#       max: 1
+#       playerRatio: 1
+#       pickPlayer: false
+#       startingGear: WizardBlueGear
+#       roleLoadout:
+#       - RoleSurvivalExtended
+#       briefing:
+#         text: wizard-role-greeting
+#         color: Turquoise
+#         # TODO: Need Wizard Start sound
+#         #sound: "/Audio/Ambience/Antag/wizard_start.ogg"
+#       # TODO: WizardComp as needed
+#       components:
+#       - type: NpcFactionMember
+#         factions:
+#         - Wizard
+#       - type: RandomMetadata
+#         nameSegments:
+#         - NamesWizardFirst
+#         - NamesWizardLast
+#       mindRoles:
+#       - MindRoleWizard
