@@ -341,11 +341,11 @@
     - id: MobArgocyteCrawlerInfected
       prob: 0.0003
     - id: MobWatcherLavaland
-      prob: 0.01
+      prob: 0.001
     - id: MobWatcherIcewing
-      prob: 0.01
+      prob: 0.001
     - id: MobWatcherMagmawing
-      prob: 0.01
+      prob: 0.001
 
 
 - type: entity
@@ -411,11 +411,11 @@
     - id: MobDinosaurDilo
       prob: 0.01
     - id: MobWatcherLavaland
-      prob: 0.01
+      prob: 0.001
     - id: MobWatcherIcewing
-      prob: 0.01
+      prob: 0.001
     - id: MobWatcherMagmawing
-      prob: 0.01
+      prob: 0.001
 
 - type: entity
   id: Hardestmob
@@ -548,11 +548,11 @@
     - id: MobCarpHoloInfected
       prob: 0.0003
     - id: MobWatcherLavaland
-      prob: 0.01
+      prob: 0.001
     - id: MobWatcherIcewing
-      prob: 0.01
+      prob: 0.001
     - id: MobWatcherMagmawing
-      prob: 0.01
+      prob: 0.001
 
 - type: entity
   id: SyndyMoth
