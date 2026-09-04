@@ -295,25 +295,25 @@
     - id: MobSpiderSpace
       prob: 0.003
     - id: MobSpiderSpaceInfected
-      prob: 0.001
+      prob: 0.0002
     - id: MobBearSpace
       prob: 0.003
     - id: MobBearSpaceInfected
-      prob: 0.001
+      prob: 0.0002
     - id: MobKangarooSpace
       prob: 0.003
     - id: MobKangarooSpaceInfected
-      prob: 0.001      
+      prob: 0.0003      
     - id: MobPurpleSnake
       prob: 0.003
     - id: MobSmallPurpleSnake
       prob: 0.003
     - id: MobPurpleSnakeInfected
-      prob: 0.001
+      prob: 0.0001
     - id: MobCobraSpace
       prob: 0.003
     - id: MobCobraSpaceInfected
-      prob: 0.001
+      prob: 0.0003
     - id: MobGiantSpiderAngry
       prob: 0.003
     - id: MobClownSpider
@@ -329,11 +329,11 @@
     - id: MobShark
       prob: 0.003
     - id: MobSharkInfected
-      prob: 0.001
+      prob: 0.0003
     - id: MobArgocytePouncer
       prob: 0.003
     - id: MobArgocytePouncerInfected
-      prob: 0.003
+      prob: 0.0003
     - id: MobCorgiCerberus
       prob: 0.003
     - id: MobArgocyteCrawler
@@ -448,7 +448,7 @@
     - id: MobArgocyteLeviathing
       prob: 0.005
     - id: MobArgocyteLeviathingInfected
-      prob: 0.0005
+      prob: 0.0002
     - id: MobDinosaurAnki
       prob: 0.003
 

@@ -140,3 +140,29 @@
         amount: 2
       - id: MagazinePistolSubMachineGun
         amount: 4
+
+- type: entity
+  id: CrateArmorySMGDrozd
+  parent: [ CrateWeaponSecure, BaseSecurityContraband ]
+  name: SMG crateDrozd
+  description: Contains two high-powered, semiautomatic rifles with four mags. Requires Armory access to open.
+  components:
+  - type: StorageFill
+    contents:
+      - id: WeaponSubMachineGunDrozd
+        amount: 2
+      - id: MagazinePistolSubMachineGun
+        amount: 4
+
+- type: entity
+  id: CrateArmoryDBShotgun
+  parent: [ CrateWeaponSecure, BaseSecurityContraband ]
+  name: Shotgun crateDB
+  description: Contains two DoubleBarreled Shotguns, Four Boxes of ammo. Requires Armory access to open.
+  components:
+  - type: StorageFill
+    contents:
+      - id: WeaponShotgunDoubleBarreled
+        amount: 2
+      - id: BoxLethalshot
+        amount: 4
