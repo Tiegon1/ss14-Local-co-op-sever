@@ -80,7 +80,8 @@
   - Syndicate
   - Dino # dinosaurs
   - Clown
-  
+  - BloodCultist
+
 - type: npcFaction
   id: SimpleHostile
   hostile:
