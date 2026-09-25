@@ -10,6 +10,9 @@ public sealed partial class LiquidSlimeRuleComponent : Component
     public float LiquidThreshold = 5000f;
 
     [DataField]
+    public float PuddleRange = 2f;
+
+    [DataField]
     public int MinSlimesToSpawn = 1;
 
     [DataField]
