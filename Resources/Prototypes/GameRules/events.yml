@@ -102,6 +102,7 @@
     - id: MalignRiftSpawn # Funky
     - id: SneakySnake
     - id: SneakySyndy
+    - id: LiquidSlimeOutbreak
 
 - type: entityTable
   id: BasicAntagEventsTable
@@ -574,6 +575,24 @@
       prob: 0.01
     - id: MobGrenadePenguin
       prob: 0.001
+
+- type: entity
+  id: LiquidSlimeOutbreak
+  parent: BaseStationEventShortDelay
+  components:
+  - type: StationEvent
+    earliestStart: 20
+    minimumPlayers: 1
+    weight: 1
+    duration: 1
+    maxOccurrences: 1
+    startAnnouncement: station-event-vent-creatures-start-announcement
+    startAudio:
+      path: /Audio/Announcements/aliens.ogg
+  - type: LiquidSlimeRule
+    liquidThreshold: 5000
+    slimesToSpawn: 3
+    slimePrototype: MobAdultSlimesGreenAngry
 
 #- type: entity
 #  id: SyndyCat
