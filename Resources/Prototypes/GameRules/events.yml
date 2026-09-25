@@ -592,7 +592,13 @@
     maxSlimesToSpawn: 6
     slimePrototypes:
     - MobAdultSlimesBlueAngry
+    - MobAdultSlimesBlueAngry
+    - MobAdultSlimesBlueAngry
     - MobAdultSlimesGreenAngry
+    - MobAdultSlimesGreenAngry
+    - MobAdultSlimesGreenAngry
+    - MobAdultSlimesYellowAngry
+    - MobAdultSlimesYellowAngry
     - MobAdultSlimesYellowAngry
     - ReagentSlime
     - ReagentSlimeBeer
