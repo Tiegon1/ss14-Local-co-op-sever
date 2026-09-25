@@ -145,7 +145,7 @@
 - type: cargoProduct
   id: ArmoryDBShotgun
   icon:
-    sprite: Objects/Weapons/Guns/SMGs/atreides.rsi
+    sprite: Objects/Weapons/Guns/Shotguns/db_shotgun.rsi
     state: icon
   product: CrateArmoryDBShotgun
   cost: 7000
@@ -155,7 +155,7 @@
 - type: cargoProduct
   id: ArmorySmgDrozd
   icon:
-    sprite: Objects/Weapons/Guns/SMGs/atreides.rsi
+    sprite: Objects/Weapons/Guns/SMGs/drozd.rsi
     state: icon
   product: CrateArmorySMGDrozd
   cost: 8000
@@ -165,7 +165,7 @@
 - type: cargoProduct
   id: ArmoryBulldogShotgun
   icon:
-    sprite: Objects/Weapons/Guns/SMGs/atreides.rsi
+    sprite: Objects/Weapons/Guns/Shotguns/bulldog.rsi
     state: icon
   product: ClothingBackpackDuffelSyndicateFilledShotgun
   cost: 42000
@@ -175,19 +175,19 @@
 - type: cargoProduct
   id: ArmoryKardashev-Mosin
   icon:
-    sprite: Objects/Weapons/Guns/SMGs/atreides.rsi
+    sprite: Objects/Weapons/Guns/Rifles/foam_rifle.rsi
     state: icon
   product: WeaponSniperMosin
-  cost: 2000
+  cost: 3000
   category: cargoproduct-category-name-armory
   group: market
 
 - type: cargoProduct
   id: ArmoryInspector
   icon:
-    sprite: Objects/Weapons/Guns/SMGs/atreides.rsi
+    sprite: Objects/Weapons/Guns/Revolvers/inspector.rsi
     state: icon
   product: WeaponRevolverInspector
-  cost: 6000
+  cost: 7000
   category: cargoproduct-category-name-armory
   group: market
