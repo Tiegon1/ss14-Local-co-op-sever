@@ -587,7 +587,7 @@
     duration: 1
     maxOccurrences: 1
   - type: LiquidSlimeRule
-    liquidThreshold: 100
+    liquidThreshold: 350
     minSlimesToSpawn: 2
     maxSlimesToSpawn: 6
     slimePrototypes:
@@ -607,6 +607,7 @@
     - ReagentSlimeNorepinephricAcid
     - ReagentSlimeEphedrine
     - ReagentSlimeRobustHarvest
+
 #- type: entity
 #  id: SyndyCat
 #  parent: BaseStationEventShortDelay
