@@ -590,10 +590,26 @@
     startAudio:
       path: /Audio/Announcements/aliens.ogg
   - type: LiquidSlimeRule
-    liquidThreshold: 5000
-    slimesToSpawn: 3
-    slimePrototype: MobAdultSlimesGreenAngry
-
+    liquidThreshold: 100
+    minSlimesToSpawn: 2
+    maxSlimesToSpawn: 6
+    slimePrototypes:
+    - MobAdultSlimesBlueAngry
+    - MobAdultSlimesGreenAngry
+    - MobAdultSlimesYellowAngry
+    - ReagentSlime
+    - ReagentSlimeBeer
+    - ReagentSlimePax
+    - ReagentSlimeNocturine
+    - ReagentSlimeTHC
+    - ReagentSlimeSalicylicAcid
+    - ReagentSlimeToxin
+    - ReagentSlimeNapalm
+    - ReagentSlimeOmnizine
+    - ReagentSlimeMuteToxin
+    - ReagentSlimeNorepinephricAcid
+    - ReagentSlimeEphedrine
+    - ReagentSlimeRobustHarvest
 #- type: entity
 #  id: SyndyCat
 #  parent: BaseStationEventShortDelay

@@ -63,10 +63,13 @@ public sealed class LiquidSlimeRule : StationEventSystem<LiquidSlimeRuleComponen
             return;
         }
 
-        for (var i = 0; i < component.SlimesToSpawn; i++)
+        var slimesToSpawn = RobustRandom.Next(component.MinSlimesToSpawn, component.MaxSlimesToSpawn + 1);
+        var slimePrototype = RobustRandom.Pick(component.SlimePrototypes);
+
+        for (var i = 0; i < slimesToSpawn; i++)
         {
             var coordinates = RobustRandom.Pick(puddles);
-            Spawn(component.SlimePrototype, coordinates);
+            Spawn(slimePrototype, coordinates);
         }
 
         ForceEndSelf(uid, gameRule);

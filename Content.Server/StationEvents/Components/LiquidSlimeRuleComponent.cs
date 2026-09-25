@@ -10,8 +10,29 @@ public sealed partial class LiquidSlimeRuleComponent : Component
     public float LiquidThreshold = 5000f;
 
     [DataField]
-    public int SlimesToSpawn = 3;
+    public int MinSlimesToSpawn = 1;
 
     [DataField]
-    public EntProtoId SlimePrototype = "MobAdultSlimesGreen";
+    public int MaxSlimesToSpawn = 5;
+
+    [DataField]
+    public List<EntProtoId> SlimePrototypes = new()
+    {
+        "MobAdultSlimesBlueAngry",
+        "MobAdultSlimesGreenAngry",
+        "MobAdultSlimesYellowAngry",
+        "ReagentSlime",
+        "ReagentSlimeBeer",
+        "ReagentSlimePax",
+        "ReagentSlimeNocturine",
+        "ReagentSlimeTHC",
+        "ReagentSlimeSalicylicAcid",
+        "ReagentSlimeToxin",
+        "ReagentSlimeNapalm",
+        "ReagentSlimeOmnizine",
+        "ReagentSlimeMuteToxin",
+        "ReagentSlimeNorepinephricAcid",
+        "ReagentSlimeEphedrine",
+        "ReagentSlimeRobustHarvest"
+    };
 }
