@@ -590,6 +590,7 @@
     liquidThreshold: 350
     minSlimesToSpawn: 2
     maxSlimesToSpawn: 6
+    puddleRange: 2
     slimePrototypes:
     - MobAdultSlimesBlueAngry
     - MobAdultSlimesBlueAngry
