@@ -374,12 +374,12 @@
   - type: StationEvent
     earliestStart: 20
     minimumPlayers: 1
-    weight: 0.6
+    weight: 1
     duration: 30 # DeltaV: was 60, used as a delay now
   - type: VentCrittersRule
     entries:
     - id: MobMothSyndy
-      prob: 0.01    
+      prob: 0.02    
     - id: MobCatSyndy
       prob: 0.008
     - id: MobGrenadePenguin
@@ -565,12 +565,12 @@
       path: /Audio/Announcements/aliens.ogg
     earliestStart: 30
     minimumPlayers: 1
-    weight: 0.5
+    weight: 1
     duration: 30 # DeltaV: was 60, used as a delay now
   - type: VentCrittersRule
     entries:
     - id: MobMothSyndy
-      prob: 0.03    
+      prob: 0.04    
     - id: MobCatSyndy
       prob: 0.01
     - id: MobGrenadePenguin
@@ -583,7 +583,7 @@
   - type: StationEvent
     earliestStart: 20
     minimumPlayers: 1
-    weight: 1
+    weight: 3
     duration: 1
     maxOccurrences: 1
   - type: LiquidSlimeRule
