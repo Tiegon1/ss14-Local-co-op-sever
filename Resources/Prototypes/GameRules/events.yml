@@ -381,7 +381,7 @@
     - id: MobMothSyndy
       prob: 0.02    
     - id: MobCatSyndy
-      prob: 0.008
+      prob: 0.009
     - id: MobGrenadePenguin
       prob: 0.005
 
