@@ -28,7 +28,7 @@
 - type: soundCollection
   id: LobbyMusic
   files:
-    - /Audio/Lobby/space_asshole.ogg
+#    - /Audio/Lobby/space_asshole.ogg
     - /Audio/Lobby/every_light_is_blinking_at_once.ogg
     # Goobstation - Custom lobby music
 #    - /Audio/Lobby/skubstep.ogg
@@ -37,18 +37,18 @@
 #    - /Audio/Lobby/clownalwayswins.ogg
 #    - /Audio/Lobby/clownwmv.ogg
 #    - /Audio/Lobby/dawsonschristian.ogg
-    - /Audio/Lobby/thewizard.ogg
+#    - /Audio/Lobby/thewizard.ogg
 #    - /Audio/Lobby/skubstub.ogg
-    - /Audio/Lobby/space_radiation.ogg
-    - /Audio/Lobby/droopy_likes_your_face.ogg
-    - /Audio/Lobby/spacers_home.ogg
-    - /Audio/Lobby/starpilotshymn.ogg
-    - /Audio/Lobby/tusmentiras.ogg
-    - /Audio/Lobby/ironwill.ogg
-    - /Audio/Lobby/Minerals.ogg
+#    - /Audio/Lobby/space_radiation.ogg
+#    - /Audio/Lobby/droopy_likes_your_face.ogg
+#    - /Audio/Lobby/spacers_home.ogg
+#    - /Audio/Lobby/starpilotshymn.ogg
+#    - /Audio/Lobby/tusmentiras.ogg
+#    - /Audio/Lobby/ironwill.ogg
+#    - /Audio/Lobby/Minerals.ogg
 #    - /Audio/Lobby/ashwalking.ogg
-    - /Audio/Lobby/dagd.ogg
-    - /Audio/Lobby/meltdown.ogg
+#    - /Audio/Lobby/dagd.ogg
+#    - /Audio/Lobby/meltdown.ogg
     # funky station music
 #    - /Audio/_Funkystation/Music/an_alien_song_alien_kids.ogg
     - /Audio/Lobby/Last Battle T260G.ogg
@@ -56,6 +56,10 @@
     - /Audio/Lobby/Commander Hayes theme music.ogg
     - /Audio/Lobby/Hyperspace theme music.ogg
     - /Audio/Lobby/Outpost 2 Menu Theme.ogg
+    - /Audio/Lobby/Outpost 2 Menu Theme.ogg
+    - /Audio/Lobby/Outpost 2 Menu Theme.ogg
     - /Audio/Lobby/Lost Vikings - factory beat.ogg
     - /Audio/Lobby/Galactic Attack - Penetration.ogg
     - /Audio/Lobby/Battletoads & Double Dragon - The Ultimate Team Robo Manus.ogg
+    - /Audio/Lobby/Bomberman 64 - Blue Resort.ogg
+    - /Audio/Lobby/Bomberman 64 - Stage Select.ogg
