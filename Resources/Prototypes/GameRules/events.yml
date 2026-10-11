@@ -374,7 +374,7 @@
   - type: StationEvent
     earliestStart: 20
     minimumPlayers: 1
-    weight: 1
+    weight: 0.5
     duration: 30 # DeltaV: was 60, used as a delay now
   - type: VentCrittersRule
     entries:
@@ -565,7 +565,7 @@
       path: /Audio/Announcements/aliens.ogg
     earliestStart: 30
     minimumPlayers: 1
-    weight: 1
+    weight: 0.5
     duration: 30 # DeltaV: was 60, used as a delay now
   - type: VentCrittersRule
     entries:
