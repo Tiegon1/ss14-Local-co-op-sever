@@ -271,7 +271,7 @@
       explosionType: MicroBomb
       totalIntensity: 70
       intensitySlope: 10
-      maxIntensity: 1.5
+      maxIntensity: 2
       canCreateVacuum: false
     - type: Tag
       tags:
